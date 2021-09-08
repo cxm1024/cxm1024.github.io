@@ -29,11 +29,7 @@
 
     <script src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/libs/jquery/jquery.min.js"></script>
 
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
 
@@ -480,7 +476,7 @@
 <h2 id="轮廓线DP"><a href="#轮廓线DP" class="headerlink" title="轮廓线DP"></a>轮廓线DP</h2><p>没见过不用慌，我也没见过（雾</p>
 <p>轮廓线，就是把矩阵从右上角到左下角沿着有棋子和没棋子的分界线描一下，往下走就用1表示，往左走就用0表示。这样我们就得到了一个01串，即一个二进制数，这就是我们的DP状态。</p>
 <p>例如（图丑勿喷）</p>
-<p><img src="https://i.loli.net/2021/08/14/6RlDkBPy2JnVS7W.png"></p>
+<p><img src="https://i.loli.net/2021/08/14/6RlDkBPy2JnVS7W.png" alt=""></p>
 <p>这种情况下轮廓线状态为左左下左下下左左下，即$001011001_{(2)}=89$</p>
 <p>我们设$f[s]$（$s$就是轮廓线状态）表示从轮廓线表示的局面一直下到最终下满的过程中“先手-后手”最大是多少。我们可以发现，只根据s就可以知道已经下了那些棋，但不能知道具体是黑棋还是白棋，然而根据$f$的定义，$f[s]$的值和前面怎么下的没有关系，它只管之后怎么下，所以我们只用一维轮廓线就OK，不需要记录之前怎么下的。</p>
 <p>那么状态有了，怎么转移呢？以上图为例，即将要白棋（后手）下棋，后手肯定希望他下的一步棋能使得从现在开始（以前的我们不管）先手-后手得分尽可能小（如果是负数那他更开心了），所以$f[s]=\min\limits_{所有再下一步棋可能得到的方案s’}f[s’]-b[x][y]$（$x,y$就是即将下的那一步棋的坐标）。</p>
@@ -490,7 +486,7 @@
 <p>我们一个一个解决，先看第一个问题。还是以上图为例，白棋（后手）可以下在$(1,4),(2,3),(4,1)$三个位置，但转移的时候电脑只知道当前的轮廓线，所以我们需要找这三个点的共同特点，那就是处在轮廓线左和下的拐角处，也就是轮廓线中先出现一个0，再出现一个1。现在我们知道了轮廓线上放棋子的位置，怎么得出放棋子后的轮廓线状态呢？我们还是以上图为例，如果我们放在$(2,3)$处，进行一个对比。</p>
 <p>原：$001011001_{(2)}$</p>
 <p>新：$001101001_{(2)}$</p>
-<p><img src="https://i.loli.net/2021/08/15/YyPqDZpzrfl43kO.png"></p>
+<p><img src="https://i.loli.net/2021/08/15/YyPqDZpzrfl43kO.png" alt=""></p>
 <p>我们发现只有第四位和第五位变了，而原先的第四位和第五位就是我们之前说的先出现一个0，再出现一个1，那么转移就是把0变成1，把1变成0。</p>
 <p>具体来说，就是当我们枚举到一个$i$，使得原状态的（从低位数）第$i$位是1，第$i+1$位是0，那么就把状态异或上$3&lt;&lt;i$（可以对照例子手推一下）。</p>
 <p>开始讨论第二个问题，我们知道该在轮廓线的哪一位上下棋，怎么知道那步棋的具体坐标呢？这个问题比较容易解决，只需要在枚举$i$时维护当前看到哪个坐标即可（详见代码）。</p>

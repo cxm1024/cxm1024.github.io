@@ -29,11 +29,7 @@
 
     <script src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/libs/jquery/jquery.min.js"></script>
 
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
 
@@ -467,7 +463,7 @@
                                 
                                     基础的DP各位大佬已经讲得很明白了，本文主要讲一讲优化
 DP状态很容易想到：$f[i]$ 表示打完第 $i$ 只鼹鼠能获得的最多数量。
-转移：$f[i]=\min\limits_{j&lt;i,\ t[i]-t[j]&gt;=dis(i,j
+转移：$f[i]=\min\limits_{j=dis(i,j)}f[j]+1$，即对于每一个打完第 $
                                 
                             </div>
                             <div class="cover-btns">
@@ -492,7 +488,7 @@ DP状态很容易想到：$f[i]$ 表示打完第 $i$ 只鼹鼠能获得的最多
                                 
                                     温馨提示1：本文推式子比较多，建议跟着文章自己推一推。
 温馨提示2：本文小字比较多，如果分辨率不够可以放大网页。
-0. 扩展欧几里得是什么扩展欧几里得（exgcd）是一个可以用来求$ax+by=c$（$c\mod \gcd(a,b)=0$，
+0. 扩展欧几里得是什么扩展欧几里得（exgcd）是一个可以用来求$ax+by=c$（$c\% \gcd(a,b)=0$，否则
                                 
                             </div>
                             <div class="cover-btns">
@@ -644,6 +640,53 @@ DP状态很容易想到：$f[i]$ 表示打完第 $i$ 只鼹鼠能获得的最多
              <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
+                    <a href="/2021/09/06/shu-lun-xue-xi-bi-ji/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="数论学习笔记">
+                            
+                            <span class="card-title">数论学习笔记</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                本文记录一些学习到的数论知识。
+模运算$a\% b$ 表示 $a\div b$ 的余数。它具有如下几个性质：
+(a+b)\% m=(a\% m+b\% m)\% m(a-b)\% m=(a\% m-b\% m)\% m(a\times b)
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-06
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                曹轩鸣
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                            <span class="chip bg-color">学习笔记</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+              <!-- 隐藏某个文章 -->
+            
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
                     <a href="/2021/09/05/ti-jie-p2285-da-yan-shu/">
                         <div class="card-image">
                             
@@ -659,7 +702,7 @@ DP状态很容易想到：$f[i]$ 表示打完第 $i$ 只鼹鼠能获得的最多
                             
                                 基础的DP各位大佬已经讲得很明白了，本文主要讲一讲优化
 DP状态很容易想到：$f[i]$ 表示打完第 $i$ 只鼹鼠能获得的最多数量。
-转移：$f[i]=\min\limits_{j&lt;i,\ t[i]-t[j]&gt;=dis(i,j
+转移：$f[i]=\min\limits_{j=dis(i,j)}f[j]+1$，即对于每一个打完第 $
                             
                         </div>
                         <div class="publish-info">
@@ -803,7 +846,7 @@ DP状态很容易想到：$f[i]$ 表示打完第 $i$ 只鼹鼠能获得的最多
                             
                                 温馨提示1：本文推式子比较多，建议跟着文章自己推一推。
 温馨提示2：本文小字比较多，如果分辨率不够可以放大网页。
-0. 扩展欧几里得是什么扩展欧几里得（exgcd）是一个可以用来求$ax+by=c$（$c\mod \gcd(a,b)=0$，
+0. 扩展欧几里得是什么扩展欧几里得（exgcd）是一个可以用来求$ax+by=c$（$c\% \gcd(a,b)=0$，否则
                             
                         </div>
                         <div class="publish-info">
