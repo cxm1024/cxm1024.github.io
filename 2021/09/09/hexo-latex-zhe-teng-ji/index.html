@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="扩展欧几里得学习笔记, cxm&#39;s blog">
+    <meta name="keywords" content="hexo-latex折腾记, cxm&#39;s blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>扩展欧几里得学习笔记 | cxm&#39;s blog</title>
+    <title>hexo-latex折腾记 | cxm&#39;s blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">扩展欧几里得学习笔记</h1>
+                    <h1 class="description center-align post-title">hexo-latex折腾记</h1>
                 </div>
             </div>
         </div>
@@ -431,8 +431,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">学习笔记</span>
+                            <a href="/tags/%E9%9A%8F%E7%AC%94/">
+                                <span class="chip bg-color">随笔</span>
                             </a>
                         
                     </div>
@@ -447,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-14
+                    2021-09-09
                 </div>
                 
 
@@ -471,77 +471,27 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>温馨提示1：本文推式子比较多，建议跟着文章自己推一推。</p>
-<p>温馨提示2：本文小字比较多，如果分辨率不够可以放大网页。</p>
-<h2 id="0-扩展欧几里得是什么"><a href="#0-扩展欧几里得是什么" class="headerlink" title="0. 扩展欧几里得是什么"></a>0. 扩展欧几里得是什么</h2><p>扩展欧几里得（exgcd）是一个可以用来求$ax+by=c$（$c\% \gcd(a,b)=0$，否则无解）的解的算法</p>
-<p>怎么求$ax+by=c (c\% \gcd(a,b)=0)$的解呢？</p>
-<h2 id="1-ax-by-gcd-a-b"><a href="#1-ax-by-gcd-a-b" class="headerlink" title="1. $ax+by=\gcd(a,b)$"></a>1. $ax+by=\gcd(a,b)$</h2><p>怎么求$ax+by=\gcd(a,b)$的解呢？</p>
-<p>首先，如果$b=0$的话，$\gcd(a,b)=a$，则解为$\begin{cases}x=1 \\ y=0\end{cases}$</p>
-<p>设此方程的解为$\begin{cases}x=x_0 \\ y=y_0\end{cases}$</p>
-<p>那么我们需要做的就是将$ax_0+by_0=\gcd(a,b)$转化为$b=0$的格式，这就要用到辗转相除法了。</p>
-<p>设另一个方程：$bx_1+(a\% b)y_1=\gcd(b,a\% b)$</p>
-<p>设$a_1=b,b_1=a\% b$</p>
-<p>则该方程转化为$a_1x_1+b_1y_1=\gcd(a_1,b_1)$</p>
-<p>我们会发现它和原方程的格式是一样的，而且根据欧几里得原理，它可以一直递推到$a_nx_n+b_ny_n=\gcd(a_n,b_n)$使得$b_n=0$，就可以求得解$\begin{cases}x_n=1 \\ y_n=0\end{cases}$</p>
-<p>那假设我们已经求得了该结果，那如何推导出$x_0$和$y_0$呢？</p>
-<p>我们首先研究如何从$x_1$和$y_1$推导出$x_0$和$y_0$，其他的就同理了</p>
-<p>因为</p>
-<p>$\begin{cases}bx_1+(a\% b)y_1=\gcd(b,a\% b) \\ ax_0+by_0=\gcd(a,b)\end{cases}$</p>
-<p>且根据欧几里得定理，$\gcd(a,b)=\gcd(b,a\% b)$</p>
-<p>所以</p>
-<p>$ax_0+by_0=bx_1+(a\% b)y_1$</p>
-<p>且$a\% b=a-\lfloor\frac{a}{b}\rfloor b$（好好体会一下）</p>
-<p>所以</p>
-<p>$ax_0+by_0=bx_1+(a-\lfloor\frac{a}{b}\rfloor b)y_1$</p>
-<p>$ax_0+by_0=bx_1+ay_1-\lfloor\frac{a}{b}\rfloor b y_1$</p>
-<p>$ax_0+by_0=b(x1-\lfloor\frac{a}{b}\rfloor y_1)+ay_1$</p>
-<p>$ax_0+by_0=ay_1+b(x_1-\lfloor\frac{a}{b}\rfloor y_1)$</p>
-<p>即$\begin{cases}x_0=y_1 \\ y_0=x_1-\lfloor\frac{a}{b}\rfloor y_1\end{cases}$</p>
-<p>这样，我们就由$x_1$和$y_1$推导出了$x_0$和$y_0$，其他同理</p>
-<p>于是乎：</p>
-<pre class="language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">struct</span> <span class="token class-name">node</span>
-<span class="token punctuation">&#123;</span>
-	<span class="token keyword">int</span> x<span class="token punctuation">,</span>y<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-node <span class="token function">exgcd</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span><span class="token keyword">int</span> b<span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-	<span class="token keyword">if</span><span class="token punctuation">(</span>b<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>
-	<span class="token punctuation">&#123;</span>
-		node tmp<span class="token punctuation">;</span>
-		tmp<span class="token punctuation">.</span>x<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>tmp<span class="token punctuation">.</span>y<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-		<span class="token keyword">return</span> tmp<span class="token punctuation">;</span>
-	<span class="token punctuation">&#125;</span>
-	node tmp<span class="token operator">=</span><span class="token function">exgcd</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span>a<span class="token operator">%</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//递归求出x_(k+1)和y_(k+1)</span>
-	node ans<span class="token punctuation">;</span>
-	ans<span class="token punctuation">.</span>x<span class="token operator">=</span>tmp<span class="token punctuation">.</span>y<span class="token punctuation">,</span>ans<span class="token punctuation">.</span>y<span class="token operator">=</span><span class="token punctuation">(</span>tmp<span class="token punctuation">.</span>x<span class="token punctuation">)</span><span class="token operator">-</span>a<span class="token operator">/</span>b<span class="token operator">*</span><span class="token punctuation">(</span>tmp<span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//推导出x_k和y_k</span>
-	<span class="token keyword">return</span> ans<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span></code></pre>
+                <p>hexo的LaTeX可算把我给折腾死了。。。</p>
+<p>问题：多行公式无法显示（hexo-renderer-marked，mathjax）</p>
+<p>看到网上说是因为渲染引擎把<code>\\</code>渲染成<code>\</code>，然后才交给mathjax渲染公式</p>
+<p>都说把hexo-renderer-marked换成hexo-renderer-kramed，然后再node_modules/kramed/lib/rules/inline.js里修改escape项，照做了，确实解决了问题，但是却出现了新的问题：复杂公式显示错乱，遂放弃。</p>
+<p>又看到在node_modules/marked/lib/marked.js里修改escape项，失败。</p>
+<p>后来发现那些文章都比较老，于是把hexo-renderer-marked换成了2018年的1.0.0版本，再修改escape，终于成功。</p>
+<p>最终解决步骤：</p>
+<pre class="language-none"><code class="language-none">cd blog
+npm uninstall hexo-renderer-marked
+npm install hexo-renderer-marked@1.0.0</code></pre>
 
-<p>这样，我们就求出了$ax+by=\gcd(a,b)$的一组解</p>
-<h2 id="2-ax-by-c-的一组解-begin-cases-x-x-tmp-y-y-tmp-end-cases"><a href="#2-ax-by-c-的一组解-begin-cases-x-x-tmp-y-y-tmp-end-cases" class="headerlink" title="2. $ax+by=c$的一组解$\begin{cases}x=x_{tmp}\\y=y_{tmp}\end{cases}$"></a>2. $ax+by=c$的一组解$\begin{cases}x=x_{tmp}\\y=y_{tmp}\end{cases}$</h2><p>我们已经求出了$ax+by=\gcd(a,b)$的一组解$\begin{cases}x=x_0 \\ y=y_0\end{cases}$</p>
-<p>那么我们就可以知道$akx_0+bky_0=k\gcd(a,b)$</p>
-<p>又因为要求$c$是$\gcd(a,b)$的倍数（否则无解）</p>
-<p>所以$k=\frac{c}{\gcd(a,b)}$</p>
-<p>所以很简单：</p>
-<p>$\begin{cases}x_{tmp}=kx_0=\frac{c}{\gcd(a,b)}x_0 \\ y_{tmp}=ky_0=\frac{c}{\gcd(a,b)}y_0\end{cases}$</p>
-<h2 id="3-ax-by-c-的所有解-begin-cases-x-x-ans-y-y-ans-end-cases"><a href="#3-ax-by-c-的所有解-begin-cases-x-x-ans-y-y-ans-end-cases" class="headerlink" title="3.$ax+by=c$的所有解$\begin{cases}x=x_{ans}\\y=y_{ans}\end{cases}$"></a>3.$ax+by=c$的所有解$\begin{cases}x=x_{ans}\\y=y_{ans}\end{cases}$</h2><p>我们已经求出了$ax+by=c$的一组解$\begin{cases}x=x_{tmp} \\ y=y_{tmp}\end{cases}$</p>
-<p>即$ax_{tmp}+by_{tmp}=c$</p>
-<p>将它加上再减去$\frac{ab}{\gcd(a,b)}$，得到</p>
-<p>$ax_{tmp}+\frac{ab}{\gcd(a,b)}+by_{tmp}-\frac{ab}{\gcd(a,b)}=c$</p>
-<p>$a(x_{tmp}+\frac{b}{\gcd(a,b)})+b(y_{tmp}-\frac{a}{\gcd(a,b)})=c$</p>
-<p>在$x_{tmp}$上减，在$y_{tmp}$上加也同理</p>
-<p>所以$\begin{cases}x=x_{tmp}\pm\frac{b}{\gcd(a,b)} \\ y=y_{tmp}\mp\frac{a}{\gcd(a,b)}\end{cases}$也是一组解</p>
-<p>这个变换进行多次，即可得到</p>
-<p>$\begin{cases}x_{ans}=x_{tmp}+t\times\frac{b}{\gcd(a,b)} \\ y_{ans}=y_{tmp}-t\times\frac{a}{\gcd(a,b)}\end{cases}$（$t$的正负可以代替加和减的分类讨论）</p>
-<h2 id="4-x-和-y-各自的最小正整数解"><a href="#4-x-和-y-各自的最小正整数解" class="headerlink" title="4. $x$和$y$各自的最小正整数解"></a>4. $x$和$y$各自的最小正整数解</h2><p>以$x$的最小正整数解为例：</p>
-<p>求出任意一组解$\begin{cases}x=x_{tmp} \\ y=y_{tmp}\end{cases}$</p>
-<p>因为将$x_{tmp}$加或减$\frac{b}{\gcd(a,b)}$也成立，所以可设$d=\frac{b}{\gcd(a,b)}$（注意这里分子是$b$）</p>
-<p>$x_{min}=(x_{tmp}\% d+d)\% d$（因为$x_{tmp}$有可能是负数）</p>
-<p>同理对于$y$，设$d=\frac{a}{\gcd(a,b)}$（注意这里分子是$a$）</p>
-<p>$y_{min}=(y_{tmp}\% d+d)\% d$</p>
-<h2 id="5-完结撒花"><a href="#5-完结撒花" class="headerlink" title="5. 完结撒花"></a>5. 完结撒花</h2><p>至此，你已经学完了扩展欧几里得的基础用法，如有不懂的地方，建议对照着文章自己推一推，悟一悟。</p>
-<p>做个题练习一下吧：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P5656">洛谷 P5656 【模板】二元一次不定方程 (exgcd)</a></p>
+<p>编辑node_modules/marked/lib/marked.js</p>
+<p>第539行</p>
+<pre class="language-none"><code class="language-none">escape: &#x2F;^\\([!&quot;#$%&amp;&#39;()*+,\-.&#x2F;:;&lt;&#x3D;&gt;?@\[\]\\^_&#96;&#123;|&#125;~])&#x2F;,
+改成
+escape: &#x2F;^\\([!&quot;#$&amp;&#39;()*+,\-.&#x2F;:;&lt;&#x3D;&gt;?@\[\]^_&#96;|~])&#x2F;,</code></pre>
 
+<p>第564行</p>
+<pre class="language-none"><code class="language-none">inline._escapes &#x3D; &#x2F;\\([!&quot;#$%&amp;&#39;()*+,\-.&#x2F;:;&lt;&#x3D;&gt;?@\[\]\\^_&#96;&#123;|&#125;~])&#x2F;g;
+改成
+inline._escapes &#x3D; &#x2F;\\([!&quot;#$&amp;&#39;()*+,\-.&#x2F;:;&lt;&#x3D;&gt;?@\[\]^_&#96;|~])&#x2F;g;</code></pre>
                 
             </div>
             <hr/>
@@ -567,7 +517,7 @@ node <span class="token function">exgcd</span><span class="token punctuation">(<
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://caoxuanming.github.io/2021/08/14/kuo-zhan-ou-ji-li-de-xue-xi-bi-ji/">https://caoxuanming.github.io/2021/08/14/kuo-zhan-ou-ji-li-de-xue-xi-bi-ji/</a>
+                    <a href="https://caoxuanming.github.io/2021/09/09/hexo-latex-zhe-teng-ji/">https://caoxuanming.github.io/2021/09/09/hexo-latex-zhe-teng-ji/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -605,8 +555,8 @@ node <span class="token function">exgcd</span><span class="token punctuation">(<
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">学习笔记</span>
+                                <a href="/tags/%E9%9A%8F%E7%AC%94/">
+                                    <span class="chip bg-color">随笔</span>
                                 </a>
                             
                         </div>
@@ -778,17 +728,18 @@ node <span class="token function">exgcd</span><span class="token punctuation">(<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/08/14/wan-neng-de-gao-jing-du-mo-ban/">
+                <a href="/2021/09/09/hexo-latex-zhe-teng-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/16.jpg" class="responsive-img" alt="万能的高精度模板">
+                        <img src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/9.jpg" class="responsive-img" alt="hexo-latex折腾记">
                         
-                        <span class="card-title">万能的高精度模板</span>
+                        <span class="card-title">hexo-latex折腾记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -798,9 +749,9 @@ node <span class="token function">exgcd</span><span class="token punctuation">(<
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -809,11 +760,12 @@ node <span class="token function">exgcd</span><span class="token punctuation">(<
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%A8%A1%E6%9D%BF/">
-                        <span class="chip bg-color">模板</span>
+                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
+                        <span class="chip bg-color">随笔</span>
                     </a>
                     
                 </div>
@@ -827,13 +779,13 @@ node <span class="token function">exgcd</span><span class="token punctuation">(<
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/08/14/hello-world/">
+                <a href="/2021/09/06/shu-lun-xue-xi-bi-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="数论学习笔记">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">数论学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -844,7 +796,7 @@ node <span class="token function">exgcd</span><span class="token punctuation">(<
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-06
                             </span>
                         <span class="publish-author">
                             
@@ -853,6 +805,14 @@ node <span class="token function">exgcd</span><span class="token punctuation">(<
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">学习笔记</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -981,13 +941,6 @@ node <span class="token function">exgcd</span><span class="token punctuation">(<
 
 </main>
 
-
-<script src="https://cdn.jsdelivr.net/npm/mathjax/unpacked/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 
 

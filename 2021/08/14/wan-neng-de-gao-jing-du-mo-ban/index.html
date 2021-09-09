@@ -471,419 +471,419 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre class="language-cpp" data-language="cpp"><code class="language-cpp">#include&lt;iostream&gt;
-#include&lt;vector&gt;
-#include&lt;deque&gt;
-#include&lt;string.h&gt;
-#include&lt;math.h&gt;
-#include&lt;stdio.h&gt;
-#include&lt;algorithm&gt;
-using namespace std;
-class DividedByZeroException &#123;&#125;;
-class Int &#123;
-	private:
-		vector&lt;char&gt; digits;
-		bool sign;
-		void trim();
-	public:
-		Int(int);
-		Int(string&amp;) ;
-		Int();
-		Int(const Int&amp;);
-		Int operator&#x3D;(const Int&amp; op2);
-		Int abs() const;
-		Int pow(int a);
-		friend Int operator+&#x3D;(Int&amp;, const Int&amp;);
-		friend Int operator-&#x3D;(Int&amp;, const Int&amp;);
-		friend Int operator*&#x3D;(Int&amp;, const Int&amp;);
-		friend Int operator&#x2F;&#x3D;(Int&amp;, const Int&amp;) throw(DividedByZeroException);
-		friend Int operator%&#x3D;(Int&amp;, const Int&amp;) throw(DividedByZeroException);
-		friend Int operator+(const Int&amp;, const Int&amp;);
-		friend Int operator-(const Int&amp;, const Int&amp;);
-		friend Int operator*(const Int&amp;, const Int&amp;);
-		friend Int operator&#x2F;(const Int&amp;, const Int&amp;) throw(DividedByZeroException);
-		friend Int operator%(const Int&amp;, const Int&amp;) throw(DividedByZeroException);
-		friend Int operator-(const Int&amp;);
-		friend Int operator++(Int&amp;);
-		friend Int operator++(Int&amp;, int);
-		friend Int operator--(Int&amp;);
-		friend Int operator--(Int&amp;, int);
-		friend bool operator&gt;(const Int&amp;, const Int&amp;);
-		friend bool operator&lt;(const Int&amp;, const Int&amp;);
-		friend bool operator&#x3D;&#x3D;(const Int&amp;, const Int&amp;);
-		friend bool operator!&#x3D;(const Int&amp;, const Int&amp;);
-		friend bool operator&gt;&#x3D;(const Int&amp;, const Int&amp;);
-		friend bool operator&lt;&#x3D;(const Int&amp;, const Int&amp;);
-		friend ostream&amp; operator&lt;&lt;(ostream&amp;, const Int&amp;);
-		friend istream&amp; operator&gt;&gt;(istream&amp;, Int&amp;);
-	public:
-		static const Int ZERO;
-		static const Int ONE;
-		static const Int TEN;
-&#125;;
-const Int Int::ZERO &#x3D; Int(0);
-const Int Int::ONE &#x3D; Int(1);
-const Int Int::TEN &#x3D; Int(10);
-Int::Int() &#123;
-	sign &#x3D; true;
-&#125;
-Int::Int(int val) &#123;
-	if (val &gt;&#x3D; 0) &#123;
-		sign &#x3D; true;
-	&#125;
-	else &#123;
-		sign &#x3D; false;
-		val *&#x3D; (-1);
-	&#125;
-	do &#123;
-		digits.push_back((char)(val % 10));
-		val &#x2F;&#x3D; 10;
-	&#125; while (val !&#x3D; 0);
-&#125;
-Int::Int(string&amp; def) &#123;
-	sign &#x3D; true;
-	for (string::reverse_iterator iter &#x3D; def.rbegin() ; iter &lt; def.rend();  iter++) &#123;
-		char ch &#x3D; (*iter);
-		if (iter &#x3D;&#x3D; def.rend() - 1) &#123;
-			if (ch &#x3D;&#x3D; &#39;+&#39;) &#123;
-				break;
-			&#125;
-			if (ch &#x3D;&#x3D; &#39;-&#39;) &#123;
-				sign &#x3D; false;
-				break;
-			&#125;
-		&#125;
-		digits.push_back((char)((*iter) - &#39;0&#39;));
-	&#125;
-	trim();
-&#125;
-void Int::trim() &#123;
-	vector&lt;char&gt;::reverse_iterator iter &#x3D; digits.rbegin();
-	while (!digits.empty() &amp;&amp; (*iter) &#x3D;&#x3D; 0) &#123;
-		digits.pop_back();
-		iter &#x3D; digits.rbegin();
-	&#125;
-	if (digits.size() &#x3D;&#x3D; 0) &#123;
-		sign &#x3D; true;
-		digits.push_back(0);
-	&#125;
-&#125;
-Int::Int(const Int&amp; op2) &#123;
-	sign &#x3D; op2.sign;
-	digits &#x3D; op2.digits;
-&#125;
-Int Int::operator&#x3D;(const Int&amp; op2) &#123;
-	digits &#x3D; op2.digits;
-	sign &#x3D; op2.sign;
-	return (*this);
-&#125;
-Int Int::abs() const &#123;
-	if (sign) &#123;
-		return *this;
-	&#125;
-	else &#123;
-		return -(*this);
-	&#125;
-&#125;
-Int Int::pow(int a) &#123;
-	Int res(1);
-	for (int i &#x3D; 0; i &lt; a; i++) &#123;
-		res *&#x3D; (*this);
-	&#125;
-	return res;
-&#125;
-Int operator+&#x3D;(Int&amp; op1, const Int&amp; op2) &#123;
-	if (op1.sign &#x3D;&#x3D; op2.sign) &#123;
-		vector&lt;char&gt;::iterator iter1;
-		vector&lt;char&gt;::const_iterator iter2;
-		iter1 &#x3D; op1.digits.begin();
-		iter2 &#x3D; op2.digits.begin();
-		char to_add &#x3D; 0;
-		while (iter1 !&#x3D; op1.digits.end() &amp;&amp; iter2 !&#x3D; op2.digits.end()) &#123;
-			(*iter1) &#x3D; (*iter1) + (*iter2) + to_add;
-			to_add &#x3D; ((*iter1) &gt; 9);
-			(*iter1) &#x3D; (*iter1) % 10;
-			iter1++;
-			iter2++;
-		&#125;
-		while (iter1 !&#x3D; op1.digits.end()) &#123;
-			(*iter1) &#x3D; (*iter1) + to_add;
-			to_add &#x3D; ((*iter1) &gt; 9);
-			(*iter1) %&#x3D; 10;
-			iter1++;
-		&#125;
-		while (iter2 !&#x3D; op2.digits.end()) &#123;
-			char val &#x3D; (*iter2) + to_add;
-			to_add &#x3D; (val &gt; 9) ;
-			val %&#x3D; 10;
-			op1.digits.push_back(val);
-			iter2++;
-		&#125;
-		if (to_add !&#x3D; 0) &#123;
-			op1.digits.push_back(to_add);
-		&#125;
-		return op1;
-	&#125;
-	else &#123;
-		if (op1.sign) &#123;
-			return op1 -&#x3D; (-op2);
-		&#125;
-		else &#123;
-			return op1 &#x3D; op2 - (-op1);
-		&#125;
-	&#125;
-&#125;
-Int operator-&#x3D;(Int&amp; op1, const Int&amp; op2) &#123;
-	if (op1.sign &#x3D;&#x3D; op2.sign) &#123;
-		if (op1.sign) &#123;
-			if (op1 &lt; op2) &#123;
-				return  op1 &#x3D; -(op2 - op1);
-			&#125;
-		&#125;
-		else &#123;
-			if (-op1 &gt; -op2) &#123;
-				return op1 &#x3D; -((-op1) - (-op2));
-			&#125;
-			else &#123;
-				return op1 &#x3D; (-op2) - (-op1);
-			&#125;
-		&#125;
-		vector&lt;char&gt;::iterator iter1;
-		vector&lt;char&gt;::const_iterator iter2;
-		iter1 &#x3D; op1.digits.begin();
-		iter2 &#x3D; op2.digits.begin();
-		char to_substract &#x3D; 0;
-		while (iter1 !&#x3D; op1.digits.end() &amp;&amp; iter2 !&#x3D; op2.digits.end()) &#123;
-			(*iter1) &#x3D; (*iter1) - (*iter2) - to_substract;
-			to_substract &#x3D; 0;
-			if ((*iter1) &lt; 0) &#123;
-				to_substract &#x3D; 1;
-				(*iter1) +&#x3D; 10;
-			&#125;
-			iter1++;
-			iter2++;
-		&#125;
-		while (iter1 !&#x3D; op1.digits.end()) &#123;
-			(*iter1) &#x3D; (*iter1) - to_substract;
-			to_substract &#x3D; 0;
-			if ((*iter1) &lt; 0) &#123;
-				to_substract &#x3D; 1;
-				(*iter1) +&#x3D; 10;
-			&#125;
-			else &#123;
-				break;
-			&#125;
-			iter1++;
-		&#125;
-		op1.trim();
-		return op1;
-	&#125;
-	else &#123;
-		if (op1 &gt; Int::ZERO) &#123;
-			return op1 +&#x3D; (-op2);
-		&#125;
-		else &#123;
-			return op1 &#x3D; -(op2 + (-op1));
-		&#125;
-	&#125;
-&#125;
-Int operator*&#x3D;(Int&amp; op1, const Int&amp; op2) &#123;
-	Int result(0);
-	if (op1 &#x3D;&#x3D; Int::ZERO || op2 &#x3D;&#x3D; Int::ZERO) &#123;
-		result &#x3D; Int::ZERO;
-	&#125;
-	else &#123;
-		vector&lt;char&gt;::const_iterator iter2 &#x3D; op2.digits.begin();
-		while (iter2 !&#x3D; op2.digits.end()) &#123;
-			if (*iter2 !&#x3D; 0) &#123;
-				deque&lt;char&gt; temp(op1.digits.begin(), op1.digits.end());
-				char to_add &#x3D; 0;
-				deque&lt;char&gt;::iterator iter1 &#x3D; temp.begin();
-				while (iter1 !&#x3D; temp.end()) &#123;
-					(*iter1) *&#x3D; (*iter2);
-					(*iter1) +&#x3D; to_add;
-					to_add &#x3D; (*iter1) &#x2F; 10;
-					(*iter1) %&#x3D; 10;
-					iter1++;
-				&#125;
-				if (to_add !&#x3D; 0) &#123;
-					temp.push_back(to_add);
-				&#125;
-				int num_of_zeros &#x3D; iter2 - op2.digits.begin();
-				while (num_of_zeros--) &#123;
-					temp.push_front(0);
-				&#125;
-				Int temp2;
-				temp2.digits.insert(temp2.digits.end(), temp.begin(), temp.end());
-				temp2.trim();
-				result &#x3D; result + temp2;
-			&#125;
-			iter2++;
-		&#125;
-		result.sign &#x3D; ((op1.sign &amp;&amp; op2.sign) || (!op1.sign &amp;&amp; !op2.sign));
-	&#125;
-	op1 &#x3D; result;
-	return op1;
-&#125;
-Int operator&#x2F;&#x3D;(Int&amp; op1, const Int&amp; op2) throw(DividedByZeroException) &#123;
-	if (op2 &#x3D;&#x3D; Int::ZERO) &#123;
-		throw DividedByZeroException();
-	&#125;
-	Int t1 &#x3D; op1.abs(), t2 &#x3D; op2.abs();
-	if (t1 &lt; t2) &#123;
-		op1 &#x3D; Int::ZERO;
-		return op1;
-	&#125;
-	deque&lt;char&gt; temp;
-	vector&lt;char&gt;::reverse_iterator iter &#x3D; t1.digits.rbegin();
-	Int temp2(0);
-	while (iter !&#x3D; t1.digits.rend()) &#123;
-		temp2 &#x3D; temp2 * Int::TEN + Int((int)(*iter));
-		char s &#x3D; 0;
-		while (temp2 &gt;&#x3D; t2) &#123;
-			temp2 &#x3D; temp2 - t2;
-			s &#x3D; s + 1;
-		&#125;
-		temp.push_front(s);
-		iter++;
-	&#125;
-	op1.digits.clear();
-	op1.digits.insert(op1.digits.end(), temp.begin(), temp.end());
-	op1.trim();
-	op1.sign &#x3D; ((op1.sign &amp;&amp; op2.sign) || (!op1.sign &amp;&amp; !op2.sign));
-	return op1;
-&#125;
-Int operator%&#x3D;(Int&amp; op1, const Int&amp; op2) throw(DividedByZeroException) &#123;
-	return op1 -&#x3D; ((op1 &#x2F; op2) * op2);
-&#125;
-Int operator+(const Int&amp; op1, const Int&amp; op2) &#123;
-	Int temp(op1);
-	temp +&#x3D; op2;
-	return temp;
-&#125;
-Int operator-(const Int&amp; op1, const Int&amp; op2) &#123;
-	Int temp(op1);
-	temp -&#x3D; op2;
-	return temp;
-&#125;
-Int operator*(const Int&amp; op1, const Int&amp; op2) &#123;
-	Int temp(op1);
-	temp *&#x3D; op2;
-	return temp;
+                <pre class="language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;vector></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;deque></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;string.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;math.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;algorithm></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">DividedByZeroException</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Int</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">private</span><span class="token operator">:</span>
+		vector<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">></span> digits<span class="token punctuation">;</span>
+		<span class="token keyword">bool</span> sign<span class="token punctuation">;</span>
+		<span class="token keyword">void</span> <span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">public</span><span class="token operator">:</span>
+		<span class="token function">Int</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">Int</span><span class="token punctuation">(</span>string<span class="token operator">&amp;</span><span class="token punctuation">)</span> <span class="token punctuation">;</span>
+		<span class="token function">Int</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">Int</span><span class="token punctuation">(</span><span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		Int <span class="token keyword">operator</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		Int <span class="token function">abs</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span>
+		Int <span class="token function">pow</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">friend</span> Int <span class="token keyword">operator</span><span class="token operator">+=</span><span class="token punctuation">(</span>Int<span class="token operator">&amp;</span><span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">friend</span> Int <span class="token keyword">operator</span><span class="token operator">-=</span><span class="token punctuation">(</span>Int<span class="token operator">&amp;</span><span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">friend</span> Int <span class="token keyword">operator</span><span class="token operator">*=</span><span class="token punctuation">(</span>Int<span class="token operator">&amp;</span><span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">friend</span> Int <span class="token keyword">operator</span><span class="token operator">/=</span><span class="token punctuation">(</span>Int<span class="token operator">&amp;</span><span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">)</span> <span class="token keyword">throw</span><span class="token punctuation">(</span>DividedByZeroException<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">friend</span> Int <span class="token keyword">operator</span><span class="token operator">%=</span><span class="token punctuation">(</span>Int<span class="token operator">&amp;</span><span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">)</span> <span class="token keyword">throw</span><span class="token punctuation">(</span>DividedByZeroException<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">friend</span> Int <span class="token keyword">operator</span><span class="token operator">+</span><span class="token punctuation">(</span><span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">friend</span> Int <span class="token keyword">operator</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">friend</span> Int <span class="token keyword">operator</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">friend</span> Int <span class="token keyword">operator</span><span class="token operator">/</span><span class="token punctuation">(</span><span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">)</span> <span class="token keyword">throw</span><span class="token punctuation">(</span>DividedByZeroException<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">friend</span> Int <span class="token keyword">operator</span><span class="token operator">%</span><span class="token punctuation">(</span><span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">)</span> <span class="token keyword">throw</span><span class="token punctuation">(</span>DividedByZeroException<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">friend</span> Int <span class="token keyword">operator</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">friend</span> Int <span class="token keyword">operator</span><span class="token operator">++</span><span class="token punctuation">(</span>Int<span class="token operator">&amp;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">friend</span> Int <span class="token keyword">operator</span><span class="token operator">++</span><span class="token punctuation">(</span>Int<span class="token operator">&amp;</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">friend</span> Int <span class="token keyword">operator</span><span class="token operator">--</span><span class="token punctuation">(</span>Int<span class="token operator">&amp;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">friend</span> Int <span class="token keyword">operator</span><span class="token operator">--</span><span class="token punctuation">(</span>Int<span class="token operator">&amp;</span><span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">friend</span> <span class="token keyword">bool</span> <span class="token keyword">operator</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">friend</span> <span class="token keyword">bool</span> <span class="token keyword">operator</span><span class="token operator">&lt;</span><span class="token punctuation">(</span><span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">friend</span> <span class="token keyword">bool</span> <span class="token keyword">operator</span><span class="token operator">==</span><span class="token punctuation">(</span><span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">friend</span> <span class="token keyword">bool</span> <span class="token keyword">operator</span><span class="token operator">!=</span><span class="token punctuation">(</span><span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">friend</span> <span class="token keyword">bool</span> <span class="token keyword">operator</span><span class="token operator">>=</span><span class="token punctuation">(</span><span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">friend</span> <span class="token keyword">bool</span> <span class="token keyword">operator</span><span class="token operator">&lt;=</span><span class="token punctuation">(</span><span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">friend</span> ostream<span class="token operator">&amp;</span> <span class="token generic-function"><span class="token function">operator</span><span class="token generic class-name"><span class="token operator">&lt;&lt;</span><span class="token punctuation">(</span>ostream<span class="token operator">&amp;</span><span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">friend</span> istream<span class="token operator">&amp;</span> <span class="token keyword">operator</span><span class="token operator">>></span></span></span><span class="token punctuation">(</span>istream<span class="token operator">&amp;</span><span class="token punctuation">,</span> Int<span class="token operator">&amp;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">public</span><span class="token operator">:</span>
+		<span class="token keyword">static</span> <span class="token keyword">const</span> Int ZERO<span class="token punctuation">;</span>
+		<span class="token keyword">static</span> <span class="token keyword">const</span> Int ONE<span class="token punctuation">;</span>
+		<span class="token keyword">static</span> <span class="token keyword">const</span> Int TEN<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> Int Int<span class="token double-colon punctuation">::</span>ZERO <span class="token operator">=</span> <span class="token function">Int</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> Int Int<span class="token double-colon punctuation">::</span>ONE <span class="token operator">=</span> <span class="token function">Int</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> Int Int<span class="token double-colon punctuation">::</span>TEN <span class="token operator">=</span> <span class="token function">Int</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Int</span><span class="token double-colon punctuation">::</span><span class="token function">Int</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	sign <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token class-name">Int</span><span class="token double-colon punctuation">::</span><span class="token function">Int</span><span class="token punctuation">(</span><span class="token keyword">int</span> val<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>val <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		sign <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+		sign <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+		val <span class="token operator">*=</span> <span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">do</span> <span class="token punctuation">&#123;</span>
+		digits<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span><span class="token punctuation">(</span>val <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		val <span class="token operator">/=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>val <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token class-name">Int</span><span class="token double-colon punctuation">::</span><span class="token function">Int</span><span class="token punctuation">(</span>string<span class="token operator">&amp;</span> def<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	sign <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span>string<span class="token double-colon punctuation">::</span>reverse_iterator iter <span class="token operator">=</span> def<span class="token punctuation">.</span><span class="token function">rbegin</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">;</span> iter <span class="token operator">&lt;</span> def<span class="token punctuation">.</span><span class="token function">rend</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  iter<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">char</span> ch <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">*</span>iter<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>iter <span class="token operator">==</span> def<span class="token punctuation">.</span><span class="token function">rend</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>ch <span class="token operator">==</span> <span class="token string">'+'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+				<span class="token keyword">break</span><span class="token punctuation">;</span>
+			<span class="token punctuation">&#125;</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>ch <span class="token operator">==</span> <span class="token string">'-'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+				sign <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+				<span class="token keyword">break</span><span class="token punctuation">;</span>
+			<span class="token punctuation">&#125;</span>
+		<span class="token punctuation">&#125;</span>
+		digits<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">*</span>iter<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">void</span> <span class="token class-name">Int</span><span class="token double-colon punctuation">::</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	vector<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">></span><span class="token double-colon punctuation">::</span>reverse_iterator iter <span class="token operator">=</span> digits<span class="token punctuation">.</span><span class="token function">rbegin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token operator">!</span>digits<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span><span class="token operator">*</span>iter<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		digits<span class="token punctuation">.</span><span class="token function">pop_back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		iter <span class="token operator">=</span> digits<span class="token punctuation">.</span><span class="token function">rbegin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>digits<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		sign <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+		digits<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token class-name">Int</span><span class="token double-colon punctuation">::</span><span class="token function">Int</span><span class="token punctuation">(</span><span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	sign <span class="token operator">=</span> op2<span class="token punctuation">.</span>sign<span class="token punctuation">;</span>
+	digits <span class="token operator">=</span> op2<span class="token punctuation">.</span>digits<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+Int Int<span class="token double-colon punctuation">::</span><span class="token keyword">operator</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	digits <span class="token operator">=</span> op2<span class="token punctuation">.</span>digits<span class="token punctuation">;</span>
+	sign <span class="token operator">=</span> op2<span class="token punctuation">.</span>sign<span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token operator">*</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+Int <span class="token class-name">Int</span><span class="token double-colon punctuation">::</span><span class="token function">abs</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">const</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>sign<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> <span class="token operator">*</span><span class="token keyword">this</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> <span class="token operator">-</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+Int <span class="token class-name">Int</span><span class="token double-colon punctuation">::</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	Int <span class="token function">res</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> a<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		res <span class="token operator">*=</span> <span class="token punctuation">(</span><span class="token operator">*</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">return</span> res<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+Int <span class="token keyword">operator</span><span class="token operator">+=</span><span class="token punctuation">(</span>Int<span class="token operator">&amp;</span> op1<span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>op1<span class="token punctuation">.</span>sign <span class="token operator">==</span> op2<span class="token punctuation">.</span>sign<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		vector<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">></span><span class="token double-colon punctuation">::</span>iterator iter1<span class="token punctuation">;</span>
+		vector<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">></span><span class="token double-colon punctuation">::</span>const_iterator iter2<span class="token punctuation">;</span>
+		iter1 <span class="token operator">=</span> op1<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		iter2 <span class="token operator">=</span> op2<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">char</span> to_add <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+		<span class="token keyword">while</span> <span class="token punctuation">(</span>iter1 <span class="token operator">!=</span> op1<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> iter2 <span class="token operator">!=</span> op2<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+			<span class="token punctuation">(</span><span class="token operator">*</span>iter1<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">*</span>iter1<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token operator">*</span>iter2<span class="token punctuation">)</span> <span class="token operator">+</span> to_add<span class="token punctuation">;</span>
+			to_add <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">*</span>iter1<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token punctuation">(</span><span class="token operator">*</span>iter1<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">*</span>iter1<span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">10</span><span class="token punctuation">;</span>
+			iter1<span class="token operator">++</span><span class="token punctuation">;</span>
+			iter2<span class="token operator">++</span><span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span>
+		<span class="token keyword">while</span> <span class="token punctuation">(</span>iter1 <span class="token operator">!=</span> op1<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+			<span class="token punctuation">(</span><span class="token operator">*</span>iter1<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">*</span>iter1<span class="token punctuation">)</span> <span class="token operator">+</span> to_add<span class="token punctuation">;</span>
+			to_add <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">*</span>iter1<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token punctuation">(</span><span class="token operator">*</span>iter1<span class="token punctuation">)</span> <span class="token operator">%=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+			iter1<span class="token operator">++</span><span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span>
+		<span class="token keyword">while</span> <span class="token punctuation">(</span>iter2 <span class="token operator">!=</span> op2<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+			<span class="token keyword">char</span> val <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">*</span>iter2<span class="token punctuation">)</span> <span class="token operator">+</span> to_add<span class="token punctuation">;</span>
+			to_add <span class="token operator">=</span> <span class="token punctuation">(</span>val <span class="token operator">></span> <span class="token number">9</span><span class="token punctuation">)</span> <span class="token punctuation">;</span>
+			val <span class="token operator">%=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+			op1<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			iter2<span class="token operator">++</span><span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>to_add <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+			op1<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>to_add<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span>
+		<span class="token keyword">return</span> op1<span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>op1<span class="token punctuation">.</span>sign<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+			<span class="token keyword">return</span> op1 <span class="token operator">-=</span> <span class="token punctuation">(</span><span class="token operator">-</span>op2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span>
+		<span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+			<span class="token keyword">return</span> op1 <span class="token operator">=</span> op2 <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token operator">-</span>op1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+Int <span class="token keyword">operator</span><span class="token operator">-=</span><span class="token punctuation">(</span>Int<span class="token operator">&amp;</span> op1<span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>op1<span class="token punctuation">.</span>sign <span class="token operator">==</span> op2<span class="token punctuation">.</span>sign<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>op1<span class="token punctuation">.</span>sign<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>op1 <span class="token operator">&lt;</span> op2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+				<span class="token keyword">return</span>  op1 <span class="token operator">=</span> <span class="token operator">-</span><span class="token punctuation">(</span>op2 <span class="token operator">-</span> op1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token punctuation">&#125;</span>
+		<span class="token punctuation">&#125;</span>
+		<span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">-</span>op1 <span class="token operator">></span> <span class="token operator">-</span>op2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+				<span class="token keyword">return</span> op1 <span class="token operator">=</span> <span class="token operator">-</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">-</span>op1<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token operator">-</span>op2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token punctuation">&#125;</span>
+			<span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+				<span class="token keyword">return</span> op1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">-</span>op2<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token operator">-</span>op1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token punctuation">&#125;</span>
+		<span class="token punctuation">&#125;</span>
+		vector<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">></span><span class="token double-colon punctuation">::</span>iterator iter1<span class="token punctuation">;</span>
+		vector<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">></span><span class="token double-colon punctuation">::</span>const_iterator iter2<span class="token punctuation">;</span>
+		iter1 <span class="token operator">=</span> op1<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		iter2 <span class="token operator">=</span> op2<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">char</span> to_substract <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+		<span class="token keyword">while</span> <span class="token punctuation">(</span>iter1 <span class="token operator">!=</span> op1<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> iter2 <span class="token operator">!=</span> op2<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+			<span class="token punctuation">(</span><span class="token operator">*</span>iter1<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">*</span>iter1<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token punctuation">(</span><span class="token operator">*</span>iter2<span class="token punctuation">)</span> <span class="token operator">-</span> to_substract<span class="token punctuation">;</span>
+			to_substract <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">*</span>iter1<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+				to_substract <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+				<span class="token punctuation">(</span><span class="token operator">*</span>iter1<span class="token punctuation">)</span> <span class="token operator">+=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+			<span class="token punctuation">&#125;</span>
+			iter1<span class="token operator">++</span><span class="token punctuation">;</span>
+			iter2<span class="token operator">++</span><span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span>
+		<span class="token keyword">while</span> <span class="token punctuation">(</span>iter1 <span class="token operator">!=</span> op1<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+			<span class="token punctuation">(</span><span class="token operator">*</span>iter1<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">*</span>iter1<span class="token punctuation">)</span> <span class="token operator">-</span> to_substract<span class="token punctuation">;</span>
+			to_substract <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">*</span>iter1<span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+				to_substract <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+				<span class="token punctuation">(</span><span class="token operator">*</span>iter1<span class="token punctuation">)</span> <span class="token operator">+=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+			<span class="token punctuation">&#125;</span>
+			<span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+				<span class="token keyword">break</span><span class="token punctuation">;</span>
+			<span class="token punctuation">&#125;</span>
+			iter1<span class="token operator">++</span><span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span>
+		op1<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span> op1<span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>op1 <span class="token operator">></span> Int<span class="token double-colon punctuation">::</span>ZERO<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+			<span class="token keyword">return</span> op1 <span class="token operator">+=</span> <span class="token punctuation">(</span><span class="token operator">-</span>op2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span>
+		<span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+			<span class="token keyword">return</span> op1 <span class="token operator">=</span> <span class="token operator">-</span><span class="token punctuation">(</span>op2 <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token operator">-</span>op1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+Int <span class="token keyword">operator</span><span class="token operator">*=</span><span class="token punctuation">(</span>Int<span class="token operator">&amp;</span> op1<span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	Int <span class="token function">result</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>op1 <span class="token operator">==</span> Int<span class="token double-colon punctuation">::</span>ZERO <span class="token operator">||</span> op2 <span class="token operator">==</span> Int<span class="token double-colon punctuation">::</span>ZERO<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		result <span class="token operator">=</span> Int<span class="token double-colon punctuation">::</span>ZERO<span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+		vector<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">></span><span class="token double-colon punctuation">::</span>const_iterator iter2 <span class="token operator">=</span> op2<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">while</span> <span class="token punctuation">(</span>iter2 <span class="token operator">!=</span> op2<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">*</span>iter2 <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+				deque<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">></span> <span class="token function">temp</span><span class="token punctuation">(</span>op1<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> op1<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token keyword">char</span> to_add <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+				deque<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">></span><span class="token double-colon punctuation">::</span>iterator iter1 <span class="token operator">=</span> temp<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token keyword">while</span> <span class="token punctuation">(</span>iter1 <span class="token operator">!=</span> temp<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+					<span class="token punctuation">(</span><span class="token operator">*</span>iter1<span class="token punctuation">)</span> <span class="token operator">*=</span> <span class="token punctuation">(</span><span class="token operator">*</span>iter2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+					<span class="token punctuation">(</span><span class="token operator">*</span>iter1<span class="token punctuation">)</span> <span class="token operator">+=</span> to_add<span class="token punctuation">;</span>
+					to_add <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">*</span>iter1<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">10</span><span class="token punctuation">;</span>
+					<span class="token punctuation">(</span><span class="token operator">*</span>iter1<span class="token punctuation">)</span> <span class="token operator">%=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+					iter1<span class="token operator">++</span><span class="token punctuation">;</span>
+				<span class="token punctuation">&#125;</span>
+				<span class="token keyword">if</span> <span class="token punctuation">(</span>to_add <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+					temp<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>to_add<span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token punctuation">&#125;</span>
+				<span class="token keyword">int</span> num_of_zeros <span class="token operator">=</span> iter2 <span class="token operator">-</span> op2<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token keyword">while</span> <span class="token punctuation">(</span>num_of_zeros<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+					temp<span class="token punctuation">.</span><span class="token function">push_front</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token punctuation">&#125;</span>
+				Int temp2<span class="token punctuation">;</span>
+				temp2<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>temp2<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> temp<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> temp<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				temp2<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				result <span class="token operator">=</span> result <span class="token operator">+</span> temp2<span class="token punctuation">;</span>
+			<span class="token punctuation">&#125;</span>
+			iter2<span class="token operator">++</span><span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span>
+		result<span class="token punctuation">.</span>sign <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>op1<span class="token punctuation">.</span>sign <span class="token operator">&amp;&amp;</span> op2<span class="token punctuation">.</span>sign<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token punctuation">(</span><span class="token operator">!</span>op1<span class="token punctuation">.</span>sign <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>op2<span class="token punctuation">.</span>sign<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	op1 <span class="token operator">=</span> result<span class="token punctuation">;</span>
+	<span class="token keyword">return</span> op1<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+Int <span class="token keyword">operator</span><span class="token operator">/=</span><span class="token punctuation">(</span>Int<span class="token operator">&amp;</span> op1<span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op2<span class="token punctuation">)</span> <span class="token keyword">throw</span><span class="token punctuation">(</span>DividedByZeroException<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>op2 <span class="token operator">==</span> Int<span class="token double-colon punctuation">::</span>ZERO<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">throw</span> <span class="token function">DividedByZeroException</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	Int t1 <span class="token operator">=</span> op1<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> t2 <span class="token operator">=</span> op2<span class="token punctuation">.</span><span class="token function">abs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>t1 <span class="token operator">&lt;</span> t2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		op1 <span class="token operator">=</span> Int<span class="token double-colon punctuation">::</span>ZERO<span class="token punctuation">;</span>
+		<span class="token keyword">return</span> op1<span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	deque<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">></span> temp<span class="token punctuation">;</span>
+	vector<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">></span><span class="token double-colon punctuation">::</span>reverse_iterator iter <span class="token operator">=</span> t1<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">rbegin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	Int <span class="token function">temp2</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span>iter <span class="token operator">!=</span> t1<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">rend</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		temp2 <span class="token operator">=</span> temp2 <span class="token operator">*</span> Int<span class="token double-colon punctuation">::</span>TEN <span class="token operator">+</span> <span class="token function">Int</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token operator">*</span>iter<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">char</span> s <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+		<span class="token keyword">while</span> <span class="token punctuation">(</span>temp2 <span class="token operator">>=</span> t2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+			temp2 <span class="token operator">=</span> temp2 <span class="token operator">-</span> t2<span class="token punctuation">;</span>
+			s <span class="token operator">=</span> s <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span>
+		temp<span class="token punctuation">.</span><span class="token function">push_front</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		iter<span class="token operator">++</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	op1<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	op1<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span>op1<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> temp<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> temp<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	op1<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	op1<span class="token punctuation">.</span>sign <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>op1<span class="token punctuation">.</span>sign <span class="token operator">&amp;&amp;</span> op2<span class="token punctuation">.</span>sign<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token punctuation">(</span><span class="token operator">!</span>op1<span class="token punctuation">.</span>sign <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>op2<span class="token punctuation">.</span>sign<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> op1<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+Int <span class="token keyword">operator</span><span class="token operator">%=</span><span class="token punctuation">(</span>Int<span class="token operator">&amp;</span> op1<span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op2<span class="token punctuation">)</span> <span class="token keyword">throw</span><span class="token punctuation">(</span>DividedByZeroException<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">return</span> op1 <span class="token operator">-=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>op1 <span class="token operator">/</span> op2<span class="token punctuation">)</span> <span class="token operator">*</span> op2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+Int <span class="token keyword">operator</span><span class="token operator">+</span><span class="token punctuation">(</span><span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op1<span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	Int <span class="token function">temp</span><span class="token punctuation">(</span>op1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	temp <span class="token operator">+=</span> op2<span class="token punctuation">;</span>
+	<span class="token keyword">return</span> temp<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+Int <span class="token keyword">operator</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op1<span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	Int <span class="token function">temp</span><span class="token punctuation">(</span>op1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	temp <span class="token operator">-=</span> op2<span class="token punctuation">;</span>
+	<span class="token keyword">return</span> temp<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+Int <span class="token keyword">operator</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op1<span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	Int <span class="token function">temp</span><span class="token punctuation">(</span>op1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	temp <span class="token operator">*=</span> op2<span class="token punctuation">;</span>
+	<span class="token keyword">return</span> temp<span class="token punctuation">;</span>
 
-&#125;
-Int operator&#x2F;(const Int&amp; op1, const Int&amp; op2) throw(DividedByZeroException) &#123;
-	Int temp(op1);
-	temp &#x2F;&#x3D; op2;
-	return temp;
-&#125;
-Int operator%(const Int&amp; op1, const Int&amp; op2) throw(DividedByZeroException) &#123;
-	Int temp(op1);
-	temp %&#x3D; op2;
-	return temp;
-&#125;
-Int operator-(const Int&amp; op) &#123;
-	Int temp &#x3D; Int(op);
-	temp.sign &#x3D; !temp.sign;
-	return temp;
-&#125;
-Int operator++(Int&amp; op) &#123;
-	op +&#x3D; Int::ONE;
-	return op;
-&#125;
-Int operator++(Int&amp; op, int x) &#123;
-	Int temp(op);
-	++op;
-	return temp;
-&#125;
-Int operator--(Int&amp; op) &#123;
-	op -&#x3D;  Int::ONE;
-	return op;
-&#125;
-Int operator--(Int&amp; op, int x) &#123;
-	Int temp(op);
-	--op;
-	return temp;
-&#125;
-bool operator&lt;(const Int&amp; op1, const Int&amp; op2) &#123;
-	if (op1.sign !&#x3D; op2.sign) &#123;
-		return !op1.sign;
-	&#125;
-	else &#123;
-		if (op1.digits.size() !&#x3D; op2.digits.size())
-			return (op1.sign &amp;&amp; op1.digits.size() &lt; op2.digits.size())
-				|| (!op1.sign &amp;&amp; op1.digits.size() &gt; op2.digits.size());
-		vector&lt;char&gt;::const_reverse_iterator iter1, iter2;
-		iter1 &#x3D; op1.digits.rbegin();
-		iter2 &#x3D; op2.digits.rbegin();
-		while (iter1 !&#x3D; op1.digits.rend()) &#123;
-			if (op1.sign &amp;&amp;  *iter1 &lt; *iter2) &#123;
-				return true;
-			&#125;
-			if (op1.sign &amp;&amp;  *iter1 &gt; *iter2) &#123;
-				return false;
-			&#125;
-			if (!op1.sign &amp;&amp;  *iter1 &gt; *iter2) &#123;
-				return true;
-			&#125;
-			if (!op1.sign &amp;&amp;  *iter1 &lt; *iter2) &#123;
-				return false;
-			&#125;
-			iter1++;
-			iter2++;
-		&#125;
-		return false;
-	&#125;
-&#125;
-bool operator&#x3D;&#x3D;(const Int&amp; op1, const Int&amp; op2) &#123;
-	if (op1.sign !&#x3D; op2.sign  || op1.digits.size() !&#x3D; op2.digits.size()) &#123;
-		return false;
-	&#125;
-	vector&lt;char&gt;::const_iterator iter1, iter2;
-	iter1 &#x3D; op1.digits.begin();
-	iter2 &#x3D; op2.digits.begin();
-	while (iter1 !&#x3D; op1.digits.end()) &#123;
-		if (*iter1 !&#x3D; *iter2) &#123;
-			return false;
-		&#125;
-		iter1++;
-		iter2++;
-	&#125;
-	return true;
-&#125;
-bool operator!&#x3D;(const Int&amp; op1, const Int&amp; op2) &#123;
-	return !(op1 &#x3D;&#x3D; op2);
-&#125;
-bool operator&gt;&#x3D;(const Int&amp; op1, const Int&amp; op2) &#123;
-	return (op1 &gt; op2) || (op1 &#x3D;&#x3D; op2);
-&#125;
-bool operator&lt;&#x3D;(const Int&amp; op1, const Int&amp; op2) &#123;
-	return (op1 &lt; op2) || (op1 &#x3D;&#x3D; op2);
-&#125;
-bool operator&gt;(const Int&amp; op1, const Int&amp; op2) &#123;
-	return !(op1 &lt;&#x3D; op2);
-&#125;
-ostream&amp; operator&lt;&lt;(ostream&amp; stream, const Int&amp; val) &#123;
-	if (!val.sign) &#123;
-		stream &lt;&lt; &quot;-&quot;;
-	&#125;
-	for (vector&lt;char&gt;::const_reverse_iterator iter &#x3D; val.digits.rbegin(); iter !&#x3D; val.digits.rend() ; iter++) &#123;
-		stream &lt;&lt; (char)((*iter) + &#39;0&#39;);
-	&#125;
-	return stream;
-&#125;
-istream&amp; operator&gt;&gt;(istream&amp; stream, Int&amp; val) &#123;
-	string str;
-	stream &gt;&gt; str;
-	val &#x3D; Int(str);
-	return stream;
-&#125;
-int main() &#123;
-	Int a,b;
-	cin&gt;&gt;a&gt;&gt;b;
-	cout&lt;&lt;a*b&lt;&lt;endl;
-	return 0;
-&#125;</code></pre>
+<span class="token punctuation">&#125;</span>
+Int <span class="token keyword">operator</span><span class="token operator">/</span><span class="token punctuation">(</span><span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op1<span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op2<span class="token punctuation">)</span> <span class="token keyword">throw</span><span class="token punctuation">(</span>DividedByZeroException<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	Int <span class="token function">temp</span><span class="token punctuation">(</span>op1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	temp <span class="token operator">/=</span> op2<span class="token punctuation">;</span>
+	<span class="token keyword">return</span> temp<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+Int <span class="token keyword">operator</span><span class="token operator">%</span><span class="token punctuation">(</span><span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op1<span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op2<span class="token punctuation">)</span> <span class="token keyword">throw</span><span class="token punctuation">(</span>DividedByZeroException<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	Int <span class="token function">temp</span><span class="token punctuation">(</span>op1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	temp <span class="token operator">%=</span> op2<span class="token punctuation">;</span>
+	<span class="token keyword">return</span> temp<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+Int <span class="token keyword">operator</span><span class="token operator">-</span><span class="token punctuation">(</span><span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	Int temp <span class="token operator">=</span> <span class="token function">Int</span><span class="token punctuation">(</span>op<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	temp<span class="token punctuation">.</span>sign <span class="token operator">=</span> <span class="token operator">!</span>temp<span class="token punctuation">.</span>sign<span class="token punctuation">;</span>
+	<span class="token keyword">return</span> temp<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+Int <span class="token keyword">operator</span><span class="token operator">++</span><span class="token punctuation">(</span>Int<span class="token operator">&amp;</span> op<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	op <span class="token operator">+=</span> Int<span class="token double-colon punctuation">::</span>ONE<span class="token punctuation">;</span>
+	<span class="token keyword">return</span> op<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+Int <span class="token keyword">operator</span><span class="token operator">++</span><span class="token punctuation">(</span>Int<span class="token operator">&amp;</span> op<span class="token punctuation">,</span> <span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	Int <span class="token function">temp</span><span class="token punctuation">(</span>op<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token operator">++</span>op<span class="token punctuation">;</span>
+	<span class="token keyword">return</span> temp<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+Int <span class="token keyword">operator</span><span class="token operator">--</span><span class="token punctuation">(</span>Int<span class="token operator">&amp;</span> op<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	op <span class="token operator">-=</span>  Int<span class="token double-colon punctuation">::</span>ONE<span class="token punctuation">;</span>
+	<span class="token keyword">return</span> op<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+Int <span class="token keyword">operator</span><span class="token operator">--</span><span class="token punctuation">(</span>Int<span class="token operator">&amp;</span> op<span class="token punctuation">,</span> <span class="token keyword">int</span> x<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	Int <span class="token function">temp</span><span class="token punctuation">(</span>op<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token operator">--</span>op<span class="token punctuation">;</span>
+	<span class="token keyword">return</span> temp<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">bool</span> <span class="token keyword">operator</span><span class="token operator">&lt;</span><span class="token punctuation">(</span><span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op1<span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>op1<span class="token punctuation">.</span>sign <span class="token operator">!=</span> op2<span class="token punctuation">.</span>sign<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> <span class="token operator">!</span>op1<span class="token punctuation">.</span>sign<span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>op1<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> op2<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+			<span class="token keyword">return</span> <span class="token punctuation">(</span>op1<span class="token punctuation">.</span>sign <span class="token operator">&amp;&amp;</span> op1<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> op2<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+				<span class="token operator">||</span> <span class="token punctuation">(</span><span class="token operator">!</span>op1<span class="token punctuation">.</span>sign <span class="token operator">&amp;&amp;</span> op1<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">></span> op2<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		vector<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">></span><span class="token double-colon punctuation">::</span>const_reverse_iterator iter1<span class="token punctuation">,</span> iter2<span class="token punctuation">;</span>
+		iter1 <span class="token operator">=</span> op1<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">rbegin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		iter2 <span class="token operator">=</span> op2<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">rbegin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">while</span> <span class="token punctuation">(</span>iter1 <span class="token operator">!=</span> op1<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">rend</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>op1<span class="token punctuation">.</span>sign <span class="token operator">&amp;&amp;</span>  <span class="token operator">*</span>iter1 <span class="token operator">&lt;</span> <span class="token operator">*</span>iter2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+				<span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+			<span class="token punctuation">&#125;</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>op1<span class="token punctuation">.</span>sign <span class="token operator">&amp;&amp;</span>  <span class="token operator">*</span>iter1 <span class="token operator">></span> <span class="token operator">*</span>iter2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+				<span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+			<span class="token punctuation">&#125;</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>op1<span class="token punctuation">.</span>sign <span class="token operator">&amp;&amp;</span>  <span class="token operator">*</span>iter1 <span class="token operator">></span> <span class="token operator">*</span>iter2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+				<span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+			<span class="token punctuation">&#125;</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>op1<span class="token punctuation">.</span>sign <span class="token operator">&amp;&amp;</span>  <span class="token operator">*</span>iter1 <span class="token operator">&lt;</span> <span class="token operator">*</span>iter2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+				<span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+			<span class="token punctuation">&#125;</span>
+			iter1<span class="token operator">++</span><span class="token punctuation">;</span>
+			iter2<span class="token operator">++</span><span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span>
+		<span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">bool</span> <span class="token keyword">operator</span><span class="token operator">==</span><span class="token punctuation">(</span><span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op1<span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>op1<span class="token punctuation">.</span>sign <span class="token operator">!=</span> op2<span class="token punctuation">.</span>sign  <span class="token operator">||</span> op1<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> op2<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	vector<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">></span><span class="token double-colon punctuation">::</span>const_iterator iter1<span class="token punctuation">,</span> iter2<span class="token punctuation">;</span>
+	iter1 <span class="token operator">=</span> op1<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	iter2 <span class="token operator">=</span> op2<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span>iter1 <span class="token operator">!=</span> op1<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">*</span>iter1 <span class="token operator">!=</span> <span class="token operator">*</span>iter2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+			<span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span>
+		iter1<span class="token operator">++</span><span class="token punctuation">;</span>
+		iter2<span class="token operator">++</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">bool</span> <span class="token keyword">operator</span><span class="token operator">!=</span><span class="token punctuation">(</span><span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op1<span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">return</span> <span class="token operator">!</span><span class="token punctuation">(</span>op1 <span class="token operator">==</span> op2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">bool</span> <span class="token keyword">operator</span><span class="token operator">>=</span><span class="token punctuation">(</span><span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op1<span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">return</span> <span class="token punctuation">(</span>op1 <span class="token operator">></span> op2<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token punctuation">(</span>op1 <span class="token operator">==</span> op2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">bool</span> <span class="token keyword">operator</span><span class="token operator">&lt;=</span><span class="token punctuation">(</span><span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op1<span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token generic-function"><span class="token function">op1</span> <span class="token generic class-name"><span class="token operator">&lt;</span> op2<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token punctuation">(</span>op1 <span class="token operator">==</span> op2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">bool</span> <span class="token keyword">operator</span><span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op1<span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span> op2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">return</span> <span class="token operator">!</span><span class="token punctuation">(</span>op1 <span class="token operator">&lt;=</span> op2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+ostream<span class="token operator">&amp;</span> <span class="token keyword">operator</span><span class="token operator">&lt;&lt;</span><span class="token punctuation">(</span>ostream<span class="token operator">&amp;</span> stream<span class="token punctuation">,</span> <span class="token keyword">const</span> Int<span class="token operator">&amp;</span> val<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>val<span class="token punctuation">.</span>sign<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		stream <span class="token operator">&lt;&lt;</span> <span class="token string">"-"</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">></span><span class="token double-colon punctuation">::</span>const_reverse_iterator iter <span class="token operator">=</span> val<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">rbegin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> iter <span class="token operator">!=</span> val<span class="token punctuation">.</span>digits<span class="token punctuation">.</span><span class="token function">rend</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">;</span> iter<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		stream <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">*</span>iter<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token keyword">return</span> stream<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+istream<span class="token operator">&amp;</span> <span class="token keyword">operator</span><span class="token operator">>></span><span class="token punctuation">(</span>istream<span class="token operator">&amp;</span> stream<span class="token punctuation">,</span> Int<span class="token operator">&amp;</span> val<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	string str<span class="token punctuation">;</span>
+	stream <span class="token operator">>></span> str<span class="token punctuation">;</span>
+	val <span class="token operator">=</span> <span class="token function">Int</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> stream<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	Int a<span class="token punctuation">,</span>b<span class="token punctuation">;</span>
+	cin<span class="token operator">>></span>a<span class="token operator">>></span>b<span class="token punctuation">;</span>
+	cout<span class="token operator">&lt;&lt;</span>a<span class="token operator">*</span>b<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
                 
             </div>
             <hr/>
