@@ -535,30 +535,30 @@
 <p><code>for(;t[i]-t[start+1]&gt;=2*n;start++);</code></p>
 <p>来更新 $start$，可以发现，整个程序运行下来，$start$ 最多只会更新 $n$次，所以复杂度可忽略。</p>
 <p>最终代码：</p>
-<pre class="language-none"><code class="language-none">#include&lt;bits&#x2F;stdc++.h&gt;
-using namespace std;
-int t[10010],x[10010],y[10010];
-int f[10010],g[10010],start;
-int dis(int a,int b) &#123;
-	return abs(x[a]-x[b])+abs(y[a]-y[b]);
-&#125;
-int main() &#123;
-	int n,m;
-	scanf(&quot;%d%d&quot;,&amp;n,&amp;m);
-	for(int i&#x3D;1;i&lt;&#x3D;m;i++)
-		scanf(&quot;%d%d%d&quot;,&amp;t[i],&amp;x[i],&amp;y[i]);
-	for(int i&#x3D;1;i&lt;&#x3D;m;i++) &#123;
-		for(;t[i]-t[start+1]&gt;&#x3D;2*n;start++);
-		f[i]&#x3D;g[start]+1;
-		for(int j&#x3D;max(1,start);j&lt;i;j++) &#123;
-			if(t[i]-t[j]&gt;&#x3D;dis(i,j))
-				f[i]&#x3D;max(f[i],f[j]+1);
-		&#125;
-		g[i]&#x3D;max(g[i-1],f[i]);
-	&#125;
-	printf(&quot;%d\n&quot;,g[m]);
-	return 0;
-&#125;</code></pre>
+<pre class="language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> t<span class="token punctuation">[</span><span class="token number">10010</span><span class="token punctuation">]</span><span class="token punctuation">,</span>x<span class="token punctuation">[</span><span class="token number">10010</span><span class="token punctuation">]</span><span class="token punctuation">,</span>y<span class="token punctuation">[</span><span class="token number">10010</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> f<span class="token punctuation">[</span><span class="token number">10010</span><span class="token punctuation">]</span><span class="token punctuation">,</span>g<span class="token punctuation">[</span><span class="token number">10010</span><span class="token punctuation">]</span><span class="token punctuation">,</span>start<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">dis</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span><span class="token keyword">int</span> b<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">return</span> <span class="token function">abs</span><span class="token punctuation">(</span>x<span class="token punctuation">[</span>a<span class="token punctuation">]</span><span class="token operator">-</span>x<span class="token punctuation">[</span>b<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">abs</span><span class="token punctuation">(</span>y<span class="token punctuation">[</span>a<span class="token punctuation">]</span><span class="token operator">-</span>y<span class="token punctuation">[</span>b<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">int</span> n<span class="token punctuation">,</span>m<span class="token punctuation">;</span>
+	<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">,</span><span class="token operator">&amp;</span>m<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>m<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+		<span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>t<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>x<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>y<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>m<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token punctuation">;</span>t<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">-</span>t<span class="token punctuation">[</span>start<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">>=</span><span class="token number">2</span><span class="token operator">*</span>n<span class="token punctuation">;</span>start<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>g<span class="token punctuation">[</span>start<span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>
+		<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>start<span class="token punctuation">)</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>i<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+			<span class="token keyword">if</span><span class="token punctuation">(</span>t<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">-</span>t<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">>=</span><span class="token function">dis</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token punctuation">)</span><span class="token punctuation">)</span>
+				f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token function">max</span><span class="token punctuation">(</span>f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>f<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token punctuation">&#125;</span>
+		g<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token function">max</span><span class="token punctuation">(</span>g<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span>g<span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
 
 <p>不开O2可达48ms，可见优化非常显著。</p>
 <p><strong>请勿抄袭，如果一定要抄，请理解明白后再抄</strong></p>
