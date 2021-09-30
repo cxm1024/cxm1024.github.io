@@ -728,18 +728,17 @@ inline._escapes &#x3D; &#x2F;\\([!&quot;#$&amp;&#39;()*+,\-.&#x2F;:;&lt;&#x3D;&g
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/09/09/hexo-latex-zhe-teng-ji/">
+                <a href="/2021/09/30/cfr-744-div-3-jie-ti-bao-gao/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/9.jpg" class="responsive-img" alt="hexo-latex折腾记">
+                        <img src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/20.jpg" class="responsive-img" alt="CFR-744-Div.3解题报告">
                         
-                        <span class="card-title">hexo-latex折腾记</span>
+                        <span class="card-title">CFR-744-Div.3解题报告</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -749,9 +748,9 @@ inline._escapes &#x3D; &#x2F;\\([!&quot;#$&amp;&#39;()*+,\-.&#x2F;:;&lt;&#x3D;&g
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-09
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-30
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -760,12 +759,11 @@ inline._escapes &#x3D; &#x2F;\\([!&quot;#$&amp;&#39;()*+,\-.&#x2F;:;&lt;&#x3D;&g
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
-                        <span class="chip bg-color">随笔</span>
+                    <a href="/tags/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/">
+                        <span class="chip bg-color">解题报告</span>
                     </a>
                     
                 </div>
@@ -869,7 +867,7 @@ inline._escapes &#x3D; &#x2F;\\([!&quot;#$&amp;&#39;()*+,\-.&#x2F;:;&lt;&#x3D;&g
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
             collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            headingSelector: 'h1, h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -881,7 +879,7 @@ inline._escapes &#x3D; &#x2F;\\([!&quot;#$&amp;&#39;()*+,\-.&#x2F;:;&lt;&#x3D;&g
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
