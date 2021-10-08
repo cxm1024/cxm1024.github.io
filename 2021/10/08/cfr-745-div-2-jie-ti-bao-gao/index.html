@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CFR-744-Div.3解题报告, cxm&#39;s blog">
+    <meta name="keywords" content="CFR-745-Div-2解题报告, cxm&#39;s blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>CFR-744-Div.3解题报告 | cxm&#39;s blog</title>
+    <title>CFR-745-Div-2解题报告 | cxm&#39;s blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">CFR-744-Div.3解题报告</h1>
+                    <h1 class="description center-align post-title">CFR-745-Div-2解题报告</h1>
                 </div>
             </div>
         </div>
@@ -447,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-30
+                    2021-10-08
                 </div>
                 
 
@@ -471,58 +471,35 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>赛时 AC 2道题，掉大分（哭）</p>
-<h1 id="A-Casimir’s-String-Solitaire"><a href="#A-Casimir’s-String-Solitaire" class="headerlink" title="A. Casimir’s String Solitaire"></a>A. Casimir’s String Solitaire</h1><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1579/problem/A">题目传送门</a></p>
-<h2 id="Problem"><a href="#Problem" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>给你一个仅含 A,B,C 的字符串，每次可以删掉一个 A 和一个 B，或一个 B 和一个 C，位置、顺序不限，问能不能删完。</p>
-<p>$t\le 1000,len\le 50$</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>大水题，只需要判断 A 的数量加 C 的数量是否等于 B 的数量。<del>一开始脑抽还判断 A 的数量是否等于 C 的数量</del></p>
-<h1 id="B-Shifting-Sort"><a href="#B-Shifting-Sort" class="headerlink" title="B. Shifting Sort"></a>B. Shifting Sort</h1><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1579/problem/B">题目传送门</a></p>
-<h2 id="Problem-1"><a href="#Problem-1" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>定义对一段区间的 <code>Cyclically Shift</code>（以下简称<code>Shift</code>） 操作为：</p>
+                <p>没打比赛，赛后做出3道。<br>这场比赛题目质量很高，非常巧妙。</p>
+<h1 id="A-CQXYM-Count-Permutations"><a href="#A-CQXYM-Count-Permutations" class="headerlink" title="A. CQXYM Count Permutations"></a>A. CQXYM Count Permutations</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>求有多少 $2n$ 的排列满足存在超过 $n$ 个 $i$ 使得 $p_i&lt;p_{i+1}$，答案对 $10^9+7$ 取模。</p>
+<p>$\sum n\le 10^5$</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>这题就非常巧妙了，当我们使劲想想不出来时，正难则反，考虑有多少 $2n$ 的排列满足存在超过 $n$ 个 $i$ 使得 $p_i&gt;p_{i+1}$，这时候我们就会发现：这不是一样吗？没错，答案就是 $\frac{(2n)!}{2}$。</p>
+<h1 id="B-Diameter-of-Graph"><a href="#B-Diameter-of-Graph" class="headerlink" title="B. Diameter of Graph"></a>B. Diameter of Graph</h1><h2 id="Problem-1"><a href="#Problem-1" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>每次给定 $n,m,k$ 问能不能构造一个 $n$ 个点，$m$ 条边的简单无向图使得图的直径小于 $k-1$。</p>
+<p>一张图的直径定义为最短路最长的两个点的最短路长度。</p>
+<p>$t\le 10^5,n,m,k\le 10^9$</p>
+<h2 id="Solution-1"><a href="#Solution-1" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>始终没有明白为什么要“小于 $k-1$”，直接 <code>k-=2</code> 后变成 $\le k$。</p>
+<p>考虑这道题可以转化为构造一个 $n$ 个点，$m$ 条边的直径尽可能小的图。</p>
+<p>首先判断能否连通，即 $m&lt;n-1$，然后判断是否必须有重边，即 $m&gt;\frac{n(n-1)}{2}$，如果出现这两种情况则为不合法，直接排除。而且，如果 $k&lt;1$，也直接排除，因为不可能存在两个点的距离 $&lt;1$。</p>
+<p>然后考虑能否构造出直径为 $1$ 的图。我们发现只有完全图的直径为 $1$，因为任意两个点都可以直径过 $1$ 条边到达。所以，如果 $k=1$，只有完全图才成立，否则不成立。接着在考虑能否构造出直径为 $2$ 的图。我们会发现只要图连通，就一定能构造出来直径为 $2$ 的图，因为菊花图的直径为 $2$，而在菊花图上加边不会让直径变大，所以只要 $k&gt;1$ 就一定能构造出来。</p>
+<h1 id="C-Portal"><a href="#C-Portal" class="headerlink" title="C. Portal"></a>C. Portal</h1><h2 id="Problem-2"><a href="#Problem-2" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>给定一张 $n\times m$ 的矩阵，每个格子有空和黑曜石两种状态，你可以花费一步操作将空格子变成黑曜石或将黑曜石变成空格子。一个子矩阵可以形成传送门需要具备以下条件：</p>
 <ol>
-<li>指定一个数 $x(x\le len)$ 为操作的周期。</li>
-<li>每次将区间左移一位，移出去的那一位放到最右边，重复 $x$ 次。</li>
+<li>高度 $\ge 5$，宽度 $\ge 4$。注意，传送门不能横过来看，宽就是宽，高就是高。</li>
+<li>中间部分必须全是空格子。</li>
+<li>四周边框必须全是黑曜石。</li>
+<li>四角不限。</li>
 </ol>
-<p>给你一个数列 $a$，问如何用不超过 $n$ 次 <code>Shift</code> 操作将 $a$ 排好序（不要求使用次数最少，只要不超过 $n$ 就行）。</p>
-<p>$1\le t \le 1000,2\le n\le 50$</p>
-<h2 id="Solution-1"><a href="#Solution-1" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>注意只要求不超过 $n$ 次，也就意味着我们只需要每一次把一个数排好序就行了。我们可以每次挑选最大的数，通过一次 <code>Shift</code> 操作（$x=1$）将它移到最右边的位置，如果已经在该在的位置就不操作，每次都能将一个数归位，重复 $n$ 次即可。</p>
-<p>eg.</p>
-<pre class="language-none"><code class="language-none">原序列
-2 5 1 4 3
-将5归位
-2 1 4 3 5
-将4归位
-2 1 3 4 5
-将2归位
-1 2 3 4 5</code></pre>
-
-<p>由于 $n$ 很小，暴力找最大值就可以。</p>
-<h1 id="C-Ticks"><a href="#C-Ticks" class="headerlink" title="C. Ticks"></a>C. Ticks</h1><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1579/problem/C">题目传送门</a></p>
-<h2 id="Problem-2"><a href="#Problem-2" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>给你一个 $n\times m$ 的网格图，每个格子有 <code>*</code> 和 <code>.</code> 两种状态，<code>*</code> 表示填，<code>.</code> 表示不填，问能不能通过若干个大小超过 $k$ 的“V字形”表示出这个图形（V 的两条边必须一样长，机房的两位大佬就是没判断这个而 FST 了）。</p>
-<p>“V字形”大小的定义：</p>
-<pre class="language-none"><code class="language-none">*...*
-.*.*.
-..*..</code></pre>
-<p>的大小为 $2$。</p>
-<p>$1\le k\le n\le 10,1\le m\le 19$</p>
-<h2 id="Solution-2"><a href="#Solution-2" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>注意到 $n$ 和 $m$ 的范围很小，完全可以通过暴力求解。对于每一个格子，尽可能多的往上延伸，如果超过 $k$ 就把覆盖格子的标记一下，最后判断是否都被覆盖完。</p>
-<h1 id="D-Productive-Meeting"><a href="#D-Productive-Meeting" class="headerlink" title="D. Productive Meeting"></a>D. Productive Meeting</h1><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1579/problem/D">题目传送门</a></p>
-<h2 id="Problem-3"><a href="#Problem-3" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>在一场见面会中有 $n$ 个人，会议开始后他们会两两交谈，每个人有一定的耐心值 $a_i$，第 $i$ 个人在交谈 $a_i$ 次后会离开会议，两个人可以交谈多次，请找出一种方案使得总交谈次数尽可能多。</p>
-<p>$1\le t\le 1000,\sum n\le 2\times 10^5,\sum a_i\le 2\times 10^5$</p>
-<h2 id="Solution-3"><a href="#Solution-3" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>由于 $\sum a_i$ 不大，我们可以依次考虑每一次交谈，容易想到每次让耐心值最大的两个人交谈是最优方案。</p>
-<h3 id="实现-1"><a href="#实现-1" class="headerlink" title="实现 1"></a>实现 1</h3><p>先排好序，每次让剩余耐心值最大的两个人交谈，耐心值–，在考虑维护序列单调性，可以通过一通 <code>lower_bound</code> 和 <code>upper_bound</code> 以及 <code>swap</code> 来实现，时间复杂度 $O((\sum a_i)\log(n))$。</p>
-<h3 id="实现-2"><a href="#实现-2" class="headerlink" title="实现 2"></a>实现 2</h3><p>使用 <code>lower_bound</code> 和 <code>upper_bound</code> 来维护需要考虑一大堆细节（我调错调了一下午加一晚上），不如用堆来维护。每次从堆里拿出两个耐心值最大的人，耐心值–，如果还有剩余耐心值，就把他们再扔回堆里，用 STL 的优先队列实现非常简洁，时间复杂度也是 $O((\sum a_i)\log(n))$。</p>
-<h1 id="E1-Permutation-Minimization-by-Deque"><a href="#E1-Permutation-Minimization-by-Deque" class="headerlink" title="E1. Permutation Minimization by Deque"></a>E1. Permutation Minimization by Deque</h1><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1579/problem/E1">题目传送门</a></p>
-<p>在 Codeforces 中首次被 hack 祭。</p>
-<h2 id="Problem-4"><a href="#Problem-4" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>给你一个 $1-n$ 的排列，你需要把它们按顺序扔进双端队列里，你可以决定从哪一端扔。需要使得最终双端队列里的数的字典序最小。</p>
-<p>$1\le t\le 1000,\sum n\le 2\times 10^5$</p>
-<h2 id="Solution-1"><a href="#Solution-1" class="headerlink" title="$Solution\ 1$"></a>$Solution\ 1$</h2><p>由于要让字典序最小，肯定最小的值放在最前面，最小值之前的数的放法先不管，放完最小值之前的数之后在把最小值放在最前面，最小值后面的数就只能从后面挨个放了。而最小值之前的数我们可以递归处理。</p>
-<p>具体实现中我们需要用 ST 表维护区间最小值，再用分治递归的方法实现。</p>
-<h2 id="Solution-2"><a href="#Solution-2" class="headerlink" title="$Solution\ 2$"></a>$Solution\ 2$</h2><p>从通过人数上看，这道题的简单程度可是仅次于 A 题，怎么会这么复杂呢？</p>
-<p>考虑用贪心的思想，先扔进去第一个数，以后对于每一个数，如果它比队首小，就扔到队首（这样可以让结果的字典序尽可能小），否则就扔到队尾（如果还扔到队首字典序就大了）。就是这么简单。</p>
-<h1 id="E2-Array-Optimization-by-Deque"><a href="#E2-Array-Optimization-by-Deque" class="headerlink" title="E2. Array Optimization by Deque"></a>E2. Array Optimization by Deque</h1><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1579/problem/E2">题目传送门</a></p>
-<h2 id="Problem-5"><a href="#Problem-5" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>给你一个长度为 $n$ 的数列（注意不是排列），你需要把它们按顺序扔进双端队列里，你可以决定从哪一端扔。需要使得最终双端队列里的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/逆序对/11035554">逆序对</a>尽可能少。</p>
-<p>$1\le t\le 1000,\sum n\le 2\times 10^5,-10^9\le a_i\le 10^9$</p>
-<h2 id="Solution-4"><a href="#Solution-4" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>同样是贪心，对于每个数，如果放在队首，则贡献的逆序对数为前面比它小的数的个数，反之则为比它大的数的个数，这个数放在队首还是队尾对以后的方法不会产生干扰，所以只需要判断它前面是比它大的多还是比它小的多，这可以用树状数组或权值线段树维护。由于 $a_i$ 的值跨度过大，需要先进行离散化处理。</p>
+<p>问至少需要几次操作才能搭建一个传送门。</p>
+<p>$\sum n\le 400,\sum m\le 400$</p>
+<h2 id="Solution-2"><a href="#Solution-2" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>这道题我从9月30号读题一直到10月8号才做出来，历尽了千辛万苦。</p>
+<p>记输入的矩阵为 $a$，用 $0$ 表示空格，$1$ 表示黑曜石。</p>
+<p>首先预处理出每一行的前缀和，以便我们 $O(1)$ 查询一段横向区间里有多少块黑曜石，我们用 $s[i][j]$ 表示。</p>
+<p>然后，枚举合法的左右边界（$r-l\ge 3$），我们记 $len=r-l-1$ 表示中间部分的宽度，对于每一个左右边界，记 $t[i]$ 表示前 $i$ 行全变成 $100…001$ 的格式需要花费的步数，本质上是竖向的前缀和：$t[i]=t[i-1]+(s[i][r-1]-s[i][l])+(2-a[i][l]-a[i][r])$。然后我们考虑如何 $O(1)$ 计算搭建一段以 $u$ 为上边界，$d$ 为下边界的传送门的步数：首先让中间和左右边框合法（$t[d-1]-t[u]$），再让上边框合法（$len-(s[u][r-1]-s[u][l])$），同理再让下边框合法（$len-(s[d][r-1]-s[u][l])$）。加起来，则为：</p>
+<p>$t[d-1]-t[u]+(len-(s[d][r-1]-s[d][l]))+(len-(s[u][r-1]-s[u][l]))$</p>
+<p>将与 $u,d$ 有关的项分开，方便处理：</p>
+<p>$2len+(t[d-1]-s[d][r-1]+s[d][l])-(t[u]+s[u][r-1]-s[u][l])$</p>
+<p>我们记 $f[i]=t[i-1]-s[i][r-1]+s[i][l],g[i]=t[i]+s[i][r-1]-s[i][l]$，则上式可简化为 $2len+f[d]-g[u]$。</p>
+<p>现在考虑从上到下扫下边界，对于每一个下边界，我们要使步数尽可能小，即让 $2len+f[d]-g[u]$ 尽可能小，就要让 $g[u]$ 尽可能大，于是我们从上到下扫的时候，记录以下当前扫过的 $g[u]$ 的最大值 $maxn[i]=\max(maxn[i-1],g[i])$，那么对于每一个下边界 $d$，最小步数就为 $2len+f[d]-maxn[d-4]$，整个算法的时间复杂度就可以做到 $O(m^2n)$。</p>
 
                 
             </div>
@@ -549,7 +526,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://caoxuanming.github.io/2021/09/30/cfr-744-div-3-jie-ti-bao-gao/">https://caoxuanming.github.io/2021/09/30/cfr-744-div-3-jie-ti-bao-gao/</a>
+                    <a href="https://caoxuanming.github.io/2021/10/08/cfr-745-div-2-jie-ti-bao-gao/">https://caoxuanming.github.io/2021/10/08/cfr-745-div-2-jie-ti-bao-gao/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -760,9 +737,56 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/10/08/cfr-745-div-2-jie-ti-bao-gao/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/19.jpg" class="responsive-img" alt="CFR-745-Div-2解题报告">
+                        
+                        <span class="card-title">CFR-745-Div-2解题报告</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            曹轩鸣
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/">
+                        <span class="chip bg-color">解题报告</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2021/10/03/oi-zhu-yu-zhong-ying-dui-zhao-biao/">
                     <div class="card-image">
@@ -780,9 +804,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -796,51 +820,6 @@
                     
                     <a href="/tags/%E5%B7%A5%E5%85%B7/">
                         <span class="chip bg-color">工具</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/09/09/hexo-latex-zhe-teng-ji/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/9.jpg" class="responsive-img" alt="hexo-latex折腾记">
-                        
-                        <span class="card-title">hexo-latex折腾记</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-09
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            曹轩鸣
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
-                        <span class="chip bg-color">随笔</span>
                     </a>
                     
                 </div>
