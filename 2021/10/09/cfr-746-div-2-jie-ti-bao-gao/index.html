@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CFR-745-Div-2解题报告, cxm&#39;s blog">
+    <meta name="keywords" content="CFR-746-Div-2解题报告, cxm&#39;s blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>CFR-745-Div-2解题报告 | cxm&#39;s blog</title>
+    <title>CFR-746-Div-2解题报告 | cxm&#39;s blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">CFR-745-Div-2解题报告</h1>
+                    <h1 class="description center-align post-title">CFR-746-Div-2解题报告</h1>
                 </div>
             </div>
         </div>
@@ -447,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-10-08
+                    2021-10-09
                 </div>
                 
 
@@ -471,35 +471,26 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>没打比赛，赛后做出3道。<br>这场比赛题目质量很高，非常巧妙。</p>
-<h1 id="A-CQXYM-Count-Permutations"><a href="#A-CQXYM-Count-Permutations" class="headerlink" title="A. CQXYM Count Permutations"></a>A. CQXYM Count Permutations</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>求有多少 $2n$ 的排列满足存在超过 $n$ 个 $i$ 使得 $p_i&lt;p_{i+1}$，答案对 $10^9+7$ 取模。</p>
-<p>$\sum n\le 10^5$</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>这题就非常巧妙了，当我们使劲想想不出来时，正难则反，考虑有多少 $2n$ 的排列满足存在超过 $n$ 个 $i$ 使得 $p_i&gt;p_{i+1}$，这时候我们就会发现：这不是一样吗？没错，答案就是 $\frac{(2n)!}{2}$。</p>
-<h1 id="B-Diameter-of-Graph"><a href="#B-Diameter-of-Graph" class="headerlink" title="B. Diameter of Graph"></a>B. Diameter of Graph</h1><h2 id="Problem-1"><a href="#Problem-1" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>每次给定 $n,m,k$ 问能不能构造一个 $n$ 个点，$m$ 条边的简单无向图使得图的直径小于 $k-1$。</p>
-<p>一张图的直径定义为最短路最长的两个点的最短路长度。</p>
-<p>$t\le 10^5,n,m,k\le 10^9$</p>
-<h2 id="Solution-1"><a href="#Solution-1" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>始终没有明白为什么要“小于 $k-1$”，直接 <code>k-=2</code> 后变成 $\le k$。</p>
-<p>考虑这道题可以转化为构造一个 $n$ 个点，$m$ 条边的直径尽可能小的图。</p>
-<p>首先判断能否连通，即 $m&lt;n-1$，然后判断是否必须有重边，即 $m&gt;\frac{n(n-1)}{2}$，如果出现这两种情况则为不合法，直接排除。而且，如果 $k&lt;1$，也直接排除，因为不可能存在两个点的距离 $&lt;1$。</p>
-<p>然后考虑能否构造出直径为 $1$ 的图。我们发现只有完全图的直径为 $1$，因为任意两个点都可以直径过 $1$ 条边到达。所以，如果 $k=1$，只有完全图才成立，否则不成立。接着在考虑能否构造出直径为 $2$ 的图。我们会发现只要图连通，就一定能构造出来直径为 $2$ 的图，因为菊花图的直径为 $2$，而在菊花图上加边不会让直径变大，所以只要 $k&gt;1$ 就一定能构造出来。</p>
-<h1 id="C-Portal"><a href="#C-Portal" class="headerlink" title="C. Portal"></a>C. Portal</h1><h2 id="Problem-2"><a href="#Problem-2" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>给定一张 $n\times m$ 的矩阵，每个格子有空和黑曜石两种状态，你可以花费一步操作将空格子变成黑曜石或将黑曜石变成空格子。一个子矩阵可以形成传送门需要具备以下条件：</p>
-<ol>
-<li>高度 $\ge 5$，宽度 $\ge 4$。注意，传送门不能横过来看，宽就是宽，高就是高。</li>
-<li>中间部分必须全是空格子。</li>
-<li>四周边框必须全是黑曜石。</li>
-<li>四角不限。</li>
-</ol>
-<p>问至少需要几次操作才能搭建一个传送门。</p>
-<p>$\sum n\le 400,\sum m\le 400$</p>
-<h2 id="Solution-2"><a href="#Solution-2" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>这道题我从9月30号读题一直到10月8号才做出来，历尽了千辛万苦。</p>
-<p>记输入的矩阵为 $a$，用 $0$ 表示空格，$1$ 表示黑曜石。</p>
-<p>首先预处理出每一行的前缀和，以便我们 $O(1)$ 查询一段横向区间里有多少块黑曜石，我们用 $s[i][j]$ 表示。</p>
-<p>然后，枚举合法的左右边界（$r-l\ge 3$），我们记 $len=r-l-1$ 表示中间部分的宽度，对于每一个左右边界，记 $t[i]$ 表示前 $i$ 行全变成 $100…001$ 的格式需要花费的步数，本质上是竖向的前缀和：$t[i]=t[i-1]+(s[i][r-1]-s[i][l])+(2-a[i][l]-a[i][r])$。然后我们考虑如何 $O(1)$ 计算搭建一段以 $u$ 为上边界，$d$ 为下边界的传送门的步数：首先让中间和左右边框合法（$t[d-1]-t[u]$），再让上边框合法（$len-(s[u][r-1]-s[u][l])$），同理再让下边框合法（$len-(s[d][r-1]-s[u][l])$）。加起来，则为：</p>
-<p>$t[d-1]-t[u]+(len-(s[d][r-1]-s[d][l]))+(len-(s[u][r-1]-s[u][l]))$</p>
-<p>将与 $u,d$ 有关的项分开，方便处理：</p>
-<p>$2len+(t[d-1]-s[d][r-1]+s[d][l])-(t[u]+s[u][r-1]-s[u][l])$</p>
-<p>我们记 $f[i]=t[i-1]-s[i][r-1]+s[i][l],g[i]=t[i]+s[i][r-1]-s[i][l]$，则上式可简化为 $2len+f[d]-g[u]$。</p>
-<p>现在考虑从上到下扫下边界，对于每一个下边界，我们要使步数尽可能小，即让 $2len+f[d]-g[u]$ 尽可能小，就要让 $g[u]$ 尽可能大，于是我们从上到下扫的时候，记录以下当前扫过的 $g[u]$ 的最大值 $maxn[i]=\max(maxn[i-1],g[i])$，那么对于每一个下边界 $d$，最小步数就为 $2len+f[d]-maxn[d-4]$，整个算法的时间复杂度就可以做到 $O(m^2n)$。</p>
+                <p>VP做出来一道，补题又做出来3道。</p>
+<h1 id="A-Gamer-Hemose"><a href="#A-Gamer-Hemose" class="headerlink" title="A. Gamer Hemose"></a>A. Gamer Hemose</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>你有 $n$ 个武器，要打一个体力为 $H$ 的敌人，第 $i$ 个武器可以对敌人造成 $a_i$ 的伤害，每把武器不能连续使用两次，问至少需要多少次才能打败敌人。</p>
+<p>$t\le 10^5,\sum n\le 2\times 10^5$</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>（读错题意调了半天）</p>
+<p>肯定是最厉害的武器和次厉害的武器轮番上阵，把它们看作一组，首先算要用多少组，剩余的再单独处理。</p>
+<p>时间复杂度 $O(1)$。</p>
+<h1 id="B-Hemose-Shopping"><a href="#B-Hemose-Shopping" class="headerlink" title="B. Hemose Shopping"></a>B. Hemose Shopping</h1><h2 id="Problem-1"><a href="#Problem-1" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>你有一个数组，每次操作只能将距离 $\ge x$ 的两个数交换，问能否排好序。</p>
+<p>$t\le 10^5,\sum n\le 2\times 10^5$</p>
+<h2 id="Solution-1"><a href="#Solution-1" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>由于每次距离只能 $\ge x$，中间可能有一段区间是无论如何也动不了的，为 $[n-m+1,m]$。假设不用考虑这段区间，则剩下的分成左右两边，每次只能交换左右两边的数，是否能排好序呢？能。我们肯定能交换左右两边的数，所以考虑如何交换同一边的数（假设是 $a_x,a_y$），我们需要一个在另一边的辅助变量 $t$，就可以用我们刚学编程是学的用辅助变量来交换变量的方法交换，而 $t$ 的值也不会改变。</p>
+<p>如此，两边的就不用管了，反正总能排好序。接下来考虑中间的部分，因为完全动不了，我们就要求它们已经排好序了。这样就结束了？不。（我就被这个坑了）它们还需要在排好序的数组里处于正确的位置，即，对于排好序的数组 $b$，$\forall i\in[n-m+1,m],a_i=b_i$。</p>
+<h1 id="C-Bakry-and-Partitioning"><a href="#C-Bakry-and-Partitioning" class="headerlink" title="C. Bakry and Partitioning"></a>C. Bakry and Partitioning</h1><h2 id="Problem-2"><a href="#Problem-2" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>给你一棵有点权的树，问是否能割断至少 $1$ 条、至多 $k-1$ 条边，将树分成若干个连通块，使得每个连通块中点权的异或和相等。</p>
+<p>$t\le 5\times 10^4,\sum n\le 2\times 10^5$</p>
+<h2 id="Solution-2"><a href="#Solution-2" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>如果异或和是 $0$，随便割一条边即可，因为两边的异或和相等，异或起来的结果才能等于 $0$。</p>
+<p>如果疑惑和不是 $0$，而是 $x$，我们就需要将树分成三个异或和都为 $x$ 的连通块。为什么不是五个、七个？因为可以合并三个异或和都为 $x$ 的连通块得到一个异或和为 $x$ 的连通块。具体实现中跑一边 dfs 即可，跑的过程中一发现出现异或和为 $x$ 的连通块，马上把它分割出去，统计分割了多少次，如果多于两次就成立，否则不成立。</p>
+<h1 id="D-Hemose-in-ICPC"><a href="#D-Hemose-in-ICPC" class="headerlink" title="D. Hemose in ICPC ?"></a>D. Hemose in ICPC ?</h1><h2 id="Problem-3"><a href="#Problem-3" class="headerlink" title="$Problem$"></a>$Problem$</h2><p><strong>这是一道交互题。</strong> 给你一棵有边权的树，但你不知道边权是多少，每次你可以询问一个点集，会得到这个点集中距离最远的两个点的距离（即直径）。距离定义为路径中所有边权的 $\gcd$。你需要在 $12$ 次询问以内输出整棵树直径的两个端点。</p>
+<p>$n\le 10^3$</p>
+<h2 id="Solution-3"><a href="#Solution-3" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>有一个很重要的结论，$a\ge gcd(a,b)$，这告诉我们树的“直径”一定只有一条边，所以问题转化为我们要求得最长的边的两个端点。我们先花费一次询问得知整棵树的直径（即最长的边），设它为 $x$。</p>
+<p>假设我们以 $1$ 号结点为根，那么每一条边唯一对应一个点，所以我们用一个点来代表这个点与它父亲结点之间的边。考虑我们先对所有点按照 dfs 序排序，然后二分选相邻的点集（一定要加上前面的），这样它的直径一定是这个点集中最长的边，如果它是 $x$，那么递归再这段，否则递归后面的段（也加上前面的）。</p>
+<p>为什么选的点要相邻呢？以下图为例，如果我们问 ${1,3,4}$，它返回 $10$，我们也不知道是否真的有一条边的权值等于 $10$，这对我们获知答案没有什么意义。</p>
+<p><img src="https://i.loli.net/2021/10/09/ahmk2zd1EYy5Rrb.png" alt=""></p>
 
                 
             </div>
@@ -526,7 +517,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://caoxuanming.github.io/2021/10/08/cfr-745-div-2-jie-ti-bao-gao/">https://caoxuanming.github.io/2021/10/08/cfr-745-div-2-jie-ti-bao-gao/</a>
+                    <a href="https://caoxuanming.github.io/2021/10/09/cfr-746-div-2-jie-ti-bao-gao/">https://caoxuanming.github.io/2021/10/09/cfr-746-div-2-jie-ti-bao-gao/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -737,9 +728,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/10/09/cfr-746-div-2-jie-ti-bao-gao/">
                     <div class="card-image">
@@ -757,9 +749,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -768,6 +760,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -786,13 +779,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/03/oi-zhu-yu-zhong-ying-dui-zhao-biao/">
+                <a href="/2021/10/08/cfr-745-div-2-jie-ti-bao-gao/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="OI术语中英对照表">
+                        <img src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/19.jpg" class="responsive-img" alt="CFR-745-Div-2解题报告">
                         
-                        <span class="card-title">OI术语中英对照表</span>
+                        <span class="card-title">CFR-745-Div-2解题报告</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -803,7 +796,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-08
                             </span>
                         <span class="publish-author">
                             
@@ -816,8 +809,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B7%A5%E5%85%B7/">
-                        <span class="chip bg-color">工具</span>
+                    <a href="/tags/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/">
+                        <span class="chip bg-color">解题报告</span>
                     </a>
                     
                 </div>
