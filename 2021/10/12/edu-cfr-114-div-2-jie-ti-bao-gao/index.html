@@ -474,7 +474,7 @@
                 <p>赛时AC 2道题，赛后补题做出来一道（赛时交了4发，赛后交了十几发才过，太残忍了）</p>
 <p><img src="https://cdn.jsdelivr.net/gh/caoxuanming/img@master/uPic/wuJBv8.png" alt=""></p>
 <p>总体难度比较高，可能题解会比较冗长</p>
-<h1 id="A-Regular-Bracket-Sequences"><a href="#A-Regular-Bracket-Sequences" class="headerlink" title="A. Regular Bracket Sequences"></a>A. Regular Bracket Sequences</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>输入 $n$，输出 $n$ 个合法的、长度为 $2n$ 的括号序列。</p>
+<h1 id="A-Regular-Bracket-Sequences"><a href="#A-Regular-Bracket-Sequences" class="headerlink" title="A. Regular Bracket Sequences"></a>A. Regular Bracket Sequences</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>输入 $n$，输出 $n$ 个互不相同的、合法的、长度为 $2n$ 的括号序列。</p>
 <p>$t\le 50,n\le 50$</p>
 <h2 id="Solution-1"><a href="#Solution-1" class="headerlink" title="$Solution\ 1$"></a>$Solution\ 1$</h2><p>update: 我的解法非常复杂，可以直接看 $Solution\ 2$ CF官方题解的做法（想看看我的憨批做法也行）</p>
 <p>考虑一开始在 $(0,0)$ 点，左括号往右上走，右括号往右下走，则合法的括号序列一定在 $x$ 轴之上。现在考虑最简单的括号序列：<code>(((...(())...)))</code>，即<br>$${+1,+1,…,+1,+1,-1,-1,…,-1,-1}$$<br>展现在坐标系上，就是一个山峰形，那么我们考虑将山峰的顶砍一刀，让它凹进去，变成<br>$${+1,+1,…,+1,-1,+1,-1,…,-1,-1}$$<br>这样就得到了下一种合法序列，再下一种就再把左边的山峰砍一刀（自始至终都不管右边），每次砍左边的山峰，由于最初的山峰高度为 $n$，每砍一刀左边的山峰高度 $-1$，看 $n-1$ 刀的最终高度为 $1$，加上最初的单峰山，就得到了 $n$ 种合法括号序列。</p>
