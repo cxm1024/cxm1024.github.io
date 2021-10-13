@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CFR-744-Div.3解题报告, cxm&#39;s blog">
+    <meta name="keywords" content="EDU-CFR-115-Div.2解题报告, cxm&#39;s blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>CFR-744-Div.3解题报告 | cxm&#39;s blog</title>
+    <title>EDU-CFR-115-Div.2解题报告 | cxm&#39;s blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">CFR-744-Div.3解题报告</h1>
+                    <h1 class="description center-align post-title">EDU-CFR-115-Div.2解题报告</h1>
                 </div>
             </div>
         </div>
@@ -447,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-30
+                    2021-10-13
                 </div>
                 
 
@@ -471,58 +471,19 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>赛时 AC 2道题，掉大分（哭）</p>
-<h1 id="A-Casimir’s-String-Solitaire"><a href="#A-Casimir’s-String-Solitaire" class="headerlink" title="A. Casimir’s String Solitaire"></a>A. Casimir’s String Solitaire</h1><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1579/problem/A">题目传送门</a></p>
-<h2 id="Problem"><a href="#Problem" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>给你一个仅含 A,B,C 的字符串，每次可以删掉一个 A 和一个 B，或一个 B 和一个 C，位置、顺序不限，问能不能删完。</p>
-<p>$t\le 1000,len\le 50$</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>大水题，只需要判断 A 的数量加 C 的数量是否等于 B 的数量。<del>一开始脑抽还判断 A 的数量是否等于 C 的数量</del></p>
-<h1 id="B-Shifting-Sort"><a href="#B-Shifting-Sort" class="headerlink" title="B. Shifting Sort"></a>B. Shifting Sort</h1><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1579/problem/B">题目传送门</a></p>
-<h2 id="Problem-1"><a href="#Problem-1" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>定义对一段区间的 <code>Cyclically Shift</code>（以下简称<code>Shift</code>） 操作为：</p>
-<ol>
-<li>指定一个数 $x(x\le len)$ 为操作的周期。</li>
-<li>每次将区间左移一位，移出去的那一位放到最右边，重复 $x$ 次。</li>
-</ol>
-<p>给你一个数列 $a$，问如何用不超过 $n$ 次 <code>Shift</code> 操作将 $a$ 排好序（不要求使用次数最少，只要不超过 $n$ 就行）。</p>
-<p>$1\le t \le 1000,2\le n\le 50$</p>
-<h2 id="Solution-1"><a href="#Solution-1" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>注意只要求不超过 $n$ 次，也就意味着我们只需要每一次把一个数排好序就行了。我们可以每次挑选最大的数，通过一次 <code>Shift</code> 操作（$x=1$）将它移到最右边的位置，如果已经在该在的位置就不操作，每次都能将一个数归位，重复 $n$ 次即可。</p>
-<p>eg.</p>
-<pre class="language-none"><code class="language-none">原序列
-2 5 1 4 3
-将5归位
-2 1 4 3 5
-将4归位
-2 1 3 4 5
-将2归位
-1 2 3 4 5</code></pre>
-
-<p>由于 $n$ 很小，暴力找最大值就可以。</p>
-<h1 id="C-Ticks"><a href="#C-Ticks" class="headerlink" title="C. Ticks"></a>C. Ticks</h1><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1579/problem/C">题目传送门</a></p>
-<h2 id="Problem-2"><a href="#Problem-2" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>给你一个 $n\times m$ 的网格图，每个格子有 <code>*</code> 和 <code>.</code> 两种状态，<code>*</code> 表示填，<code>.</code> 表示不填，问能不能通过若干个大小超过 $k$ 的“V字形”表示出这个图形（V 的两条边必须一样长，机房的两位大佬就是没判断这个而 FST 了）。</p>
-<p>“V字形”大小的定义：</p>
-<pre class="language-none"><code class="language-none">*...*
-.*.*.
-..*..</code></pre>
-<p>的大小为 $2$。</p>
-<p>$1\le k\le n\le 10,1\le m\le 19$</p>
-<h2 id="Solution-2"><a href="#Solution-2" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>注意到 $n$ 和 $m$ 的范围很小，完全可以通过暴力求解。对于每一个格子，尽可能多的往上延伸，如果超过 $k$ 就把覆盖格子的标记一下，最后判断是否都被覆盖完。</p>
-<h1 id="D-Productive-Meeting"><a href="#D-Productive-Meeting" class="headerlink" title="D. Productive Meeting"></a>D. Productive Meeting</h1><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1579/problem/D">题目传送门</a></p>
-<h2 id="Problem-3"><a href="#Problem-3" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>在一场见面会中有 $n$ 个人，会议开始后他们会两两交谈，每个人有一定的耐心值 $a_i$，第 $i$ 个人在交谈 $a_i$ 次后会离开会议，两个人可以交谈多次，请找出一种方案使得总交谈次数尽可能多。</p>
-<p>$1\le t\le 1000,\sum n\le 2\times 10^5,\sum a_i\le 2\times 10^5$</p>
-<h2 id="Solution-3"><a href="#Solution-3" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>由于 $\sum a_i$ 不大，我们可以依次考虑每一次交谈，容易想到每次让耐心值最大的两个人交谈是最优方案。</p>
-<h3 id="实现-1"><a href="#实现-1" class="headerlink" title="实现 1"></a>实现 1</h3><p>先排好序，每次让剩余耐心值最大的两个人交谈，耐心值–，在考虑维护序列单调性，可以通过一通 <code>lower_bound</code> 和 <code>upper_bound</code> 以及 <code>swap</code> 来实现，时间复杂度 $O((\sum a_i)\log(n))$。</p>
-<h3 id="实现-2"><a href="#实现-2" class="headerlink" title="实现 2"></a>实现 2</h3><p>使用 <code>lower_bound</code> 和 <code>upper_bound</code> 来维护需要考虑一大堆细节（我调错调了一下午加一晚上），不如用堆来维护。每次从堆里拿出两个耐心值最大的人，耐心值–，如果还有剩余耐心值，就把他们再扔回堆里，用 STL 的优先队列实现非常简洁，时间复杂度也是 $O((\sum a_i)\log(n))$。</p>
-<h1 id="E1-Permutation-Minimization-by-Deque"><a href="#E1-Permutation-Minimization-by-Deque" class="headerlink" title="E1. Permutation Minimization by Deque"></a>E1. Permutation Minimization by Deque</h1><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1579/problem/E1">题目传送门</a></p>
-<p>在 Codeforces 中首次被 hack 祭。</p>
-<h2 id="Problem-4"><a href="#Problem-4" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>给你一个 $1-n$ 的排列，你需要把它们按顺序扔进双端队列里，你可以决定从哪一端扔。需要使得最终双端队列里的数的字典序最小。</p>
-<p>$1\le t\le 1000,\sum n\le 2\times 10^5$</p>
-<h2 id="Solution-1"><a href="#Solution-1" class="headerlink" title="$Solution\ 1$"></a>$Solution\ 1$</h2><p>由于要让字典序最小，肯定最小的值放在最前面，最小值之前的数的放法先不管，放完最小值之前的数之后在把最小值放在最前面，最小值后面的数就只能从后面挨个放了。而最小值之前的数我们可以递归处理。</p>
-<p>具体实现中我们需要用 ST 表维护区间最小值，再用分治递归的方法实现。</p>
-<h2 id="Solution-2"><a href="#Solution-2" class="headerlink" title="$Solution\ 2$"></a>$Solution\ 2$</h2><p>从通过人数上看，这道题的简单程度可是仅次于 A 题，怎么会这么复杂呢？</p>
-<p>考虑用贪心的思想，先扔进去第一个数，以后对于每一个数，如果它比队首小，就扔到队首（这样可以让结果的字典序尽可能小），否则就扔到队尾（如果还扔到队首字典序就大了）。就是这么简单。</p>
-<h1 id="E2-Array-Optimization-by-Deque"><a href="#E2-Array-Optimization-by-Deque" class="headerlink" title="E2. Array Optimization by Deque"></a>E2. Array Optimization by Deque</h1><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1579/problem/E2">题目传送门</a></p>
-<h2 id="Problem-5"><a href="#Problem-5" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>给你一个长度为 $n$ 的数列（注意不是排列），你需要把它们按顺序扔进双端队列里，你可以决定从哪一端扔。需要使得最终双端队列里的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/逆序对/11035554">逆序对</a>尽可能少。</p>
-<p>$1\le t\le 1000,\sum n\le 2\times 10^5,-10^9\le a_i\le 10^9$</p>
-<h2 id="Solution-4"><a href="#Solution-4" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>同样是贪心，对于每个数，如果放在队首，则贡献的逆序对数为前面比它小的数的个数，反之则为比它大的数的个数，这个数放在队首还是队尾对以后的方法不会产生干扰，所以只需要判断它前面是比它大的多还是比它小的多，这可以用树状数组或权值线段树维护。由于 $a_i$ 的值跨度过大，需要先进行离散化处理。</p>
+                <p>赛时AC 3道，补题做出来一道</p>
+<h1 id="A-Computer-Game"><a href="#A-Computer-Game" class="headerlink" title="A. Computer Game"></a>A. Computer Game</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>有一个 $2\times n$ 的01矩阵，1为障碍，你要从 $(1,1)$ 走到 $(2,n)$，每一步只能向右、上、下、右上、右下走，问能不能走到。</p>
+<p>$t\le 100,n\le 100$</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>如果有一列的两个数都是1，则一定会被堵住，否则一定能到，因为每一列至少有1个0，而我们可以斜着走，所以一定可以从一列走到下一列。</p>
+<h1 id="B-Groups"><a href="#B-Groups" class="headerlink" title="B. Groups"></a>B. Groups</h1><h2 id="Problem-1"><a href="#Problem-1" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>有 $n$ 个学生（$n$ 是偶数），每个学生在星期一到星期五会有若干天空闲，问能否将学生平均分成两组，使得每一组能够挑选一天组织社团活动（两组选的日子不能相同）。</p>
+<p>$t\le 10^4,\sum n\le 10^5$</p>
+<h2 id="Solution-1"><a href="#Solution-1" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>由于一周只有五天，考虑枚举选的是哪两天，然后判断可不可行。判断就需要一点脑洞了，我的方法是如果两天的空闲学生人数都 $\ge n/2$，且交集能够覆盖所有学生（即每个学生都在这两天中至少有一天空闲），就一定可行。</p>
+<h1 id="C-Delete-Two-Elements"><a href="#C-Delete-Two-Elements" class="headerlink" title="C. Delete Two Elements"></a>C. Delete Two Elements</h1><h2 id="Problem-2"><a href="#Problem-2" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>给你一个长度为 $n$ 的序列，问有多少种选出两个数的方案使得删除它们后平均值不变。</p>
+<p>$t\le 10^4,\sum n\le 2\times 10^5,a_i\le 10^9$</p>
+<h2 id="Solution-2"><a href="#Solution-2" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>要想删除后平均值不变，取出的两个数的平均值必须等于全部的平均值，即两个数的和必须等于全部平均值的两倍，如果数列的平均值 $\times 2$ 不是整数则一定不可行（选出的两个数的和一定是整数），我们如果已经选出了一个数，就可以知道另一个数应该是多少，于是我们可以想到开一个桶，但 $10^9$ 开不了桶怎么办？用 map 即可。</p>
+<h1 id="D-Training-Session"><a href="#D-Training-Session" class="headerlink" title="D. Training Session"></a>D. Training Session</h1><h2 id="Problem-3"><a href="#Problem-3" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>教练有 $n$ 道题，每道题有一个算法主题 $x$ 和难度 $y$，你需要选出恰好 $3$ 道题使得 $x$ 互不相同<strong>或</strong> $y$ 互不相同。问有多少种选法。保证没有两个完全相同的题。</p>
+<p>$t\le 50000,\sum n\le 2\times 10^5,x,y\le n$</p>
+<h2 id="Solution-3"><a href="#Solution-3" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>考虑用总方案数减去不合法方案数，不合法的方案就是有两个题的 $x$ 相同，有两个题的 $y$ 相同，表现在坐标系上，每一个点的贡献就是横坐标相同的点数$\times$纵坐标相同的点数，可以开两个桶维护。</p>
 
                 
             </div>
@@ -549,7 +510,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://caoxuanming.github.io/2021/09/30/cfr-744-div-3-jie-ti-bao-gao/">https://caoxuanming.github.io/2021/09/30/cfr-744-div-3-jie-ti-bao-gao/</a>
+                    <a href="https://caoxuanming.github.io/2021/10/13/edu-cfr-115-div-2-jie-ti-bao-gao/">https://caoxuanming.github.io/2021/10/13/edu-cfr-115-div-2-jie-ti-bao-gao/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -760,17 +721,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/10/03/oi-zhu-yu-zhong-ying-dui-zhao-biao/">
+                <a href="/2021/10/13/edu-cfr-115-div-2-jie-ti-bao-gao/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="OI术语中英对照表">
+                        <img src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/6.jpg" class="responsive-img" alt="EDU-CFR-115-Div.2解题报告">
                         
-                        <span class="card-title">OI术语中英对照表</span>
+                        <span class="card-title">EDU-CFR-115-Div.2解题报告</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -780,9 +742,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -791,11 +753,12 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B7%A5%E5%85%B7/">
-                        <span class="chip bg-color">工具</span>
+                    <a href="/tags/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/">
+                        <span class="chip bg-color">解题报告</span>
                     </a>
                     
                 </div>
@@ -809,13 +772,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/09/09/hexo-latex-zhe-teng-ji/">
+                <a href="/2021/10/12/edu-cfr-114-div-2-jie-ti-bao-gao/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/9.jpg" class="responsive-img" alt="hexo-latex折腾记">
+                        <img src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/1.jpg" class="responsive-img" alt="EDU-CFR-114-Div.2解题报告">
                         
-                        <span class="card-title">hexo-latex折腾记</span>
+                        <span class="card-title">EDU-CFR-114-Div.2解题报告</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -826,7 +789,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-12
                             </span>
                         <span class="publish-author">
                             
@@ -839,8 +802,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%9A%8F%E7%AC%94/">
-                        <span class="chip bg-color">随笔</span>
+                    <a href="/tags/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/">
+                        <span class="chip bg-color">解题报告</span>
                     </a>
                     
                 </div>

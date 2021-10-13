@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>EDU-CFR-115-Div.2解题报告</title>
+      <link href="/2021/10/13/edu-cfr-115-div-2-jie-ti-bao-gao/"/>
+      <url>/2021/10/13/edu-cfr-115-div-2-jie-ti-bao-gao/</url>
+      
+        <content type="html"><![CDATA[<p>赛时AC 3道，补题做出来一道</p><h1 id="A-Computer-Game"><a href="#A-Computer-Game" class="headerlink" title="A. Computer Game"></a>A. Computer Game</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>有一个 $2\times n$ 的01矩阵，1为障碍，你要从 $(1,1)$ 走到 $(2,n)$，每一步只能向右、上、下、右上、右下走，问能不能走到。</p><p>$t\le 100,n\le 100$</p><h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>如果有一列的两个数都是1，则一定会被堵住，否则一定能到，因为每一列至少有1个0，而我们可以斜着走，所以一定可以从一列走到下一列。</p><h1 id="B-Groups"><a href="#B-Groups" class="headerlink" title="B. Groups"></a>B. Groups</h1><h2 id="Problem-1"><a href="#Problem-1" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>有 $n$ 个学生（$n$ 是偶数），每个学生在星期一到星期五会有若干天空闲，问能否将学生平均分成两组，使得每一组能够挑选一天组织社团活动（两组选的日子不能相同）。</p><p>$t\le 10^4,\sum n\le 10^5$</p><h2 id="Solution-1"><a href="#Solution-1" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>由于一周只有五天，考虑枚举选的是哪两天，然后判断可不可行。判断就需要一点脑洞了，我的方法是如果两天的空闲学生人数都 $\ge n/2$，且交集能够覆盖所有学生（即每个学生都在这两天中至少有一天空闲），就一定可行。</p><h1 id="C-Delete-Two-Elements"><a href="#C-Delete-Two-Elements" class="headerlink" title="C. Delete Two Elements"></a>C. Delete Two Elements</h1><h2 id="Problem-2"><a href="#Problem-2" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>给你一个长度为 $n$ 的序列，问有多少种选出两个数的方案使得删除它们后平均值不变。</p><p>$t\le 10^4,\sum n\le 2\times 10^5,a_i\le 10^9$</p><h2 id="Solution-2"><a href="#Solution-2" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>要想删除后平均值不变，取出的两个数的平均值必须等于全部的平均值，即两个数的和必须等于全部平均值的两倍，如果数列的平均值 $\times 2$ 不是整数则一定不可行（选出的两个数的和一定是整数），我们如果已经选出了一个数，就可以知道另一个数应该是多少，于是我们可以想到开一个桶，但 $10^9$ 开不了桶怎么办？用 map 即可。</p><h1 id="D-Training-Session"><a href="#D-Training-Session" class="headerlink" title="D. Training Session"></a>D. Training Session</h1><h2 id="Problem-3"><a href="#Problem-3" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>教练有 $n$ 道题，每道题有一个算法主题 $x$ 和难度 $y$，你需要选出恰好 $3$ 道题使得 $x$ 互不相同<strong>或</strong> $y$ 互不相同。问有多少种选法。保证没有两个完全相同的题。</p><p>$t\le 50000,\sum n\le 2\times 10^5,x,y\le n$</p><h2 id="Solution-3"><a href="#Solution-3" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>考虑用总方案数减去不合法方案数，不合法的方案就是有两个题的 $x$ 相同，有两个题的 $y$ 相同，表现在坐标系上，每一个点的贡献就是横坐标相同的点数$\times$纵坐标相同的点数，可以开两个桶维护。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 解题报告 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>EDU-CFR-114-Div.2解题报告</title>
       <link href="/2021/10/12/edu-cfr-114-div-2-jie-ti-bao-gao/"/>
       <url>/2021/10/12/edu-cfr-114-div-2-jie-ti-bao-gao/</url>
