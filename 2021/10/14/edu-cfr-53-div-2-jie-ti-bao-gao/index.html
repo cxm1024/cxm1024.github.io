@@ -475,6 +475,7 @@
 <p>$n\le 1000$</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>只有两个不同字符的字符串时多变的，所以只要给定的字符串中包含至少两个字符就一定可以，输出相邻两个不同字符即可。</p>
 <h1 id="B-Vasya-and-Books"><a href="#B-Vasya-and-Books" class="headerlink" title="B. Vasya and Books"></a>B. Vasya and Books</h1><h2 id="Problem-1"><a href="#Problem-1" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>有一摞书，从上到下依次编号为 $a_1,a_2,a_3…$，现在 Vasya 想把它们分 $n$ 次挪到别的地方，每次他会告诉你他想挪的书的编号，如果这本书还没有被挪动，他将会把这本书以上的书（包括这本书）一块搬走。对于每次挪动，回答他搬了多少本书（没搬输出 0）。</p>
+<p>$n\le 2\times 10^5$</p>
 <h2 id="Solution-1"><a href="#Solution-1" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>开一个桶记录每一本书的位置，记录当前搬到那个位置了，每搬一次就更新一下，减一下即可。</p>
 <h1 id="C-Vasya-and-Robot"><a href="#C-Vasya-and-Robot" class="headerlink" title="C. Vasya and Robot"></a>C. Vasya and Robot</h1><h2 id="Problem-2"><a href="#Problem-2" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>有一个机器人，初始在 $(0,0)$ 点，给你一个长度为 $n$ 的操作序列，每次让机器人向上、下、左、右中的一个方向走一步，你需要修改连续的一段操作序列（这一段中的操作不必全部都修改），使它最终走到 $(x,y)$ 点，问修改的操作序列的最短长度。（不是很严谨，序列长度的详细定义见原题面）</p>
 <p>$n\le 2\times 10^5$</p>
@@ -482,7 +483,7 @@
 <p>实现上，我们维护一个走的位置的前缀和和后缀和，就可以 $O(1)$ 判断去除这段修改后机器人会走到那个位置，然后再考虑一些细节问题即可。</p>
 <h1 id="D-Berland-Fair"><a href="#D-Berland-Fair" class="headerlink" title="D. Berland Fair"></a>D. Berland Fair</h1><h2 id="Problem-3"><a href="#Problem-3" class="headerlink" title="$Problem$"></a>$Problem$</h2><p><del>有一个人前来买东西。</del>Polycarp 带了 $T$ 元钱，去逛商铺。有 $n$ 家商铺顺时针排成一圈，编号 $1-n$，第 $i$ 个商铺卖一种价格为 $a_i$ 的商品（数量有无限个）。Polycarp 从一号商铺开始，只要钱足够，就买<strong>一件商品</strong>，否则跳过这家店，直到他一个商品也买不了为止，问他一共会买多少件商品。</p>
 <p>$n\le 2\times 10^5,T\le 10^{18},a_i\le 10^9$</p>
-<h2 id="Solution-3"><a href="#Solution-3" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>先算出来买一圈要花多少钱，让他买尽可能多的圈。为什么他买不了下一圈了呢？一定是到某一个商铺是他买不起了。现在买不起，以后也不可能买的起，于是直接把这个商铺删掉，不考虑。于是我们暴力跑一圈，看看是哪些商铺买不起，把它们都删掉，删完后再让他转圈，知道所有的商品全都被删完为止。由于每一次至少删掉一个商品，最多删 $n$ 次，每次 $O(n)$，总时间复杂度为 $O(n^2)$。<del>（别问我为什么能过 $2\times 10^5$，我也不知道）</del></p>
+<h2 id="Solution-3"><a href="#Solution-3" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>先算出来买一圈要花多少钱，让他买尽可能多的圈。为什么他买不了下一圈了呢？一定是到某一个商铺是他买不起了。现在买不起，以后也不可能买的起，于是直接把这个商铺删掉，不考虑。于是我们暴力跑一圈，看看是哪些商铺买不起，把它们都删掉，删完后再让他转圈，知道所有的商品全都被删完为止。由于每一次至少删掉一个商品，最多删 $n$ 次，每次 $O(n)$，总时间复杂度为 $O(n^2)$。<del>（别问我为什么能过 $2\times 10^5$，我也不知道）</del>（经过同学推导，复杂度为 $O(n\log(n))$）</p>
 
                 
             </div>
