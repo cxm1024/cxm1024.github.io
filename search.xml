@@ -156,25 +156,6 @@
     
     
     <entry>
-      <title>数论学习笔记</title>
-      <link href="/2021/09/06/shu-lun-xue-xi-bi-ji/"/>
-      <url>/2021/09/06/shu-lun-xue-xi-bi-ji/</url>
-      
-        <content type="html"><![CDATA[<p>本文记录一些学习到的数论知识。</p><h1 id="模运算"><a href="#模运算" class="headerlink" title="模运算"></a>模运算</h1><p>$a\% b$ 表示 $a\div b$ 的余数。它具有如下几个性质：</p><p>$$(a+b)\% m=(a\% m+b\% m)\% m$$</p><p>$$(a-b)\% m=(a\% m-b\% m)\% m$$</p><p>$$(a\times b)\% m=(a\% m)\times (b\% m)\% m$$</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 学习笔记 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>P2285打鼹鼠 题解</title>
       <link href="/2021/09/05/p2285-da-yan-shu-ti-jie/"/>
       <url>/2021/09/05/p2285-da-yan-shu-ti-jie/</url>
