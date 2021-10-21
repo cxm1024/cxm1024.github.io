@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"caoxuanming.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"caoxuanming.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 <meta name="description" content="hexo的LaTeX可算把我给折腾死了。。。  问题：多行公式无法显示（hexo-renderer-marked，mathjax）  看到网上说是因为渲染引擎把\\渲染成\，然后才交给mathjax渲染公式  都说把hexo-renderer-marked换成hexo-renderer-kramed，然后再node_modules&#x2F;kramed&#x2F;lib&#x2F;rules&#x2F;inline.js里修改esca">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo-latex折腾记">
@@ -244,20 +244,14 @@
 <p>又看到在node_modules/marked/lib/marked.js里修改escape项，失败。</p>
 <p>后来发现那些文章都比较老，于是把hexo-renderer-marked换成了2018年的1.0.0版本，再修改escape，终于成功。</p>
 <p>最终解决步骤：</p>
-<pre class="language-none"><code class="language-none">cd blog
-npm uninstall hexo-renderer-marked
-npm install hexo-renderer-marked@1.0.0</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd blog</span><br><span class="line">npm uninstall hexo-renderer-marked</span><br><span class="line">npm install hexo-renderer-marked@1.0.0</span><br></pre></td></tr></table></figure>
 
 <p>编辑node_modules/marked/lib/marked.js</p>
 <p>第539行</p>
-<pre class="language-none"><code class="language-none">escape: &#x2F;^\\([!&quot;#$%&amp;&#39;()*+,\-.&#x2F;:;&lt;&#x3D;&gt;?@\[\]\\^_&#96;&#123;|&#125;~])&#x2F;,
-改成
-escape: &#x2F;^\\([!&quot;#$&amp;&#39;()*+,\-.&#x2F;:;&lt;&#x3D;&gt;?@\[\]^_&#96;|~])&#x2F;,</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">escape: /^\\([!&quot;#$%&amp;&#x27;()*+,\-./:;&lt;=&gt;?@\[\]\\^_`&#123;|&#125;~])/,</span><br><span class="line">改成</span><br><span class="line">escape: /^\\([!&quot;#$&amp;&#x27;()*+,\-./:;&lt;=&gt;?@\[\]^_`|~])/,</span><br></pre></td></tr></table></figure>
 
 <p>第564行</p>
-<pre class="language-none"><code class="language-none">inline._escapes &#x3D; &#x2F;\\([!&quot;#$%&amp;&#39;()*+,\-.&#x2F;:;&lt;&#x3D;&gt;?@\[\]\\^_&#96;&#123;|&#125;~])&#x2F;g;
-改成
-inline._escapes &#x3D; &#x2F;\\([!&quot;#$&amp;&#39;()*+,\-.&#x2F;:;&lt;&#x3D;&gt;?@\[\]^_&#96;|~])&#x2F;g;</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">inline._escapes = /\\([!&quot;#$%&amp;&#x27;()*+,\-./:;&lt;=&gt;?@\[\]\\^_`&#123;|&#125;~])/g;</span><br><span class="line">改成</span><br><span class="line">inline._escapes = /\\([!&quot;#$&amp;&#x27;()*+,\-./:;&lt;=&gt;?@\[\]^_`|~])/g;</span><br></pre></td></tr></table></figure>
     </div>
 
     
