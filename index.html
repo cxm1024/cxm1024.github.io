@@ -1,1372 +1,1136 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="zh-CN">
-
-
 <head>
-    <meta charset="utf-8">
-    <meta name="keywords" content="cxm&#39;s blog">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="renderer" content="webkit|ie-stand|ie-comp">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="Hexo 5.4.0">
 
 
-    <title>cxm&#39;s blog</title>
-    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/libs/awesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/css/my.css">
-
-    <script src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/libs/jquery/jquery.min.js"></script>
-
-<meta name="generator" content="Hexo 5.4.0"></head>
+<link rel="stylesheet" href="/css/main.css">
 
 
 
-   <style>
-    body{
-       background-image: url();
-       background-repeat:no-repeat;
-       background-size:cover;
-       background-attachment:fixed;
-    }
-</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"caoxuanming.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="cxm&#39;s blog">
+<meta property="og:url" content="https://caoxuanming.github.io/index.html">
+<meta property="og:site_name" content="cxm&#39;s blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="曹轩鸣">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://caoxuanming.github.io/">
 
 
 
-<body>
-    <header class="navbar-fixed">
-    <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper container">
-            <div class="brand-logo">
-                <a href="/" class="waves-effect waves-light">
-                    
-                    <img src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/logo.png" class="logo-img" alt="LOGO">
-                    
-                    <span class="logo-span">cxm&#39;s blog</span>
-                </a>
-            </div>
-            
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
 
-<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
-<ul class="right nav-menu">
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>cxm's blog</title>
   
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/" class="waves-effect waves-light">
-      
-      <i class="fas fa-home" style="zoom: 0.6;"></i>
-      
-      <span>首页</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/tags" class="waves-effect waves-light">
-      
-      <i class="fas fa-tags" style="zoom: 0.6;"></i>
-      
-      <span>标签</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/archives" class="waves-effect waves-light">
-      
-      <i class="fas fa-archive" style="zoom: 0.6;"></i>
-      
-      <span>归档</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/about" class="waves-effect waves-light">
-      
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
-      
-      <span>关于</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>留言板</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/friends" class="waves-effect waves-light">
-      
-      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
-      
-      <span>友情链接</span>
-    </a>
-    
-  </li>
-  
-  <li>
-    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
-    </a>
-  </li>
-</ul>
 
 
-<div id="mobile-nav" class="side-nav sidenav">
 
-    <div class="mobile-head bg-color">
-        
-        <img src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/logo.png" class="logo-img circle responsive-img">
-        
-        <div class="logo-name">cxm&#39;s blog</div>
-        <div class="logo-desc">
-            
-            Never really desperate, only the lost of the soul.
-            
-        </div>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
+  </div>
 
-    
+  <div class="site-meta">
 
-    <ul class="menu-list mobile-menu-list">
-        
-        <li class="m-nav-item">
-	  
-		<a href="/" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-home"></i>
-			
-			首页
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/tags" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-tags"></i>
-			
-			标签
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/archives" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-archive"></i>
-			
-			归档
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/about" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-user-circle"></i>
-			
-			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			留言板
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/friends" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-address-book"></i>
-			
-			友情链接
-		</a>
-          
-        </li>
-        
-        
-        <li><div class="divider"></div></li>
-        <li>
-            <a href="https://github.com/caoxuanming/caoxuanming.github.io/" class="waves-effect waves-light" target="_blank">
-                <i class="fab fa-github-square fa-fw"></i>Fork Me
-            </a>
-        </li>
-        
-    </ul>
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">cxm's blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">曹轩鸣的博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
 </div>
 
 
-        </div>
 
-        
-            <style>
-    .nav-transparent .github-corner {
-        display: none !important;
-    }
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
 
-    .github-corner {
-        position: absolute;
-        z-index: 10;
-        top: 0;
-        right: 0;
-        border: 0;
-        transform: scale(1.1);
-    }
-
-    .github-corner svg {
-        color: #0f9d58;
-        fill: #fff;
-        height: 64px;
-        width: 64px;
-    }
-
-    .github-corner:hover .octo-arm {
-        animation: a 0.56s ease-in-out;
-    }
-
-    .github-corner .octo-arm {
-        animation: none;
-    }
-
-    @keyframes a {
-        0%,
-        to {
-            transform: rotate(0);
-        }
-        20%,
-        60% {
-            transform: rotate(-25deg);
-        }
-        40%,
-        80% {
-            transform: rotate(10deg);
-        }
-    }
-</style>
-
-<a href="https://github.com/caoxuanming/caoxuanming.github.io/" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
-   data-tooltip="Fork Me" data-position="left" data-delay="50">
-    <svg viewBox="0 0 250 250" aria-hidden="true">
-        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
-              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
-        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
-              fill="currentColor" class="octo-body"></path>
-    </svg>
-</a>
-        
-    </nav>
-
-</header>
-
-    
-<style>
-    .carousel-control {
-        width: 45px;
-        height: 45px;
-        line-height: 55px;
-        border-radius: 45px;
-        background: transparent;
-        cursor: pointer;
-        z-index: 100;
-    }
-
-    #prev-cover {
-        position: absolute;
-        top: 48%;
-        left: 8px;
-    }
-
-    #next-cover {
-        position: absolute;
-        top: 48%;
-        right: 8px;;
-    }
-
-    #prev-cover i {
-        margin-right: 3px;
-    }
-
-    #next-cover i {
-        margin-left: 3px;
-    }
-
-    .carousel-control:hover {
-        background-color: rgba(0, 0, 0, .4);
-    }
-
-    .carousel-control i {
-        color: #fff;
-        font-size: 2.4rem;
-    }
-</style>
-
-
-
-<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
-    
-        <div id="prev-cover" class="left waves-effect carousel-control">
-            <i class="icon fa fa-angle-left"></i>
-        </div>
-        <div id="next-cover" class="right waves-effect carousel-control">
-            <i class="icon fa fa-angle-right"></i>
-        </div>
-    
-
-    <div class="carousel-item red white-text bg-cover about-cover">
-        <div class="container">
-            <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                曹轩鸣的博客
-                
-            </div>
-
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: [ 
-                            
-                                "一切皆有可能",
-                            
-                                "Nothing is impossible.",
-                            
-                        ],
-                        startDelay: 300,
-                        typeSpeed: 140,
-                        loop: true,
-                        backSpeed: 70,
-                        showCursor: true
-                    });
-                </script>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
-</script>
-
-
-
-            <div class="cover-btns">
-                <a href="#indexCard" class="waves-effect waves-light btn">
-                    <i class="fa fa-angle-double-down"></i>开始阅读
-                </a>
-
-                
-                    <a href="https://github.com/caoxuanming/caoxuanming.github.io" class="waves-effect waves-light btn" target="_blank">
-                        <i class="fab fa-github-alt"></i>Github
-                    </a>
-                
-            </div>
-            <div class="cover-social-link">
-    <a href="https://github.com/caoxuanming" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:394960942@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=394960942" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 394960942" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-
-
-    <a href="https://www.zhihu.com/caoxuanming" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/caoxuanming" data-position="top" data-delay="50">
-        <i class="fab fa-zhihu1">知</i>
-    </a>
 
 
 
 </div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
         </div>
-    </div>
+        <!--/noindex-->
 
-    
-        
-
-        
-            
-            <div class="carousel-item amber white-text carousel-post bg-cover"
-                 style="background-image: url('https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/2.jpg');">
-                <div class="container">
-                    <div class="row">
-                        <div class="col s10 offset-s1">
-                            <div class="title center-align">P2285打鼹鼠 题解</div>
-                            <div class="description center-align">
-                                
-                                    基础的DP各位大佬已经讲得很明白了，本文主要讲一讲优化
-DP状态很容易想到：$f[i]$ 表示打完第 $i$ 只鼹鼠能获得的最多数量。
-转移：$f[i]=\min\limits_{j&lt;i,\ t[i]-t[j]&gt;=dis(i,j
-                                
-                            </div>
-                            <div class="cover-btns">
-                                <a href="/2021/09/05/p2285-da-yan-shu-ti-jie/" class="waves-effect waves-light btn"
-                                   target="_blank">
-                                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-            
-            <div class="carousel-item amber white-text carousel-post bg-cover"
-                 style="background-image: url('https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/14.jpg');">
-                <div class="container">
-                    <div class="row">
-                        <div class="col s10 offset-s1">
-                            <div class="title center-align">扩展欧几里得学习笔记</div>
-                            <div class="description center-align">
-                                
-                                    温馨提示1：本文推式子比较多，建议跟着文章自己推一推。
-温馨提示2：本文小字比较多，如果分辨率不够可以放大网页。
-0. 扩展欧几里得是什么扩展欧几里得（exgcd）是一个可以用来求$ax+by=c$（$c\% \gcd(a,b)=0$，否则
-                                
-                            </div>
-                            <div class="cover-btns">
-                                <a href="/2021/08/14/kuo-zhan-ou-ji-li-de-xue-xi-bi-ji/" class="waves-effect waves-light btn"
-                                   target="_blank">
-                                    <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-    
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">曹轩鸣</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
 </div>
 
-<script>
-    $(function () {
-        let coverSlider = $('.carousel');
-
-        //用户触摸轮播自动 restartPlay 是否生效
-        let initUserPressedOrDraggedActive = false
-
-        //用户触摸轮播自动 restartPlay
-        function initUserPressedOrDragged(instance) {
-            setInterval(() => {
-                if (instance.pressed || instance.dragged) {
-                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
-                    restartPlay()
-                }
-            }, 1000)
-        }
-
-        coverSlider.carousel({
-            duration: Number('120'),
-            fullWidth: true,
-            indicators: 'true' === 'true',
-            onCycleTo() {
-                if (!initUserPressedOrDraggedActive) {
-                    // console.log('initUserPressedOrDraggedActive')
-                    initUserPressedOrDragged(this)
-                    initUserPressedOrDraggedActive = true
-                }
-            },
-        })
-
-        let carouselIntervalId;
-        
-
-        function restartPlay() {
-            
-        };
-
-        
-        // prev and next cover post.
-        $('#prev-cover').click(function () {
-            coverSlider.carousel('prev');
-            restartPlay();
-        });
-        $('#next-cover').click(function () {
-            coverSlider.carousel('next');
-            restartPlay();
-        });
-        
-    });
-</script>
 
 
-
-<main class="content">
-
-    
-    <div id="indexCard" class="index-card">
-        <div class="container ">
-            <div class="card">
-                <div class="card-content">
-                    
-
-                    
-
-                    
-                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/libs/dplayer/DPlayer.min.css">
-<div class="video-player">
-    
-    <div class="title center-align">
-        <i class="fas fa-video-camera"></i>&nbsp;&nbsp;精彩视频
+        </div>
+      </div>
     </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
     
-    <div class="row">
-		
-			<iframe src='//player.bilibili.com/player.html?aid=585457410&bvid=BV1tz4y1k7ZR&cid=260909444&page=1' scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" align="middle"  style="height: 500px;" width="100%"> </iframe>
-		
-    </div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://caoxuanming.github.io/2021/10/14/edu-cfr-53-div-2-jie-ti-bao-gao/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="曹轩鸣">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="cxm's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/10/14/edu-cfr-53-div-2-jie-ti-bao-gao/" class="post-title-link" itemprop="url">EDU-CFR-53-Div.2解题报告</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-10-14 00:00:00" itemprop="dateCreated datePublished" datetime="2021-10-14T00:00:00+08:00">2021-10-14</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-10-21 09:48:55" itemprop="dateModified" datetime="2021-10-21T09:48:55+08:00">2021-10-21</time>
+      </span>
+
+  
 </div>
 
-<script src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/libs/dplayer/DPlayer.min.js"></script>
-<script>
-    $(function () {
-        new DPlayer({
-            container: document.getElementById('dplayer'),
-            autoplay: 'false' === 'true',
-            theme: '#42b983',
-            loop: 'false' === 'true',
-            lang: 'zh-CN' === 'zh-CN' ? 'zh-cn' : 'en',
-            preload: 'auto',
-            volume: Number('0.7'),
-            video: {
-                url: '',
-                pic: '',
-                thumbnails: ''
-            }
-        });
-    });
-</script>
-
-                    
-
-                    
-                    <div id="recommend-sections" class="recommend">
-                        
-
-
-
-                    </div>
-                    
-                </div>
-            </div>
         </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          A. Diverse Substring
+$Problem$
+定义一个字符串为多变的，当且仅当字符串中没有一个字符的出现次数严格大于 $n/2$。给定一个只由小写字母构成的字符串，问是否能找出一个多变的字串，如果能，任意输出一个。
+
+$n\le 1000$
+
+$Solution$
+只有两个不同字符的字符串时多变的，所以只要给定的字符串中包含至少两个字符就一定可以，输出相邻两个不同字符即可。
+
+B. Vasya and Books
+$Problem$
+有一摞书，从上到下依次编号为 $a_1,a_2,a_3…$，现在 Vasya 想把它们分 $n$ 次挪到别的地方，每次他会告诉你他想挪的书的编号，
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/10/14/edu-cfr-53-div-2-jie-ti-bao-gao/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
     </div>
-    
 
     
+    
+    
 
-    <!-- 所有文章卡片 -->
-    <article id="articles" class="container articles">
-        <div class="row article-row">
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/10/14/edu-cfr-53-div-2-jie-ti-bao-gao/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/11.jpg" class="responsive-img" alt="EDU-CFR-53-Div.2解题报告">
-                            
-                            <span class="card-title">EDU-CFR-53-Div.2解题报告</span>
-                        </div>
-                    </a>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
 
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                A. Diverse Substring$Problem$定义一个字符串为多变的，当且仅当字符串中没有一个字符的出现次数严格大于 $n/2$。给定一个只由小写字母构成的字符串，问是否能找出一个多变的字串，如果能，任意输出一个。
-$n\le 
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-14
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                曹轩鸣
-                                
-                            </span>
-                        </div>
-                    </div>
 
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/">
-                            <span class="chip bg-color">解题报告</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://caoxuanming.github.io/2021/10/13/edu-cfr-115-div-2-jie-ti-bao-gao/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="曹轩鸣">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="cxm's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/10/13/edu-cfr-115-div-2-jie-ti-bao-gao/" class="post-title-link" itemprop="url">EDU-CFR-115-Div.2解题报告</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-10-13 00:00:00" itemprop="dateCreated datePublished" datetime="2021-10-13T00:00:00+08:00">2021-10-13</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-10-21 09:49:01" itemprop="dateModified" datetime="2021-10-21T09:49:01+08:00">2021-10-21</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          赛时AC 3道，补题做出来一道
+
+A. Computer Game
+$Problem$
+有一个 $2\times n$ 的01矩阵，1为障碍，你要从 $(1,1)$ 走到 $(2,n)$，每一步只能向右、上、下、右上、右下走，问能不能走到。
+
+$t\le 100,n\le 100$
+
+$Solution$
+如果有一列的两个数都是1，则一定会被堵住，否则一定能到，因为每一列至少有1个0，而我们可以斜着走，所以一定可以从一列走到下一列。
+
+B. Groups
+$Problem$
+有 $n$ 个学生（$n$ 是偶数），每个学生在星期一到星期五会有若干天空闲，问能否将学生平均分成两组，使得每一组能够挑
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/10/13/edu-cfr-115-div-2-jie-ti-bao-gao/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
             </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/10/13/edu-cfr-115-div-2-jie-ti-bao-gao/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/6.jpg" class="responsive-img" alt="EDU-CFR-115-Div.2解题报告">
-                            
-                            <span class="card-title">EDU-CFR-115-Div.2解题报告</span>
-                        </div>
-                    </a>
+          <!--/noindex-->
+        
+      
+    </div>
 
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                赛时AC 3道，补题做出来一道
-A. Computer Game$Problem$有一个 $2\times n$ 的01矩阵，1为障碍，你要从 $(1,1)$ 走到 $(2,n)$，每一步只能向右、上、下、右上、右下走，问能不能走到。
-$t
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-13
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                曹轩鸣
-                                
-                            </span>
-                        </div>
-                    </div>
+    
+    
+    
 
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/">
-                            <span class="chip bg-color">解题报告</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/10/12/edu-cfr-114-div-2-jie-ti-bao-gao/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/1.jpg" class="responsive-img" alt="EDU-CFR-114-Div.2解题报告">
-                            
-                            <span class="card-title">EDU-CFR-114-Div.2解题报告</span>
-                        </div>
-                    </a>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
 
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                赛时AC 2道题，赛后补题做出来一道（赛时交了4发，赛后交了十几发才过，太残忍了）
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://caoxuanming.github.io/2021/10/12/edu-cfr-114-div-2-jie-ti-bao-gao/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="曹轩鸣">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="cxm's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/10/12/edu-cfr-114-div-2-jie-ti-bao-gao/" class="post-title-link" itemprop="url">EDU-CFR-114-Div.2解题报告</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-10-12 00:00:00" itemprop="dateCreated datePublished" datetime="2021-10-12T00:00:00+08:00">2021-10-12</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-10-21 09:48:58" itemprop="dateModified" datetime="2021-10-21T09:48:58+08:00">2021-10-21</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          赛时AC 2道题，赛后补题做出来一道（赛时交了4发，赛后交了十几发才过，太残忍了）
+
+
 
 总体难度比较高，可能题解会比较冗长
-A. Regular Bracket Sequences$Problem$输入 $n$，输出 $n$ 个互不相同的、合
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-12
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                曹轩鸣
-                                
-                            </span>
-                        </div>
-                    </div>
 
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/">
-                            <span class="chip bg-color">解题报告</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
+A. Regular Bracket Sequences
+$Problem$
+输入 $n$，输出 $n$ 个互不相同的、合法的、长度为 $2n$ 的括号序列。
+
+$t\le 50,n\le 50$
+
+$Solution\ 1$
+update: 我的解法非常复杂，可以直接看 $Solution\ 2$ CF官方题解的做法（想看看我的憨批做法也行）
+
+考虑一开始在 $(0,0)$ 点，左括号往右上走，右括号往右下走，则合法的括号序列一定在 $x$ 轴之上。现在考虑最简单的
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/10/12/edu-cfr-114-div-2-jie-ti-bao-gao/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
             </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/10/09/cfr-746-div-2-jie-ti-bao-gao/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/21.jpg" class="responsive-img" alt="CFR-746-Div.2解题报告">
-                            
-                            <span class="card-title">CFR-746-Div.2解题报告</span>
-                        </div>
-                    </a>
+          <!--/noindex-->
+        
+      
+    </div>
 
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                VP做出来一道，补题又做出来3道。
-A. Gamer Hemose$Problem$你有 $n$ 个武器，要打一个体力为 $H$ 的敌人，第 $i$ 个武器可以对敌人造成 $a_i$ 的伤害，每把武器不能连续使用两次，问至少需要多少次才能打
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-09
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                曹轩鸣
-                                
-                            </span>
-                        </div>
-                    </div>
+    
+    
+    
 
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/">
-                            <span class="chip bg-color">解题报告</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://caoxuanming.github.io/2021/10/09/cfr-746-div-2-jie-ti-bao-gao/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="曹轩鸣">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="cxm's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/10/09/cfr-746-div-2-jie-ti-bao-gao/" class="post-title-link" itemprop="url">CFR-746-Div.2解题报告</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-10-09 00:00:00" itemprop="dateCreated datePublished" datetime="2021-10-09T00:00:00+08:00">2021-10-09</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-10-21 09:48:52" itemprop="dateModified" datetime="2021-10-21T09:48:52+08:00">2021-10-21</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          VP做出来一道，补题又做出来3道。
+
+A. Gamer Hemose
+$Problem$
+你有 $n$ 个武器，要打一个体力为 $H$ 的敌人，第 $i$ 个武器可以对敌人造成 $a_i$ 的伤害，每把武器不能连续使用两次，问至少需要多少次才能打败敌人。
+
+$t\le 10^5,\sum n\le 2\times 10^5$
+
+$Solution$
+（读错题意调了半天）
+
+肯定是最厉害的武器和次厉害的武器轮番上阵，把它们看作一组，首先算要用多少组，剩余的再单独处理。
+
+时间复杂度 $O(1)$。
+
+B. Hemose Shopping
+$Problem$
+你有一个数组，每次操作只能将距离 $\
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/10/09/cfr-746-div-2-jie-ti-bao-gao/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
             </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/10/08/cfr-745-div-2-jie-ti-bao-gao/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/12.jpg" class="responsive-img" alt="CFR-745-Div.2解题报告">
-                            
-                            <span class="card-title">CFR-745-Div.2解题报告</span>
-                        </div>
-                    </a>
+          <!--/noindex-->
+        
+      
+    </div>
 
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                没打比赛，赛后做出3道。这场比赛题目质量很高，非常巧妙。
-A. CQXYM Count Permutations$Problem$求有多少 $2n$ 的排列满足存在超过 $n$ 个 $i$ 使得 $p_i&lt;p_{i+1}$，答案对 $
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-08
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                曹轩鸣
-                                
-                            </span>
-                        </div>
-                    </div>
+    
+    
+    
 
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/">
-                            <span class="chip bg-color">解题报告</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://caoxuanming.github.io/2021/10/08/cfr-745-div-2-jie-ti-bao-gao/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="曹轩鸣">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="cxm's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/10/08/cfr-745-div-2-jie-ti-bao-gao/" class="post-title-link" itemprop="url">CFR-745-Div.2解题报告</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-10-08 00:00:00" itemprop="dateCreated datePublished" datetime="2021-10-08T00:00:00+08:00">2021-10-08</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-10-21 09:48:49" itemprop="dateModified" datetime="2021-10-21T09:48:49+08:00">2021-10-21</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          没打比赛，赛后做出3道。
+这场比赛题目质量很高，非常巧妙。
+
+A. CQXYM Count Permutations
+$Problem$
+求有多少 $2n$ 的排列满足存在超过 $n$ 个 $i$ 使得 $p_i<p_{i+1}$，答案对 $10^9+7$ 取模。
+
+$\sum n\le 10^5$
+
+$Solution$
+这题就非常巧妙了，当我们使劲想想不出来时，正难则反，考虑有多少 $2n$ 的排列满足存在超过 $n$ 个 $i$ 使得 $p_i>p_{i+1}$，这时候我们就会发现：这不是一样吗？没错，答案就是 $\frac{(2n)!}{2}$。
+
+B. Diameter of Gra
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/10/08/cfr-745-div-2-jie-ti-bao-gao/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
             </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/10/03/oi-zhu-yu-zhong-ying-dui-zhao-biao/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="OI术语中英对照表">
-                            
-                            <span class="card-title">OI术语中英对照表</span>
-                        </div>
-                    </a>
+          <!--/noindex-->
+        
+      
+    </div>
 
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                $\mathcal{A}$
-$assume$ 设，令，假设
-$axis$ 坐标轴
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://caoxuanming.github.io/2021/10/03/oi-zhu-yu-zhong-ying-dui-zhao-biao/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="曹轩鸣">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="cxm's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/10/03/oi-zhu-yu-zhong-ying-dui-zhao-biao/" class="post-title-link" itemprop="url">OI术语中英对照表</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-10-03 00:00:00" itemprop="dateCreated datePublished" datetime="2021-10-03T00:00:00+08:00">2021-10-03</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-10-21 09:49:08" itemprop="dateModified" datetime="2021-10-21T09:49:08+08:00">2021-10-21</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          $\mathcal{A}$
+ * $assume$ 设，令，假设
+ * $axis$ 坐标轴
 
 $\mathcal{B}$
-$block$ 方块，格
+ * $block$ 方块，格
 
 $\mathcal{C}$
-$column$ 列
-$condition$ 条件
-$corner$ 角
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-03
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                曹轩鸣
-                                
-                            </span>
-                        </div>
-                    </div>
+ * $column$ 列
+ * $condition$ 条件
+ * $corner$ 角，角落
+ * $calculate$ 计算
+ * $complexity$ 复杂度
+ * $contributed$ 贡献
+ * $communication$ 通信
+ * $challenge$ 挑战
+ * $capacity$ 容量
+ * $coordinate$ 坐标
 
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E5%B7%A5%E5%85%B7/">
-                            <span class="chip bg-color">工具</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
+$\mathcal{D}$
+ * $diame
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/10/03/oi-zhu-yu-zhong-ying-dui-zhao-biao/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
             </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/09/30/cfr-744-div-3-jie-ti-bao-gao/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/20.jpg" class="responsive-img" alt="CFR-744-Div.3解题报告">
-                            
-                            <span class="card-title">CFR-744-Div.3解题报告</span>
-                        </div>
-                    </a>
+          <!--/noindex-->
+        
+      
+    </div>
 
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                赛时 AC 2道题，掉大分（哭）
-A. Casimir’s String Solitaire题目传送门
-$Problem$给你一个仅含 A,B,C 的字符串，每次可以删掉一个 A 和一个 B，或一个 B 和一个 C，位置、顺序不限，问能不能
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-30
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                曹轩鸣
-                                
-                            </span>
-                        </div>
-                    </div>
+    
+    
+    
 
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/">
-                            <span class="chip bg-color">解题报告</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://caoxuanming.github.io/2021/09/30/cfr-744-div-3-jie-ti-bao-gao/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="曹轩鸣">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="cxm's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/09/30/cfr-744-div-3-jie-ti-bao-gao/" class="post-title-link" itemprop="url">CFR-744-Div.3解题报告</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-09-30 00:00:00" itemprop="dateCreated datePublished" datetime="2021-09-30T00:00:00+08:00">2021-09-30</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-10-21 09:48:46" itemprop="dateModified" datetime="2021-10-21T09:48:46+08:00">2021-10-21</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          赛时 AC 2道题，掉大分（哭）
+
+A. Casimir’s String Solitaire
+题目传送门
+
+$Problem$
+给你一个仅含 A,B,C 的字符串，每次可以删掉一个 A 和一个 B，或一个 B 和一个 C，位置、顺序不限，问能不能删完。
+
+$t\le 1000,len\le 50$
+
+$Solution$
+大水题，只需要判断 A 的数量加 C 的数量是否等于 B 的数量。一开始脑抽还判断 A 的数量是否等于 C 的数量
+
+B. Shifting Sort
+题目传送门
+
+$Problem$
+定义对一段区间的 Cyclically Shift（以下简称Shift） 操作为：
+
+ 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/09/30/cfr-744-div-3-jie-ti-bao-gao/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
             </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/09/09/hexo-latex-zhe-teng-ji/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/9.jpg" class="responsive-img" alt="hexo-latex折腾记">
-                            
-                            <span class="card-title">hexo-latex折腾记</span>
-                        </div>
-                    </a>
+          <!--/noindex-->
+        
+      
+    </div>
 
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                hexo的LaTeX可算把我给折腾死了。。。
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://caoxuanming.github.io/2021/09/09/hexo-latex-zhe-teng-ji/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="曹轩鸣">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="cxm's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/09/09/hexo-latex-zhe-teng-ji/" class="post-title-link" itemprop="url">hexo-latex折腾记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-09-09 11:11:41" itemprop="dateCreated datePublished" datetime="2021-09-09T11:11:41+08:00">2021-09-09</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-10-21 09:49:11" itemprop="dateModified" datetime="2021-10-21T09:49:11+08:00">2021-10-21</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          hexo的LaTeX可算把我给折腾死了。。。
+
 问题：多行公式无法显示（hexo-renderer-marked，mathjax）
+
 看到网上说是因为渲染引擎把\\渲染成\，然后才交给mathjax渲染公式
-都说把hexo-renderer-m
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-09
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                曹轩鸣
-                                
-                            </span>
-                        </div>
-                    </div>
 
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E9%9A%8F%E7%AC%94/">
-                            <span class="chip bg-color">随笔</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
+都说把hexo-renderer-marked换成hexo-renderer-kramed，然后再node_modules/kramed/lib/rules/inline.js里修改escape项，照做了，确实解决了问题，但是却出现了新的问题：复杂公式显示错乱，遂放弃。
+
+又看到在node_modules/marked/lib/marked.js里修改escape项，失败。
+
+后来发现那
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/09/09/hexo-latex-zhe-teng-ji/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
             </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/09/05/p2285-da-yan-shu-ti-jie/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/2.jpg" class="responsive-img" alt="P2285打鼹鼠 题解">
-                            
-                            <span class="card-title">P2285打鼹鼠 题解</span>
-                        </div>
-                    </a>
+          <!--/noindex-->
+        
+      
+    </div>
 
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                基础的DP各位大佬已经讲得很明白了，本文主要讲一讲优化
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://caoxuanming.github.io/2021/09/05/p2285-da-yan-shu-ti-jie/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="曹轩鸣">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="cxm's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/09/05/p2285-da-yan-shu-ti-jie/" class="post-title-link" itemprop="url">P2285打鼹鼠 题解</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2021-09-05T00:00:00+08:00">2021-09-05</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-10-21 10:23:33" itemprop="dateModified" datetime="2021-10-21T10:23:33+08:00">2021-10-21</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          基础的DP各位大佬已经讲得很明白了，本文主要讲一讲优化
+
 DP状态很容易想到：$f[i]$ 表示打完第 $i$ 只鼹鼠能获得的最多数量。
-转移：$f[i]=\min\limits_{j&lt;i,\ t[i]-t[j]&gt;=dis(i,j
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-05
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                曹轩鸣
-                                
-                            </span>
-                        </div>
-                    </div>
 
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E9%A2%98%E8%A7%A3/">
-                            <span class="chip bg-color">题解</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
+转移：$f[i]=\min\limits_{j<i,\ t[i]-t[j]>=dis(i,j)}f[j]+1$ ，即对于每一个打完第 $j$ 个能来得及走到第 $i$ 个的 $j$，算最大的 $f[j]+1$。
+
+重点来了！！
+优化
+
+我们发现，如果时间差大于 $2\times n$，无论在天涯海角哪里都能走到，又因为输入的时间是升序排列，我们只需要在转移时维护 $g[i]$ 表示 $\max\limits_{j<=i}f[i]$，这样在转移 $f[i]$
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/09/05/p2285-da-yan-shu-ti-jie/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
             </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2021/08/14/p4363-yi-shuang-mu-qi-ti-jie/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="P4363一双木棋 题解">
-                            
-                            <span class="card-title">P4363一双木棋 题解</span>
-                        </div>
-                    </a>
+          <!--/noindex-->
+        
+      
+    </div>
 
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                本篇题解献给和我一样看不懂其他题解的状压DP小白
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://caoxuanming.github.io/2021/08/14/p4363-yi-shuang-mu-qi-ti-jie/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="曹轩鸣">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="cxm's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/08/14/p4363-yi-shuang-mu-qi-ti-jie/" class="post-title-link" itemprop="url">P4363一双木棋 题解</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-08-14 00:00:00" itemprop="dateCreated datePublished" datetime="2021-08-14T00:00:00+08:00">2021-08-14</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-10-21 09:49:23" itemprop="dateModified" datetime="2021-10-21T09:49:23+08:00">2021-10-21</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          本篇题解献给和我一样看不懂其他题解的状压DP小白
+
 相信大家都是看了其他题解看不懂才看到这篇题解的（莫名自信），所以什么每行棋子数递减啊，每行的棋子都排在左边啊，就不用我多说了，直接切入正题（大段文字多，请耐心观看）。
-轮廓线DP没见过不用慌
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-14
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                曹轩鸣
-                                
-                            </span>
-                        </div>
-                    </div>
 
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E9%A2%98%E8%A7%A3/">
-                            <span class="chip bg-color">题解</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
+轮廓线DP
+没见过不用慌，我也没见过（雾
+
+轮廓线，就是把矩阵从右上角到左下角沿着有棋子和没棋子的分界线描一下，往下走就用1表示，往左走就用0表示。这样我们就得到了一个01串，即一个二进制数，这就是我们的DP状态。
+
+例如（图丑勿喷）
+
+
+
+这种情况下轮廓线状态为左左下左下下左左下，即$001011001_{(2)}=89$
+
+我们设$f[s]$（$s$就是轮廓线状态）表示从
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/08/14/p4363-yi-shuang-mu-qi-ti-jie/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
             </div>
-              <!-- 隐藏某个文章 -->
-            
-        </div>
-    </article>
-
-</main>
-
-
-<div class="container paging">
-    <div class="row">
-        <div class="col s6 m4 l4">
-            
-            <a class="left btn-floating btn-large disabled">
-                <i class="fas fa-angle-left"></i>
-            </a>
-            
-        </div>
-        <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">1 / 2</div>
-        </div>
-        <div class="col s6 m4 l4">
-            
-            <a href="/page/2/"
-               class="right btn-floating btn-large waves-effect waves-light bg-color">
-                <i class="fas fa-angle-right"></i>
-            </a>
-            
-        </div>
+          <!--/noindex-->
+        
+      
     </div>
-</div>
 
-
-
-
-    <footer class="page-footer bg-color">
+    
+    
     
 
-    <div class="container row center-align"
-         style="margin-bottom: 0px !important;">
-        <div class="col s12 m8 l8 copy-right">
-            Copyright&nbsp;&copy;
-            
-                <span id="year">2021</span>
-            
-            <span id="year">2021</span>
-            <a href="/about" target="_blank">曹轩鸣</a>
-            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
-            <br>
-            
-                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">10.6k</span>
-            
-            
-            
-                
-            
-            
-                <span id="busuanzi_container_site_pv">
-                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
-                    <span id="busuanzi_value_site_pv" class="white-color"></span>
-            </span>
-            
-            
-                <span id="busuanzi_container_site_uv">
-                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
-                    <span id="busuanzi_value_site_uv" class="white-color"></span>
-            </span>
-            
-            <br>
-
-            <!-- 运行天数提醒. -->
-            
-            <br>
-            
-        </div>
-        <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/caoxuanming" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:394960942@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
 
 
 
 
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=394960942" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 394960942" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-
-
-    <a href="https://www.zhihu.com/caoxuanming" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://www.zhihu.com/caoxuanming" data-position="top" data-delay="50">
-        <i class="fab fa-zhihu1">知</i>
-    </a>
-
-
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">曹轩鸣</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
     </div>
-</footer>
+  </footer>
 
-<div class="progress-bar"></div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
-
-    <!-- 搜索遮罩框 -->
-<div id="searchModal" class="modal">
-    <div class="modal-content">
-        <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
-                   class="search-input">
-        </div>
-        <div id="searchResult"></div>
-    </div>
-</div>
-
-<script type="text/javascript">
-$(function () {
-    var searchFunc = function (path, search_id, content_id) {
-        'use strict';
-        $.ajax({
-            url: path,
-            dataType: "xml",
-            success: function (xmlResponse) {
-                // get the contents from search data
-                var datas = $("entry", xmlResponse).map(function () {
-                    return {
-                        title: $("title", this).text(),
-                        content: $("content", this).text(),
-                        url: $("url", this).text()
-                    };
-                }).get();
-                var $input = document.getElementById(search_id);
-                var $resultContent = document.getElementById(content_id);
-                $input.addEventListener('input', function () {
-                    var str = '<ul class=\"search-result-list\">';
-                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                    $resultContent.innerHTML = "";
-                    if (this.value.trim().length <= 0) {
-                        return;
-                    }
-                    // perform local searching
-                    datas.forEach(function (data) {
-                        var isMatch = true;
-                        var data_title = data.title.trim().toLowerCase();
-                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
-                        var data_url = data.url;
-                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
-                        var index_title = -1;
-                        var index_content = -1;
-                        var first_occur = -1;
-                        // only match artiles with not empty titles and contents
-                        if (data_title !== '' && data_content !== '') {
-                            keywords.forEach(function (keyword, i) {
-                                index_title = data_title.indexOf(keyword);
-                                index_content = data_content.indexOf(keyword);
-                                if (index_title < 0 && index_content < 0) {
-                                    isMatch = false;
-                                } else {
-                                    if (index_content < 0) {
-                                        index_content = 0;
-                                    }
-                                    if (i === 0) {
-                                        first_occur = index_content;
-                                    }
-                                }
-                            });
-                        }
-                        // show search results
-                        if (isMatch) {
-                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
-                            var content = data.content.trim().replace(/<[^>]+>/g, "");
-                            if (first_occur >= 0) {
-                                // cut out 100 characters
-                                var start = first_occur - 20;
-                                var end = first_occur + 80;
-                                if (start < 0) {
-                                    start = 0;
-                                }
-                                if (start === 0) {
-                                    end = 100;
-                                }
-                                if (end > content.length) {
-                                    end = content.length;
-                                }
-                                var match_content = content.substr(start, end);
-                                // highlight all keywords
-                                keywords.forEach(function (keyword) {
-                                    var regS = new RegExp(keyword, "gi");
-                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
-                                });
-
-                                str += "<p class=\"search-result\">" + match_content + "...</p>"
-                            }
-                            str += "</li>";
-                        }
-                    });
-                    str += "</ul>";
-                    $resultContent.innerHTML = str;
-                });
-            }
-        });
-    };
-
-    searchFunc('/search.xml', 'searchInput', 'searchResult');
-});
-</script>
-
-    <!-- 回到顶部按钮 -->
-<div id="backTop" class="top-scroll">
-    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-</div>
+  
 
 
-    <script src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/libs/materialize/materialize.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/libs/aos/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/js/matery.js"></script>
 
-    <!-- Baidu Analytics -->
 
-    <!-- Baidu Push -->
 
-<script>
-    (function () {
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        } else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-</script>
+  
 
-    
-    
-    <script async src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/libs/others/busuanzi.pure.mini.js"></script>
-    
 
-    
 
-    
 
-    <!--腾讯兔小巢-->
-    
-    
+  
 
-    
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
 
-    
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
-    
 
-    
-    <script src="https://cdn.jsdelivr.net/gh/caoxuanming/caoxuanming.github.io/libs/instantpage/instantpage.js" type="module"></script>
-    
 
 </body>
-
 </html>
