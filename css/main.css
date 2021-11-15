@@ -205,7 +205,7 @@ template {
   display: none;
 }
 ::selection {
-  background: #b1cef2;
+  background: #bad7fb;
   color: $selection-color;
 }
 html,
