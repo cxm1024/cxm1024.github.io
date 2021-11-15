@@ -25,27 +25,31 @@
   <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"caoxuanming.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="A. Diverse Substring $Problem$ 定义一个字符串为多变的，当且仅当字符串中没有一个字符的出现次数严格大于 $n&#x2F;2$。给定一个只由小写字母构成的字符串，问是否能找出一个多变的字串，如果能，任意输出一个。  $n\le 1000$  $Solution$ 只有两个不同字符的字符串时多变的，所以只要给定的字符串中包含至少两个字符就一定可以，输出相邻两个不同字符即可。  B.">
+<meta name="description" content="比赛传送门  赛时AC三道，补题做出一道。  A. Mathematical Addition Problem  给你两个正整数 $u,v$，求一对合法的 $x,y$ 使得 $\frac{x}{u}+\frac{y}{v}&#x3D;\frac{x+y}{u+v}$。  解方程。  $$ \frac{vx+uy}{uv}&#x3D;\frac{x+y}{u+v}\ (vx+uy)(u+v)&#x3D;uv(x+y)\ uvx+">
 <meta property="og:type" content="article">
-<meta property="og:title" content="EDU-CFR-53-Div.2解题报告">
-<meta property="og:url" content="https://caoxuanming.github.io/2021/10/14/edu-cfr-53-div-2-jie-ti-bao-gao/index.html">
+<meta property="og:title" content="CFR-755-Div.2解题报告">
+<meta property="og:url" content="https://caoxuanming.github.io/2021/11/15/cfr-755-div-2-jie-ti-bao-gao/index.html">
 <meta property="og:site_name" content="曹轩鸣的博客">
-<meta property="og:description" content="A. Diverse Substring $Problem$ 定义一个字符串为多变的，当且仅当字符串中没有一个字符的出现次数严格大于 $n&#x2F;2$。给定一个只由小写字母构成的字符串，问是否能找出一个多变的字串，如果能，任意输出一个。  $n\le 1000$  $Solution$ 只有两个不同字符的字符串时多变的，所以只要给定的字符串中包含至少两个字符就一定可以，输出相邻两个不同字符即可。  B.">
+<meta property="og:description" content="比赛传送门  赛时AC三道，补题做出一道。  A. Mathematical Addition Problem  给你两个正整数 $u,v$，求一对合法的 $x,y$ 使得 $\frac{x}{u}+\frac{y}{v}&#x3D;\frac{x+y}{u+v}$。  解方程。  $$ \frac{vx+uy}{uv}&#x3D;\frac{x+y}{u+v}\ (vx+uy)(u+v)&#x3D;uv(x+y)\ uvx+">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-10-13T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-10-21T05:39:33.092Z">
+<meta property="og:image" content="https://espresso.codeforces.com/594fbc0a7f610ebbd39c222d75175364a33218ec.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/caoxuanming/img@master/uPic/LMrB4f.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/caoxuanming/img@master/uPic/gZylEP.png">
+<meta property="article:published_time" content="2021-11-14T23:41:56.000Z">
+<meta property="article:modified_time" content="2021-11-15T00:39:55.304Z">
 <meta property="article:author" content="曹轩鸣">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://espresso.codeforces.com/594fbc0a7f610ebbd39c222d75175364a33218ec.png">
 
 
-<link rel="canonical" href="https://caoxuanming.github.io/2021/10/14/edu-cfr-53-div-2-jie-ti-bao-gao/">
+<link rel="canonical" href="https://caoxuanming.github.io/2021/11/15/cfr-755-div-2-jie-ti-bao-gao/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://caoxuanming.github.io/2021/10/14/edu-cfr-53-div-2-jie-ti-bao-gao/","path":"2021/10/14/edu-cfr-53-div-2-jie-ti-bao-gao/","title":"EDU-CFR-53-Div.2解题报告"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://caoxuanming.github.io/2021/11/15/cfr-755-div-2-jie-ti-bao-gao/","path":"2021/11/15/cfr-755-div-2-jie-ti-bao-gao/","title":"CFR-755-Div.2解题报告"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>EDU-CFR-53-Div.2解题报告 | 曹轩鸣的博客</title>
+<title>CFR-755-Div.2解题报告 | 曹轩鸣的博客</title>
   
 
 
@@ -125,7 +129,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#A-Diverse-Substring"><span class="nav-number">1.</span> <span class="nav-text">A. Diverse Substring</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">1.1.</span> <span class="nav-text">$Problem$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">1.2.</span> <span class="nav-text">$Solution$</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#B-Vasya-and-Books"><span class="nav-number">2.</span> <span class="nav-text">B. Vasya and Books</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-1"><span class="nav-number">2.1.</span> <span class="nav-text">$Problem$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution-1"><span class="nav-number">2.2.</span> <span class="nav-text">$Solution$</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-Vasya-and-Robot"><span class="nav-number">3.</span> <span class="nav-text">C. Vasya and Robot</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-2"><span class="nav-number">3.1.</span> <span class="nav-text">$Problem$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution-2"><span class="nav-number">3.2.</span> <span class="nav-text">$Solution$</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#D-Berland-Fair"><span class="nav-number">4.</span> <span class="nav-text">D. Berland Fair</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-3"><span class="nav-number">4.1.</span> <span class="nav-text">$Problem$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution-3"><span class="nav-number">4.2.</span> <span class="nav-text">$Solution$</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#A-Mathematical-Addition"><span class="nav-number">1.</span> <span class="nav-text">A. Mathematical Addition</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#B-Coloring-Rectangles"><span class="nav-number">2.</span> <span class="nav-text">B. Coloring Rectangles</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-Two-Arrays"><span class="nav-number">3.</span> <span class="nav-text">C. Two Arrays</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#D-Guess-the-Permutation"><span class="nav-number">4.</span> <span class="nav-text">D. Guess the Permutation</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -213,7 +217,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxuanming.github.io/2021/10/14/edu-cfr-53-div-2-jie-ti-bao-gao/">
+    <link itemprop="mainEntityOfPage" href="https://caoxuanming.github.io/2021/11/15/cfr-755-div-2-jie-ti-bao-gao/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -226,7 +230,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          EDU-CFR-53-Div.2解题报告
+          CFR-755-Div.2解题报告
         </h1>
 
         <div class="post-meta-container">
@@ -236,16 +240,10 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2021-10-14 00:00:00" itemprop="dateCreated datePublished" datetime="2021-10-14T00:00:00+08:00">2021-10-14</time>
+      <time title="创建时间：2021-11-15 07:41:56 / 修改时间：08:39:55" itemprop="dateCreated datePublished" datetime="2021-11-15T07:41:56+08:00">2021-11-15</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-21 13:39:33" itemprop="dateModified" datetime="2021-10-21T13:39:33+08:00">2021-10-21</time>
-      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -265,13 +263,13 @@
     </span>
     <span class="post-meta-item-text">Waline：</span>
   
-    <a title="waline" href="/2021/10/14/edu-cfr-53-div-2-jie-ti-bao-gao/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/2021/10/14/edu-cfr-53-div-2-jie-ti-bao-gao/" data-xid="/2021/10/14/edu-cfr-53-div-2-jie-ti-bao-gao/" itemprop="commentCount"></span>
+    <a title="waline" href="/2021/11/15/cfr-755-div-2-jie-ti-bao-gao/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/2021/11/15/cfr-755-div-2-jie-ti-bao-gao/" data-xid="/2021/11/15/cfr-755-div-2-jie-ti-bao-gao/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-    <span id="/2021/10/14/edu-cfr-53-div-2-jie-ti-bao-gao/" class="post-meta-item leancloud_visitors" data-flag-title="EDU-CFR-53-Div.2解题报告" title="阅读次数">
+    <span id="/2021/11/15/cfr-755-div-2-jie-ti-bao-gao/" class="post-meta-item leancloud_visitors" data-flag-title="CFR-755-Div.2解题报告" title="阅读次数">
       <span class="post-meta-item-icon">
         <i class="far fa-eye"></i>
       </span>
@@ -288,19 +286,55 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="A-Diverse-Substring"><a href="#A-Diverse-Substring" class="headerlink" title="A. Diverse Substring"></a>A. Diverse Substring</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>定义一个字符串为多变的，当且仅当字符串中没有一个字符的出现次数严格大于 $n/2$。给定一个只由小写字母构成的字符串，问是否能找出一个多变的字串，如果能，任意输出一个。</p>
-<p>$n\le 1000$</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>只有两个不同字符的字符串时多变的，所以只要给定的字符串中包含至少两个字符就一定可以，输出相邻两个不同字符即可。</p>
-<h1 id="B-Vasya-and-Books"><a href="#B-Vasya-and-Books" class="headerlink" title="B. Vasya and Books"></a>B. Vasya and Books</h1><h2 id="Problem-1"><a href="#Problem-1" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>有一摞书，从上到下依次编号为 $a_1,a_2,a_3…$，现在 Vasya 想把它们分 $n$ 次挪到别的地方，每次他会告诉你他想挪的书的编号，如果这本书还没有被挪动，他将会把这本书以上的书（包括这本书）一块搬走。对于每次挪动，回答他搬了多少本书（没搬输出 0）。</p>
-<p>$n\le 2\times 10^5$</p>
-<h2 id="Solution-1"><a href="#Solution-1" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>开一个桶记录每一本书的位置，记录当前搬到那个位置了，每搬一次就更新一下，减一下即可。</p>
-<h1 id="C-Vasya-and-Robot"><a href="#C-Vasya-and-Robot" class="headerlink" title="C. Vasya and Robot"></a>C. Vasya and Robot</h1><h2 id="Problem-2"><a href="#Problem-2" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>有一个机器人，初始在 $(0,0)$ 点，给你一个长度为 $n$ 的操作序列，每次让机器人向上、下、左、右中的一个方向走一步，你需要修改连续的一段操作序列（这一段中的操作不必全部都修改），使它最终走到 $(x,y)$ 点，问修改的操作序列的最短长度。（不是很严谨，序列长度的详细定义见原题面）</p>
-<p>$n\le 2\times 10^5$</p>
-<h2 id="Solution-2"><a href="#Solution-2" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>如果修改一个长度为 $len$ 的序列可以使它走到终点，那么一定存在一种长度为 $len+1$ 的方案也能走到终点（大不了就加一个空修改），于是我们发现这是可以二分的。二分最终修改的长度 $len$，对于一个长度，我们需要 $O(n)$ 判断是否可行，怎么判断呢？对于每一段长度为 $len$ 的修改，判断不考虑这段修改后机器人会走到哪个位置，再从这个位置开始，判断随便走 $len$ 步能否走到终点（反正允许修改这一段，那想怎么改就怎么改）。</p>
-<p>实现上，我们维护一个走的位置的前缀和和后缀和，就可以 $O(1)$ 判断去除这段修改后机器人会走到那个位置，然后再考虑一些细节问题即可。</p>
-<h1 id="D-Berland-Fair"><a href="#D-Berland-Fair" class="headerlink" title="D. Berland Fair"></a>D. Berland Fair</h1><h2 id="Problem-3"><a href="#Problem-3" class="headerlink" title="$Problem$"></a>$Problem$</h2><p><del>有一个人前来买东西。</del>Polycarp 带了 $T$ 元钱，去逛商铺。有 $n$ 家商铺顺时针排成一圈，编号 $1-n$，第 $i$ 个商铺卖一种价格为 $a_i$ 的商品（数量有无限个）。Polycarp 从一号商铺开始，只要钱足够，就买<strong>一件商品</strong>，否则跳过这家店，直到他一个商品也买不了为止，问他一共会买多少件商品。</p>
-<p>$n\le 2\times 10^5,T\le 10^{18},a_i\le 10^9$</p>
-<h2 id="Solution-3"><a href="#Solution-3" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>先算出来买一圈要花多少钱，让他买尽可能多的圈。为什么他买不了下一圈了呢？一定是到某一个商铺是他买不起了。现在买不起，以后也不可能买的起，于是直接把这个商铺删掉，不考虑。于是我们暴力跑一圈，看看是哪些商铺买不起，把它们都删掉，删完后再让他转圈，知道所有的商品全都被删完为止。由于每一次至少删掉一个商品，最多删 $n$ 次，每次 $O(n)$，总时间复杂度为 $O(n^2)$。<del>（别问我为什么能过 $2\times 10^5$，我也不知道）</del>（经过同学推导，复杂度为 $O(n\log(n))$）</p>
+        <p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1589">比赛传送门</a></p>
+<p>赛时AC三道，补题做出一道。</p>
+<h1 id="A-Mathematical-Addition"><a href="#A-Mathematical-Addition" class="headerlink" title="A. Mathematical Addition"></a>A. Mathematical Addition</h1><details class="note info no-icon"><summary><p>Problem</p>
+</summary>
+<p>给你两个正整数 $u,v$，求一对合法的 $x,y$ 使得 $\frac{x}{u}+\frac{y}{v}=\frac{x+y}{u+v}$。</p>
+
+</details>
+
+<p>解方程。</p>
+<p>$$<br>\frac{vx+uy}{uv}=\frac{x+y}{u+v}\<br>(vx+uy)(u+v)=uv(x+y)\<br>uvx+u^2y+v^2x+uvy=uvx+uvy\<br>u^2y+v^2x=0<br>$$</p>
+<p>则显然一组合法解为 $\begin{cases}x=-u^2\\y=v^2\end{cases}$</p>
+<h1 id="B-Coloring-Rectangles"><a href="#B-Coloring-Rectangles" class="headerlink" title="B. Coloring Rectangles"></a>B. Coloring Rectangles</h1><details class="note info no-icon"><summary><p>Problem</p>
+</summary>
+<p>有一个 $n\times m$ 的矩阵，每个方格均为红色。你可以任意多次的横切或纵切（必须贯穿整块），不能出现 $1\times 1$ 的矩阵，问切完后最少需要涂几个蓝色格子才能使得红色格子不相邻。</p>
+<p>example: $2\times 5$</p>
+<p><img data-src="https://espresso.codeforces.com/594fbc0a7f610ebbd39c222d75175364a33218ec.png" alt=""></p>
+
+</details>
+
+<div class="tabs" id="solution"><ul class="nav-tabs"><li class="tab active"><a href="#solution-1">Solution 1</a></li><li class="tab"><a href="#solution-2">Solution 2</a></li></ul><div class="tab-content"><div class="tab-pane active" id="solution-1"><p>容易发现，把格子割成 $1\times 3$ 是最优的，于是考虑在不对后续操作产生影响的前提下，把它切成这样：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/caoxuanming/img@master/uPic/LMrB4f.png" alt=""></p>
+<p>然后再切成这样：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/caoxuanming/img@master/uPic/gZylEP.png" alt=""></p>
+<p>最后特判剩下的。注意切的时候要时刻堤防剩下一行或剩下一列的情况，防止出现 $1\times 1$。</p></div><div class="tab-pane" id="solution-2"><p>通过找规律，我们可以发现，答案为 $ceil(\frac{n\times m}{3})$。</p></div></div></div>
+
+<h1 id="C-Two-Arrays"><a href="#C-Two-Arrays" class="headerlink" title="C. Two Arrays"></a>C. Two Arrays</h1><details class="note info no-icon"><summary><p>Problem</p>
+</summary>
+<p>给你两个数组 $a,b$，问能否通过把 $a$ 进行<strong>一次</strong>变换得到 $b$。</p>
+<p>变换方式：在 $a$ 数组中选出若干个数分别 $+1$，然后随意排列顺序。</p>
+
+</details>
+
+<p>大水题。$a,b$ 分别排序，看是否每个 $a$ 数组的元素都等于 $b$ 的对应元素或等于 $b$ 的对应元素 $+1$。</p>
+<h1 id="D-Guess-the-Permutation"><a href="#D-Guess-the-Permutation" class="headerlink" title="D. Guess the Permutation"></a>D. Guess the Permutation</h1><details class="note info no-icon"><summary><p>Problem</p>
+</summary>
+<p>这是一道交互题。</p>
+<p>有一初始个数组 $a$，满足 $a_i=i$，即 ${1,2,3…}$。现在有 $1&lt;=i&lt;j&lt;=k&lt;=n$，将 $[i,j-1],[j,k]$ 分别翻转。你需要通过不超过 $40$ 次询问得到 $i,j,k$ 的值。</p>
+<p>每一次询问你可以给出 $l,r$，得到 $[l,r]$ 中的逆序对个数。</p>
+<p>$n\le 10^9(\log_2(10^9)\approx 30)$</p>
+
+</details>
+
+<ol>
+<li>用一次 $\log$ 找到 $k$：二分 $mid$，询问 $[mid,r]$ 中逆序对个数，如果不为 $0$，则 $k$ 在 $[mid+1,r]$ 中，否则在 $[l,mid]$ 中。</li>
+<li>用两次询问 $[1,k]$ 和 $[1,k-1]$ 来获得 $j$ 的位置：一段降序区间 $[l,r]$ 的逆序对数减去 $[l,r-1]$ 的逆序对数等于 $len-1$，于是 $[1,k]-[1,k-1]=len_{[j,k]}-1$（$j$ 前面的都被抵消了），用 $k-(len-1)$ 即可求出 $j$。</li>
+<li>同理用两次询问 $[1,j-1]$ 和 $[1,j-2]$ 来获得 $i$ 的位置。</li>
+</ol>
+<p>询问次数约为 $\log(n)+4$。</p>
+<p>不开 <code>long long</code> 见祖宗（逆序对个数最多有 $n^2$ 级别）。</p>
 
     </div>
 
@@ -314,14 +348,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/10/13/edu-cfr-115-div-2-jie-ti-bao-gao/" rel="prev" title="EDU-CFR-115-Div.2解题报告">
-                  <i class="fa fa-chevron-left"></i> EDU-CFR-115-Div.2解题报告
+                <a href="/2021/10/21/p3383-mo-ban-xian-xing-shai-ti-jie/" rel="prev" title="P3383【模板】线性筛-题解">
+                  <i class="fa fa-chevron-left"></i> P3383【模板】线性筛-题解
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/10/21/p3383-mo-ban-xian-xing-shai-ti-jie/" rel="next" title="P3383【模板】线性筛-题解">
-                  P3383【模板】线性筛-题解 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -378,7 +409,7 @@
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://waline-talk-cxm.vercel.app","placeholder":"畅所欲言吧～","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":["nick"],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/2021/10/14/edu-cfr-53-div-2-jie-ti-bao-gao/"}</script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://waline-talk-cxm.vercel.app","placeholder":"畅所欲言吧～","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":["nick"],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/2021/11/15/cfr-755-div-2-jie-ti-bao-gao/"}</script>
 <script>
 document.addEventListener('page:loaded', () => {
   NexT.utils.loadComments(CONFIG.waline.el).then(() => 
