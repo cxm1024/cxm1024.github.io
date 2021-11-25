@@ -25,28 +25,27 @@
   <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"caoxuanming.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="$\mathcal{A}$  * $assume$ 设，令，假设  * $axis$ 坐标轴  $\mathcal{B}$  * $block$ 方块，格  $\mathcal{C}$  * $column$ 列  * $condition$ 条件  * $corner$ 角，角落  * $calculate$ 计算  * $complexity$ 复杂度  * $contributed$ 贡献">
+<meta name="description" content="比赛传送门  做出来五道题。  A. AB Balance problem  给你一个只含有 a 和 b 的字符串，问怎样通过修改尽可能少的字符，使得 ab 的数量和 ba 的数量相等。  显然，ab 的数量和 ba 的数量最多差 $1$，而当开头字母和结尾字母相同时，ab 的数量等于 ba 的数量。如果不同，修改开头或结尾字母使它们相同即可。  B. Update Files problem">
 <meta property="og:type" content="article">
-<meta property="og:title" content="OI术语中英对照表">
-<meta property="og:url" content="https://caoxuanming.github.io/2021/10/03/oi-zhu-yu-zhong-ying-dui-zhao-biao/index.html">
+<meta property="og:title" content="EDU-CFR-116-Div.2解题报告">
+<meta property="og:url" content="https://caoxuanming.github.io/2021/11/21/edu-cfr-116-div-2-jie-ti-bao-gao/index.html">
 <meta property="og:site_name" content="曹轩鸣的博客">
-<meta property="og:description" content="$\mathcal{A}$  * $assume$ 设，令，假设  * $axis$ 坐标轴  $\mathcal{B}$  * $block$ 方块，格  $\mathcal{C}$  * $column$ 列  * $condition$ 条件  * $corner$ 角，角落  * $calculate$ 计算  * $complexity$ 复杂度  * $contributed$ 贡献">
+<meta property="og:description" content="比赛传送门  做出来五道题。  A. AB Balance problem  给你一个只含有 a 和 b 的字符串，问怎样通过修改尽可能少的字符，使得 ab 的数量和 ba 的数量相等。  显然，ab 的数量和 ba 的数量最多差 $1$，而当开头字母和结尾字母相同时，ab 的数量等于 ba 的数量。如果不同，修改开头或结尾字母使它们相同即可。  B. Update Files problem">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-10-02T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-10-21T05:38:45.217Z">
+<meta property="article:published_time" content="2021-11-21T05:06:44.000Z">
+<meta property="article:modified_time" content="2021-11-21T12:01:08.411Z">
 <meta property="article:author" content="曹轩鸣">
-<meta property="article:tag" content="英语">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://caoxuanming.github.io/2021/10/03/oi-zhu-yu-zhong-ying-dui-zhao-biao/">
+<link rel="canonical" href="https://caoxuanming.github.io/2021/11/21/edu-cfr-116-div-2-jie-ti-bao-gao/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://caoxuanming.github.io/2021/10/03/oi-zhu-yu-zhong-ying-dui-zhao-biao/","path":"2021/10/03/oi-zhu-yu-zhong-ying-dui-zhao-biao/","title":"OI术语中英对照表"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://caoxuanming.github.io/2021/11/21/edu-cfr-116-div-2-jie-ti-bao-gao/","path":"2021/11/21/edu-cfr-116-div-2-jie-ti-bao-gao/","title":"EDU-CFR-116-Div.2解题报告"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>OI术语中英对照表 | 曹轩鸣的博客</title>
+<title>EDU-CFR-116-Div.2解题报告 | 曹轩鸣的博客</title>
   
 
 
@@ -126,7 +125,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#mathcal-A"><span class="nav-number">1.</span> <span class="nav-text">$\mathcal{A}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathcal-B"><span class="nav-number">2.</span> <span class="nav-text">$\mathcal{B}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathcal-C"><span class="nav-number">3.</span> <span class="nav-text">$\mathcal{C}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathcal-D"><span class="nav-number">4.</span> <span class="nav-text">$\mathcal{D}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathcal-E"><span class="nav-number">5.</span> <span class="nav-text">$\mathcal{E}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathcal-F"><span class="nav-number">6.</span> <span class="nav-text">$\mathcal{F}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathcal-G"><span class="nav-number">7.</span> <span class="nav-text">$\mathcal{G}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathcal-H"><span class="nav-number">8.</span> <span class="nav-text">$\mathcal{H}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathcal-I"><span class="nav-number">9.</span> <span class="nav-text">$\mathcal{I}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathcal-J"><span class="nav-number">10.</span> <span class="nav-text">$\mathcal{J}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathcal-K"><span class="nav-number">11.</span> <span class="nav-text">$\mathcal{K}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathcal-L"><span class="nav-number">12.</span> <span class="nav-text">$\mathcal{L}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathcal-M"><span class="nav-number">13.</span> <span class="nav-text">$\mathcal{M}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathcal-N"><span class="nav-number">14.</span> <span class="nav-text">$\mathcal{N}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathcal-O"><span class="nav-number">15.</span> <span class="nav-text">$\mathcal{O}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathcal-P"><span class="nav-number">16.</span> <span class="nav-text">$\mathcal{P}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathcal-Q"><span class="nav-number">17.</span> <span class="nav-text">$\mathcal{Q}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathcal-R"><span class="nav-number">18.</span> <span class="nav-text">$\mathcal{R}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathcal-S"><span class="nav-number">19.</span> <span class="nav-text">$\mathcal{S}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathcal-T"><span class="nav-number">20.</span> <span class="nav-text">$\mathcal{T}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathcal-U"><span class="nav-number">21.</span> <span class="nav-text">$\mathcal{U}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathcal-V"><span class="nav-number">22.</span> <span class="nav-text">$\mathcal{V}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathcal-W"><span class="nav-number">23.</span> <span class="nav-text">$\mathcal{W}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathcal-X"><span class="nav-number">24.</span> <span class="nav-text">$\mathcal{X}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathcal-Y"><span class="nav-number">25.</span> <span class="nav-text">$\mathcal{Y}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathcal-Z"><span class="nav-number">26.</span> <span class="nav-text">$\mathcal{Z}$</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#A-AB-Balance"><span class="nav-number">1.</span> <span class="nav-text">A. AB Balance</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#B-Update-Files"><span class="nav-number">2.</span> <span class="nav-text">B. Update Files</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-Banknotes"><span class="nav-number">3.</span> <span class="nav-text">C. Banknotes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#D-Red-Blue-Matrix"><span class="nav-number">4.</span> <span class="nav-text">D. Red-Blue Matrix</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#E-Arena"><span class="nav-number">5.</span> <span class="nav-text">E. Arena</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -214,7 +213,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxuanming.github.io/2021/10/03/oi-zhu-yu-zhong-ying-dui-zhao-biao/">
+    <link itemprop="mainEntityOfPage" href="https://caoxuanming.github.io/2021/11/21/edu-cfr-116-div-2-jie-ti-bao-gao/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -227,7 +226,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          OI术语中英对照表
+          EDU-CFR-116-Div.2解题报告
         </h1>
 
         <div class="post-meta-container">
@@ -237,23 +236,17 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2021-10-03 00:00:00" itemprop="dateCreated datePublished" datetime="2021-10-03T00:00:00+08:00">2021-10-03</time>
+      <time title="创建时间：2021-11-21 13:06:44 / 修改时间：20:01:08" itemprop="dateCreated datePublished" datetime="2021-11-21T13:06:44+08:00">2021-11-21</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-21 13:38:45" itemprop="dateModified" datetime="2021-10-21T13:38:45+08:00">2021-10-21</time>
-      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
+          <a href="/categories/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" itemprop="url" rel="index"><span itemprop="name">解题报告</span></a>
         </span>
     </span>
 
@@ -266,13 +259,13 @@
     </span>
     <span class="post-meta-item-text">Waline：</span>
   
-    <a title="waline" href="/2021/10/03/oi-zhu-yu-zhong-ying-dui-zhao-biao/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/2021/10/03/oi-zhu-yu-zhong-ying-dui-zhao-biao/" data-xid="/2021/10/03/oi-zhu-yu-zhong-ying-dui-zhao-biao/" itemprop="commentCount"></span>
+    <a title="waline" href="/2021/11/21/edu-cfr-116-div-2-jie-ti-bao-gao/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/2021/11/21/edu-cfr-116-div-2-jie-ti-bao-gao/" data-xid="/2021/11/21/edu-cfr-116-div-2-jie-ti-bao-gao/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-    <span id="/2021/10/03/oi-zhu-yu-zhong-ying-dui-zhao-biao/" class="post-meta-item leancloud_visitors" data-flag-title="OI术语中英对照表" title="阅读次数">
+    <span id="/2021/11/21/edu-cfr-116-div-2-jie-ti-bao-gao/" class="post-meta-item leancloud_visitors" data-flag-title="EDU-CFR-116-Div.2解题报告" title="阅读次数">
       <span class="post-meta-item-icon">
         <i class="far fa-eye"></i>
       </span>
@@ -289,79 +282,45 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="mathcal-A"><a href="#mathcal-A" class="headerlink" title="$\mathcal{A}$"></a>$\mathcal{A}$</h1><ul>
-<li>$assume$ 设，令，假设</li>
-<li>$axis$ 坐标轴</li>
-</ul>
-<h1 id="mathcal-B"><a href="#mathcal-B" class="headerlink" title="$\mathcal{B}$"></a>$\mathcal{B}$</h1><ul>
-<li>$block$ 方块，格</li>
-</ul>
-<h1 id="mathcal-C"><a href="#mathcal-C" class="headerlink" title="$\mathcal{C}$"></a>$\mathcal{C}$</h1><ul>
-<li>$column$ 列</li>
-<li>$condition$ 条件</li>
-<li>$corner$ 角，角落</li>
-<li>$calculate$ 计算</li>
-<li>$complexity$ 复杂度</li>
-<li>$contributed$ 贡献</li>
-<li>$communication$ 通信</li>
-<li>$challenge$ 挑战</li>
-<li>$capacity$ 容量</li>
-<li>$coordinate$ 坐标</li>
-</ul>
-<h1 id="mathcal-D"><a href="#mathcal-D" class="headerlink" title="$\mathcal{D}$"></a>$\mathcal{D}$</h1><ul>
-<li>$diameter$ 直径</li>
-<li>$directed$ 有向的</li>
-</ul>
-<h1 id="mathcal-E"><a href="#mathcal-E" class="headerlink" title="$\mathcal{E}$"></a>$\mathcal{E}$</h1><ul>
-<li>$exceed$ 超过</li>
-<li>$enumerate$ 枚举</li>
-</ul>
-<h1 id="mathcal-F"><a href="#mathcal-F" class="headerlink" title="$\mathcal{F}$"></a>$\mathcal{F}$</h1><ul>
-<li>$figure$ 插图</li>
-<li>$flow$ 流量</li>
-</ul>
-<h1 id="mathcal-G"><a href="#mathcal-G" class="headerlink" title="$\mathcal{G}$"></a>$\mathcal{G}$</h1><ul>
-<li>$guarantee$ 保证</li>
-</ul>
-<h1 id="mathcal-H"><a href="#mathcal-H" class="headerlink" title="$\mathcal{H}$"></a>$\mathcal{H}$</h1><h1 id="mathcal-I"><a href="#mathcal-I" class="headerlink" title="$\mathcal{I}$"></a>$\mathcal{I}$</h1><ul>
-<li>$intersection$ 交集，交点</li>
-</ul>
-<h1 id="mathcal-J"><a href="#mathcal-J" class="headerlink" title="$\mathcal{J}$"></a>$\mathcal{J}$</h1><h1 id="mathcal-K"><a href="#mathcal-K" class="headerlink" title="$\mathcal{K}$"></a>$\mathcal{K}$</h1><h1 id="mathcal-L"><a href="#mathcal-L" class="headerlink" title="$\mathcal{L}$"></a>$\mathcal{L}$</h1><h1 id="mathcal-M"><a href="#mathcal-M" class="headerlink" title="$\mathcal{M}$"></a>$\mathcal{M}$</h1><ul>
-<li>$minimum$ 最少的</li>
-<li>$maximum$ 最多的</li>
-<li>$matrix$ 矩阵</li>
-<li>$multiedges$ 重边</li>
-</ul>
-<h1 id="mathcal-N"><a href="#mathcal-N" class="headerlink" title="$\mathcal{N}$"></a>$\mathcal{N}$</h1><h1 id="mathcal-O"><a href="#mathcal-O" class="headerlink" title="$\mathcal{O}$"></a>$\mathcal{O}$</h1><ul>
-<li>$otherwise$ 否则</li>
-<li>$overlap$ 重叠</li>
-</ul>
-<h1 id="mathcal-P"><a href="#mathcal-P" class="headerlink" title="$\mathcal{P}$"></a>$\mathcal{P}$</h1><ul>
-<li>$precalculate$ 预处理</li>
-<li>$prefix$ 前缀</li>
-<li>$permutation$ 排列</li>
-<li>$preceding$ 前面的</li>
-<li>$positive$ 正的</li>
-</ul>
-<h1 id="mathcal-Q"><a href="#mathcal-Q" class="headerlink" title="$\mathcal{Q}$"></a>$\mathcal{Q}$</h1><h1 id="mathcal-R"><a href="#mathcal-R" class="headerlink" title="$\mathcal{R}$"></a>$\mathcal{R}$</h1><ul>
-<li>$rectangle$ 长方形，矩阵</li>
-<li>$row$ 行</li>
-<li>$resources$ 资源</li>
-</ul>
-<h1 id="mathcal-S"><a href="#mathcal-S" class="headerlink" title="$\mathcal{S}$"></a>$\mathcal{S}$</h1><ul>
-<li>$satisfy$ 满足（条件）</li>
-<li>$suffix$ 后缀</li>
-<li>$submatrix$ 子矩阵</li>
-</ul>
-<h1 id="mathcal-T"><a href="#mathcal-T" class="headerlink" title="$\mathcal{T}$"></a>$\mathcal{T}$</h1><ul>
-<li>$therefore$ 因此</li>
-<li>$tutorial$ 题解</li>
-</ul>
-<h1 id="mathcal-U"><a href="#mathcal-U" class="headerlink" title="$\mathcal{U}$"></a>$\mathcal{U}$</h1><ul>
-<li>$utilization$ 利用</li>
-<li>$undirected$ 无向的</li>
-</ul>
-<h1 id="mathcal-V"><a href="#mathcal-V" class="headerlink" title="$\mathcal{V}$"></a>$\mathcal{V}$</h1><h1 id="mathcal-W"><a href="#mathcal-W" class="headerlink" title="$\mathcal{W}$"></a>$\mathcal{W}$</h1><h1 id="mathcal-X"><a href="#mathcal-X" class="headerlink" title="$\mathcal{X}$"></a>$\mathcal{X}$</h1><h1 id="mathcal-Y"><a href="#mathcal-Y" class="headerlink" title="$\mathcal{Y}$"></a>$\mathcal{Y}$</h1><h1 id="mathcal-Z"><a href="#mathcal-Z" class="headerlink" title="$\mathcal{Z}$"></a>$\mathcal{Z}$</h1>
+        <p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1606">比赛传送门</a></p>
+<p>做出来五道题。</p>
+<h1 id="A-AB-Balance"><a href="#A-AB-Balance" class="headerlink" title="A. AB Balance"></a>A. AB Balance</h1><details class="note info no-icon"><summary><p>problem</p>
+</summary>
+<p>给你一个只含有 <code>a</code> 和 <code>b</code> 的字符串，问怎样通过修改尽可能少的字符，使得 <code>ab</code> 的数量和 <code>ba</code> 的数量相等。</p>
+
+</details>
+
+<p>显然，<code>ab</code> 的数量和 <code>ba</code> 的数量最多差 $1$，而当开头字母和结尾字母相同时，<code>ab</code> 的数量等于 <code>ba</code> 的数量。如果不同，修改开头或结尾字母使它们相同即可。</p>
+<h1 id="B-Update-Files"><a href="#B-Update-Files" class="headerlink" title="B. Update Files"></a>B. Update Files</h1><details class="note info no-icon"><summary><p>problem</p>
+</summary>
+<p>有 $n$ 个电脑和 $k$ 个数据线，其中一个电脑上有一个文件，每次可以通过数据线将文件从一个电脑传到另一个电脑上，耗时 $1$ 小时。问至少需要几个小时才能让所有电脑都有文件。</p>
+
+</details>
+
+<p>设当前有 $x$ 个电脑有文件：若 $x&lt;=k$，则通过 $x$ 条数据线将 $x$ 翻倍；若 $x&gt;k$，则通过 $k$ 条数据线将 $x+=k$。暴力跑第一种情况（$\log(k)$），剩下的情况算一下就行了。</p>
+<h1 id="C-Banknotes"><a href="#C-Banknotes" class="headerlink" title="C. Banknotes"></a>C. Banknotes</h1><details class="note info no-icon"><summary><p>problem</p>
+</summary>
+<p>有 $n$ 中不同面值的货币，每种货币的面值为 $10^{a_i}$，问至少需要 $x+1$ <strong>个</strong>货币才能组成的价值最小的货币是多少。</p>
+
+</details>
+
+<p>暴力贪心模拟。先尽可能多地用面值最小的货币，再用面值第二小的货币，以此类推。具体实现细节比较多，在这里放个代码。</p>
+<details class="note success"><summary><p>code</p>
+</summary>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> n,k,a[<span class="number">10</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    cin&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--) &#123;</span><br><span class="line">        cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">        k++;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) &#123;</span><br><span class="line">            cin&gt;&gt;a[i];</span><br><span class="line">            <span class="keyword">int</span> cur=<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span>(x--)</span><br><span class="line">                cur*=<span class="number">10</span>;</span><br><span class="line">            a[i]=cur;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> cnt=k;</span><br><span class="line">            <span class="keyword">if</span>(i&lt;=n)</span><br><span class="line">                cnt=<span class="built_in">min</span>(cnt,a[i+<span class="number">1</span>]/a[i]<span class="number">-1</span>);</span><br><span class="line">            res+=<span class="number">1ll</span>*a[i]*cnt;</span><br><span class="line">            k-=cnt;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;res&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</details>
+
+<h1 id="D-Red-Blue-Matrix"><a href="#D-Red-Blue-Matrix" class="headerlink" title="D. Red-Blue Matrix"></a>D. Red-Blue Matrix</h1><details class="note info no-icon"><summary><p>problem</p>
+</summary>
+<p>有一个 $n\times m$ 的矩阵，每个格子有一个正整数，你需要对每一行染成红色或蓝色，使得能够找到竖线，让左边所有红格子都大于所有蓝格子的值，右边相反。输出染色方案以及竖线位置。</p>
+<p>$\sum n\times m\le 10^6$</p>
+
+</details>
+
+<p>假设我们已经知道了竖线的位置，如何分配红蓝呢？考虑以行为单位，以每一行的第一个元素为关键字进行从大到小的排序，则我们发现，一定是上面几行为红色，下面几行为蓝色，而这个两条分界线，一横一竖，左上、右上为红，左下、右下为蓝，则必须满足左上的最小值大于左下的最大值，右上的最大值小于右下的最小值。我们可以对矩阵分别求从左上、右下开始的前缀最小值和从左下、右上开始的前缀最大值。枚举横、竖线，然后就可以 $O(1)$ 判断了。总复杂度为 $O(n\times m)$。</p>
+<h1 id="E-Arena"><a href="#E-Arena" class="headerlink" title="E. Arena"></a>E. Arena</h1><p>待更新……</p>
+
     </div>
 
     
@@ -369,22 +328,16 @@
     
 
     <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E8%8B%B1%E8%AF%AD/" rel="tag"># 英语</a>
-          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/09/30/cfr-744-div-3-jie-ti-bao-gao/" rel="prev" title="CFR-744-Div.3解题报告">
-                  <i class="fa fa-chevron-left"></i> CFR-744-Div.3解题报告
+                <a href="/2021/11/15/cfr-755-div-2-jie-ti-bao-gao/" rel="prev" title="CFR-755-Div.2解题报告">
+                  <i class="fa fa-chevron-left"></i> CFR-755-Div.2解题报告
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/10/08/cfr-745-div-2-jie-ti-bao-gao/" rel="next" title="CFR-745-Div.2解题报告">
-                  CFR-745-Div.2解题报告 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -441,7 +394,7 @@
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://waline-talk-cxm.vercel.app","placeholder":"畅所欲言吧～","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":["nick"],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/2021/10/03/oi-zhu-yu-zhong-ying-dui-zhao-biao/"}</script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://waline-talk-cxm.vercel.app","placeholder":"畅所欲言吧～","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":["nick"],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/2021/11/21/edu-cfr-116-div-2-jie-ti-bao-gao/"}</script>
 <script>
 document.addEventListener('page:loaded', () => {
   NexT.utils.loadComments(CONFIG.waline.el).then(() => 
