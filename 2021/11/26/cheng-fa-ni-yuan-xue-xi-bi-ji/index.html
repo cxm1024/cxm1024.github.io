@@ -25,23 +25,28 @@
   <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"caoxuanming.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta property="og:type" content="website">
-<meta property="og:title" content="曹轩鸣的博客">
-<meta property="og:url" content="https://caoxuanming.github.io/tags/Tarjan/index.html">
+<meta name="description" content="1.引入 有很多题的答案可能会很大，这时候通常会让我们输出模一个数的结果。当我们的计算中只用到了加法，可以边加边模；只用到了乘法，可以边乘边模。但如果有除法，就不能边除边模了。这时候就要用到乘法逆元：$ainv(b)inv(c)\%mod&#x3D;\frac{a}{b*c}\%mod$。  有了乘法逆元，在过程中想怎么模就怎么模，非常方便。  2.计算 我们都知道，当模数为质数时，可以用快速幂求 $a^{">
+<meta property="og:type" content="article">
+<meta property="og:title" content="乘法逆元学习笔记">
+<meta property="og:url" content="https://caoxuanming.github.io/2021/11/26/cheng-fa-ni-yuan-xue-xi-bi-ji/index.html">
 <meta property="og:site_name" content="曹轩鸣的博客">
+<meta property="og:description" content="1.引入 有很多题的答案可能会很大，这时候通常会让我们输出模一个数的结果。当我们的计算中只用到了加法，可以边加边模；只用到了乘法，可以边乘边模。但如果有除法，就不能边除边模了。这时候就要用到乘法逆元：$ainv(b)inv(c)\%mod&#x3D;\frac{a}{b*c}\%mod$。  有了乘法逆元，在过程中想怎么模就怎么模，非常方便。  2.计算 我们都知道，当模数为质数时，可以用快速幂求 $a^{">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-26T01:25:57.000Z">
+<meta property="article:modified_time" content="2021-11-26T02:01:40.403Z">
 <meta property="article:author" content="曹轩鸣">
+<meta property="article:tag" content="数论">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://caoxuanming.github.io/tags/Tarjan/">
+<link rel="canonical" href="https://caoxuanming.github.io/2021/11/26/cheng-fa-ni-yuan-xue-xi-bi-ji/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"tags/Tarjan/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://caoxuanming.github.io/2021/11/26/cheng-fa-ni-yuan-xue-xi-bi-ji/","path":"2021/11/26/cheng-fa-ni-yuan-xue-xi-bi-ji/","title":"乘法逆元学习笔记"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>标签: Tarjan | 曹轩鸣的博客</title>
+<title>乘法逆元学习笔记 | 曹轩鸣的博客</title>
   
 
 
@@ -108,7 +113,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -121,6 +126,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%BC%95%E5%85%A5"><span class="nav-number">1.</span> <span class="nav-text">1.引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%AE%A1%E7%AE%97"><span class="nav-number">2.</span> <span class="nav-text">2.计算</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -135,7 +141,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -197,51 +203,124 @@
 </noscript>
 
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h2 class="collection-header">Tarjan
-          <small>标签</small>
-        </h2>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://caoxuanming.github.io/2021/11/26/cheng-fa-ni-yuan-xue-xi-bi-ji/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="曹轩鸣">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹轩鸣的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          乘法逆元学习笔记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+
+      <time title="创建时间：2021-11-26 09:25:57 / 修改时间：10:01:40" itemprop="dateCreated datePublished" datetime="2021-11-26T09:25:57+08:00">2021-11-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/2021/11/26/cheng-fa-ni-yuan-xue-xi-bi-ji/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/2021/11/26/cheng-fa-ni-yuan-xue-xi-bi-ji/" data-xid="/2021/11/26/cheng-fa-ni-yuan-xue-xi-bi-ji/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span id="/2021/11/26/cheng-fa-ni-yuan-xue-xi-bi-ji/" class="post-meta-item leancloud_visitors" data-flag-title="乘法逆元学习笔记" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="1-引入"><a href="#1-引入" class="headerlink" title="1.引入"></a>1.引入</h2><p>有很多题的答案可能会很大，这时候通常会让我们输出模一个数的结果。当我们的计算中只用到了加法，可以边加边模；只用到了乘法，可以边乘边模。但如果有除法，就不能边除边模了。这时候就要用到乘法逆元：$a<em>inv(b)</em>inv(c)\%mod=\frac{a}{b*c}\%mod$。</p>
+<p>有了乘法逆元，在过程中想怎么模就怎么模，非常方便。</p>
+<h2 id="2-计算"><a href="#2-计算" class="headerlink" title="2.计算"></a>2.计算</h2><p>我们都知道，当模数为质数时，可以用快速幂求 $a^{mod-2}$，否则可以用扩展欧几里得来求。</p>
+<p>在组合数中，我们经常会用到阶乘逆元。当我们算出了 $1-n$ 的阶乘（$\%mod$）后，就可以 $O(n)$算出每一个阶乘逆元：首先用上面两种方法之一算出 $inv(n!)$，我们知道 $inv(n!)=\frac{1}{n!}\%mod$，那么 $inv((n-1)!)=\frac{1}{n!}\times n\%mod=inv(n)\times n\%mod$，以此类推即可倒推出每一个数的阶乘逆元。</p>
+<p>将其扩展为一般形式，就能得到线性求任意 $n$ 个数的逆元：将这 $n$ 个数求出前缀积，记为 $s_1-s_n$，求出 $inv(s_n)$，则 $inv(s_{n-1})=inv(s_n)\times n$，以此类推，求出每一个 $inv(s_i)$，即可得出 $inv(a_i)=inv(s_i)\times s_{i-1}$。</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-11-26T08:10:06+08:00"
-              content="2021-11-26">
-          11-26
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/26/tarjan-xue-xi-bi-ji/" itemprop="url">
-            <span itemprop="name">Tarjan学习笔记</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E8%AE%BA/" rel="tag"># 数论</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/11/26/tarjan-xue-xi-bi-ji/" rel="prev" title="Tarjan学习笔记">
+                  <i class="fa fa-chevron-left"></i> Tarjan学习笔记
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-    </div>
-  </div>
-  
-  
-  
 
+
+
+
+
+    <div class="comments" id="waline-comments"></div>
 </div>
   </main>
 
@@ -282,11 +361,11 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://waline-talk-cxm.vercel.app","placeholder":"畅所欲言吧～","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":["nick"],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/tags/Tarjan/"}</script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://waline-talk-cxm.vercel.app","placeholder":"畅所欲言吧～","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":["nick"],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/2021/11/26/cheng-fa-ni-yuan-xue-xi-bi-ji/"}</script>
 <script>
 document.addEventListener('page:loaded', () => {
   NexT.utils.loadComments(CONFIG.waline.el).then(() => 

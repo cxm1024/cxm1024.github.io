@@ -135,7 +135,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -207,6 +207,117 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://caoxuanming.github.io/2021/11/26/cheng-fa-ni-yuan-xue-xi-bi-ji/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="曹轩鸣">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹轩鸣的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/11/26/cheng-fa-ni-yuan-xue-xi-bi-ji/" class="post-title-link" itemprop="url">乘法逆元学习笔记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-11-26 09:25:57 / 修改时间：10:01:40" itemprop="dateCreated datePublished" datetime="2021-11-26T09:25:57+08:00">2021-11-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/2021/11/26/cheng-fa-ni-yuan-xue-xi-bi-ji/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/2021/11/26/cheng-fa-ni-yuan-xue-xi-bi-ji/" data-xid="/2021/11/26/cheng-fa-ni-yuan-xue-xi-bi-ji/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span id="/2021/11/26/cheng-fa-ni-yuan-xue-xi-bi-ji/" class="post-meta-item leancloud_visitors" data-flag-title="乘法逆元学习笔记" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          1.引入
+有很多题的答案可能会很大，这时候通常会让我们输出模一个数的结果。当我们的计算中只用到了加法，可以边加边模；只用到了乘法，可以边乘边模。但如果有除法，就不能边除边模了。这时候就要用到乘法逆元：$ainv(b)inv(c)\%mod=\frac{a}{b*c}\%mod$。
+
+有了乘法逆元，在过程中想怎么模就怎么模，非常方便。
+
+2.计算
+我们都知道，当模数为质数时，可以用快速幂求 $a^{mod-2}$，否则可以用扩展欧几里得来求。
+
+在组合数中，我们经常会用到阶乘逆元。当我们算出了 $1-n$ 的阶乘（$\%mod$）后，就可以 $O(n)$算出每一个阶乘逆元：首先用上面两种方法之一
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/11/26/cheng-fa-ni-yuan-xue-xi-bi-ji/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://caoxuanming.github.io/2021/11/26/tarjan-xue-xi-bi-ji/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -232,7 +343,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2021-11-26 08:10:06 / 修改时间：09:03:21" itemprop="dateCreated datePublished" datetime="2021-11-26T08:10:06+08:00">2021-11-26</time>
+      <time title="创建时间：2021-11-26 08:10:06 / 修改时间：09:26:28" itemprop="dateCreated datePublished" datetime="2021-11-26T08:10:06+08:00">2021-11-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1282,135 +1393,6 @@ B. Diameter of Gra
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/10/08/cfr-745-div-2-jie-ti-bao-gao/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://caoxuanming.github.io/2021/10/03/oi-zhu-yu-zhong-ying-dui-zhao-biao/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="曹轩鸣">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="曹轩鸣的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/10/03/oi-zhu-yu-zhong-ying-dui-zhao-biao/" class="post-title-link" itemprop="url">OI术语中英对照表</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-10-03 00:00:00" itemprop="dateCreated datePublished" datetime="2021-10-03T00:00:00+08:00">2021-10-03</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-21 13:38:45" itemprop="dateModified" datetime="2021-10-21T13:38:45+08:00">2021-10-21</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/2021/10/03/oi-zhu-yu-zhong-ying-dui-zhao-biao/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/2021/10/03/oi-zhu-yu-zhong-ying-dui-zhao-biao/" data-xid="/2021/10/03/oi-zhu-yu-zhong-ying-dui-zhao-biao/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span id="/2021/10/03/oi-zhu-yu-zhong-ying-dui-zhao-biao/" class="post-meta-item leancloud_visitors" data-flag-title="OI术语中英对照表" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          $\mathcal{A}$
- * $assume$ 设，令，假设
- * $axis$ 坐标轴
-
-$\mathcal{B}$
- * $block$ 方块，格
-
-$\mathcal{C}$
- * $column$ 列
- * $condition$ 条件
- * $corner$ 角，角落
- * $calculate$ 计算
- * $complexity$ 复杂度
- * $contributed$ 贡献
- * $communication$ 通信
- * $challenge$ 挑战
- * $capacity$ 容量
- * $coordinate$ 坐标
-
-$\mathcal{D}$
- * $diame
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/10/03/oi-zhu-yu-zhong-ying-dui-zhao-biao/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
