@@ -135,7 +135,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -146,7 +146,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -198,6 +198,112 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://caoxuanming.github.io/2021/11/26/tarjan-xue-xi-bi-ji/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="曹轩鸣">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹轩鸣的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/11/26/tarjan-xue-xi-bi-ji/" class="post-title-link" itemprop="url">Tarjan学习笔记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-11-26 08:10:06 / 修改时间：09:03:21" itemprop="dateCreated datePublished" datetime="2021-11-26T08:10:06+08:00">2021-11-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/2021/11/26/tarjan-xue-xi-bi-ji/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/2021/11/26/tarjan-xue-xi-bi-ji/" data-xid="/2021/11/26/tarjan-xue-xi-bi-ji/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span id="/2021/11/26/tarjan-xue-xi-bi-ji/" class="post-meta-item leancloud_visitors" data-flag-title="Tarjan学习笔记" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          众所周知，Tarjan 可以用来求有向图的强连通分量，我们就不扯那些 dfs 生成树，前向边、返祖边之类的东西，直接步入正题。
+
+1.准备工作
+Tarjan 算法本质上是一次 dfs 的过程，我们用 $dfn[u]$ 记录 $u$ 结点是第几次被 dfs 到的，用 $low[u]$ 记录 $u$ 能到达的所有结点中最小的 $dfn$（包括自己）（详细定义：能够回溯到的最早的已经在栈中的结点。设以 $u$ 为根的子树为 $subtree_u$。 定义为以下结点的 $dfn$ 的最小值：$subtree_u$ 中的结点；从 $subtree_u$ 通过一条不在搜索树上的边能到达的结点。）。$dfn
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/11/26/tarjan-xue-xi-bi-ji/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1305,134 +1411,6 @@ $\mathcal{D}$
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/10/03/oi-zhu-yu-zhong-ying-dui-zhao-biao/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://caoxuanming.github.io/2021/09/30/cfr-744-div-3-jie-ti-bao-gao/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="曹轩鸣">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="曹轩鸣的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/09/30/cfr-744-div-3-jie-ti-bao-gao/" class="post-title-link" itemprop="url">CFR-744-Div.3解题报告</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-09-30 00:00:00" itemprop="dateCreated datePublished" datetime="2021-09-30T00:00:00+08:00">2021-09-30</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-21 13:39:23" itemprop="dateModified" datetime="2021-10-21T13:39:23+08:00">2021-10-21</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" itemprop="url" rel="index"><span itemprop="name">解题报告</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/2021/09/30/cfr-744-div-3-jie-ti-bao-gao/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/2021/09/30/cfr-744-div-3-jie-ti-bao-gao/" data-xid="/2021/09/30/cfr-744-div-3-jie-ti-bao-gao/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span id="/2021/09/30/cfr-744-div-3-jie-ti-bao-gao/" class="post-meta-item leancloud_visitors" data-flag-title="CFR-744-Div.3解题报告" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          赛时 AC 2道题，掉大分（哭）
-
-A. Casimir’s String Solitaire
-题目传送门
-
-$Problem$
-给你一个仅含 A,B,C 的字符串，每次可以删掉一个 A 和一个 B，或一个 B 和一个 C，位置、顺序不限，问能不能删完。
-
-$t\le 1000,len\le 50$
-
-$Solution$
-大水题，只需要判断 A 的数量加 C 的数量是否等于 B 的数量。一开始脑抽还判断 A 的数量是否等于 C 的数量
-
-B. Shifting Sort
-题目传送门
-
-$Problem$
-定义对一段区间的 Cyclically Shift（以下简称Shift） 操作为：
-
- 
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/09/30/cfr-744-div-3-jie-ti-bao-gao/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
