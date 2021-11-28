@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>ABC-229解题报告</title>
+      <link href="/2021/11/28/abc-229-jie-ti-bao-gao/"/>
+      <url>/2021/11/28/abc-229-jie-ti-bao-gao/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://atcoder.jp/contests/abc229">比赛传送门</a></p><p>赛时做出来五道题，涨大分（开心）</p><h1 id="A-First-Grid"><a href="#A-First-Grid" class="headerlink" title="A. First Grid"></a>A. First Grid</h1><details class="note info no-icon"><summary><p>problem</p></summary><p>有一个两行两列的矩阵，每个格子有黑和白两种颜色，至少有两个黑色格子，问黑色格子是否构成一个连通块（四连通）。</p></details><p>显然，如果左上、右下都是白色或右上、左下都是白色，那么不能构成，否则能。</p><h1 id="B-Hard-Calculation"><a href="#B-Hard-Calculation" class="headerlink" title="B. Hard Calculation"></a>B. Hard Calculation</h1><details class="note info no-icon"><summary><p>problem</p></summary><p>有两个正整数 $a$ 和 $b$ 做加法，问是否需要进位。</p></details><p>大水题，一位一位地判断即可。</p><h1 id="C-Cheese"><a href="#C-Cheese" class="headerlink" title="C. Cheese"></a>C. Cheese</h1><details class="note info no-icon"><summary><p>problem</p></summary><p>有 $n$ 种奶酪，第 $i$ 种奶酪每千克能提供 $a_i$ 的美味度，但最多能使用 $b_i$ 千克。你一共最多能使用 $W$ 千克奶酪，问获得的总美味度最大是多少。</p><p>$n\le 3\times 10^5,W\le 3\times 10^8,b_i\le 1000$</p></details><p>这题太坑了，我本来以为是个奇怪的背包，后来发现，既然每个物品的重量都是 $1$，那不就是优先选最美味的奶酪的简单贪心吗？</p><h1 id="D-Longest-X"><a href="#D-Longest-X" class="headerlink" title="D. Longest X"></a>D. Longest X</h1><details class="note info no-icon"><summary><p>problem</p></summary><p>有一个只包含 <code>X</code> 和 <code>.</code> 的字符串 $S$，你每次可以将一个 <code>.</code> 变成 <code>X</code>，问最多 $K$ 次操作后能获得的最长连续 <code>X</code> 字串的长度。</p><p>$|S|\le 2\times 10^5,K\le 2\times 10^5$</p></details><p>如果 $K$ 次操作足以把所有的 <code>.</code> 都变成 <code>X</code>（即点的个数 $\le K$），那么答案一定是 $|S|$。</p><p>如果不能，那么容易发现，答案一定是把 $K$ 次操作全部用完。那么我们就从后往前扫，维护一个数组 $t_i$ 表示从第 $i$ 位开始往后用 $K$ 次操作能到达的最远位置（如果用不完 $K$ 次就到了末尾，那么就是结尾下标）。维护完后就可以直接取长度最大值输出。这里放一下维护的代码实现。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//a[i]为0则是点，为1则是X</span></span><br><span class="line"><span class="comment">//now表示当前的i能到达的最远位置</span></span><br><span class="line"><span class="comment">//nowf表示到达最远位置需要花费几次操作</span></span><br><span class="line"><span class="keyword">int</span> now=n,nowf=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=n;i&gt;<span class="number">0</span>;i--) &#123;</span><br><span class="line">    nowf+=(!a[i]);</span><br><span class="line">    <span class="keyword">while</span>(nowf&gt;k)</span><br><span class="line">        nowf-=(!a[now--]);</span><br><span class="line">    t[i]=now;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="E-Graph-Destruction"><a href="#E-Graph-Destruction" class="headerlink" title="E. Graph Destruction"></a>E. Graph Destruction</h1><details class="note info no-icon"><summary><p>problem</p></summary><p>给你一个 $n$ 个点、$m$ 条边的无向图，依次删除编号为 $1-n$ 的结点，每次删完后问剩下的连通块个数。</p></details><p>正着删边没法维护，我们考虑反向处理，每次加边。仔细像一下就会知道，每次加一个点，就要加上这个点与已有结点的边，即 $\min(u,v)=i$ 的边。所以我们按照 $\min(u,v)$ 排一个序，每加一个点就加上符合条件的边，然后用并查集维护连通性即可。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 解题报告 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>乘法逆元学习笔记</title>
       <link href="/2021/11/26/cheng-fa-ni-yuan-xue-xi-bi-ji/"/>
       <url>/2021/11/26/cheng-fa-ni-yuan-xue-xi-bi-ji/</url>
