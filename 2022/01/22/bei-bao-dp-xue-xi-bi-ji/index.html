@@ -25,28 +25,28 @@
   <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"caoxuanming.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="这道题是线性筛的模板题，所以我们考虑怎么不用线性筛。  我们都知道有一种筛法叫埃拉托色尼筛，简称埃氏筛，它比线性筛好写，也更好理解，但它过不了这道题，那怎么办呢？我们可以用 $bitset$ 代替 bool 数组来进行优化，这造成的常数优化非常显著，以至于开了 ios::sync_with_stdio(false) 之后能轻松过掉这道题，和线性筛的时间总差距只有 $0.5s$，可以说是非常优秀了。">
+<meta name="description" content="1. 01背包 由于01背包太过经典，所以一定要把每一个细节理解透彻！  有 $n$ 个物品和一个容量为 $m$ 的背包，每个物品有体积 $w_i$ 和价值 $v_i$，求用这个背包所能装下的最大价值。  设 $f_{i,j}$ 表示只考虑前 $i$ 个物品，体积不超过 $j$ 的最大价值。如果我们算完了前 $i-1$ 个物品的所有结果，那么第 $i$ 个物品有选和不选两种情况。如果不选，则结果为">
 <meta property="og:type" content="article">
-<meta property="og:title" content="P3383【模板】线性筛-题解">
-<meta property="og:url" content="https://caoxuanming.github.io/2021/10/21/p3383-mo-ban-xian-xing-shai-ti-jie/index.html">
+<meta property="og:title" content="背包DP学习笔记">
+<meta property="og:url" content="https://caoxuanming.github.io/2022/01/22/bei-bao-dp-xue-xi-bi-ji/index.html">
 <meta property="og:site_name" content="曹轩鸣的博客">
-<meta property="og:description" content="这道题是线性筛的模板题，所以我们考虑怎么不用线性筛。  我们都知道有一种筛法叫埃拉托色尼筛，简称埃氏筛，它比线性筛好写，也更好理解，但它过不了这道题，那怎么办呢？我们可以用 $bitset$ 代替 bool 数组来进行优化，这造成的常数优化非常显著，以至于开了 ios::sync_with_stdio(false) 之后能轻松过掉这道题，和线性筛的时间总差距只有 $0.5s$，可以说是非常优秀了。">
+<meta property="og:description" content="1. 01背包 由于01背包太过经典，所以一定要把每一个细节理解透彻！  有 $n$ 个物品和一个容量为 $m$ 的背包，每个物品有体积 $w_i$ 和价值 $v_i$，求用这个背包所能装下的最大价值。  设 $f_{i,j}$ 表示只考虑前 $i$ 个物品，体积不超过 $j$ 的最大价值。如果我们算完了前 $i-1$ 个物品的所有结果，那么第 $i$ 个物品有选和不选两种情况。如果不选，则结果为">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-10-21T07:43:59.000Z">
-<meta property="article:modified_time" content="2021-11-26T04:14:08.763Z">
+<meta property="article:published_time" content="2022-01-22T02:41:31.000Z">
+<meta property="article:modified_time" content="2022-01-22T03:55:05.457Z">
 <meta property="article:author" content="曹轩鸣">
-<meta property="article:tag" content="数论">
+<meta property="article:tag" content="动态规划">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://caoxuanming.github.io/2021/10/21/p3383-mo-ban-xian-xing-shai-ti-jie/">
+<link rel="canonical" href="https://caoxuanming.github.io/2022/01/22/bei-bao-dp-xue-xi-bi-ji/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://caoxuanming.github.io/2021/10/21/p3383-mo-ban-xian-xing-shai-ti-jie/","path":"2021/10/21/p3383-mo-ban-xian-xing-shai-ti-jie/","title":"P3383【模板】线性筛-题解"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://caoxuanming.github.io/2022/01/22/bei-bao-dp-xue-xi-bi-ji/","path":"2022/01/22/bei-bao-dp-xue-xi-bi-ji/","title":"背包DP学习笔记"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>P3383【模板】线性筛-题解 | 曹轩鸣的博客</title>
+<title>背包DP学习笔记 | 曹轩鸣的博客</title>
   
 
 
@@ -113,7 +113,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -126,6 +126,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-01%E8%83%8C%E5%8C%85"><span class="nav-number">1.</span> <span class="nav-text">1. 01背包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%A5%BD%E5%A1%AB%E6%BB%A1%E7%9A%84%E8%83%8C%E5%8C%85"><span class="nav-number">2.</span> <span class="nav-text">正好填满的背包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85"><span class="nav-number">3.</span> <span class="nav-text">完全背包</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -213,7 +214,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxuanming.github.io/2021/10/21/p3383-mo-ban-xian-xing-shai-ti-jie/">
+    <link itemprop="mainEntityOfPage" href="https://caoxuanming.github.io/2022/01/22/bei-bao-dp-xue-xi-bi-ji/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -226,7 +227,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          P3383【模板】线性筛-题解
+          背包DP学习笔记
         </h1>
 
         <div class="post-meta-container">
@@ -236,23 +237,17 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2021-10-21 15:43:59" itemprop="dateCreated datePublished" datetime="2021-10-21T15:43:59+08:00">2021-10-21</time>
+      <time title="创建时间：2022-01-22 10:41:31 / 修改时间：11:55:05" itemprop="dateCreated datePublished" datetime="2022-01-22T10:41:31+08:00">2022-01-22</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-11-26 12:14:08" itemprop="dateModified" datetime="2021-11-26T12:14:08+08:00">2021-11-26</time>
-      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
         </span>
     </span>
 
@@ -265,13 +260,13 @@
     </span>
     <span class="post-meta-item-text">Waline：</span>
   
-    <a title="waline" href="/2021/10/21/p3383-mo-ban-xian-xing-shai-ti-jie/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/2021/10/21/p3383-mo-ban-xian-xing-shai-ti-jie/" data-xid="/2021/10/21/p3383-mo-ban-xian-xing-shai-ti-jie/" itemprop="commentCount"></span>
+    <a title="waline" href="/2022/01/22/bei-bao-dp-xue-xi-bi-ji/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/2022/01/22/bei-bao-dp-xue-xi-bi-ji/" data-xid="/2022/01/22/bei-bao-dp-xue-xi-bi-ji/" itemprop="commentCount"></span>
     </a>
   </span>
   
   
-    <span id="/2021/10/21/p3383-mo-ban-xian-xing-shai-ti-jie/" class="post-meta-item leancloud_visitors" data-flag-title="P3383【模板】线性筛-题解" title="阅读次数">
+    <span id="/2022/01/22/bei-bao-dp-xue-xi-bi-ji/" class="post-meta-item leancloud_visitors" data-flag-title="背包DP学习笔记" title="阅读次数">
       <span class="post-meta-item-icon">
         <i class="far fa-eye"></i>
       </span>
@@ -288,10 +283,31 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>这道题是线性筛的模板题，所以我们考虑怎么不用线性筛。</p>
-<p>我们都知道有一种筛法叫埃拉托色尼筛，简称埃氏筛，它比线性筛好写，也更好理解，但它过不了这道题，那怎么办呢？我们可以用 $bitset$ 代替 bool 数组来进行优化，这造成的常数优化非常显著，以至于开了 <code>ios::sync_with_stdio(false)</code> 之后能轻松过掉这道题，和线性筛的时间总差距只有 $0.5s$，可以说是非常优秀了。</p>
-<p>AC 代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN=<span class="number">100000000</span>;</span><br><span class="line"><span class="keyword">int</span> cnt=<span class="number">0</span>,prime[<span class="number">6000000</span>];</span><br><span class="line">bitset&lt;100000000&gt; p;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    p.<span class="built_in">flip</span>();p[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;MAXN;i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(p[i]) &#123;</span><br><span class="line">            prime[++cnt]=i;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=i+i;j&lt;MAXN;j+=i)</span><br><span class="line">                p[j]=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">init</span>();</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;n;</span><br><span class="line">    <span class="keyword">while</span>(n--) &#123;</span><br><span class="line">        <span class="keyword">int</span> x;</span><br><span class="line">        cin&gt;&gt;x;</span><br><span class="line">        cout&lt;&lt;prime[x]&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="1-01背包"><a href="#1-01背包" class="headerlink" title="1. 01背包"></a>1. 01背包</h2><p><strong>由于01背包太过经典，所以一定要把每一个细节理解透彻！</strong></p>
+<blockquote>
+<p>有 $n$ 个物品和一个容量为 $m$ 的背包，每个物品有体积 $w_i$ 和价值 $v_i$，求用这个背包所能装下的最大价值。</p>
+</blockquote>
+<p>设 $f_{i,j}$ 表示只考虑前 $i$ 个物品，体积不超过 $j$ 的最大价值。如果我们算完了前 $i-1$ 个物品的所有结果，那么第 $i$ 个物品有选和不选两种情况。如果不选，则结果为 $f_{i-1,j}$；如果买，则：由于选了 $i$ 后体积不超过 $j$，那么选 $i$ 之前体积就不能超过 $j-w_i$，而选了 $i$ 之后获得的价值就多了 $v_i$，所以结果为 $f_{i-1,j-w_i}+v_i$。这样，我们就得出了经典的状态转移方程：$f_{i,j}=max(f_{i-1,j},f_{i-1,j-w_i}+v_i)$。</p>
+<p>接下来，我们再考虑一些细节。对于 $f$ 数组的初始化，我们可以将所有的方案全部赋值为 $0$，因为无论考虑多少物品，无论体积不超过多少，都一定有一种符合要求的方案：一个也不选。这时的价值就是 $0$。</p>
+<p>然后就到了经典的空间优化：我们可以发现 $f_i$ 这一行只与 $f_{i-1}$ 这一行有关，所以我们可以将 $i$ 这一维省略。这样，当我们准备求 $f_j$ 时，我们要求 $f_j$ 和 $f_{j-w_i}$ 都还没有被更新过。因为我们正准备更新 $f_j$，所以第一个要求可以保证，那么怎么保证 $f_{j-w_i}$ 没有被更新过呢？答案就是倒序更新（这样就在更新 $f_j$ 之后才会更新到 $f_{j-w_i}$ 了）。</p>
+<p>接下来还有一个经典的常数优化：因为当 $j&lt;w_i$ 时，转移方程中 $f_{j-w_i}$ 不存在，不需要考虑更新，所以 $j$ 必须大于等于 $w_i$，也就是倒序枚举时 $j$ 只需要从 $m$ 枚举到 $w_i$。</p>
+<p>所以，我们就得到了经典的01背包代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=m;j&gt;=w_i;j--)</span><br><span class="line">        f[j]=<span class="built_in">max</span>(f[j],f[j-w[i]]+v[i]);</span><br><span class="line">cout&lt;&lt;f[m]&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
+
+<h2 id="正好填满的背包"><a href="#正好填满的背包" class="headerlink" title="正好填满的背包"></a>正好填满的背包</h2><p>是一个01背包经典的变形，题意基本与01背包相同，但要求背包必须填满。</p>
+<p>这时，$f$ 数组的意义发生了一点变化：$f_{i,j}$ 表示只考虑前 $i$ 个物品，体积<strong>恰好为</strong> $j$ 的最大价值。</p>
+<p>但是，仔细推理一下，就会发现，状态转移方程和01背包一模一样，空间优化和常数优化也都通用。那不一样的地方在哪里呢？答案是初始化。由于要求体积恰好为 $j$，所以当 $j\ne 0$ 时，不允许一个也不选，所以初始化为负无穷（表示目前没有任何方案满足条件），当 $j=0$ 时，才存在一个也不选的方案，这时才能初始化为 $0$。</p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">memset</span>(f,<span class="number">-0x3f</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(f));</span><br><span class="line">f[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=m;j&gt;=w[i];j--)</span><br><span class="line">        f[j]=<span class="built_in">max</span>(f[j],f[j-w[i]]+v[i]);</span><br><span class="line">cout&lt;&lt;f[m]&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完全背包"><a href="#完全背包" class="headerlink" title="完全背包"></a>完全背包</h2><p>又是一个经典模型，也必须要理解透彻。题意与01背包基本相同，但每个物品能选无数遍。</p>
+<p>同样设 $f_{i,j}$ 表示只考虑前 $i$ 种物品，体积不超过 $j$ 的最大价值。这时如何更新呢？如果我们不选这个物品，那么结果为 $f_{i-1,j}$；如果选，那么结果为 $f_{i,j-w_i}+v_i$。这是为什么呢？在01背包中，我们当前要选 $i$，那么选这个 $i$ 之前，只能考虑前 $i-1$ 个物品，所以要从 $f_{i-1,j-w_i}$ 转移，但是在完全背包中，每个物品可以选无数次，所以选这个 $i$ 之前，$i$ 也是可以选的，所以要从 $f_{i,j-w_i}$ 转移而来。这样，我们就得到了最终的转移方程：$f_{i,j}=max(f_{i-1,j},f_{i,j-w_i}+v_i)$。</p>
+<p>同01背包一样，我们也可以省略掉 $i$ 这一维。这时，当我们求 $f_j$ 时，要求变成 $f_j$ 还没有更新，而 $f_{j-w_i}$ 已经更新过了（因为我们要用的是 $f_{i,j-w_i}$ 而不是 $f_{i-1,j-w_i}$）。同样，第一个要求能直接满足，对于第二个要求，我们只需要正序枚举 $j$ 即可。所以，最终转移方程与01背包一样，但 $j$ 的枚举顺序变成了正序。</p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=w[i];j&lt;=m;j++)</span><br><span class="line">        f[j]=<span class="built_in">max</span>(f[j],f[j-w[i]]+v[i]);</span><br><span class="line">cout&lt;&lt;f[m]&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
+
+<p>不定期更新其他模型</p>
+
     </div>
 
     
@@ -300,21 +316,18 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%95%B0%E8%AE%BA/" rel="tag"># 数论</a>
+              <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag"># 动态规划</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/10/14/edu-cfr-53-div-2-jie-ti-bao-gao/" rel="prev" title="EDU-CFR-53-Div.2解题报告">
-                  <i class="fa fa-chevron-left"></i> EDU-CFR-53-Div.2解题报告
+                <a href="/2021/11/28/abc-229-jie-ti-bao-gao/" rel="prev" title="ABC-229解题报告">
+                  <i class="fa fa-chevron-left"></i> ABC-229解题报告
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/11/15/cfr-755-div-2-jie-ti-bao-gao/" rel="next" title="CFR-755-Div.2解题报告">
-                  CFR-755-Div.2解题报告 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -371,7 +384,7 @@
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://waline-talk-cxm.vercel.app","placeholder":"畅所欲言吧～","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":["nick"],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/2021/10/21/p3383-mo-ban-xian-xing-shai-ti-jie/"}</script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://waline-talk-cxm.vercel.app","placeholder":"畅所欲言吧～","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":["nick"],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/2022/01/22/bei-bao-dp-xue-xi-bi-ji/"}</script>
 <script>
 document.addEventListener('page:loaded', () => {
   NexT.utils.loadComments(CONFIG.waline.el).then(() => 

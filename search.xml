@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>背包DP学习笔记</title>
+      <link href="/2022/01/22/bei-bao-dp-xue-xi-bi-ji/"/>
+      <url>/2022/01/22/bei-bao-dp-xue-xi-bi-ji/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-01背包"><a href="#1-01背包" class="headerlink" title="1. 01背包"></a>1. 01背包</h2><p><strong>由于01背包太过经典，所以一定要把每一个细节理解透彻！</strong></p><blockquote><p>有 $n$ 个物品和一个容量为 $m$ 的背包，每个物品有体积 $w_i$ 和价值 $v_i$，求用这个背包所能装下的最大价值。</p></blockquote><p>设 $f_{i,j}$ 表示只考虑前 $i$ 个物品，体积不超过 $j$ 的最大价值。如果我们算完了前 $i-1$ 个物品的所有结果，那么第 $i$ 个物品有选和不选两种情况。如果不选，则结果为 $f_{i-1,j}$；如果买，则：由于选了 $i$ 后体积不超过 $j$，那么选 $i$ 之前体积就不能超过 $j-w_i$，而选了 $i$ 之后获得的价值就多了 $v_i$，所以结果为 $f_{i-1,j-w_i}+v_i$。这样，我们就得出了经典的状态转移方程：$f_{i,j}=max(f_{i-1,j},f_{i-1,j-w_i}+v_i)$。</p><p>接下来，我们再考虑一些细节。对于 $f$ 数组的初始化，我们可以将所有的方案全部赋值为 $0$，因为无论考虑多少物品，无论体积不超过多少，都一定有一种符合要求的方案：一个也不选。这时的价值就是 $0$。</p><p>然后就到了经典的空间优化：我们可以发现 $f_i$ 这一行只与 $f_{i-1}$ 这一行有关，所以我们可以将 $i$ 这一维省略。这样，当我们准备求 $f_j$ 时，我们要求 $f_j$ 和 $f_{j-w_i}$ 都还没有被更新过。因为我们正准备更新 $f_j$，所以第一个要求可以保证，那么怎么保证 $f_{j-w_i}$ 没有被更新过呢？答案就是倒序更新（这样就在更新 $f_j$ 之后才会更新到 $f_{j-w_i}$ 了）。</p><p>接下来还有一个经典的常数优化：因为当 $j&lt;w_i$ 时，转移方程中 $f_{j-w_i}$ 不存在，不需要考虑更新，所以 $j$ 必须大于等于 $w_i$，也就是倒序枚举时 $j$ 只需要从 $m$ 枚举到 $w_i$。</p><p>所以，我们就得到了经典的01背包代码：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=m;j&gt;=w_i;j--)</span><br><span class="line">        f[j]=<span class="built_in">max</span>(f[j],f[j-w[i]]+v[i]);</span><br><span class="line">cout&lt;&lt;f[m]&lt;&lt;endl;</span><br></pre></td></tr></table></figure><h2 id="正好填满的背包"><a href="#正好填满的背包" class="headerlink" title="正好填满的背包"></a>正好填满的背包</h2><p>是一个01背包经典的变形，题意基本与01背包相同，但要求背包必须填满。</p><p>这时，$f$ 数组的意义发生了一点变化：$f_{i,j}$ 表示只考虑前 $i$ 个物品，体积<strong>恰好为</strong> $j$ 的最大价值。</p><p>但是，仔细推理一下，就会发现，状态转移方程和01背包一模一样，空间优化和常数优化也都通用。那不一样的地方在哪里呢？答案是初始化。由于要求体积恰好为 $j$，所以当 $j\ne 0$ 时，不允许一个也不选，所以初始化为负无穷（表示目前没有任何方案满足条件），当 $j=0$ 时，才存在一个也不选的方案，这时才能初始化为 $0$。</p><p>代码：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">memset</span>(f,<span class="number">-0x3f</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(f));</span><br><span class="line">f[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=m;j&gt;=w[i];j--)</span><br><span class="line">        f[j]=<span class="built_in">max</span>(f[j],f[j-w[i]]+v[i]);</span><br><span class="line">cout&lt;&lt;f[m]&lt;&lt;endl;</span><br></pre></td></tr></table></figure><h2 id="完全背包"><a href="#完全背包" class="headerlink" title="完全背包"></a>完全背包</h2><p>又是一个经典模型，也必须要理解透彻。题意与01背包基本相同，但每个物品能选无数遍。</p><p>同样设 $f_{i,j}$ 表示只考虑前 $i$ 种物品，体积不超过 $j$ 的最大价值。这时如何更新呢？如果我们不选这个物品，那么结果为 $f_{i-1,j}$；如果选，那么结果为 $f_{i,j-w_i}+v_i$。这是为什么呢？在01背包中，我们当前要选 $i$，那么选这个 $i$ 之前，只能考虑前 $i-1$ 个物品，所以要从 $f_{i-1,j-w_i}$ 转移，但是在完全背包中，每个物品可以选无数次，所以选这个 $i$ 之前，$i$ 也是可以选的，所以要从 $f_{i,j-w_i}$ 转移而来。这样，我们就得到了最终的转移方程：$f_{i,j}=max(f_{i-1,j},f_{i,j-w_i}+v_i)$。</p><p>同01背包一样，我们也可以省略掉 $i$ 这一维。这时，当我们求 $f_j$ 时，要求变成 $f_j$ 还没有更新，而 $f_{j-w_i}$ 已经更新过了（因为我们要用的是 $f_{i,j-w_i}$ 而不是 $f_{i-1,j-w_i}$）。同样，第一个要求能直接满足，对于第二个要求，我们只需要正序枚举 $j$ 即可。所以，最终转移方程与01背包一样，但 $j$ 的枚举顺序变成了正序。</p><p>代码：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=w[i];j&lt;=m;j++)</span><br><span class="line">        f[j]=<span class="built_in">max</span>(f[j],f[j-w[i]]+v[i]);</span><br><span class="line">cout&lt;&lt;f[m]&lt;&lt;endl;</span><br></pre></td></tr></table></figure><p>不定期更新其他模型</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 动态规划 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ABC-229解题报告</title>
       <link href="/2021/11/28/abc-229-jie-ti-bao-gao/"/>
       <url>/2021/11/28/abc-229-jie-ti-bao-gao/</url>
