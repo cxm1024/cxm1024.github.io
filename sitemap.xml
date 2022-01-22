@@ -221,7 +221,14 @@
   </url>
   
   <url>
-    <loc>https://caoxuanming.github.io/tags/hexo/</loc>
+    <loc>https://caoxuanming.github.io/tags/%E6%95%B0%E8%AE%BA/</loc>
+    <lastmod>2022-01-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://caoxuanming.github.io/tags/%E5%9B%BE%E8%AE%BA/</loc>
     <lastmod>2022-01-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -235,14 +242,7 @@
   </url>
   
   <url>
-    <loc>https://caoxuanming.github.io/tags/%E6%95%B0%E8%AE%BA/</loc>
-    <lastmod>2022-01-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://caoxuanming.github.io/tags/%E5%9B%BE%E8%AE%BA/</loc>
+    <loc>https://caoxuanming.github.io/tags/hexo/</loc>
     <lastmod>2022-01-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -272,7 +272,7 @@
   </url>
   
   <url>
-    <loc>https://caoxuanming.github.io/categories/%E9%9A%8F%E7%AC%94/</loc>
+    <loc>https://caoxuanming.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2022-01-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -286,7 +286,7 @@
   </url>
   
   <url>
-    <loc>https://caoxuanming.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://caoxuanming.github.io/categories/%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2022-01-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
