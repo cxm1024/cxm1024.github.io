@@ -24,11 +24,11 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
   <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"caoxuanming.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cxm1024.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 <meta name="description" content="众所周知，Tarjan 可以用来求有向图的强连通分量，我们就不扯那些 dfs 生成树，前向边、返祖边之类的东西，直接步入正题。  准备工作 Tarjan 算法本质上是一次 dfs 的过程，我们用 $dfn[u]$ 记录 $u$ 结点是第几次被 dfs 到的，用 $low[u]$ 记录 $u$ 能到达的所有结点中最小的 $dfn$（包括自己）（详细定义：能够回溯到的最早的已经在栈中的结点。设以 $u">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tarjan学习笔记">
-<meta property="og:url" content="https://caoxuanming.github.io/2021/11/26/tarjan-xue-xi-bi-ji/index.html">
+<meta property="og:url" content="https://cxm1024.github.io/2021/11/26/tarjan-xue-xi-bi-ji/index.html">
 <meta property="og:site_name" content="曹轩鸣的博客">
 <meta property="og:description" content="众所周知，Tarjan 可以用来求有向图的强连通分量，我们就不扯那些 dfs 生成树，前向边、返祖边之类的东西，直接步入正题。  准备工作 Tarjan 算法本质上是一次 dfs 的过程，我们用 $dfn[u]$ 记录 $u$ 结点是第几次被 dfs 到的，用 $low[u]$ 记录 $u$ 能到达的所有结点中最小的 $dfn$（包括自己）（详细定义：能够回溯到的最早的已经在栈中的结点。设以 $u">
 <meta property="og:locale" content="zh_CN">
@@ -41,11 +41,11 @@
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/cxm1024/img@master/uPic/wF29Sl.png">
 
 
-<link rel="canonical" href="https://caoxuanming.github.io/2021/11/26/tarjan-xue-xi-bi-ji/">
+<link rel="canonical" href="https://cxm1024.github.io/2021/11/26/tarjan-xue-xi-bi-ji/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://caoxuanming.github.io/2021/11/26/tarjan-xue-xi-bi-ji/","path":"2021/11/26/tarjan-xue-xi-bi-ji/","title":"Tarjan学习笔记"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://cxm1024.github.io/2021/11/26/tarjan-xue-xi-bi-ji/","path":"2021/11/26/tarjan-xue-xi-bi-ji/","title":"Tarjan学习笔记"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>Tarjan学习笔记 | 曹轩鸣的博客</title>
@@ -216,7 +216,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxuanming.github.io/2021/11/26/tarjan-xue-xi-bi-ji/">
+    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2021/11/26/tarjan-xue-xi-bi-ji/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">

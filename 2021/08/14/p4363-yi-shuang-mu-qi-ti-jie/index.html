@@ -24,11 +24,11 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
   <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"caoxuanming.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cxm1024.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 <meta name="description" content="本篇题解献给和我一样看不懂其他题解的状压DP小白  相信大家都是看了其他题解看不懂才看到这篇题解的（莫名自信），所以什么每行棋子数递减啊，每行的棋子都排在左边啊，就不用我多说了，直接切入正题（大段文字多，请耐心观看）。  轮廓线DP 没见过不用慌，我也没见过（雾  轮廓线，就是把矩阵从右上角到左下角沿着有棋子和没棋子的分界线描一下，往下走就用1表示，往左走就用0表示。这样我们就得到了一个01串，即">
 <meta property="og:type" content="article">
 <meta property="og:title" content="P4363一双木棋 题解">
-<meta property="og:url" content="https://caoxuanming.github.io/2021/08/14/p4363-yi-shuang-mu-qi-ti-jie/index.html">
+<meta property="og:url" content="https://cxm1024.github.io/2021/08/14/p4363-yi-shuang-mu-qi-ti-jie/index.html">
 <meta property="og:site_name" content="曹轩鸣的博客">
 <meta property="og:description" content="本篇题解献给和我一样看不懂其他题解的状压DP小白  相信大家都是看了其他题解看不懂才看到这篇题解的（莫名自信），所以什么每行棋子数递减啊，每行的棋子都排在左边啊，就不用我多说了，直接切入正题（大段文字多，请耐心观看）。  轮廓线DP 没见过不用慌，我也没见过（雾  轮廓线，就是把矩阵从右上角到左下角沿着有棋子和没棋子的分界线描一下，往下走就用1表示，往左走就用0表示。这样我们就得到了一个01串，即">
 <meta property="og:locale" content="zh_CN">
@@ -42,11 +42,11 @@
 <meta name="twitter:image" content="https://i.loli.net/2021/08/14/6RlDkBPy2JnVS7W.png">
 
 
-<link rel="canonical" href="https://caoxuanming.github.io/2021/08/14/p4363-yi-shuang-mu-qi-ti-jie/">
+<link rel="canonical" href="https://cxm1024.github.io/2021/08/14/p4363-yi-shuang-mu-qi-ti-jie/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://caoxuanming.github.io/2021/08/14/p4363-yi-shuang-mu-qi-ti-jie/","path":"2021/08/14/p4363-yi-shuang-mu-qi-ti-jie/","title":"P4363一双木棋 题解"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://cxm1024.github.io/2021/08/14/p4363-yi-shuang-mu-qi-ti-jie/","path":"2021/08/14/p4363-yi-shuang-mu-qi-ti-jie/","title":"P4363一双木棋 题解"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>P4363一双木棋 题解 | 曹轩鸣的博客</title>
@@ -217,7 +217,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://caoxuanming.github.io/2021/08/14/p4363-yi-shuang-mu-qi-ti-jie/">
+    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2021/08/14/p4363-yi-shuang-mu-qi-ti-jie/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
