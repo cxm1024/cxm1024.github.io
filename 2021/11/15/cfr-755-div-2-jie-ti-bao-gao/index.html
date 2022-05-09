@@ -25,18 +25,18 @@
   <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"cxm1024.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="比赛传送门  赛时AC三道，补题做出一道。  A. Mathematical Addition Problem  给你两个正整数 $u,v$，求一对合法的 $x,y$ 使得 $\frac{x}{u}+\frac{y}{v}&#x3D;\frac{x+y}{u+v}$。  解方程。  $$ \frac{vx+uy}{uv}&#x3D;\frac{x+y}{u+v}\ (vx+uy)(u+v)&#x3D;uv(x+y)\ uvx+">
+<meta name="description" content="比赛传送门  赛时AC三道，补题做出一道。  A. Mathematical Addition Problem  给你两个正整数 $u,v$，求一对合法的 $x,y$ 使得 $\frac{x}{u}+\frac{y}{v}&#x3D;\frac{x+y}{u+v}$。  解方程。  $$ \begin{array}{c} \frac{vx+uy}{uv}&#x3D;\frac{x+y}{u+v}\ (vx+uy)(u">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CFR-755-Div.2解题报告">
 <meta property="og:url" content="https://cxm1024.github.io/2021/11/15/cfr-755-div-2-jie-ti-bao-gao/index.html">
 <meta property="og:site_name" content="曹轩鸣的博客">
-<meta property="og:description" content="比赛传送门  赛时AC三道，补题做出一道。  A. Mathematical Addition Problem  给你两个正整数 $u,v$，求一对合法的 $x,y$ 使得 $\frac{x}{u}+\frac{y}{v}&#x3D;\frac{x+y}{u+v}$。  解方程。  $$ \frac{vx+uy}{uv}&#x3D;\frac{x+y}{u+v}\ (vx+uy)(u+v)&#x3D;uv(x+y)\ uvx+">
+<meta property="og:description" content="比赛传送门  赛时AC三道，补题做出一道。  A. Mathematical Addition Problem  给你两个正整数 $u,v$，求一对合法的 $x,y$ 使得 $\frac{x}{u}+\frac{y}{v}&#x3D;\frac{x+y}{u+v}$。  解方程。  $$ \begin{array}{c} \frac{vx+uy}{uv}&#x3D;\frac{x+y}{u+v}\ (vx+uy)(u">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://espresso.codeforces.com/594fbc0a7f610ebbd39c222d75175364a33218ec.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/caoxuanming/img@master/uPic/LMrB4f.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/caoxuanming/img@master/uPic/gZylEP.png">
 <meta property="article:published_time" content="2021-11-14T23:41:56.000Z">
-<meta property="article:modified_time" content="2021-11-26T04:13:48.925Z">
+<meta property="article:modified_time" content="2022-05-09T06:26:48.125Z">
 <meta property="article:author" content="曹轩鸣">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://espresso.codeforces.com/594fbc0a7f610ebbd39c222d75175364a33218ec.png">
@@ -248,7 +248,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-11-26 12:13:48" itemprop="dateModified" datetime="2021-11-26T12:13:48+08:00">2021-11-26</time>
+        <time title="修改时间：2022-05-09 14:26:48" itemprop="dateModified" datetime="2022-05-09T14:26:48+08:00">2022-05-09</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -301,7 +301,7 @@
 </details>
 
 <p>解方程。</p>
-<p>$$<br>\frac{vx+uy}{uv}=\frac{x+y}{u+v}\<br>(vx+uy)(u+v)=uv(x+y)\<br>uvx+u^2y+v^2x+uvy=uvx+uvy\<br>u^2y+v^2x=0<br>$$</p>
+<p>$$<br>\begin{array}{c}<br>\frac{vx+uy}{uv}=\frac{x+y}{u+v}\<br>(vx+uy)(u+v)=uv(x+y)\<br>uvx+u^2y+v^2x+uvy=uvx+uvy\<br>u^2y+v^2x=0<br>\end{array}<br>$$</p>
 <p>则显然一组合法解为 $\begin{cases}x=-u^2\\y=v^2\end{cases}$</p>
 <h1 id="B-Coloring-Rectangles"><a href="#B-Coloring-Rectangles" class="headerlink" title="B. Coloring Rectangles"></a>B. Coloring Rectangles</h1><details class="note info no-icon"><summary><p>Problem</p>
 </summary>
