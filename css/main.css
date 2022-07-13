@@ -1919,7 +1919,7 @@ pre code {
 }
 .reading-progress-bar {
   --progress: 0;
-  background: #37c6c0;
+  background: #fc6423;
   height: 4px;
   position: fixed;
   z-index: 1500;
