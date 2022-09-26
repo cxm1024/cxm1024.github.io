@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.2">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -19,18 +18,19 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
-  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/lib/@fortawesome/fontawesome-free/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/lib/animate.css/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/lib/pace-js/themes/blue/pace-theme-minimal.css">
+  <script src="/lib/pace-js/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"cxm1024.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="在这个直角三角形中，我们设以 $c$ 为底的大三角形面积为 $S_c$，以 $a,b$ 为底的两个小三角形的面积分别为 $S_a,S_b$。  显然，$S_c&#x3D;\frac{ch}{2}&#x3D;c^2\cdot\frac{h}{2c}$。令 $m&#x3D;\frac{h}{2c}$，则有 $S_c&#x3D;mc^2$。  同理，$S_a&#x3D;a^2\cdot\frac{h_a}{2a}$（其中 $h_a$ 表示三角形 $BP">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cxm1024.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="在这个直角三角形中，我们设以 \(c\) 为底的大三角形面积为 \(S_c\)，以 \(a,b\) 为底的两个小三角形的面积分别为 \(S_a,S_b\)。  显然，\(S_c&#x3D;\frac{ch}{2}&#x3D;c^2\cdot\frac{h}{2c}\)。令 \(m&#x3D;\frac{h}{2c}\)，则有 \(S_c&#x3D;mc^2\)。  同理，\(S_a&#x3D;a^2\cdot\frac{h_a}{2a}\)（其中">
 <meta property="og:type" content="article">
 <meta property="og:title" content="勾股定理证明">
 <meta property="og:url" content="https://cxm1024.github.io/2022/04/28/gou-gu-ding-li-zheng-ming/index.html">
 <meta property="og:site_name" content="曹轩鸣的博客">
-<meta property="og:description" content="在这个直角三角形中，我们设以 $c$ 为底的大三角形面积为 $S_c$，以 $a,b$ 为底的两个小三角形的面积分别为 $S_a,S_b$。  显然，$S_c&#x3D;\frac{ch}{2}&#x3D;c^2\cdot\frac{h}{2c}$。令 $m&#x3D;\frac{h}{2c}$，则有 $S_c&#x3D;mc^2$。  同理，$S_a&#x3D;a^2\cdot\frac{h_a}{2a}$（其中 $h_a$ 表示三角形 $BP">
+<meta property="og:description" content="在这个直角三角形中，我们设以 \(c\) 为底的大三角形面积为 \(S_c\)，以 \(a,b\) 为底的两个小三角形的面积分别为 \(S_a,S_b\)。  显然，\(S_c&#x3D;\frac{ch}{2}&#x3D;c^2\cdot\frac{h}{2c}\)。令 \(m&#x3D;\frac{h}{2c}\)，则有 \(S_c&#x3D;mc^2\)。  同理，\(S_a&#x3D;a^2\cdot\frac{h_a}{2a}\)（其中">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/cxm1024/img@master/uPic/gSEQDf.png">
 <meta property="article:published_time" content="2022-04-28T08:40:20.000Z">
@@ -53,7 +53,9 @@
 
 
 
-<link rel="dns-prefetch" href="https://waline-talk-cxm.vercel.app">
+
+
+
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
@@ -77,7 +79,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">曹轩鸣的博客</h1>
+      <p class="site-title">曹轩鸣的博客</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">Nothing is impossible.</p>
@@ -92,12 +94,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
   </ul>
 </nav>
 
@@ -142,7 +139,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -153,7 +150,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -220,11 +217,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="cxm1024">
-      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="勾股定理证明 | 曹轩鸣的博客">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -241,13 +243,13 @@
 
       <time title="创建时间：2022-04-28 16:40:20" itemprop="dateCreated datePublished" datetime="2022-04-28T16:40:20+08:00">2022-04-28</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-07-23 23:13:27" itemprop="dateModified" datetime="2022-07-23T23:13:27+08:00">2022-07-23</time>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
       </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-07-23 23:13:27" itemprop="dateModified" datetime="2022-07-23T23:13:27+08:00">2022-07-23</time>
+    </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -259,28 +261,6 @@
     </span>
 
   
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/2022/04/28/gou-gu-ding-li-zheng-ming/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/2022/04/28/gou-gu-ding-li-zheng-ming/" data-xid="/2022/04/28/gou-gu-ding-li-zheng-ming/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span id="/2022/04/28/gou-gu-ding-li-zheng-ming/" class="post-meta-item leancloud_visitors" data-flag-title="勾股定理证明" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-  
 </div>
 
         </div>
@@ -290,11 +270,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p><img data-src="https://cdn.jsdelivr.net/gh/cxm1024/img@master/uPic/gSEQDf.png" alt=""></p>
-<p>在这个直角三角形中，我们设以 $c$ 为底的大三角形面积为 $S_c$，以 $a,b$ 为底的两个小三角形的面积分别为 $S_a,S_b$。</p>
-<p>显然，$S_c=\frac{ch}{2}=c^2\cdot\frac{h}{2c}$。令 $m=\frac{h}{2c}$，则有 $S_c=mc^2$。</p>
-<p>同理，$S_a=a^2\cdot\frac{h_a}{2a}$（其中 $h_a$ 表示三角形 $BPC$ 中以 $a$ 为底的高）。显然该三角形与大三角形 $ABC$ 相似，所以 $\frac{ha}{h}=\frac{a}{c}$，即 $\frac{h_a}{2a}=\frac{h}{2c}=m$，所以 $S_a=ma^2$。同理 $S_b=mb^2$。</p>
-<p>又因为，$S_c=S_a+S_b$，所以 $mc^2=ma^2+mb^2$，即 $c^2=a^2+b^2$。</p>
+        <p><img data-src="https://cdn.jsdelivr.net/gh/cxm1024/img@master/uPic/gSEQDf.png" /></p>
+<p>在这个直角三角形中，我们设以 <span class="math inline">\(c\)</span> 为底的大三角形面积为 <span class="math inline">\(S_c\)</span>，以 <span class="math inline">\(a,b\)</span> 为底的两个小三角形的面积分别为 <span class="math inline">\(S_a,S_b\)</span>。</p>
+<p>显然，<span class="math inline">\(S_c=\frac{ch}{2}=c^2\cdot\frac{h}{2c}\)</span>。令 <span class="math inline">\(m=\frac{h}{2c}\)</span>，则有 <span class="math inline">\(S_c=mc^2\)</span>。</p>
+<p>同理，<span class="math inline">\(S_a=a^2\cdot\frac{h_a}{2a}\)</span>（其中 <span class="math inline">\(h_a\)</span> 表示三角形 <span class="math inline">\(BPC\)</span> 中以 <span class="math inline">\(a\)</span> 为底的高）。显然该三角形与大三角形 <span class="math inline">\(ABC\)</span> 相似，所以 <span class="math inline">\(\frac{ha}{h}=\frac{a}{c}\)</span>，即 <span class="math inline">\(\frac{h_a}{2a}=\frac{h}{2c}=m\)</span>，所以 <span class="math inline">\(S_a=ma^2\)</span>。同理 <span class="math inline">\(S_b=mb^2\)</span>。</p>
+<p>又因为，<span class="math inline">\(S_c=S_a+S_b\)</span>，所以 <span class="math inline">\(mc^2=ma^2+mb^2\)</span>，即 <span class="math inline">\(c^2=a^2+b^2\)</span>。</p>
 
     </div>
 
@@ -330,7 +310,6 @@
 
 
 
-    <div class="comments" id="waline-comments"></div>
 </div>
   </main>
 
@@ -353,8 +332,8 @@
   </footer>
 
   
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="/lib/animejs/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="/lib/lozad/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
@@ -371,19 +350,10 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"/lib/mathjax/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://waline-talk-cxm.vercel.app","placeholder":"畅所欲言吧～","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":["nick"],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/2022/04/28/gou-gu-ding-li-zheng-ming/"}</script>
-<script>
-document.addEventListener('page:loaded', () => {
-  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
-    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
-  ).then(() => {
-    new Waline(CONFIG.waline);
-  });
-});
-</script>
+
 </body>
 </html>

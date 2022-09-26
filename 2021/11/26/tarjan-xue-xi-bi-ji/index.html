@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.2">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -19,18 +18,19 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
-  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/lib/@fortawesome/fontawesome-free/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/lib/animate.css/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/lib/pace-js/themes/blue/pace-theme-minimal.css">
+  <script src="/lib/pace-js/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"cxm1024.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="众所周知，Tarjan 可以用来求有向图的强连通分量，我们就不扯那些 dfs 生成树，前向边、返祖边之类的东西，直接步入正题。  准备工作 Tarjan 算法本质上是一次 dfs 的过程，我们用 $dfn[u]$ 记录 $u$ 结点是第几次被 dfs 到的，用 $low[u]$ 记录 $u$ 能到达的所有结点中最小的 $dfn$（包括自己）（详细定义：能够回溯到的最早的已经在栈中的结点。设以 $u">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cxm1024.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="众所周知，Tarjan 可以用来求有向图的强连通分量，我们就不扯那些 dfs 生成树，前向边、返祖边之类的东西，直接步入正题。  准备工作 Tarjan 算法本质上是一次 dfs 的过程，我们用 \(dfn[u]\) 记录 \(u\) 结点是第几次被 dfs 到的，用 \(low[u]\) 记录 \(u\) 能到达的所有结点中最小的 \(dfn\)（包括自己）（详细定义：能够回溯到的最早的已经在栈">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tarjan学习笔记">
 <meta property="og:url" content="https://cxm1024.github.io/2021/11/26/tarjan-xue-xi-bi-ji/index.html">
 <meta property="og:site_name" content="曹轩鸣的博客">
-<meta property="og:description" content="众所周知，Tarjan 可以用来求有向图的强连通分量，我们就不扯那些 dfs 生成树，前向边、返祖边之类的东西，直接步入正题。  准备工作 Tarjan 算法本质上是一次 dfs 的过程，我们用 $dfn[u]$ 记录 $u$ 结点是第几次被 dfs 到的，用 $low[u]$ 记录 $u$ 能到达的所有结点中最小的 $dfn$（包括自己）（详细定义：能够回溯到的最早的已经在栈中的结点。设以 $u">
+<meta property="og:description" content="众所周知，Tarjan 可以用来求有向图的强连通分量，我们就不扯那些 dfs 生成树，前向边、返祖边之类的东西，直接步入正题。  准备工作 Tarjan 算法本质上是一次 dfs 的过程，我们用 \(dfn[u]\) 记录 \(u\) 结点是第几次被 dfs 到的，用 \(low[u]\) 记录 \(u\) 能到达的所有结点中最小的 \(dfn\)（包括自己）（详细定义：能够回溯到的最早的已经在栈">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/cxm1024/img@master/uPic/wF29Sl.png">
 <meta property="article:published_time" content="2021-11-26T00:10:06.000Z">
@@ -53,7 +53,9 @@
 
 
 
-<link rel="dns-prefetch" href="https://waline-talk-cxm.vercel.app">
+
+
+
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
@@ -77,7 +79,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">曹轩鸣的博客</h1>
+      <p class="site-title">曹轩鸣的博客</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">Nothing is impossible.</p>
@@ -92,12 +94,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
   </ul>
 </nav>
 
@@ -143,7 +140,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -154,7 +151,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -221,11 +218,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="cxm1024">
-      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Tarjan学习笔记 | 曹轩鸣的博客">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -254,28 +256,6 @@
     </span>
 
   
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/2021/11/26/tarjan-xue-xi-bi-ji/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/2021/11/26/tarjan-xue-xi-bi-ji/" data-xid="/2021/11/26/tarjan-xue-xi-bi-ji/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span id="/2021/11/26/tarjan-xue-xi-bi-ji/" class="post-meta-item leancloud_visitors" data-flag-title="Tarjan学习笔记" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-  
 </div>
 
         </div>
@@ -286,25 +266,28 @@
     
     <div class="post-body" itemprop="articleBody">
         <p>众所周知，Tarjan 可以用来求有向图的强连通分量，我们就不扯那些 dfs 生成树，前向边、返祖边之类的东西，直接步入正题。</p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>Tarjan 算法本质上是一次 dfs 的过程，我们用 $dfn[u]$ 记录 $u$ 结点是第几次被 dfs 到的，用 $low[u]$ 记录 $u$ 能到达的所有结点中最小的 $dfn$（包括自己）（详细定义：能够回溯到的最早的已经在栈中的结点。设以 $u$ 为根的子树为 $subtree_u$。 定义为以下结点的 $dfn$ 的最小值：$subtree_u$ 中的结点；从 $subtree_u$ 通过<strong>一条</strong>不在搜索树上的边能到达的结点。）。$dfn$ 很好维护，dfs 的过程中记录一下即可，$low$ 的维护也不难，为 $\min\limits_{u\to v}{low[v]}$，dfs 的过程中顺便维护即可。我们还需要一个栈 $s$ 来维护有哪些结点被 dfs 过，且还没计算出属于哪个强连通分量，用一个 $vis$ 数组来记录结点是否在栈中。</p>
-<h2 id="正式开始"><a href="#正式开始" class="headerlink" title="正式开始"></a>正式开始</h2><p>考虑从一个结点 $u$ 到另一个结点 $v$ 的过程中会发生什么。</p>
-<ol>
-<li>如果 $v$ 在栈中（即那个节点还没操作完），那么 $v$ 一定是 $u$ 的祖先，则用 $dfn[v]$ 更新 $low[u]$。</li>
-<li>如果 $v$ 访问过且不在栈中（即访问完了），那么装作无事发生。</li>
-<li>如果 $v$ 还没被访问过，那么递归访问。</li>
+<h2 id="准备工作">准备工作</h2>
+<p>Tarjan 算法本质上是一次 dfs 的过程，我们用 <span class="math inline">\(dfn[u]\)</span> 记录 <span class="math inline">\(u\)</span> 结点是第几次被 dfs 到的，用 <span class="math inline">\(low[u]\)</span> 记录 <span class="math inline">\(u\)</span> 能到达的所有结点中最小的 <span class="math inline">\(dfn\)</span>（包括自己）（详细定义：能够回溯到的最早的已经在栈中的结点。设以 <span class="math inline">\(u\)</span> 为根的子树为 <span class="math inline">\(subtree_u\)</span>。 定义为以下结点的 <span class="math inline">\(dfn\)</span> 的最小值：<span class="math inline">\(subtree_u\)</span> 中的结点；从 <span class="math inline">\(subtree_u\)</span> 通过<strong>一条</strong>不在搜索树上的边能到达的结点。）。<span class="math inline">\(dfn\)</span> 很好维护，dfs 的过程中记录一下即可，<span class="math inline">\(low\)</span> 的维护也不难，为 <span class="math inline">\(\min\limits_{u\to v}{low[v]}\)</span>，dfs 的过程中顺便维护即可。我们还需要一个栈 <span class="math inline">\(s\)</span> 来维护有哪些结点被 dfs 过，且还没计算出属于哪个强连通分量，用一个 <span class="math inline">\(vis\)</span> 数组来记录结点是否在栈中。</p>
+<h2 id="正式开始">正式开始</h2>
+<p>考虑从一个结点 <span class="math inline">\(u\)</span> 到另一个结点 <span class="math inline">\(v\)</span> 的过程中会发生什么。</p>
+<ol type="1">
+<li>如果 <span class="math inline">\(v\)</span> 在栈中（即那个节点还没操作完），那么 <span class="math inline">\(v\)</span> 一定是 <span class="math inline">\(u\)</span> 的祖先，则用 <span class="math inline">\(dfn[v]\)</span> 更新 <span class="math inline">\(low[u]\)</span>。</li>
+<li>如果 <span class="math inline">\(v\)</span> 访问过且不在栈中（即访问完了），那么装作无事发生。</li>
+<li>如果 <span class="math inline">\(v\)</span> 还没被访问过，那么递归访问。</li>
 </ol>
-<p>将 $u$ 能直接到达的所有 $v$ 都算完后，就可以结算强连通分量了。我们发现，如果一个结点算完后 $low[u]=dfn[u]$，则能告诉我们两个信息：</p>
-<ol>
+<p>将 <span class="math inline">\(u\)</span> 能直接到达的所有 <span class="math inline">\(v\)</span> 都算完后，就可以结算强连通分量了。我们发现，如果一个结点算完后 <span class="math inline">\(low[u]=dfn[u]\)</span>，则能告诉我们两个信息：</p>
+<ol type="1">
 <li>这个结点能到达自己（出现环了！）</li>
 <li>这个结点是这个环中最先到达的（我们称之为这个强连通分量的根）</li>
 </ol>
-<p><img data-src="https://cdn.jsdelivr.net/gh/cxm1024/img@master/uPic/wF29Sl.png" alt=""></p>
-<p>在这个图中，$2$ 号节点就是强连通分量 ${2,3,4,5,6,7}$ 中的根。</p>
-<p>这时候，我们就可以处理 $u$ 的强连通分量了！循环让结点出栈，直到栈顶元素为 $u$ 自己（因为 $u$ 是强连通分量的根，所以它一定是该强连通分量在栈中最靠前的），这些节点都在同一个以 $u$ 为根的强连通分量里。</p>
-<p>如果一个结点算完后 $low[u]\ne dfn[u]$，则意味着它能到达一个它的祖先，我们暂时先不处理它，也不出栈（还没算完强连通分量怎么能出栈呢），直接返回，到他的那个强连通分量的根的时候再去算强连通分量。</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//num记录当前一共遍历了几个结点，用于计算新结点的dfn</span></span><br><span class="line"><span class="comment">//col[i]记录第节点i在哪个强连通分量里，root[i]表示i所在强连通分量的根</span></span><br><span class="line"><span class="comment">//colnum记录当前一共算完了几个强连通分量，用来计算新强连通分量的编号</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">tarjan</span><span class="params">(<span class="keyword">int</span> now)</span> </span>&#123;</span><br><span class="line">    s.<span class="built_in">push</span>(now),vis[now]=<span class="number">1</span>;</span><br><span class="line">    low[now]=dfn[now]=++num;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=head[now];i;i=e[i].next)</span><br><span class="line">        <span class="keyword">if</span>(!dfn[e[i].to])</span><br><span class="line">            low[now]=<span class="built_in">min</span>(low[now],<span class="built_in">tarjan</span>(e[i].to));</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(vis[e[i].to])</span><br><span class="line">            low[now]=<span class="built_in">min</span>(low[now],dfn[e[i].to]);</span><br><span class="line">    <span class="keyword">if</span>(dfn[now]==low[now]) &#123;</span><br><span class="line">        vis[now]=<span class="number">0</span>;</span><br><span class="line">        col[now]=++colnum,root[now]=now;</span><br><span class="line">        <span class="keyword">while</span>(s.<span class="built_in">top</span>()!=now) &#123;</span><br><span class="line">            col[s.<span class="built_in">top</span>()]=colnum,root[s.<span class="built_in">top</span>()]=now;</span><br><span class="line">            vis[s.<span class="built_in">top</span>()]=<span class="number">0</span>,s.<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        s.<span class="built_in">pop</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> low[now];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><p>建议参考阅读<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_34374664/article/details/77488976">这篇文章</a>的手动模拟算法的部分，会有更直观的理解。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/cxm1024/img@master/uPic/wF29Sl.png" /></p>
+<p>在这个图中，<span class="math inline">\(2\)</span> 号节点就是强连通分量 <span class="math inline">\({2,3,4,5,6,7}\)</span> 中的根。</p>
+<p>这时候，我们就可以处理 <span class="math inline">\(u\)</span> 的强连通分量了！循环让结点出栈，直到栈顶元素为 <span class="math inline">\(u\)</span> 自己（因为 <span class="math inline">\(u\)</span> 是强连通分量的根，所以它一定是该强连通分量在栈中最靠前的），这些节点都在同一个以 <span class="math inline">\(u\)</span> 为根的强连通分量里。</p>
+<p>如果一个结点算完后 <span class="math inline">\(low[u]\ne dfn[u]\)</span>，则意味着它能到达一个它的祖先，我们暂时先不处理它，也不出栈（还没算完强连通分量怎么能出栈呢），直接返回，到他的那个强连通分量的根的时候再去算强连通分量。</p>
+<h2 id="代码实现">代码实现</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//num记录当前一共遍历了几个结点，用于计算新结点的dfn</span></span><br><span class="line"><span class="comment">//col[i]记录第节点i在哪个强连通分量里，root[i]表示i所在强连通分量的根</span></span><br><span class="line"><span class="comment">//colnum记录当前一共算完了几个强连通分量，用来计算新强连通分量的编号</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">tarjan</span><span class="params">(<span class="keyword">int</span> now)</span> </span>&#123;</span><br><span class="line">    s.<span class="built_in">push</span>(now),vis[now]=<span class="number">1</span>;</span><br><span class="line">    low[now]=dfn[now]=++num;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=head[now];i;i=e[i].next)</span><br><span class="line">        <span class="keyword">if</span>(!dfn[e[i].to])</span><br><span class="line">            low[now]=<span class="built_in">min</span>(low[now],<span class="built_in">tarjan</span>(e[i].to));</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(vis[e[i].to])</span><br><span class="line">            low[now]=<span class="built_in">min</span>(low[now],dfn[e[i].to]);</span><br><span class="line">    <span class="keyword">if</span>(dfn[now]==low[now]) &#123;</span><br><span class="line">        vis[now]=<span class="number">0</span>;</span><br><span class="line">        col[now]=++colnum,root[now]=now;</span><br><span class="line">        <span class="keyword">while</span>(s.<span class="built_in">top</span>()!=now) &#123;</span><br><span class="line">            col[s.<span class="built_in">top</span>()]=colnum,root[s.<span class="built_in">top</span>()]=now;</span><br><span class="line">            vis[s.<span class="built_in">top</span>()]=<span class="number">0</span>,s.<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        s.<span class="built_in">pop</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> low[now];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="扩展阅读">扩展阅读</h2>
+<p>建议参考阅读<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_34374664/article/details/77488976">这篇文章</a>的手动模拟算法的部分，会有更直观的理解。</p>
 <p>有兴趣看看更严谨的说明，请上 <a target="_blank" rel="noopener" href="https://oi-wiki.org/graph/scc/">oi-wiki</a> 观看。</p>
 
     </div>
@@ -341,7 +324,6 @@
 
 
 
-    <div class="comments" id="waline-comments"></div>
 </div>
   </main>
 
@@ -364,8 +346,8 @@
   </footer>
 
   
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="/lib/animejs/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="/lib/lozad/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
@@ -382,19 +364,10 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"/lib/mathjax/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://waline-talk-cxm.vercel.app","placeholder":"畅所欲言吧～","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":["nick"],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/2021/11/26/tarjan-xue-xi-bi-ji/"}</script>
-<script>
-document.addEventListener('page:loaded', () => {
-  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
-    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
-  ).then(() => {
-    new Waline(CONFIG.waline);
-  });
-});
-</script>
+
 </body>
 </html>

@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.2">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -19,18 +18,19 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
-  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/lib/@fortawesome/fontawesome-free/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/lib/animate.css/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/lib/pace-js/themes/blue/pace-theme-minimal.css">
+  <script src="/lib/pace-js/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"cxm1024.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="A. Diverse Substring $Problem$ 定义一个字符串为多变的，当且仅当字符串中没有一个字符的出现次数严格大于 $n&#x2F;2$。给定一个只由小写字母构成的字符串，问是否能找出一个多变的字串，如果能，任意输出一个。  $n\le 1000$  $Solution$ 只有两个不同字符的字符串时多变的，所以只要给定的字符串中包含至少两个字符就一定可以，输出相邻两个不同字符即可。  B.">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cxm1024.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="A. Diverse Substring \(Problem\) 定义一个字符串为多变的，当且仅当字符串中没有一个字符的出现次数严格大于 \(n&#x2F;2\)。给定一个只由小写字母构成的字符串，问是否能找出一个多变的字串，如果能，任意输出一个。  \(n\le 1000\)  \(Solution\) 只有两个不同字符的字符串时多变的，所以只要给定的字符串中包含至少两个字符就一定可以，输出相邻两个不同字">
 <meta property="og:type" content="article">
 <meta property="og:title" content="EDU-CFR-53-Div.2解题报告">
 <meta property="og:url" content="https://cxm1024.github.io/2021/10/14/edu-cfr-53-div-2-jie-ti-bao-gao/index.html">
 <meta property="og:site_name" content="曹轩鸣的博客">
-<meta property="og:description" content="A. Diverse Substring $Problem$ 定义一个字符串为多变的，当且仅当字符串中没有一个字符的出现次数严格大于 $n&#x2F;2$。给定一个只由小写字母构成的字符串，问是否能找出一个多变的字串，如果能，任意输出一个。  $n\le 1000$  $Solution$ 只有两个不同字符的字符串时多变的，所以只要给定的字符串中包含至少两个字符就一定可以，输出相邻两个不同字符即可。  B.">
+<meta property="og:description" content="A. Diverse Substring \(Problem\) 定义一个字符串为多变的，当且仅当字符串中没有一个字符的出现次数严格大于 \(n&#x2F;2\)。给定一个只由小写字母构成的字符串，问是否能找出一个多变的字串，如果能，任意输出一个。  \(n\le 1000\)  \(Solution\) 只有两个不同字符的字符串时多变的，所以只要给定的字符串中包含至少两个字符就一定可以，输出相邻两个不同字">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-10-13T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-11-26T04:13:51.259Z">
@@ -50,7 +50,9 @@
 
 
 
-<link rel="dns-prefetch" href="https://waline-talk-cxm.vercel.app">
+
+
+
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
@@ -74,7 +76,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">曹轩鸣的博客</h1>
+      <p class="site-title">曹轩鸣的博客</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">Nothing is impossible.</p>
@@ -89,12 +91,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
   </ul>
 </nav>
 
@@ -125,7 +122,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#A-Diverse-Substring"><span class="nav-number">1.</span> <span class="nav-text">A. Diverse Substring</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">1.1.</span> <span class="nav-text">$Problem$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">1.2.</span> <span class="nav-text">$Solution$</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#B-Vasya-and-Books"><span class="nav-number">2.</span> <span class="nav-text">B. Vasya and Books</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-1"><span class="nav-number">2.1.</span> <span class="nav-text">$Problem$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution-1"><span class="nav-number">2.2.</span> <span class="nav-text">$Solution$</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-Vasya-and-Robot"><span class="nav-number">3.</span> <span class="nav-text">C. Vasya and Robot</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-2"><span class="nav-number">3.1.</span> <span class="nav-text">$Problem$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution-2"><span class="nav-number">3.2.</span> <span class="nav-text">$Solution$</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#D-Berland-Fair"><span class="nav-number">4.</span> <span class="nav-text">D. Berland Fair</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-3"><span class="nav-number">4.1.</span> <span class="nav-text">$Problem$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution-3"><span class="nav-number">4.2.</span> <span class="nav-text">$Solution$</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#a.-diverse-substring"><span class="nav-number">1.</span> <span class="nav-text">A. Diverse Substring</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#problem"><span class="nav-number">1.1.</span> <span class="nav-text">\(Problem\)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#solution"><span class="nav-number">1.2.</span> <span class="nav-text">\(Solution\)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#b.-vasya-and-books"><span class="nav-number">2.</span> <span class="nav-text">B. Vasya and Books</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#problem-1"><span class="nav-number">2.1.</span> <span class="nav-text">\(Problem\)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#solution-1"><span class="nav-number">2.2.</span> <span class="nav-text">\(Solution\)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#c.-vasya-and-robot"><span class="nav-number">3.</span> <span class="nav-text">C. Vasya and Robot</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#problem-2"><span class="nav-number">3.1.</span> <span class="nav-text">\(Problem\)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#solution-2"><span class="nav-number">3.2.</span> <span class="nav-text">\(Solution\)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#d.-berland-fair"><span class="nav-number">4.</span> <span class="nav-text">D. Berland Fair</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#problem-3"><span class="nav-number">4.1.</span> <span class="nav-text">\(Problem\)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#solution-3"><span class="nav-number">4.2.</span> <span class="nav-text">\(Solution\)</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -140,7 +137,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -151,7 +148,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -218,11 +215,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="cxm1024">
-      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="EDU-CFR-53-Div.2解题报告 | 曹轩鸣的博客">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -239,13 +241,13 @@
 
       <time title="创建时间：2021-10-14 00:00:00" itemprop="dateCreated datePublished" datetime="2021-10-14T00:00:00+08:00">2021-10-14</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-11-26 12:13:51" itemprop="dateModified" datetime="2021-11-26T12:13:51+08:00">2021-11-26</time>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
       </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2021-11-26 12:13:51" itemprop="dateModified" datetime="2021-11-26T12:13:51+08:00">2021-11-26</time>
+    </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -257,28 +259,6 @@
     </span>
 
   
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/2021/10/14/edu-cfr-53-div-2-jie-ti-bao-gao/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/2021/10/14/edu-cfr-53-div-2-jie-ti-bao-gao/" data-xid="/2021/10/14/edu-cfr-53-div-2-jie-ti-bao-gao/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span id="/2021/10/14/edu-cfr-53-div-2-jie-ti-bao-gao/" class="post-meta-item leancloud_visitors" data-flag-title="EDU-CFR-53-Div.2解题报告" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-  
 </div>
 
         </div>
@@ -288,19 +268,31 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="A-Diverse-Substring"><a href="#A-Diverse-Substring" class="headerlink" title="A. Diverse Substring"></a>A. Diverse Substring</h1><h2 id="Problem"><a href="#Problem" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>定义一个字符串为多变的，当且仅当字符串中没有一个字符的出现次数严格大于 $n/2$。给定一个只由小写字母构成的字符串，问是否能找出一个多变的字串，如果能，任意输出一个。</p>
-<p>$n\le 1000$</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>只有两个不同字符的字符串时多变的，所以只要给定的字符串中包含至少两个字符就一定可以，输出相邻两个不同字符即可。</p>
-<h1 id="B-Vasya-and-Books"><a href="#B-Vasya-and-Books" class="headerlink" title="B. Vasya and Books"></a>B. Vasya and Books</h1><h2 id="Problem-1"><a href="#Problem-1" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>有一摞书，从上到下依次编号为 $a_1,a_2,a_3…$，现在 Vasya 想把它们分 $n$ 次挪到别的地方，每次他会告诉你他想挪的书的编号，如果这本书还没有被挪动，他将会把这本书以上的书（包括这本书）一块搬走。对于每次挪动，回答他搬了多少本书（没搬输出 0）。</p>
-<p>$n\le 2\times 10^5$</p>
-<h2 id="Solution-1"><a href="#Solution-1" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>开一个桶记录每一本书的位置，记录当前搬到那个位置了，每搬一次就更新一下，减一下即可。</p>
-<h1 id="C-Vasya-and-Robot"><a href="#C-Vasya-and-Robot" class="headerlink" title="C. Vasya and Robot"></a>C. Vasya and Robot</h1><h2 id="Problem-2"><a href="#Problem-2" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>有一个机器人，初始在 $(0,0)$ 点，给你一个长度为 $n$ 的操作序列，每次让机器人向上、下、左、右中的一个方向走一步，你需要修改连续的一段操作序列（这一段中的操作不必全部都修改），使它最终走到 $(x,y)$ 点，问修改的操作序列的最短长度。（不是很严谨，序列长度的详细定义见原题面）</p>
-<p>$n\le 2\times 10^5$</p>
-<h2 id="Solution-2"><a href="#Solution-2" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>如果修改一个长度为 $len$ 的序列可以使它走到终点，那么一定存在一种长度为 $len+1$ 的方案也能走到终点（大不了就加一个空修改），于是我们发现这是可以二分的。二分最终修改的长度 $len$，对于一个长度，我们需要 $O(n)$ 判断是否可行，怎么判断呢？对于每一段长度为 $len$ 的修改，判断不考虑这段修改后机器人会走到哪个位置，再从这个位置开始，判断随便走 $len$ 步能否走到终点（反正允许修改这一段，那想怎么改就怎么改）。</p>
-<p>实现上，我们维护一个走的位置的前缀和和后缀和，就可以 $O(1)$ 判断去除这段修改后机器人会走到那个位置，然后再考虑一些细节问题即可。</p>
-<h1 id="D-Berland-Fair"><a href="#D-Berland-Fair" class="headerlink" title="D. Berland Fair"></a>D. Berland Fair</h1><h2 id="Problem-3"><a href="#Problem-3" class="headerlink" title="$Problem$"></a>$Problem$</h2><p><del>有一个人前来买东西。</del>Polycarp 带了 $T$ 元钱，去逛商铺。有 $n$ 家商铺顺时针排成一圈，编号 $1-n$，第 $i$ 个商铺卖一种价格为 $a_i$ 的商品（数量有无限个）。Polycarp 从一号商铺开始，只要钱足够，就买<strong>一件商品</strong>，否则跳过这家店，直到他一个商品也买不了为止，问他一共会买多少件商品。</p>
-<p>$n\le 2\times 10^5,T\le 10^{18},a_i\le 10^9$</p>
-<h2 id="Solution-3"><a href="#Solution-3" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>先算出来买一圈要花多少钱，让他买尽可能多的圈。为什么他买不了下一圈了呢？一定是到某一个商铺是他买不起了。现在买不起，以后也不可能买的起，于是直接把这个商铺删掉，不考虑。于是我们暴力跑一圈，看看是哪些商铺买不起，把它们都删掉，删完后再让他转圈，知道所有的商品全都被删完为止。由于每一次至少删掉一个商品，最多删 $n$ 次，每次 $O(n)$，总时间复杂度为 $O(n^2)$。<del>（别问我为什么能过 $2\times 10^5$，我也不知道）</del>（经过同学推导，复杂度为 $O(n\log(n))$）</p>
+        <h1 id="a.-diverse-substring">A. Diverse Substring</h1>
+<h2 id="problem"><span class="math inline">\(Problem\)</span></h2>
+<p>定义一个字符串为多变的，当且仅当字符串中没有一个字符的出现次数严格大于 <span class="math inline">\(n/2\)</span>。给定一个只由小写字母构成的字符串，问是否能找出一个多变的字串，如果能，任意输出一个。</p>
+<p><span class="math inline">\(n\le 1000\)</span></p>
+<h2 id="solution"><span class="math inline">\(Solution\)</span></h2>
+<p>只有两个不同字符的字符串时多变的，所以只要给定的字符串中包含至少两个字符就一定可以，输出相邻两个不同字符即可。</p>
+<h1 id="b.-vasya-and-books">B. Vasya and Books</h1>
+<h2 id="problem-1"><span class="math inline">\(Problem\)</span></h2>
+<p>有一摞书，从上到下依次编号为 <span class="math inline">\(a_1,a_2,a_3...\)</span>，现在 Vasya 想把它们分 <span class="math inline">\(n\)</span> 次挪到别的地方，每次他会告诉你他想挪的书的编号，如果这本书还没有被挪动，他将会把这本书以上的书（包括这本书）一块搬走。对于每次挪动，回答他搬了多少本书（没搬输出 0）。</p>
+<p><span class="math inline">\(n\le 2\times 10^5\)</span></p>
+<h2 id="solution-1"><span class="math inline">\(Solution\)</span></h2>
+<p>开一个桶记录每一本书的位置，记录当前搬到那个位置了，每搬一次就更新一下，减一下即可。</p>
+<h1 id="c.-vasya-and-robot">C. Vasya and Robot</h1>
+<h2 id="problem-2"><span class="math inline">\(Problem\)</span></h2>
+<p>有一个机器人，初始在 <span class="math inline">\((0,0)\)</span> 点，给你一个长度为 <span class="math inline">\(n\)</span> 的操作序列，每次让机器人向上、下、左、右中的一个方向走一步，你需要修改连续的一段操作序列（这一段中的操作不必全部都修改），使它最终走到 <span class="math inline">\((x,y)\)</span> 点，问修改的操作序列的最短长度。（不是很严谨，序列长度的详细定义见原题面）</p>
+<p><span class="math inline">\(n\le 2\times 10^5\)</span></p>
+<h2 id="solution-2"><span class="math inline">\(Solution\)</span></h2>
+<p>如果修改一个长度为 <span class="math inline">\(len\)</span> 的序列可以使它走到终点，那么一定存在一种长度为 <span class="math inline">\(len+1\)</span> 的方案也能走到终点（大不了就加一个空修改），于是我们发现这是可以二分的。二分最终修改的长度 <span class="math inline">\(len\)</span>，对于一个长度，我们需要 <span class="math inline">\(O(n)\)</span> 判断是否可行，怎么判断呢？对于每一段长度为 <span class="math inline">\(len\)</span> 的修改，判断不考虑这段修改后机器人会走到哪个位置，再从这个位置开始，判断随便走 <span class="math inline">\(len\)</span> 步能否走到终点（反正允许修改这一段，那想怎么改就怎么改）。</p>
+<p>实现上，我们维护一个走的位置的前缀和和后缀和，就可以 <span class="math inline">\(O(1)\)</span> 判断去除这段修改后机器人会走到那个位置，然后再考虑一些细节问题即可。</p>
+<h1 id="d.-berland-fair">D. Berland Fair</h1>
+<h2 id="problem-3"><span class="math inline">\(Problem\)</span></h2>
+<p><del>有一个人前来买东西。</del>Polycarp 带了 <span class="math inline">\(T\)</span> 元钱，去逛商铺。有 <span class="math inline">\(n\)</span> 家商铺顺时针排成一圈，编号 <span class="math inline">\(1-n\)</span>，第 <span class="math inline">\(i\)</span> 个商铺卖一种价格为 <span class="math inline">\(a_i\)</span> 的商品（数量有无限个）。Polycarp 从一号商铺开始，只要钱足够，就买<strong>一件商品</strong>，否则跳过这家店，直到他一个商品也买不了为止，问他一共会买多少件商品。</p>
+<p><span class="math inline">\(n\le 2\times 10^5,T\le 10^{18},a_i\le 10^9\)</span></p>
+<h2 id="solution-3"><span class="math inline">\(Solution\)</span></h2>
+<p>先算出来买一圈要花多少钱，让他买尽可能多的圈。为什么他买不了下一圈了呢？一定是到某一个商铺是他买不起了。现在买不起，以后也不可能买的起，于是直接把这个商铺删掉，不考虑。于是我们暴力跑一圈，看看是哪些商铺买不起，把它们都删掉，删完后再让他转圈，知道所有的商品全都被删完为止。由于每一次至少删掉一个商品，最多删 <span class="math inline">\(n\)</span> 次，每次 <span class="math inline">\(O(n)\)</span>，总时间复杂度为 <span class="math inline">\(O(n^2)\)</span>。<del>（别问我为什么能过 <span class="math inline">\(2\times 10^5\)</span>，我也不知道）</del>（经过同学推导，复杂度为 <span class="math inline">\(O(n\log(n))\)</span>）</p>
 
     </div>
 
@@ -333,7 +325,6 @@
 
 
 
-    <div class="comments" id="waline-comments"></div>
 </div>
   </main>
 
@@ -356,8 +347,8 @@
   </footer>
 
   
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="/lib/animejs/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="/lib/lozad/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
@@ -374,19 +365,10 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"/lib/mathjax/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://waline-talk-cxm.vercel.app","placeholder":"畅所欲言吧～","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":["nick"],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/2021/10/14/edu-cfr-53-div-2-jie-ti-bao-gao/"}</script>
-<script>
-document.addEventListener('page:loaded', () => {
-  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
-    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
-  ).then(() => {
-    new Waline(CONFIG.waline);
-  });
-});
-</script>
+
 </body>
 </html>

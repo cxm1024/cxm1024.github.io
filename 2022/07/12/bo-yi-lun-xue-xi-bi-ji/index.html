@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.2">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -19,18 +18,19 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
-  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/lib/@fortawesome/fontawesome-free/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/lib/animate.css/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/lib/pace-js/themes/blue/pace-theme-minimal.css">
+  <script src="/lib/pace-js/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"cxm1024.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="挖个巨坑，慢慢填。  从 Nim 游戏入手 问题：有 $n$ 堆石子，第 $i$ 堆石子有 $s_i$ 个，两个人轮流取石子，每人每次只能从一堆中取任意数量的石子，可以取完，不能不取。问先手必胜还是必败。  前置知识：   1. 异或 $\oplus$：有两个数均为 $0$ 或 $1$，若它们相等则异或结果为 $0$，不相等结果为 $1$  2. 按位异或 $\oplus$：将两个正整数分别表示成">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cxm1024.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="挖个巨坑，慢慢填。  从 Nim 游戏入手 问题：有 \(n\) 堆石子，第 \(i\) 堆石子有 \(s_i\) 个，两个人轮流取石子，每人每次只能从一堆中取任意数量的石子，可以取完，不能不取。问先手必胜还是必败。  前置知识：   1. 异或 \(\oplus\)：有两个数均为 \(0\) 或 \(1\)，若它们相等则异或结果为 \(0\)，不相等结果为 \(1\)  2. 按位异或 \(\o">
 <meta property="og:type" content="article">
 <meta property="og:title" content="博弈论学习笔记">
 <meta property="og:url" content="https://cxm1024.github.io/2022/07/12/bo-yi-lun-xue-xi-bi-ji/index.html">
 <meta property="og:site_name" content="曹轩鸣的博客">
-<meta property="og:description" content="挖个巨坑，慢慢填。  从 Nim 游戏入手 问题：有 $n$ 堆石子，第 $i$ 堆石子有 $s_i$ 个，两个人轮流取石子，每人每次只能从一堆中取任意数量的石子，可以取完，不能不取。问先手必胜还是必败。  前置知识：   1. 异或 $\oplus$：有两个数均为 $0$ 或 $1$，若它们相等则异或结果为 $0$，不相等结果为 $1$  2. 按位异或 $\oplus$：将两个正整数分别表示成">
+<meta property="og:description" content="挖个巨坑，慢慢填。  从 Nim 游戏入手 问题：有 \(n\) 堆石子，第 \(i\) 堆石子有 \(s_i\) 个，两个人轮流取石子，每人每次只能从一堆中取任意数量的石子，可以取完，不能不取。问先手必胜还是必败。  前置知识：   1. 异或 \(\oplus\)：有两个数均为 \(0\) 或 \(1\)，若它们相等则异或结果为 \(0\)，不相等结果为 \(1\)  2. 按位异或 \(\o">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-12T12:10:43.000Z">
 <meta property="article:modified_time" content="2022-07-12T13:48:19.313Z">
@@ -51,7 +51,9 @@
 
 
 
-<link rel="dns-prefetch" href="https://waline-talk-cxm.vercel.app">
+
+
+
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
@@ -75,7 +77,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">曹轩鸣的博客</h1>
+      <p class="site-title">曹轩鸣的博客</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">Nothing is impossible.</p>
@@ -90,12 +92,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
   </ul>
 </nav>
 
@@ -126,7 +123,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E-Nim-%E6%B8%B8%E6%88%8F%E5%85%A5%E6%89%8B"><span class="nav-number">1.</span> <span class="nav-text">从 Nim 游戏入手</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E-nim-%E6%B8%B8%E6%88%8F%E5%85%A5%E6%89%8B"><span class="nav-number">1.</span> <span class="nav-text">从 Nim 游戏入手</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -141,7 +138,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -152,7 +149,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -219,11 +216,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="cxm1024">
-      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="博弈论学习笔记 | 曹轩鸣的博客">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -252,28 +254,6 @@
     </span>
 
   
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/2022/07/12/bo-yi-lun-xue-xi-bi-ji/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/2022/07/12/bo-yi-lun-xue-xi-bi-ji/" data-xid="/2022/07/12/bo-yi-lun-xue-xi-bi-ji/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span id="/2022/07/12/bo-yi-lun-xue-xi-bi-ji/" class="post-meta-item leancloud_visitors" data-flag-title="博弈论学习笔记" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-  
 </div>
 
         </div>
@@ -284,35 +264,36 @@
     
     <div class="post-body" itemprop="articleBody">
         <p>挖个巨坑，慢慢填。</p>
-<h2 id="从-Nim-游戏入手"><a href="#从-Nim-游戏入手" class="headerlink" title="从 Nim 游戏入手"></a>从 Nim 游戏入手</h2><p>问题：有 $n$ 堆石子，第 $i$ 堆石子有 $s_i$ 个，两个人轮流取石子，每人每次只能从一堆中取任意数量的石子，可以取完，不能不取。问先手必胜还是必败。</p>
+<h2 id="从-nim-游戏入手">从 Nim 游戏入手</h2>
+<p>问题：有 <span class="math inline">\(n\)</span> 堆石子，第 <span class="math inline">\(i\)</span> 堆石子有 <span class="math inline">\(s_i\)</span> 个，两个人轮流取石子，每人每次只能从一堆中取任意数量的石子，可以取完，不能不取。问先手必胜还是必败。</p>
 <blockquote>
 <p>前置知识：</p>
-<ol>
-<li>异或 $\oplus$：有两个数均为 $0$ 或 $1$，若它们相等则异或结果为 $0$，不相等结果为 $1$</li>
-<li>按位异或 $\oplus$：将两个正整数分别表示成二进制，对应位进行异或。易证，按位异或满足交换律、结合律，同时有自反性，即 $a\oplus a=0$</li>
-<li>异或和：若干个正整数 $a_1,a_2,a_3,\ldots,a_n$ 的异或和为 $a_1\oplus a_2\oplus a_3\oplus\ldots\oplus a_n$。容易发现，若 $s$（二进制）中某一位为 $1$ 的数字个数为奇数，则异或和中该位为 $1$；若为偶数，则异或和中该位为 $0$</li>
+<ol type="1">
+<li>异或 <span class="math inline">\(\oplus\)</span>：有两个数均为 <span class="math inline">\(0\)</span> 或 <span class="math inline">\(1\)</span>，若它们相等则异或结果为 <span class="math inline">\(0\)</span>，不相等结果为 <span class="math inline">\(1\)</span></li>
+<li>按位异或 <span class="math inline">\(\oplus\)</span>：将两个正整数分别表示成二进制，对应位进行异或。易证，按位异或满足交换律、结合律，同时有自反性，即 <span class="math inline">\(a\oplus a=0\)</span></li>
+<li>异或和：若干个正整数 <span class="math inline">\(a_1,a_2,a_3,\ldots,a_n\)</span> 的异或和为 <span class="math inline">\(a_1\oplus a_2\oplus a_3\oplus\ldots\oplus a_n\)</span>。容易发现，若 <span class="math inline">\(s\)</span>（二进制）中某一位为 <span class="math inline">\(1\)</span> 的数字个数为奇数，则异或和中该位为 <span class="math inline">\(1\)</span>；若为偶数，则异或和中该位为 <span class="math inline">\(0\)</span></li>
 </ol>
 </blockquote>
-<p><strong>结论：若 $s$ 的异或和为 $0$，先手必败，反之则先手必胜。</strong></p>
+<p><strong>结论：若 <span class="math inline">\(s\)</span> 的异或和为 <span class="math inline">\(0\)</span>，先手必败，反之则先手必胜。</strong></p>
 <p>感性理解一下。考虑只有两堆的特殊情况，如果两堆的数量相等，那么先手必败，策略为：先手从一堆中取若干个，后手从另一堆中取相同个数，则易证一定被后手取完。反之，如果两堆的数量不等，那么先手必胜，策略为：先从多的那堆里取若干个，使两堆数量相等，接下来同上（后手变为上面的先手）。</p>
-<p>考虑用异或来解释。若先手取时两堆不相等（即异或和不为 $0$），则从多的那堆里取若干个使两堆相等（使得异或和变为 $0$）。接下来无论后手怎么取，一定会导致两堆数量不相等（使异或和不为 $0$）。先手从另一堆中模仿后手操作，使两堆再次相等（异或和重新变成 $0$），以此类推。</p>
-<p>有了以上感性理解，我们就可以尝试推广到 $n$ 堆的普遍情况。</p>
-<p><strong>定理一：当异或和不为 $0$ 时，一定存在一种取石子方式使得异或和变为 $0$。</strong></p>
+<p>考虑用异或来解释。若先手取时两堆不相等（即异或和不为 <span class="math inline">\(0\)</span>），则从多的那堆里取若干个使两堆相等（使得异或和变为 <span class="math inline">\(0\)</span>）。接下来无论后手怎么取，一定会导致两堆数量不相等（使异或和不为 <span class="math inline">\(0\)</span>）。先手从另一堆中模仿后手操作，使两堆再次相等（异或和重新变成 <span class="math inline">\(0\)</span>），以此类推。</p>
+<p>有了以上感性理解，我们就可以尝试推广到 <span class="math inline">\(n\)</span> 堆的普遍情况。</p>
+<p><strong>定理一：当异或和不为 <span class="math inline">\(0\)</span> 时，一定存在一种取石子方式使得异或和变为 <span class="math inline">\(0\)</span>。</strong></p>
 <p>证明：</p>
-<p>若我们所在的状态满足 $s_1\oplus s_2\oplus\ldots\oplus s_n=m (m\ne 0)$（$s_i$ 表示第 $i$ 堆的石子数），则$s_1\oplus s_2\oplus\ldots\oplus s_n\oplus m=m\oplus m=0$（自反性），所以只要随便选择一堆 $s_i$ 变为 $s_i\oplus m$ 即可。但是由于要“取”石子，所以要求变化后石子数必须减少，那么是否一定存在一堆 $s_i$ 满足 $s_i\oplus m&lt;s_i$ 呢？答案是肯定的。</p>
-<p>$m$（二进制）的最高位（设为第 $k$ 位）的 $1$ 一定是由 $s$ 中奇数个 $1$ 得来的，也就是在 $s$ 中一定存在至少一个第 $k$ 位为 $1$ 的数。随便选一个，假设为第 $i$ 个，则将上式最后的 $\oplus m$ 与 $s_i$ 结合，结果一定会比 $s_i$ 小。因为 $s_i$ 比 $k$ 高的位不变，第 $k$ 位由 $1$ 变为了 $0$，剩下的无论怎么变结果都会比 $s_i$ 小。</p>
-<p>所以只要异或和不为 $0$，一定可以通过选合适的一堆取若干个石子使得 $s_i\to s_i\oplus m$，则异或和 $m\to 0$。</p>
-<p><strong>定理二：当异或和为 $0$ 时，无论如何取石子，取后异或和都将不为 $0$。</strong></p>
+<p>若我们所在的状态满足 <span class="math inline">\(s_1\oplus s_2\oplus\ldots\oplus s_n=m (m\ne 0)\)</span>（<span class="math inline">\(s_i\)</span> 表示第 <span class="math inline">\(i\)</span> 堆的石子数），则<span class="math inline">\(s_1\oplus s_2\oplus\ldots\oplus s_n\oplus m=m\oplus m=0\)</span>（自反性），所以只要随便选择一堆 <span class="math inline">\(s_i\)</span> 变为 <span class="math inline">\(s_i\oplus m\)</span> 即可。但是由于要“取”石子，所以要求变化后石子数必须减少，那么是否一定存在一堆 <span class="math inline">\(s_i\)</span> 满足 <span class="math inline">\(s_i\oplus m&lt;s_i\)</span> 呢？答案是肯定的。</p>
+<p><span class="math inline">\(m\)</span>（二进制）的最高位（设为第 <span class="math inline">\(k\)</span> 位）的 <span class="math inline">\(1\)</span> 一定是由 <span class="math inline">\(s\)</span> 中奇数个 <span class="math inline">\(1\)</span> 得来的，也就是在 <span class="math inline">\(s\)</span> 中一定存在至少一个第 <span class="math inline">\(k\)</span> 位为 <span class="math inline">\(1\)</span> 的数。随便选一个，假设为第 <span class="math inline">\(i\)</span> 个，则将上式最后的 <span class="math inline">\(\oplus m\)</span> 与 <span class="math inline">\(s_i\)</span> 结合，结果一定会比 <span class="math inline">\(s_i\)</span> 小。因为 <span class="math inline">\(s_i\)</span> 比 <span class="math inline">\(k\)</span> 高的位不变，第 <span class="math inline">\(k\)</span> 位由 <span class="math inline">\(1\)</span> 变为了 <span class="math inline">\(0\)</span>，剩下的无论怎么变结果都会比 <span class="math inline">\(s_i\)</span> 小。</p>
+<p>所以只要异或和不为 <span class="math inline">\(0\)</span>，一定可以通过选合适的一堆取若干个石子使得 <span class="math inline">\(s_i\to s_i\oplus m\)</span>，则异或和 <span class="math inline">\(m\to 0\)</span>。</p>
+<p><strong>定理二：当异或和为 <span class="math inline">\(0\)</span> 时，无论如何取石子，取后异或和都将不为 <span class="math inline">\(0\)</span>。</strong></p>
 <p>证明：</p>
-<p>假设取后异或和仍然为 $0$，则 $m=0$，又因为 $m$ 只能选一堆结合，所以 $s_i$ 只能不变。但题目要求必须取，与假设矛盾，所以取后异或和一定不为 $0$。</p>
-<p>综上所述，当先手处于异或和不为 $0$ 的状态时：</p>
-<ol>
-<li>先手一定可以通过一定方式变成异或和为 $0$（定理一）</li>
-<li>此时后手只能变成异或和不为 $0$（定理二），接下来重复步骤 1</li>
-<li>胜利状态的 $s$ 全为 $0$，异或和为 $0$，而对手只能变成异或和不为 $0$，所以永远取不到胜利状态</li>
+<p>假设取后异或和仍然为 <span class="math inline">\(0\)</span>，则 <span class="math inline">\(m=0\)</span>，又因为 <span class="math inline">\(m\)</span> 只能选一堆结合，所以 <span class="math inline">\(s_i\)</span> 只能不变。但题目要求必须取，与假设矛盾，所以取后异或和一定不为 <span class="math inline">\(0\)</span>。</p>
+<p>综上所述，当先手处于异或和不为 <span class="math inline">\(0\)</span> 的状态时：</p>
+<ol type="1">
+<li>先手一定可以通过一定方式变成异或和为 <span class="math inline">\(0\)</span>（定理一）</li>
+<li>此时后手只能变成异或和不为 <span class="math inline">\(0\)</span>（定理二），接下来重复步骤 1</li>
+<li>胜利状态的 <span class="math inline">\(s\)</span> 全为 <span class="math inline">\(0\)</span>，异或和为 <span class="math inline">\(0\)</span>，而对手只能变成异或和不为 <span class="math inline">\(0\)</span>，所以永远取不到胜利状态</li>
 <li>由于每步石子数必然会减少，最终一定会达到胜利状态，则胜利状态必然由先手取到</li>
 </ol>
-<p>若先手处于异或和为 $0$ 的状态，则任何操作都将导致异或和不为 $0$，接下来后手如上操作，则后手必胜。</p>
+<p>若先手处于异或和为 <span class="math inline">\(0\)</span> 的状态，则任何操作都将导致异或和不为 <span class="math inline">\(0\)</span>，接下来后手如上操作，则后手必胜。</p>
 <p>未完待续，不定期更新。</p>
 
     </div>
@@ -349,7 +330,6 @@
 
 
 
-    <div class="comments" id="waline-comments"></div>
 </div>
   </main>
 
@@ -372,8 +352,8 @@
   </footer>
 
   
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="/lib/animejs/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="/lib/lozad/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
@@ -390,19 +370,10 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"/lib/mathjax/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://waline-talk-cxm.vercel.app","placeholder":"畅所欲言吧～","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":["nick"],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/2022/07/12/bo-yi-lun-xue-xi-bi-ji/"}</script>
-<script>
-document.addEventListener('page:loaded', () => {
-  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
-    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
-  ).then(() => {
-    new Waline(CONFIG.waline);
-  });
-});
-</script>
+
 </body>
 </html>

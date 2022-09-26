@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.2">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -19,18 +18,19 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
-  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/lib/@fortawesome/fontawesome-free/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/lib/animate.css/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/lib/pace-js/themes/blue/pace-theme-minimal.css">
+  <script src="/lib/pace-js/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"cxm1024.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="比赛传送门  赛时AC三道，补题做出一道。  A. Mathematical Addition Problem  给你两个正整数 $u,v$，求一对合法的 $x,y$ 使得 $\frac{x}{u}+\frac{y}{v}&#x3D;\frac{x+y}{u+v}$。  解方程。  $$ \begin{array}{c} \frac{vx+uy}{uv}&#x3D;\frac{x+y}{u+v} \\ (vx+uy)">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cxm1024.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="比赛传送门  赛时AC三道，补题做出一道。  A. Mathematical Addition Problem  给你两个正整数 \(u,v\)，求一对合法的 \(x,y\) 使得 \(\frac{x}{u}+\frac{y}{v}&#x3D;\frac{x+y}{u+v}\)。  解方程。  \[ \begin{array}{c} \frac{vx+uy}{uv}&#x3D;\frac{x+y}{u+v} \\ (">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CFR-755-Div.2解题报告">
 <meta property="og:url" content="https://cxm1024.github.io/2021/11/15/cfr-755-div-2-jie-ti-bao-gao/index.html">
 <meta property="og:site_name" content="曹轩鸣的博客">
-<meta property="og:description" content="比赛传送门  赛时AC三道，补题做出一道。  A. Mathematical Addition Problem  给你两个正整数 $u,v$，求一对合法的 $x,y$ 使得 $\frac{x}{u}+\frac{y}{v}&#x3D;\frac{x+y}{u+v}$。  解方程。  $$ \begin{array}{c} \frac{vx+uy}{uv}&#x3D;\frac{x+y}{u+v} \\ (vx+uy)">
+<meta property="og:description" content="比赛传送门  赛时AC三道，补题做出一道。  A. Mathematical Addition Problem  给你两个正整数 \(u,v\)，求一对合法的 \(x,y\) 使得 \(\frac{x}{u}+\frac{y}{v}&#x3D;\frac{x+y}{u+v}\)。  解方程。  \[ \begin{array}{c} \frac{vx+uy}{uv}&#x3D;\frac{x+y}{u+v} \\ (">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://espresso.codeforces.com/594fbc0a7f610ebbd39c222d75175364a33218ec.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/caoxuanming/img@master/uPic/LMrB4f.png">
@@ -54,7 +54,9 @@
 
 
 
-<link rel="dns-prefetch" href="https://waline-talk-cxm.vercel.app">
+
+
+
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
@@ -78,7 +80,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">曹轩鸣的博客</h1>
+      <p class="site-title">曹轩鸣的博客</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">Nothing is impossible.</p>
@@ -93,12 +95,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
   </ul>
 </nav>
 
@@ -129,7 +126,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#A-Mathematical-Addition"><span class="nav-number">1.</span> <span class="nav-text">A. Mathematical Addition</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#B-Coloring-Rectangles"><span class="nav-number">2.</span> <span class="nav-text">B. Coloring Rectangles</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-Two-Arrays"><span class="nav-number">3.</span> <span class="nav-text">C. Two Arrays</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#D-Guess-the-Permutation"><span class="nav-number">4.</span> <span class="nav-text">D. Guess the Permutation</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#a.-mathematical-addition"><span class="nav-number">1.</span> <span class="nav-text">A. Mathematical Addition</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#b.-coloring-rectangles"><span class="nav-number">2.</span> <span class="nav-text">B. Coloring Rectangles</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#c.-two-arrays"><span class="nav-number">3.</span> <span class="nav-text">C. Two Arrays</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#d.-guess-the-permutation"><span class="nav-number">4.</span> <span class="nav-text">D. Guess the Permutation</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -144,7 +141,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -155,7 +152,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -222,11 +219,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="cxm1024">
-      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="CFR-755-Div.2解题报告 | 曹轩鸣的博客">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -243,13 +245,13 @@
 
       <time title="创建时间：2021-11-15 07:41:56" itemprop="dateCreated datePublished" datetime="2021-11-15T07:41:56+08:00">2021-11-15</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-05-09 16:38:35" itemprop="dateModified" datetime="2022-05-09T16:38:35+08:00">2022-05-09</time>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
       </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-05-09 16:38:35" itemprop="dateModified" datetime="2022-05-09T16:38:35+08:00">2022-05-09</time>
+    </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -260,28 +262,6 @@
         </span>
     </span>
 
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/2021/11/15/cfr-755-div-2-jie-ti-bao-gao/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/2021/11/15/cfr-755-div-2-jie-ti-bao-gao/" data-xid="/2021/11/15/cfr-755-div-2-jie-ti-bao-gao/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span id="/2021/11/15/cfr-755-div-2-jie-ti-bao-gao/" class="post-meta-item leancloud_visitors" data-flag-title="CFR-755-Div.2解题报告" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
   
 </div>
 
@@ -294,53 +274,54 @@
     <div class="post-body" itemprop="articleBody">
         <p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1589">比赛传送门</a></p>
 <p>赛时AC三道，补题做出一道。</p>
-<h1 id="A-Mathematical-Addition"><a href="#A-Mathematical-Addition" class="headerlink" title="A. Mathematical Addition"></a>A. Mathematical Addition</h1><details class="note info no-icon"><summary><p>Problem</p>
+<h1 id="a.-mathematical-addition">A. Mathematical Addition</h1>
+<details class="note info no-icon"><summary><p>Problem</p>
 </summary>
-<p>给你两个正整数 $u,v$，求一对合法的 $x,y$ 使得 $\frac{x}{u}+\frac{y}{v}=\frac{x+y}{u+v}$。</p>
+<p>给你两个正整数 <span class="math inline">\(u,v\)</span>，求一对合法的 <span class="math inline">\(x,y\)</span> 使得 <span class="math inline">\(\frac{x}{u}+\frac{y}{v}=\frac{x+y}{u+v}\)</span>。</p>
 
 </details>
-
 <p>解方程。</p>
-<p>$$<br>\begin{array}{c} \frac{vx+uy}{uv}=\frac{x+y}{u+v} \\ (vx+uy)(u+v)=uv(x+y) \\ uvx+u^2y+v^2x+uvy=uvx+uvy \\ u^2y+v^2x=0 \end{array}<br>$$</p>
-<p>则显然一组合法解为 $\begin{cases}x=-u^2\\y=v^2\end{cases}$</p>
-<h1 id="B-Coloring-Rectangles"><a href="#B-Coloring-Rectangles" class="headerlink" title="B. Coloring Rectangles"></a>B. Coloring Rectangles</h1><details class="note info no-icon"><summary><p>Problem</p>
+<p><span class="math display">\[
+\begin{array}{c} \frac{vx+uy}{uv}=\frac{x+y}{u+v} \\ (vx+uy)(u+v)=uv(x+y) \\ uvx+u^2y+v^2x+uvy=uvx+uvy \\ u^2y+v^2x=0 \end{array}
+\]</span></p>
+<p>则显然一组合法解为 <span class="math inline">\(\begin{cases}x=-u^2\\y=v^2\end{cases}\)</span></p>
+<h1 id="b.-coloring-rectangles">B. Coloring Rectangles</h1>
+<details class="note info no-icon"><summary><p>Problem</p>
 </summary>
-<p>有一个 $n\times m$ 的矩阵，每个方格均为红色。你可以任意多次的横切或纵切（必须贯穿整块），不能出现 $1\times 1$ 的矩阵，问切完后最少需要涂几个蓝色格子才能使得红色格子不相邻。</p>
-<p>example: $2\times 5$</p>
-<p><img data-src="https://espresso.codeforces.com/594fbc0a7f610ebbd39c222d75175364a33218ec.png" alt=""></p>
+<p>有一个 <span class="math inline">\(n\times m\)</span> 的矩阵，每个方格均为红色。你可以任意多次的横切或纵切（必须贯穿整块），不能出现 <span class="math inline">\(1\times 1\)</span> 的矩阵，问切完后最少需要涂几个蓝色格子才能使得红色格子不相邻。</p>
+<p>example: <span class="math inline">\(2\times 5\)</span></p>
+<p><img data-src="https://espresso.codeforces.com/594fbc0a7f610ebbd39c222d75175364a33218ec.png" /></p>
 
 </details>
-
-<div class="tabs" id="solution"><ul class="nav-tabs"><li class="tab active"><a href="#solution-1">Solution 1</a></li><li class="tab"><a href="#solution-2">Solution 2</a></li></ul><div class="tab-content"><div class="tab-pane active" id="solution-1"><p>容易发现，把格子割成 $1\times 3$ 是最优的，于是考虑在不对后续操作产生影响的前提下，把它切成这样：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/caoxuanming/img@master/uPic/LMrB4f.png" alt=""></p>
+<div class="tabs" id="solution"><ul class="nav-tabs"><li class="tab active"><a href="#solution-1">Solution 1</a></li><li class="tab"><a href="#solution-2">Solution 2</a></li></ul><div class="tab-content"><div class="tab-pane active" id="solution-1"><p>容易发现，把格子割成 <span class="math inline">\(1\times 3\)</span> 是最优的，于是考虑在不对后续操作产生影响的前提下，把它切成这样：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/caoxuanming/img@master/uPic/LMrB4f.png" /></p>
 <p>然后再切成这样：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/caoxuanming/img@master/uPic/gZylEP.png" alt=""></p>
-<p>最后特判剩下的。注意切的时候要时刻堤防剩下一行或剩下一列的情况，防止出现 $1\times 1$。</p></div><div class="tab-pane" id="solution-2"><p>通过找规律，我们可以发现，答案为 $\lceil\frac{n\times m}{3}\rceil$。</p></div></div></div>
-
-<h1 id="C-Two-Arrays"><a href="#C-Two-Arrays" class="headerlink" title="C. Two Arrays"></a>C. Two Arrays</h1><details class="note info no-icon"><summary><p>Problem</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/caoxuanming/img@master/uPic/gZylEP.png" /></p>
+<p>最后特判剩下的。注意切的时候要时刻堤防剩下一行或剩下一列的情况，防止出现 <span class="math inline">\(1\times 1\)</span>。</p></div><div class="tab-pane" id="solution-2"><p>通过找规律，我们可以发现，答案为 <span class="math inline">\(\lceil\frac{n\times m}{3}\rceil\)</span>。</p></div></div></div>
+<h1 id="c.-two-arrays">C. Two Arrays</h1>
+<details class="note info no-icon"><summary><p>Problem</p>
 </summary>
-<p>给你两个数组 $a,b$，问能否通过把 $a$ 进行<strong>一次</strong>变换得到 $b$。</p>
-<p>变换方式：在 $a$ 数组中选出若干个数分别 $+1$，然后随意排列顺序。</p>
+<p>给你两个数组 <span class="math inline">\(a,b\)</span>，问能否通过把 <span class="math inline">\(a\)</span> 进行<strong>一次</strong>变换得到 <span class="math inline">\(b\)</span>。</p>
+<p>变换方式：在 <span class="math inline">\(a\)</span> 数组中选出若干个数分别 <span class="math inline">\(+1\)</span>，然后随意排列顺序。</p>
 
 </details>
-
-<p>大水题。$a,b$ 分别排序，看是否每个 $a$ 数组的元素都等于 $b$ 的对应元素或等于 $b$ 的对应元素 $+1$。</p>
-<h1 id="D-Guess-the-Permutation"><a href="#D-Guess-the-Permutation" class="headerlink" title="D. Guess the Permutation"></a>D. Guess the Permutation</h1><details class="note info no-icon"><summary><p>Problem</p>
+<p>大水题。<span class="math inline">\(a,b\)</span> 分别排序，看是否每个 <span class="math inline">\(a\)</span> 数组的元素都等于 <span class="math inline">\(b\)</span> 的对应元素或等于 <span class="math inline">\(b\)</span> 的对应元素 <span class="math inline">\(+1\)</span>。</p>
+<h1 id="d.-guess-the-permutation">D. Guess the Permutation</h1>
+<details class="note info no-icon"><summary><p>Problem</p>
 </summary>
 <p>这是一道交互题。</p>
-<p>有一个初始数组 $a$，满足 $a_i=i$，即 ${1,2,3…}$。现在有 $1&lt;=i&lt;j&lt;=k&lt;=n$，将 $[i,j-1],[j,k]$ 分别翻转。你需要通过不超过 $40$ 次询问得到 $i,j,k$ 的值。</p>
-<p>每一次询问你可以给出 $l,r$，得到 $[l,r]$ 中的逆序对个数。</p>
-<p>$n\le 10^9(\log_2(10^9)\approx 30)$</p>
+<p>有一个初始数组 <span class="math inline">\(a\)</span>，满足 <span class="math inline">\(a_i=i\)</span>，即 <span class="math inline">\({1,2,3...}\)</span>。现在有 <span class="math inline">\(1&lt;=i&lt;j&lt;=k&lt;=n\)</span>，将 <span class="math inline">\([i,j-1],[j,k]\)</span> 分别翻转。你需要通过不超过 <span class="math inline">\(40\)</span> 次询问得到 <span class="math inline">\(i,j,k\)</span> 的值。</p>
+<p>每一次询问你可以给出 <span class="math inline">\(l,r\)</span>，得到 <span class="math inline">\([l,r]\)</span> 中的逆序对个数。</p>
+<p><span class="math inline">\(n\le 10^9(\log_2(10^9)\approx 30)\)</span></p>
 
 </details>
-
-<ol>
-<li>用一次 $\log$ 找到 $k$：二分 $mid$，询问 $[mid,r]$ 中逆序对个数，如果不为 $0$，则 $k$ 在 $[mid+1,r]$ 中，否则在 $[l,mid]$ 中。</li>
-<li>用两次询问 $[1,k]$ 和 $[1,k-1]$ 来获得 $j$ 的位置：一段降序区间 $[l,r]$ 的逆序对数减去 $[l,r-1]$ 的逆序对数等于 $len-1$，于是 $[1,k]-[1,k-1]=len_{[j,k]}-1$（$j$ 前面的都被抵消了），用 $k-(len-1)$ 即可求出 $j$。</li>
-<li>同理用两次询问 $[1,j-1]$ 和 $[1,j-2]$ 来获得 $i$ 的位置。</li>
+<ol type="1">
+<li>用一次 <span class="math inline">\(\log\)</span> 找到 <span class="math inline">\(k\)</span>：二分 <span class="math inline">\(mid\)</span>，询问 <span class="math inline">\([mid,r]\)</span> 中逆序对个数，如果不为 <span class="math inline">\(0\)</span>，则 <span class="math inline">\(k\)</span> 在 <span class="math inline">\([mid+1,r]\)</span> 中，否则在 <span class="math inline">\([l,mid]\)</span> 中。</li>
+<li>用两次询问 <span class="math inline">\([1,k]\)</span> 和 <span class="math inline">\([1,k-1]\)</span> 来获得 <span class="math inline">\(j\)</span> 的位置：一段降序区间 <span class="math inline">\([l,r]\)</span> 的逆序对数减去 <span class="math inline">\([l,r-1]\)</span> 的逆序对数等于 <span class="math inline">\(len-1\)</span>，于是 <span class="math inline">\([1,k]-[1,k-1]=len_{[j,k]}-1\)</span>（<span class="math inline">\(j\)</span> 前面的都被抵消了），用 <span class="math inline">\(k-(len-1)\)</span> 即可求出 <span class="math inline">\(j\)</span>。</li>
+<li>同理用两次询问 <span class="math inline">\([1,j-1]\)</span> 和 <span class="math inline">\([1,j-2]\)</span> 来获得 <span class="math inline">\(i\)</span> 的位置。</li>
 </ol>
-<p>询问次数约为 $\log(n)+4$。</p>
-<p>不开 <code>long long</code> 见祖宗（逆序对个数最多有 $n^2$ 级别）。</p>
+<p>询问次数约为 <span class="math inline">\(\log(n)+4\)</span>。</p>
+<p>不开 <code>long long</code> 见祖宗（逆序对个数最多有 <span class="math inline">\(n^2\)</span> 级别）。</p>
 
     </div>
 
@@ -373,7 +354,6 @@
 
 
 
-    <div class="comments" id="waline-comments"></div>
 </div>
   </main>
 
@@ -396,8 +376,8 @@
   </footer>
 
   
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="/lib/animejs/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="/lib/lozad/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
@@ -414,19 +394,10 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"/lib/mathjax/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://waline-talk-cxm.vercel.app","placeholder":"畅所欲言吧～","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":["nick"],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/2021/11/15/cfr-755-div-2-jie-ti-bao-gao/"}</script>
-<script>
-document.addEventListener('page:loaded', () => {
-  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
-    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
-  ).then(() => {
-    new Waline(CONFIG.waline);
-  });
-});
-</script>
+
 </body>
 </html>

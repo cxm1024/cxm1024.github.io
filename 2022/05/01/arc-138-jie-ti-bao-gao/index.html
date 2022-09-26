@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.2">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -19,18 +18,19 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
-  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/lib/@fortawesome/fontawesome-free/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/lib/animate.css/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/lib/pace-js/themes/blue/pace-theme-minimal.css">
+  <script src="/lib/pace-js/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"cxm1024.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="比赛传送门  A. Larger Score 因为只需要增加而不限制增加量，所以找到一对前小后大的数对，设法将它们交换即可。具体来说，所以对于 $k+1$ 到 $n$ 的一个位置 $i$，找到在前 $k$ 个当中离它最近的（最后的）、比它小的位置 $j$（取后缀 $\min$ 后用 lower_bound 找出），用 $k-j$ 次操作将 $j$ 移到位置 $k$，用 $i-k-1$ 次操作将 $">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cxm1024.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="比赛传送门  A. Larger Score 因为只需要增加而不限制增加量，所以找到一对前小后大的数对，设法将它们交换即可。具体来说，所以对于 \(k+1\) 到 \(n\) 的一个位置 \(i\)，找到在前 \(k\) 个当中离它最近的（最后的）、比它小的位置 \(j\)（取后缀 \(\min\) 后用 lower_bound 找出），用 \(k-j\) 次操作将 \(j\) 移到位置 \(k\">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ARC-138解题报告">
 <meta property="og:url" content="https://cxm1024.github.io/2022/05/01/arc-138-jie-ti-bao-gao/index.html">
 <meta property="og:site_name" content="曹轩鸣的博客">
-<meta property="og:description" content="比赛传送门  A. Larger Score 因为只需要增加而不限制增加量，所以找到一对前小后大的数对，设法将它们交换即可。具体来说，所以对于 $k+1$ 到 $n$ 的一个位置 $i$，找到在前 $k$ 个当中离它最近的（最后的）、比它小的位置 $j$（取后缀 $\min$ 后用 lower_bound 找出），用 $k-j$ 次操作将 $j$ 移到位置 $k$，用 $i-k-1$ 次操作将 $">
+<meta property="og:description" content="比赛传送门  A. Larger Score 因为只需要增加而不限制增加量，所以找到一对前小后大的数对，设法将它们交换即可。具体来说，所以对于 \(k+1\) 到 \(n\) 的一个位置 \(i\)，找到在前 \(k\) 个当中离它最近的（最后的）、比它小的位置 \(j\)（取后缀 \(\min\) 后用 lower_bound 找出），用 \(k-j\) 次操作将 \(j\) 移到位置 \(k\">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/cxm1024/img@master/uPic/On30hU.png">
 <meta property="article:published_time" content="2022-05-01T02:29:20.000Z">
@@ -52,7 +52,9 @@
 
 
 
-<link rel="dns-prefetch" href="https://waline-talk-cxm.vercel.app">
+
+
+
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
@@ -76,7 +78,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">曹轩鸣的博客</h1>
+      <p class="site-title">曹轩鸣的博客</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">Nothing is impossible.</p>
@@ -91,12 +93,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
   </ul>
 </nav>
 
@@ -127,7 +124,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#A-Larger-Score"><span class="nav-number">1.</span> <span class="nav-text">A. Larger Score</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-01-Generation"><span class="nav-number">2.</span> <span class="nav-text">B. 01 Generation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-Rotate-and-Play-Game"><span class="nav-number">3.</span> <span class="nav-text">C. Rotate and Play Game</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#a.-larger-score"><span class="nav-number">1.</span> <span class="nav-text">A. Larger Score</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#b.-01-generation"><span class="nav-number">2.</span> <span class="nav-text">B. 01 Generation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#c.-rotate-and-play-game"><span class="nav-number">3.</span> <span class="nav-text">C. Rotate and Play Game</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -142,7 +139,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -153,7 +150,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -220,11 +217,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="cxm1024">
-      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="ARC-138解题报告 | 曹轩鸣的博客">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -241,13 +243,13 @@
 
       <time title="创建时间：2022-05-01 10:29:20" itemprop="dateCreated datePublished" datetime="2022-05-01T10:29:20+08:00">2022-05-01</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-05-05 17:39:09" itemprop="dateModified" datetime="2022-05-05T17:39:09+08:00">2022-05-05</time>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
       </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-05-05 17:39:09" itemprop="dateModified" datetime="2022-05-05T17:39:09+08:00">2022-05-05</time>
+    </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -259,28 +261,6 @@
     </span>
 
   
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/2022/05/01/arc-138-jie-ti-bao-gao/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/2022/05/01/arc-138-jie-ti-bao-gao/" data-xid="/2022/05/01/arc-138-jie-ti-bao-gao/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span id="/2022/05/01/arc-138-jie-ti-bao-gao/" class="post-meta-item leancloud_visitors" data-flag-title="ARC-138解题报告" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-  
 </div>
 
         </div>
@@ -291,24 +271,26 @@
     
     <div class="post-body" itemprop="articleBody">
         <p><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/arc138">比赛传送门</a></p>
-<h2 id="A-Larger-Score"><a href="#A-Larger-Score" class="headerlink" title="A. Larger Score"></a><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/arc138/tasks/arc138_a">A. Larger Score</a></h2><p>因为只需要增加而不限制增加量，所以找到一对前小后大的数对，设法将它们交换即可。具体来说，所以对于 $k+1$ 到 $n$ 的一个位置 $i$，找到在前 $k$ 个当中离它最近的（最后的）、比它小的位置 $j$（取后缀 $\min$ 后用 <code>lower_bound</code> 找出），用 $k-j$ 次操作将 $j$ 移到位置 $k$，用 $i-k-1$ 次操作将 $i$ 移到位置 $k+1$，再用一次操作交换即可，总操作数为 $(k-j)+(i-k-1)+1=i-j$ 次。这就是一个位置的答案。计算每个位置的答案，取最小值即可。</p>
+<h2 id="a.-larger-score"><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/arc138/tasks/arc138_a">A. Larger Score</a></h2>
+<p>因为只需要增加而不限制增加量，所以找到一对前小后大的数对，设法将它们交换即可。具体来说，所以对于 <span class="math inline">\(k+1\)</span> 到 <span class="math inline">\(n\)</span> 的一个位置 <span class="math inline">\(i\)</span>，找到在前 <span class="math inline">\(k\)</span> 个当中离它最近的（最后的）、比它小的位置 <span class="math inline">\(j\)</span>（取后缀 <span class="math inline">\(\min\)</span> 后用 <code>lower_bound</code> 找出），用 <span class="math inline">\(k-j\)</span> 次操作将 <span class="math inline">\(j\)</span> 移到位置 <span class="math inline">\(k\)</span>，用 <span class="math inline">\(i-k-1\)</span> 次操作将 <span class="math inline">\(i\)</span> 移到位置 <span class="math inline">\(k+1\)</span>，再用一次操作交换即可，总操作数为 <span class="math inline">\((k-j)+(i-k-1)+1=i-j\)</span> 次。这就是一个位置的答案。计算每个位置的答案，取最小值即可。</p>
 <p>code:</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">400010</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,k,ans=<span class="number">1e9</span>;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        cin&gt;&gt;a[i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=k<span class="number">-1</span>;i&gt;<span class="number">0</span>;i--)</span><br><span class="line">        a[i]=<span class="built_in">min</span>(a[i],a[i+<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=k+<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> tmp=<span class="built_in">lower_bound</span>(a+<span class="number">1</span>,a+k+<span class="number">1</span>,a[i])-a<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">if</span>(tmp==<span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">        ans=<span class="built_in">min</span>(ans,i-tmp);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(ans==<span class="number">1e9</span>) cout&lt;&lt;<span class="number">-1</span>&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">else</span> cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="B-01-Generation"><a href="#B-01-Generation" class="headerlink" title="B. 01 Generation"></a><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/arc138/tasks/arc138_b">B. 01 Generation</a></h2><p>由于只有前面加1反转和后面加0两种操作，所以考虑它们的分界线。</p>
+<h2 id="b.-01-generation"><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/arc138/tasks/arc138_b">B. 01 Generation</a></h2>
+<p>由于只有前面加1反转和后面加0两种操作，所以考虑它们的分界线。</p>
 <p>在前面的部分全部由添加1反转构成，所以一定是 <code>010101...</code> 这种形式，找出最长的满足要求的前缀，这就是第一部分。第一部分的0必须依次插入，可以发现，每插入一个0，第二部分就会受到影响，得到反转，所以当在第二部分中遇到连续的若干个0或连续的1的时候，它们一定（在最优解中）是同一块插入的。</p>
 <p>而两块0、1的交界处必然进行了一次一操作（最优解中）。这样只需要比较操作一的次数（即最长01前缀的长度）和操作二的变化次数即可。如果操作一的次数小于第二部分的变化次数则不可行，反之可行。</p>
 <p>这道题还有另一种思考方式，即倒序思考，将插入操作转化为删除。读者可自行考虑。</p>
 <p>code:</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">bool</span> a[<span class="number">200010</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        cin&gt;&gt;a[i];</span><br><span class="line">    <span class="keyword">if</span>(a[<span class="number">1</span>]==<span class="number">1</span>) &#123;</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;No&quot;</span>&lt;&lt;endl;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> now=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(now&lt;n&amp;&amp;a[now]!=a[now+<span class="number">1</span>]) now++;</span><br><span class="line">    <span class="keyword">if</span>(now==n) &#123;</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;Yes&quot;</span>&lt;&lt;endl;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> ans=a[n];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=n<span class="number">-1</span>;i&gt;now;i--)</span><br><span class="line">        <span class="keyword">if</span>(a[i]!=a[i+<span class="number">1</span>]) ans++;</span><br><span class="line">    <span class="keyword">if</span>(ans&lt;=now) cout&lt;&lt;<span class="string">&quot;Yes&quot;</span>&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">else</span> cout&lt;&lt;<span class="string">&quot;No&quot;</span>&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="C-Rotate-and-Play-Game"><a href="#C-Rotate-and-Play-Game" class="headerlink" title="C. Rotate and Play Game"></a><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/arc138/tasks/arc138_c">C. Rotate and Play Game</a></h2><p>题目问最好情况，那么有一个很自然的猜测：最好情况一定可以取得最优解，即拿走大的那一半，留下小的那一半。这就要求我们在翻转之后，在任何一个前缀当中，小的数的个数 $\ge$ 大的数的个数（这样才能保证对方走到大的数之前，我已经把它拿掉了）。设较小的一半数为 $+1$，较大的一半为 $-1$，则相当于要求前缀和中不存在负数。在坐标系中表现出来就是这样的：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/cxm1024/img@master/uPic/On30hU.png" alt=""></p>
+<h2 id="c.-rotate-and-play-game"><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/arc138/tasks/arc138_c">C. Rotate and Play Game</a></h2>
+<p>题目问最好情况，那么有一个很自然的猜测：最好情况一定可以取得最优解，即拿走大的那一半，留下小的那一半。这就要求我们在翻转之后，在任何一个前缀当中，小的数的个数 <span class="math inline">\(\ge\)</span> 大的数的个数（这样才能保证对方走到大的数之前，我已经把它拿掉了）。设较小的一半数为 <span class="math inline">\(+1\)</span>，较大的一半为 <span class="math inline">\(-1\)</span>，则相当于要求前缀和中不存在负数。在坐标系中表现出来就是这样的：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/cxm1024/img@master/uPic/On30hU.png" /></p>
 <p>（数据 <code>3 4 1 2</code> 的图像）</p>
-<p>那么，分成两半后互换就可以表示为，选一个点，以它为原点开始，再走回自己结束。这样结论就很显然了：选最低的点，以它为起点，坐标为0，那么之后无论怎么走也不会比它更低，满足要求。在此例子中，选择点 $C$ 为起点，这样答案序列为 <code>1 2 3 4</code>，满足要求。</p>
+<p>那么，分成两半后互换就可以表示为，选一个点，以它为原点开始，再走回自己结束。这样结论就很显然了：选最低的点，以它为起点，坐标为0，那么之后无论怎么走也不会比它更低，满足要求。在此例子中，选择点 <span class="math inline">\(C\)</span> 为起点，这样答案序列为 <code>1 2 3 4</code>，满足要求。</p>
 <p>（不得不说是一道非常巧妙的转化题）</p>
 <p>code:</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">200010</span>],b[<span class="number">200010</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">        cin&gt;&gt;a[i];</span><br><span class="line">        b[i]=a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(b+<span class="number">1</span>,b+n+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> fen=b[n/<span class="number">2</span>];</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> mini=<span class="number">0</span>,ans=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=n/<span class="number">2</span>+<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        ans+=b[i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">        <span class="keyword">if</span>(a[i]&lt;=fen) a[i]=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> a[i]=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)</span><br><span class="line">        a[i]+=a[i<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)</span><br><span class="line">        <span class="keyword">if</span>(a[i]&lt;a[mini])</span><br><span class="line">            mini=i;</span><br><span class="line">    cout&lt;&lt;mini&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
     </div>
 
     
@@ -340,7 +322,6 @@
 
 
 
-    <div class="comments" id="waline-comments"></div>
 </div>
   </main>
 
@@ -363,8 +344,8 @@
   </footer>
 
   
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="/lib/animejs/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="/lib/lozad/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
@@ -381,19 +362,10 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"/lib/mathjax/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://waline-talk-cxm.vercel.app","placeholder":"畅所欲言吧～","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":["nick"],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/2022/05/01/arc-138-jie-ti-bao-gao/"}</script>
-<script>
-document.addEventListener('page:loaded', () => {
-  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
-    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
-  ).then(() => {
-    new Waline(CONFIG.waline);
-  });
-});
-</script>
+
 </body>
 </html>

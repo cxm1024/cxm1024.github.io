@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.2">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -19,18 +18,19 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
-  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/lib/@fortawesome/fontawesome-free/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/lib/animate.css/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/lib/pace-js/themes/blue/pace-theme-minimal.css">
+  <script src="/lib/pace-js/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"cxm1024.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="01背包 由于01背包太过经典，所以一定要把每一个细节理解透彻！  有 $n$ 个物品和一个容量为 $m$ 的背包，每个物品有体积 $w_i$ 和价值 $v_i$，求用这个背包所能装下的最大价值。  设 $f_{i,j}$ 表示只考虑前 $i$ 个物品，体积不超过 $j$ 的最大价值。如果我们算完了前 $i-1$ 个物品的所有结果，那么第 $i$ 个物品有选和不选两种情况。如果不选，则结果为 $f">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cxm1024.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="01背包 由于01背包太过经典，所以一定要把每一个细节理解透彻！  有 \(n\) 个物品和一个容量为 \(m\) 的背包，每个物品有体积 \(w_i\) 和价值 \(v_i\)，求用这个背包所能装下的最大价值。  设 \(f_{i,j}\) 表示只考虑前 \(i\) 个物品，体积不超过 \(j\) 的最大价值。如果我们算完了前 \(i-1\) 个物品的所有结果，那么第 \(i\) 个物品有选和不">
 <meta property="og:type" content="article">
 <meta property="og:title" content="背包DP学习笔记">
 <meta property="og:url" content="https://cxm1024.github.io/2022/01/22/bei-bao-dp-xue-xi-bi-ji/index.html">
 <meta property="og:site_name" content="曹轩鸣的博客">
-<meta property="og:description" content="01背包 由于01背包太过经典，所以一定要把每一个细节理解透彻！  有 $n$ 个物品和一个容量为 $m$ 的背包，每个物品有体积 $w_i$ 和价值 $v_i$，求用这个背包所能装下的最大价值。  设 $f_{i,j}$ 表示只考虑前 $i$ 个物品，体积不超过 $j$ 的最大价值。如果我们算完了前 $i-1$ 个物品的所有结果，那么第 $i$ 个物品有选和不选两种情况。如果不选，则结果为 $f">
+<meta property="og:description" content="01背包 由于01背包太过经典，所以一定要把每一个细节理解透彻！  有 \(n\) 个物品和一个容量为 \(m\) 的背包，每个物品有体积 \(w_i\) 和价值 \(v_i\)，求用这个背包所能装下的最大价值。  设 \(f_{i,j}\) 表示只考虑前 \(i\) 个物品，体积不超过 \(j\) 的最大价值。如果我们算完了前 \(i-1\) 个物品的所有结果，那么第 \(i\) 个物品有选和不">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-22T02:41:31.000Z">
 <meta property="article:modified_time" content="2022-01-22T06:22:51.004Z">
@@ -51,7 +51,9 @@
 
 
 
-<link rel="dns-prefetch" href="https://waline-talk-cxm.vercel.app">
+
+
+
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
@@ -75,7 +77,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">曹轩鸣的博客</h1>
+      <p class="site-title">曹轩鸣的博客</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">Nothing is impossible.</p>
@@ -90,12 +92,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
   </ul>
 </nav>
 
@@ -126,7 +123,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#01%E8%83%8C%E5%8C%85"><span class="nav-number">1.</span> <span class="nav-text">01背包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%A5%BD%E5%A1%AB%E6%BB%A1%E7%9A%8401%E8%83%8C%E5%8C%85"><span class="nav-number">1.1.</span> <span class="nav-text">正好填满的01背包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E8%B4%B9%E7%94%A8%E8%83%8C%E5%8C%85"><span class="nav-number">1.2.</span> <span class="nav-text">二维费用背包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85"><span class="nav-number">2.</span> <span class="nav-text">完全背包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E9%87%8D%E8%83%8C%E5%8C%85"><span class="nav-number">3.</span> <span class="nav-text">多重背包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B7%E5%90%88%E8%83%8C%E5%8C%85"><span class="nav-number">4.</span> <span class="nav-text">混合背包</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E5%8C%85"><span class="nav-number">1.</span> <span class="nav-text">01背包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%A5%BD%E5%A1%AB%E6%BB%A1%E7%9A%8401%E8%83%8C%E5%8C%85"><span class="nav-number">1.1.</span> <span class="nav-text">正好填满的01背包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E8%B4%B9%E7%94%A8%E8%83%8C%E5%8C%85"><span class="nav-number">1.2.</span> <span class="nav-text">二维费用背包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85"><span class="nav-number">2.</span> <span class="nav-text">完全背包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E9%87%8D%E8%83%8C%E5%8C%85"><span class="nav-number">3.</span> <span class="nav-text">多重背包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B7%E5%90%88%E8%83%8C%E5%8C%85"><span class="nav-number">4.</span> <span class="nav-text">混合背包</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -141,7 +138,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -152,7 +149,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -219,11 +216,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="cxm1024">
-      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="背包DP学习笔记 | 曹轩鸣的博客">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -252,28 +254,6 @@
     </span>
 
   
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/2022/01/22/bei-bao-dp-xue-xi-bi-ji/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/2022/01/22/bei-bao-dp-xue-xi-bi-ji/" data-xid="/2022/01/22/bei-bao-dp-xue-xi-bi-ji/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span id="/2022/01/22/bei-bao-dp-xue-xi-bi-ji/" class="post-meta-item leancloud_visitors" data-flag-title="背包DP学习笔记" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-  
 </div>
 
         </div>
@@ -283,53 +263,52 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="01背包"><a href="#01背包" class="headerlink" title="01背包"></a>01背包</h2><p><strong>由于01背包太过经典，所以一定要把每一个细节理解透彻！</strong></p>
+        <h2 id="背包">01背包</h2>
+<p><strong>由于01背包太过经典，所以一定要把每一个细节理解透彻！</strong></p>
 <blockquote>
-<p>有 $n$ 个物品和一个容量为 $m$ 的背包，每个物品有体积 $w_i$ 和价值 $v_i$，求用这个背包所能装下的最大价值。</p>
+<p>有 <span class="math inline">\(n\)</span> 个物品和一个容量为 <span class="math inline">\(m\)</span> 的背包，每个物品有体积 <span class="math inline">\(w_i\)</span> 和价值 <span class="math inline">\(v_i\)</span>，求用这个背包所能装下的最大价值。</p>
 </blockquote>
-<p>设 $f_{i,j}$ 表示只考虑前 $i$ 个物品，体积不超过 $j$ 的最大价值。如果我们算完了前 $i-1$ 个物品的所有结果，那么第 $i$ 个物品有选和不选两种情况。如果不选，则结果为 $f_{i-1,j}$；如果买，则：由于选了 $i$ 后体积不超过 $j$，那么选 $i$ 之前体积就不能超过 $j-w_i$，而选了 $i$ 之后获得的价值就多了 $v_i$，所以结果为 $f_{i-1,j-w_i}+v_i$。这样，我们就得出了经典的状态转移方程：$f_{i,j}=max(f_{i-1,j},f_{i-1,j-w_i}+v_i)$。</p>
-<p>接下来，我们再考虑一些细节。对于 $f$ 数组的初始化，我们可以将所有的方案全部赋值为 $0$，因为无论考虑多少物品，无论体积不超过多少，都一定有一种符合要求的方案：一个也不选。这时的价值就是 $0$。</p>
-<p>然后就到了经典的空间优化：我们可以发现 $f_i$ 这一行只与 $f_{i-1}$ 这一行有关，所以我们可以将 $i$ 这一维省略。这样，当我们准备求 $f_j$ 时，我们要求 $f_j$ 和 $f_{j-w_i}$ 都还没有被更新过。因为我们正准备更新 $f_j$，所以第一个要求可以保证，那么怎么保证 $f_{j-w_i}$ 没有被更新过呢？答案就是倒序更新（这样就在更新 $f_j$ 之后才会更新到 $f_{j-w_i}$ 了）。</p>
-<p>接下来还有一个经典的常数优化：因为当 $j&lt;w_i$ 时，转移方程中 $f_{j-w_i}$ 不存在，不需要考虑更新，所以 $j$ 必须大于等于 $w_i$，也就是倒序枚举时 $j$ 只需要从 $m$ 枚举到 $w_i$。</p>
+<p>设 <span class="math inline">\(f_{i,j}\)</span> 表示只考虑前 <span class="math inline">\(i\)</span> 个物品，体积不超过 <span class="math inline">\(j\)</span> 的最大价值。如果我们算完了前 <span class="math inline">\(i-1\)</span> 个物品的所有结果，那么第 <span class="math inline">\(i\)</span> 个物品有选和不选两种情况。如果不选，则结果为 <span class="math inline">\(f_{i-1,j}\)</span>；如果买，则：由于选了 <span class="math inline">\(i\)</span> 后体积不超过 <span class="math inline">\(j\)</span>，那么选 <span class="math inline">\(i\)</span> 之前体积就不能超过 <span class="math inline">\(j-w_i\)</span>，而选了 <span class="math inline">\(i\)</span> 之后获得的价值就多了 <span class="math inline">\(v_i\)</span>，所以结果为 <span class="math inline">\(f_{i-1,j-w_i}+v_i\)</span>。这样，我们就得出了经典的状态转移方程：<span class="math inline">\(f_{i,j}=max(f_{i-1,j},f_{i-1,j-w_i}+v_i)\)</span>。</p>
+<p>接下来，我们再考虑一些细节。对于 <span class="math inline">\(f\)</span> 数组的初始化，我们可以将所有的方案全部赋值为 <span class="math inline">\(0\)</span>，因为无论考虑多少物品，无论体积不超过多少，都一定有一种符合要求的方案：一个也不选。这时的价值就是 <span class="math inline">\(0\)</span>。</p>
+<p>然后就到了经典的空间优化：我们可以发现 <span class="math inline">\(f_i\)</span> 这一行只与 <span class="math inline">\(f_{i-1}\)</span> 这一行有关，所以我们可以将 <span class="math inline">\(i\)</span> 这一维省略。这样，当我们准备求 <span class="math inline">\(f_j\)</span> 时，我们要求 <span class="math inline">\(f_j\)</span> 和 <span class="math inline">\(f_{j-w_i}\)</span> 都还没有被更新过。因为我们正准备更新 <span class="math inline">\(f_j\)</span>，所以第一个要求可以保证，那么怎么保证 <span class="math inline">\(f_{j-w_i}\)</span> 没有被更新过呢？答案就是倒序更新（这样就在更新 <span class="math inline">\(f_j\)</span> 之后才会更新到 <span class="math inline">\(f_{j-w_i}\)</span> 了）。</p>
+<p>接下来还有一个经典的常数优化：因为当 <span class="math inline">\(j&lt;w_i\)</span> 时，转移方程中 <span class="math inline">\(f_{j-w_i}\)</span> 不存在，不需要考虑更新，所以 <span class="math inline">\(j\)</span> 必须大于等于 <span class="math inline">\(w_i\)</span>，也就是倒序枚举时 <span class="math inline">\(j\)</span> 只需要从 <span class="math inline">\(m\)</span> 枚举到 <span class="math inline">\(w_i\)</span>。</p>
 <p>所以，我们就得到了经典的01背包代码：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=m;j&gt;=w_i;j--)</span><br><span class="line">        f[j]=<span class="built_in">max</span>(f[j],f[j-w[i]]+v[i]);</span><br><span class="line">cout&lt;&lt;f[m]&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
-
 <p>例题：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1048">采药</a></p>
-<h3 id="正好填满的01背包"><a href="#正好填满的01背包" class="headerlink" title="正好填满的01背包"></a>正好填满的01背包</h3><p>是一个01背包经典的变形，题意基本与01背包相同，但要求背包必须填满。</p>
-<p>这时，$f$ 数组的意义发生了一点变化：$f_{i,j}$ 表示只考虑前 $i$ 个物品，体积<strong>恰好为</strong> $j$ 的最大价值。</p>
-<p>但是，仔细推理一下，就会发现，状态转移方程和01背包一模一样，空间优化和常数优化也都通用。那不一样的地方在哪里呢？答案是初始化。由于要求体积恰好为 $j$，所以当 $j\ne 0$ 时，不允许一个也不选，所以初始化为负无穷（表示目前没有任何方案满足条件），当 $j=0$ 时，才存在一个也不选的方案，这时才能初始化为 $0$。</p>
+<h3 id="正好填满的01背包">正好填满的01背包</h3>
+<p>是一个01背包经典的变形，题意基本与01背包相同，但要求背包必须填满。</p>
+<p>这时，<span class="math inline">\(f\)</span> 数组的意义发生了一点变化：<span class="math inline">\(f_{i,j}\)</span> 表示只考虑前 <span class="math inline">\(i\)</span> 个物品，体积<strong>恰好为</strong> <span class="math inline">\(j\)</span> 的最大价值。</p>
+<p>但是，仔细推理一下，就会发现，状态转移方程和01背包一模一样，空间优化和常数优化也都通用。那不一样的地方在哪里呢？答案是初始化。由于要求体积恰好为 <span class="math inline">\(j\)</span>，所以当 <span class="math inline">\(j\ne 0\)</span> 时，不允许一个也不选，所以初始化为负无穷（表示目前没有任何方案满足条件），当 <span class="math inline">\(j=0\)</span> 时，才存在一个也不选的方案，这时才能初始化为 <span class="math inline">\(0\)</span>。</p>
 <p>代码：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">memset</span>(f,<span class="number">-0x3f</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(f));</span><br><span class="line">f[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=m;j&gt;=w[i];j--)</span><br><span class="line">        f[j]=<span class="built_in">max</span>(f[j],f[j-w[i]]+v[i]);</span><br><span class="line">cout&lt;&lt;f[m]&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
-
-<h3 id="二维费用背包"><a href="#二维费用背包" class="headerlink" title="二维费用背包"></a>二维费用背包</h3><p>有两维费用（如：一个事件既要消耗时间也要消耗金钱，获得一定价值）的01背包。</p>
+<h3 id="二维费用背包">二维费用背包</h3>
+<p>有两维费用（如：一个事件既要消耗时间也要消耗金钱，获得一定价值）的01背包。</p>
 <p>将01背包多开两维费用，其他完全相同。</p>
 <p>代码：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//背包第一维容量为m，背包第二维容量为t</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=m;j&gt;=w1[i];j--)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k=t;k&gt;=w2[i];k--)</span><br><span class="line">            f[j][k]=<span class="built_in">max</span>(f[j][k],f[j-w1[i]][k-w2[i]]+v[i]);</span><br><span class="line">cout&lt;&lt;f[m][t]&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
-
 <p>例题：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1855">榨取kkksc03</a></p>
-<h2 id="完全背包"><a href="#完全背包" class="headerlink" title="完全背包"></a>完全背包</h2><p>又是一个经典模型，也必须要理解透彻。题意与01背包基本相同，但每个物品能选无数遍。</p>
-<p>同样设 $f_{i,j}$ 表示只考虑前 $i$ 种物品，体积不超过 $j$ 的最大价值。这时如何更新呢？如果我们不选这个物品，那么结果为 $f_{i-1,j}$；如果选，那么结果为 $f_{i,j-w_i}+v_i$。这是为什么呢？在01背包中，我们当前要选 $i$，那么选这个 $i$ 之前，只能考虑前 $i-1$ 个物品，所以要从 $f_{i-1,j-w_i}$ 转移，但是在完全背包中，每个物品可以选无数次，所以选这个 $i$ 之前，$i$ 也是可以选的，所以要从 $f_{i,j-w_i}$ 转移而来。这样，我们就得到了最终的转移方程：$f_{i,j}=max(f_{i-1,j},f_{i,j-w_i}+v_i)$。</p>
-<p>同01背包一样，我们也可以省略掉 $i$ 这一维。这时，当我们求 $f_j$ 时，要求变成 $f_j$ 还没有更新，而 $f_{j-w_i}$ 已经更新过了（因为我们要用的是 $f_{i,j-w_i}$ 而不是 $f_{i-1,j-w_i}$）。同样，第一个要求能直接满足，对于第二个要求，我们只需要正序枚举 $j$ 即可。所以，最终转移方程与01背包一样，但 $j$ 的枚举顺序变成了正序。</p>
+<h2 id="完全背包">完全背包</h2>
+<p>又是一个经典模型，也必须要理解透彻。题意与01背包基本相同，但每个物品能选无数遍。</p>
+<p>同样设 <span class="math inline">\(f_{i,j}\)</span> 表示只考虑前 <span class="math inline">\(i\)</span> 种物品，体积不超过 <span class="math inline">\(j\)</span> 的最大价值。这时如何更新呢？如果我们不选这个物品，那么结果为 <span class="math inline">\(f_{i-1,j}\)</span>；如果选，那么结果为 <span class="math inline">\(f_{i,j-w_i}+v_i\)</span>。这是为什么呢？在01背包中，我们当前要选 <span class="math inline">\(i\)</span>，那么选这个 <span class="math inline">\(i\)</span> 之前，只能考虑前 <span class="math inline">\(i-1\)</span> 个物品，所以要从 <span class="math inline">\(f_{i-1,j-w_i}\)</span> 转移，但是在完全背包中，每个物品可以选无数次，所以选这个 <span class="math inline">\(i\)</span> 之前，<span class="math inline">\(i\)</span> 也是可以选的，所以要从 <span class="math inline">\(f_{i,j-w_i}\)</span> 转移而来。这样，我们就得到了最终的转移方程：<span class="math inline">\(f_{i,j}=max(f_{i-1,j},f_{i,j-w_i}+v_i)\)</span>。</p>
+<p>同01背包一样，我们也可以省略掉 <span class="math inline">\(i\)</span> 这一维。这时，当我们求 <span class="math inline">\(f_j\)</span> 时，要求变成 <span class="math inline">\(f_j\)</span> 还没有更新，而 <span class="math inline">\(f_{j-w_i}\)</span> 已经更新过了（因为我们要用的是 <span class="math inline">\(f_{i,j-w_i}\)</span> 而不是 <span class="math inline">\(f_{i-1,j-w_i}\)</span>）。同样，第一个要求能直接满足，对于第二个要求，我们只需要正序枚举 <span class="math inline">\(j\)</span> 即可。所以，最终转移方程与01背包一样，但 <span class="math inline">\(j\)</span> 的枚举顺序变成了正序。</p>
 <p>代码：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=w[i];j&lt;=m;j++)</span><br><span class="line">        f[j]=<span class="built_in">max</span>(f[j],f[j-w[i]]+v[i]);</span><br><span class="line">cout&lt;&lt;f[m]&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
-
 <p>例题：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1616">疯狂的采药</a></p>
-<h2 id="多重背包"><a href="#多重背包" class="headerlink" title="多重背包"></a>多重背包</h2><p>题意与01背包基本相同，但每种物品能选 $x_i$ 次。</p>
-<p>一个很容易想到的思路为将一种物品选 $x$ 次转换成 $x$ 个完全相同的物品，再做01背包。</p>
-<p>这样的复杂度显然不够优秀，所以我们考虑优化。我们希望将每个物品选 $x$ 次转换成若干个物品，使得无论想选多少次都能用这若干个物品凑出来。一个较为明显的做法就是二进制分解。例如，我们有一个物品能选20次，我们就将它分解成一个 $1$ 倍物品、一个 $2$ 倍物品、一个 $4$ 倍物品、一个 $8$ 倍物品和一个 $5$ 倍物品（几倍物品指的是体积和价值都为原物品的几倍）。易证，这一定满足我们的条件。这样，我们就将一个物品选 $x$ 次分解成了 $\log(x)$ 个物品，然后再跑一遍01背包即可。</p>
+<h2 id="多重背包">多重背包</h2>
+<p>题意与01背包基本相同，但每种物品能选 <span class="math inline">\(x_i\)</span> 次。</p>
+<p>一个很容易想到的思路为将一种物品选 <span class="math inline">\(x\)</span> 次转换成 <span class="math inline">\(x\)</span> 个完全相同的物品，再做01背包。</p>
+<p>这样的复杂度显然不够优秀，所以我们考虑优化。我们希望将每个物品选 <span class="math inline">\(x\)</span> 次转换成若干个物品，使得无论想选多少次都能用这若干个物品凑出来。一个较为明显的做法就是二进制分解。例如，我们有一个物品能选20次，我们就将它分解成一个 <span class="math inline">\(1\)</span> 倍物品、一个 <span class="math inline">\(2\)</span> 倍物品、一个 <span class="math inline">\(4\)</span> 倍物品、一个 <span class="math inline">\(8\)</span> 倍物品和一个 <span class="math inline">\(5\)</span> 倍物品（几倍物品指的是体积和价值都为原物品的几倍）。易证，这一定满足我们的条件。这样，我们就将一个物品选 <span class="math inline">\(x\)</span> 次分解成了 <span class="math inline">\(\log(x)\)</span> 个物品，然后再跑一遍01背包即可。</p>
 <p>代码：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">for(int i=1;i&lt;=n;i++)</span><br><span class="line">    for(int tmp=1;x[i];tmp*=2) &#123;</span><br><span class="line">        int num=min(tmp,x[i]);</span><br><span class="line">        int wt=w[i]*num,vt=v[i]*num;</span><br><span class="line">        for(int j=m;j&gt;=wt;j--)</span><br><span class="line">            f[j]=max(f[j],f[j-wt]+vt);</span><br><span class="line">        x[i]-=num;</span><br><span class="line">    &#125;</span><br><span class="line">cout&lt;&lt;f[m]&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
-
 <p>例题：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1776">宝物筛选</a></p>
-<h2 id="混合背包"><a href="#混合背包" class="headerlink" title="混合背包"></a>混合背包</h2><p>将01背包、完全背包和多重背包缝合在一起的问题。</p>
+<h2 id="混合背包">混合背包</h2>
+<p>将01背包、完全背包和多重背包缝合在一起的问题。</p>
 <p>思路很简单，无需多讲解，分别考虑即可。形式为：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">for(枚举物品)  &#123;</span><br><span class="line">    if(01背包)</span><br><span class="line">        01背包代码</span><br><span class="line">    else if(完全背包)</span><br><span class="line">        完全背包代码</span><br><span class="line">    else</span><br><span class="line">        多重背包代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>实际上，01背包和多重背包可以共用多重背包的代码，因为01背包可以当成只能取一次的多重背包。</p>
 <p>例题：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1833">樱花</a></p>
 <p>核心代码：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">    <span class="keyword">if</span>(x[i]==<span class="number">0</span>) &#123;<span class="comment">//完全背包</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=w[i];j&lt;=m;j++)</span><br><span class="line">            f[j]=<span class="built_in">max</span>(f[j],f[j-w[i]]+v[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;<span class="comment">//01背包和多重背包</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> tmp=<span class="number">1</span>;x[i];tmp*=<span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> num=<span class="built_in">min</span>(tmp,x[i]);</span><br><span class="line">            <span class="keyword">int</span> wt=w[i]*num,vt=v[i]*num;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=m;j&gt;=wt;j--)</span><br><span class="line">                f[j]=<span class="built_in">max</span>(f[j],f[j-wt]+vt);</span><br><span class="line">            x[i]-=num;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">cout&lt;&lt;f[m]&lt;&lt;endl;</span><br></pre></td></tr></table></figure>
-
 <p>至此，基本模型已经讲完，其他变种模型以后有空再更新。</p>
 
     </div>
@@ -366,7 +345,6 @@
 
 
 
-    <div class="comments" id="waline-comments"></div>
 </div>
   </main>
 
@@ -389,8 +367,8 @@
   </footer>
 
   
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="/lib/animejs/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="/lib/lozad/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
@@ -407,19 +385,10 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"/lib/mathjax/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://waline-talk-cxm.vercel.app","placeholder":"畅所欲言吧～","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":["nick"],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/2022/01/22/bei-bao-dp-xue-xi-bi-ji/"}</script>
-<script>
-document.addEventListener('page:loaded', () => {
-  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
-    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
-  ).then(() => {
-    new Waline(CONFIG.waline);
-  });
-});
-</script>
+
 </body>
 </html>

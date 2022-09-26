@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.2">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
@@ -19,18 +18,19 @@
 
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
-  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/lib/@fortawesome/fontawesome-free/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/lib/animate.css/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/lib/pace-js/themes/blue/pace-theme-minimal.css">
+  <script src="/lib/pace-js/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"cxm1024.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="赛时 AC 2道题，掉大分（哭）  A. Casimir’s String Solitaire 题目传送门  $Problem$ 给你一个仅含 A,B,C 的字符串，每次可以删掉一个 A 和一个 B，或一个 B 和一个 C，位置、顺序不限，问能不能删完。  $t\le 1000,len\le 50$  $Solution$ 大水题，只需要判断 A 的数量加 C 的数量是否等于 B 的数量。一开始脑">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cxm1024.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="赛时 AC 2道题，掉大分（哭）  A. Casimir&#39;s String Solitaire 题目传送门  \(Problem\) 给你一个仅含 A,B,C 的字符串，每次可以删掉一个 A 和一个 B，或一个 B 和一个 C，位置、顺序不限，问能不能删完。  \(t\le 1000,len\le 50\)  \(Solution\) 大水题，只需要判断 A 的数量加 C 的数量是否等于 B 的数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CFR-744-Div.3解题报告">
 <meta property="og:url" content="https://cxm1024.github.io/2021/09/30/cfr-744-div-3-jie-ti-bao-gao/index.html">
 <meta property="og:site_name" content="曹轩鸣的博客">
-<meta property="og:description" content="赛时 AC 2道题，掉大分（哭）  A. Casimir’s String Solitaire 题目传送门  $Problem$ 给你一个仅含 A,B,C 的字符串，每次可以删掉一个 A 和一个 B，或一个 B 和一个 C，位置、顺序不限，问能不能删完。  $t\le 1000,len\le 50$  $Solution$ 大水题，只需要判断 A 的数量加 C 的数量是否等于 B 的数量。一开始脑">
+<meta property="og:description" content="赛时 AC 2道题，掉大分（哭）  A. Casimir&#39;s String Solitaire 题目传送门  \(Problem\) 给你一个仅含 A,B,C 的字符串，每次可以删掉一个 A 和一个 B，或一个 B 和一个 C，位置、顺序不限，问能不能删完。  \(t\le 1000,len\le 50\)  \(Solution\) 大水题，只需要判断 A 的数量加 C 的数量是否等于 B 的数">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-29T16:00:00.000Z">
 <meta property="article:modified_time" content="2021-11-26T04:13:41.811Z">
@@ -50,7 +50,9 @@
 
 
 
-<link rel="dns-prefetch" href="https://waline-talk-cxm.vercel.app">
+
+
+
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
@@ -74,7 +76,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">曹轩鸣的博客</h1>
+      <p class="site-title">曹轩鸣的博客</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">Nothing is impossible.</p>
@@ -89,12 +91,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
   </ul>
 </nav>
 
@@ -125,7 +122,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#A-Casimir%E2%80%99s-String-Solitaire"><span class="nav-number">1.</span> <span class="nav-text">A. Casimir’s String Solitaire</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">1.1.</span> <span class="nav-text">$Problem$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">1.2.</span> <span class="nav-text">$Solution$</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#B-Shifting-Sort"><span class="nav-number">2.</span> <span class="nav-text">B. Shifting Sort</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-1"><span class="nav-number">2.1.</span> <span class="nav-text">$Problem$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution-1"><span class="nav-number">2.2.</span> <span class="nav-text">$Solution$</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-Ticks"><span class="nav-number">3.</span> <span class="nav-text">C. Ticks</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-2"><span class="nav-number">3.1.</span> <span class="nav-text">$Problem$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution-2"><span class="nav-number">3.2.</span> <span class="nav-text">$Solution$</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#D-Productive-Meeting"><span class="nav-number">4.</span> <span class="nav-text">D. Productive Meeting</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-3"><span class="nav-number">4.1.</span> <span class="nav-text">$Problem$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution-3"><span class="nav-number">4.2.</span> <span class="nav-text">$Solution$</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0-1"><span class="nav-number">4.2.1.</span> <span class="nav-text">实现 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0-2"><span class="nav-number">4.2.2.</span> <span class="nav-text">实现 2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#E1-Permutation-Minimization-by-Deque"><span class="nav-number">5.</span> <span class="nav-text">E1. Permutation Minimization by Deque</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-4"><span class="nav-number">5.1.</span> <span class="nav-text">$Problem$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution-1"><span class="nav-number">5.2.</span> <span class="nav-text">$Solution\ 1$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution-2"><span class="nav-number">5.3.</span> <span class="nav-text">$Solution\ 2$</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#E2-Array-Optimization-by-Deque"><span class="nav-number">6.</span> <span class="nav-text">E2. Array Optimization by Deque</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-5"><span class="nav-number">6.1.</span> <span class="nav-text">$Problem$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution-4"><span class="nav-number">6.2.</span> <span class="nav-text">$Solution$</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#a.-casimirs-string-solitaire"><span class="nav-number">1.</span> <span class="nav-text">A. Casimir&#39;s String Solitaire</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#problem"><span class="nav-number">1.1.</span> <span class="nav-text">\(Problem\)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#solution"><span class="nav-number">1.2.</span> <span class="nav-text">\(Solution\)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#b.-shifting-sort"><span class="nav-number">2.</span> <span class="nav-text">B. Shifting Sort</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#problem-1"><span class="nav-number">2.1.</span> <span class="nav-text">\(Problem\)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#solution-1"><span class="nav-number">2.2.</span> <span class="nav-text">\(Solution\)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#c.-ticks"><span class="nav-number">3.</span> <span class="nav-text">C. Ticks</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#problem-2"><span class="nav-number">3.1.</span> <span class="nav-text">\(Problem\)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#solution-2"><span class="nav-number">3.2.</span> <span class="nav-text">\(Solution\)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#d.-productive-meeting"><span class="nav-number">4.</span> <span class="nav-text">D. Productive Meeting</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#problem-3"><span class="nav-number">4.1.</span> <span class="nav-text">\(Problem\)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#solution-3"><span class="nav-number">4.2.</span> <span class="nav-text">\(Solution\)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0-1"><span class="nav-number">4.2.1.</span> <span class="nav-text">实现 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0-2"><span class="nav-number">4.2.2.</span> <span class="nav-text">实现 2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#e1.-permutation-minimization-by-deque"><span class="nav-number">5.</span> <span class="nav-text">E1. Permutation Minimization by Deque</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#problem-4"><span class="nav-number">5.1.</span> <span class="nav-text">\(Problem\)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#solution-1-1"><span class="nav-number">5.2.</span> <span class="nav-text">\(Solution\ 1\)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#solution-2-1"><span class="nav-number">5.3.</span> <span class="nav-text">\(Solution\ 2\)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#e2.-array-optimization-by-deque"><span class="nav-number">6.</span> <span class="nav-text">E2. Array Optimization by Deque</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#problem-5"><span class="nav-number">6.1.</span> <span class="nav-text">\(Problem\)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#solution-4"><span class="nav-number">6.2.</span> <span class="nav-text">\(Solution\)</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -140,7 +137,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">28</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -151,7 +148,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -218,11 +215,16 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
       <meta itemprop="name" content="cxm1024">
-      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="CFR-744-Div.3解题报告 | 曹轩鸣的博客">
+      <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -239,13 +241,13 @@
 
       <time title="创建时间：2021-09-30 00:00:00" itemprop="dateCreated datePublished" datetime="2021-09-30T00:00:00+08:00">2021-09-30</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-11-26 12:13:41" itemprop="dateModified" datetime="2021-11-26T12:13:41+08:00">2021-11-26</time>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
       </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2021-11-26 12:13:41" itemprop="dateModified" datetime="2021-11-26T12:13:41+08:00">2021-11-26</time>
+    </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -257,28 +259,6 @@
     </span>
 
   
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/2021/09/30/cfr-744-div-3-jie-ti-bao-gao/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/2021/09/30/cfr-744-div-3-jie-ti-bao-gao/" data-xid="/2021/09/30/cfr-744-div-3-jie-ti-bao-gao/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span id="/2021/09/30/cfr-744-div-3-jie-ti-bao-gao/" class="post-meta-item leancloud_visitors" data-flag-title="CFR-744-Div.3解题报告" title="阅读次数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-eye"></i>
-      </span>
-      <span class="post-meta-item-text">阅读次数：</span>
-      <span class="leancloud-visitors-count"></span>
-    </span>
-  
 </div>
 
         </div>
@@ -289,48 +269,66 @@
     
     <div class="post-body" itemprop="articleBody">
         <p>赛时 AC 2道题，掉大分（哭）</p>
-<h1 id="A-Casimir’s-String-Solitaire"><a href="#A-Casimir’s-String-Solitaire" class="headerlink" title="A. Casimir’s String Solitaire"></a>A. Casimir’s String Solitaire</h1><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1579/problem/A">题目传送门</a></p>
-<h2 id="Problem"><a href="#Problem" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>给你一个仅含 A,B,C 的字符串，每次可以删掉一个 A 和一个 B，或一个 B 和一个 C，位置、顺序不限，问能不能删完。</p>
-<p>$t\le 1000,len\le 50$</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>大水题，只需要判断 A 的数量加 C 的数量是否等于 B 的数量。<del>一开始脑抽还判断 A 的数量是否等于 C 的数量</del></p>
-<h1 id="B-Shifting-Sort"><a href="#B-Shifting-Sort" class="headerlink" title="B. Shifting Sort"></a>B. Shifting Sort</h1><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1579/problem/B">题目传送门</a></p>
-<h2 id="Problem-1"><a href="#Problem-1" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>定义对一段区间的 <code>Cyclically Shift</code>（以下简称<code>Shift</code>） 操作为：</p>
-<ol>
-<li>指定一个数 $x(x\le len)$ 为操作的周期。</li>
-<li>每次将区间左移一位，移出去的那一位放到最右边，重复 $x$ 次。</li>
+<h1 id="a.-casimirs-string-solitaire">A. Casimir's String Solitaire</h1>
+<p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1579/problem/A">题目传送门</a></p>
+<h2 id="problem"><span class="math inline">\(Problem\)</span></h2>
+<p>给你一个仅含 A,B,C 的字符串，每次可以删掉一个 A 和一个 B，或一个 B 和一个 C，位置、顺序不限，问能不能删完。</p>
+<p><span class="math inline">\(t\le 1000,len\le 50\)</span></p>
+<h2 id="solution"><span class="math inline">\(Solution\)</span></h2>
+<p>大水题，只需要判断 A 的数量加 C 的数量是否等于 B 的数量。<del>一开始脑抽还判断 A 的数量是否等于 C 的数量</del></p>
+<h1 id="b.-shifting-sort">B. Shifting Sort</h1>
+<p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1579/problem/B">题目传送门</a></p>
+<h2 id="problem-1"><span class="math inline">\(Problem\)</span></h2>
+<p>定义对一段区间的 <code>Cyclically Shift</code>（以下简称<code>Shift</code>） 操作为：</p>
+<ol type="1">
+<li>指定一个数 <span class="math inline">\(x(x\le len)\)</span> 为操作的周期。</li>
+<li>每次将区间左移一位，移出去的那一位放到最右边，重复 <span class="math inline">\(x\)</span> 次。</li>
 </ol>
-<p>给你一个数列 $a$，问如何用不超过 $n$ 次 <code>Shift</code> 操作将 $a$ 排好序（不要求使用次数最少，只要不超过 $n$ 就行）。</p>
-<p>$1\le t \le 1000,2\le n\le 50$</p>
-<h2 id="Solution-1"><a href="#Solution-1" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>注意只要求不超过 $n$ 次，也就意味着我们只需要每一次把一个数排好序就行了。我们可以每次挑选最大的数，通过一次 <code>Shift</code> 操作（$x=1$）将它移到最右边的位置，如果已经在该在的位置就不操作，每次都能将一个数归位，重复 $n$ 次即可。</p>
+<p>给你一个数列 <span class="math inline">\(a\)</span>，问如何用不超过 <span class="math inline">\(n\)</span> 次 <code>Shift</code> 操作将 <span class="math inline">\(a\)</span> 排好序（不要求使用次数最少，只要不超过 <span class="math inline">\(n\)</span> 就行）。</p>
+<p><span class="math inline">\(1\le t \le 1000,2\le n\le 50\)</span></p>
+<h2 id="solution-1"><span class="math inline">\(Solution\)</span></h2>
+<p>注意只要求不超过 <span class="math inline">\(n\)</span> 次，也就意味着我们只需要每一次把一个数排好序就行了。我们可以每次挑选最大的数，通过一次 <code>Shift</code> 操作（<span class="math inline">\(x=1\)</span>）将它移到最右边的位置，如果已经在该在的位置就不操作，每次都能将一个数归位，重复 <span class="math inline">\(n\)</span> 次即可。</p>
 <p>eg.</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">原序列</span><br><span class="line">2 5 1 4 3</span><br><span class="line">将5归位</span><br><span class="line">2 1 4 3 5</span><br><span class="line">将4归位</span><br><span class="line">2 1 3 4 5</span><br><span class="line">将2归位</span><br><span class="line">1 2 3 4 5</span><br></pre></td></tr></table></figure>
-
-<p>由于 $n$ 很小，暴力找最大值就可以。</p>
-<h1 id="C-Ticks"><a href="#C-Ticks" class="headerlink" title="C. Ticks"></a>C. Ticks</h1><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1579/problem/C">题目传送门</a></p>
-<h2 id="Problem-2"><a href="#Problem-2" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>给你一个 $n\times m$ 的网格图，每个格子有 <code>*</code> 和 <code>.</code> 两种状态，<code>*</code> 表示填，<code>.</code> 表示不填，问能不能通过若干个大小超过 $k$ 的“V字形”表示出这个图形（V 的两条边必须一样长，机房的两位大佬就是没判断这个而 FST 了）。</p>
-<p>“V字形”大小的定义：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*...*</span><br><span class="line">.*.*.</span><br><span class="line">..*..</span><br></pre></td></tr></table></figure>
-<p>的大小为 $2$。</p>
-<p>$1\le k\le n\le 10,1\le m\le 19$</p>
-<h2 id="Solution-2"><a href="#Solution-2" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>注意到 $n$ 和 $m$ 的范围很小，完全可以通过暴力求解。对于每一个格子，尽可能多的往上延伸，如果超过 $k$ 就把覆盖格子的标记一下，最后判断是否都被覆盖完。</p>
-<h1 id="D-Productive-Meeting"><a href="#D-Productive-Meeting" class="headerlink" title="D. Productive Meeting"></a>D. Productive Meeting</h1><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1579/problem/D">题目传送门</a></p>
-<h2 id="Problem-3"><a href="#Problem-3" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>在一场见面会中有 $n$ 个人，会议开始后他们会两两交谈，每个人有一定的耐心值 $a_i$，第 $i$ 个人在交谈 $a_i$ 次后会离开会议，两个人可以交谈多次，请找出一种方案使得总交谈次数尽可能多。</p>
-<p>$1\le t\le 1000,\sum n\le 2\times 10^5,\sum a_i\le 2\times 10^5$</p>
-<h2 id="Solution-3"><a href="#Solution-3" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>由于 $\sum a_i$ 不大，我们可以依次考虑每一次交谈，容易想到每次让耐心值最大的两个人交谈是最优方案。</p>
-<h3 id="实现-1"><a href="#实现-1" class="headerlink" title="实现 1"></a>实现 1</h3><p>先排好序，每次让剩余耐心值最大的两个人交谈，耐心值–，在考虑维护序列单调性，可以通过一通 <code>lower_bound</code> 和 <code>upper_bound</code> 以及 <code>swap</code> 来实现，时间复杂度 $O((\sum a_i)\log(n))$。</p>
-<h3 id="实现-2"><a href="#实现-2" class="headerlink" title="实现 2"></a>实现 2</h3><p>使用 <code>lower_bound</code> 和 <code>upper_bound</code> 来维护需要考虑一大堆细节（我调错调了一下午加一晚上），不如用堆来维护。每次从堆里拿出两个耐心值最大的人，耐心值–，如果还有剩余耐心值，就把他们再扔回堆里，用 STL 的优先队列实现非常简洁，时间复杂度也是 $O((\sum a_i)\log(n))$。</p>
-<h1 id="E1-Permutation-Minimization-by-Deque"><a href="#E1-Permutation-Minimization-by-Deque" class="headerlink" title="E1. Permutation Minimization by Deque"></a>E1. Permutation Minimization by Deque</h1><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1579/problem/E1">题目传送门</a></p>
+<p>由于 <span class="math inline">\(n\)</span> 很小，暴力找最大值就可以。</p>
+<h1 id="c.-ticks">C. Ticks</h1>
+<p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1579/problem/C">题目传送门</a></p>
+<h2 id="problem-2"><span class="math inline">\(Problem\)</span></h2>
+<p>给你一个 <span class="math inline">\(n\times m\)</span> 的网格图，每个格子有 <code>*</code> 和 <code>.</code> 两种状态，<code>*</code> 表示填，<code>.</code> 表示不填，问能不能通过若干个大小超过 <span class="math inline">\(k\)</span> 的“V字形”表示出这个图形（V 的两条边必须一样长，机房的两位大佬就是没判断这个而 FST 了）。</p>
+<p>“V字形”大小的定义： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*...*</span><br><span class="line">.*.*.</span><br><span class="line">..*..</span><br></pre></td></tr></table></figure> 的大小为 <span class="math inline">\(2\)</span>。</p>
+<p><span class="math inline">\(1\le k\le n\le 10,1\le m\le 19\)</span></p>
+<h2 id="solution-2"><span class="math inline">\(Solution\)</span></h2>
+<p>注意到 <span class="math inline">\(n\)</span> 和 <span class="math inline">\(m\)</span> 的范围很小，完全可以通过暴力求解。对于每一个格子，尽可能多的往上延伸，如果超过 <span class="math inline">\(k\)</span> 就把覆盖格子的标记一下，最后判断是否都被覆盖完。</p>
+<h1 id="d.-productive-meeting">D. Productive Meeting</h1>
+<p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1579/problem/D">题目传送门</a></p>
+<h2 id="problem-3"><span class="math inline">\(Problem\)</span></h2>
+<p>在一场见面会中有 <span class="math inline">\(n\)</span> 个人，会议开始后他们会两两交谈，每个人有一定的耐心值 <span class="math inline">\(a_i\)</span>，第 <span class="math inline">\(i\)</span> 个人在交谈 <span class="math inline">\(a_i\)</span> 次后会离开会议，两个人可以交谈多次，请找出一种方案使得总交谈次数尽可能多。</p>
+<p><span class="math inline">\(1\le t\le 1000,\sum n\le 2\times 10^5,\sum a_i\le 2\times 10^5\)</span></p>
+<h2 id="solution-3"><span class="math inline">\(Solution\)</span></h2>
+<p>由于 <span class="math inline">\(\sum a_i\)</span> 不大，我们可以依次考虑每一次交谈，容易想到每次让耐心值最大的两个人交谈是最优方案。</p>
+<h3 id="实现-1">实现 1</h3>
+<p>先排好序，每次让剩余耐心值最大的两个人交谈，耐心值--，在考虑维护序列单调性，可以通过一通 <code>lower_bound</code> 和 <code>upper_bound</code> 以及 <code>swap</code> 来实现，时间复杂度 <span class="math inline">\(O((\sum a_i)\log(n))\)</span>。</p>
+<h3 id="实现-2">实现 2</h3>
+<p>使用 <code>lower_bound</code> 和 <code>upper_bound</code> 来维护需要考虑一大堆细节（我调错调了一下午加一晚上），不如用堆来维护。每次从堆里拿出两个耐心值最大的人，耐心值--，如果还有剩余耐心值，就把他们再扔回堆里，用 STL 的优先队列实现非常简洁，时间复杂度也是 <span class="math inline">\(O((\sum a_i)\log(n))\)</span>。</p>
+<h1 id="e1.-permutation-minimization-by-deque">E1. Permutation Minimization by Deque</h1>
+<p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1579/problem/E1">题目传送门</a></p>
 <p>在 Codeforces 中首次被 hack 祭。</p>
-<h2 id="Problem-4"><a href="#Problem-4" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>给你一个 $1-n$ 的排列，你需要把它们按顺序扔进双端队列里，你可以决定从哪一端扔。需要使得最终双端队列里的数的字典序最小。</p>
-<p>$1\le t\le 1000,\sum n\le 2\times 10^5$</p>
-<h2 id="Solution-1"><a href="#Solution-1" class="headerlink" title="$Solution\ 1$"></a>$Solution\ 1$</h2><p>由于要让字典序最小，肯定最小的值放在最前面，最小值之前的数的放法先不管，放完最小值之前的数之后在把最小值放在最前面，最小值后面的数就只能从后面挨个放了。而最小值之前的数我们可以递归处理。</p>
+<h2 id="problem-4"><span class="math inline">\(Problem\)</span></h2>
+<p>给你一个 <span class="math inline">\(1-n\)</span> 的排列，你需要把它们按顺序扔进双端队列里，你可以决定从哪一端扔。需要使得最终双端队列里的数的字典序最小。</p>
+<p><span class="math inline">\(1\le t\le 1000,\sum n\le 2\times 10^5\)</span></p>
+<h2 id="solution-1-1"><span class="math inline">\(Solution\ 1\)</span></h2>
+<p>由于要让字典序最小，肯定最小的值放在最前面，最小值之前的数的放法先不管，放完最小值之前的数之后在把最小值放在最前面，最小值后面的数就只能从后面挨个放了。而最小值之前的数我们可以递归处理。</p>
 <p>具体实现中我们需要用 ST 表维护区间最小值，再用分治递归的方法实现。</p>
-<h2 id="Solution-2"><a href="#Solution-2" class="headerlink" title="$Solution\ 2$"></a>$Solution\ 2$</h2><p>从通过人数上看，这道题的简单程度可是仅次于 A 题，怎么会这么复杂呢？</p>
+<h2 id="solution-2-1"><span class="math inline">\(Solution\ 2\)</span></h2>
+<p>从通过人数上看，这道题的简单程度可是仅次于 A 题，怎么会这么复杂呢？</p>
 <p>考虑用贪心的思想，先扔进去第一个数，以后对于每一个数，如果它比队首小，就扔到队首（这样可以让结果的字典序尽可能小），否则就扔到队尾（如果还扔到队首字典序就大了）。就是这么简单。</p>
-<h1 id="E2-Array-Optimization-by-Deque"><a href="#E2-Array-Optimization-by-Deque" class="headerlink" title="E2. Array Optimization by Deque"></a>E2. Array Optimization by Deque</h1><p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1579/problem/E2">题目传送门</a></p>
-<h2 id="Problem-5"><a href="#Problem-5" class="headerlink" title="$Problem$"></a>$Problem$</h2><p>给你一个长度为 $n$ 的数列（注意不是排列），你需要把它们按顺序扔进双端队列里，你可以决定从哪一端扔。需要使得最终双端队列里的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/逆序对/11035554">逆序对</a>尽可能少。</p>
-<p>$1\le t\le 1000,\sum n\le 2\times 10^5,-10^9\le a_i\le 10^9$</p>
-<h2 id="Solution-4"><a href="#Solution-4" class="headerlink" title="$Solution$"></a>$Solution$</h2><p>同样是贪心，对于每个数，如果放在队首，则贡献的逆序对数为前面比它小的数的个数，反之则为比它大的数的个数，这个数放在队首还是队尾对以后的方法不会产生干扰，所以只需要判断它前面是比它大的多还是比它小的多，这可以用树状数组或权值线段树维护。由于 $a_i$ 的值跨度过大，需要先进行离散化处理。</p>
+<h1 id="e2.-array-optimization-by-deque">E2. Array Optimization by Deque</h1>
+<p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1579/problem/E2">题目传送门</a></p>
+<h2 id="problem-5"><span class="math inline">\(Problem\)</span></h2>
+<p>给你一个长度为 <span class="math inline">\(n\)</span> 的数列（注意不是排列），你需要把它们按顺序扔进双端队列里，你可以决定从哪一端扔。需要使得最终双端队列里的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/逆序对/11035554">逆序对</a>尽可能少。</p>
+<p><span class="math inline">\(1\le t\le 1000,\sum n\le 2\times 10^5,-10^9\le a_i\le 10^9\)</span></p>
+<h2 id="solution-4"><span class="math inline">\(Solution\)</span></h2>
+<p>同样是贪心，对于每个数，如果放在队首，则贡献的逆序对数为前面比它小的数的个数，反之则为比它大的数的个数，这个数放在队首还是队尾对以后的方法不会产生干扰，所以只需要判断它前面是比它大的多还是比它小的多，这可以用树状数组或权值线段树维护。由于 <span class="math inline">\(a_i\)</span> 的值跨度过大，需要先进行离散化处理。</p>
 
     </div>
 
@@ -363,7 +361,6 @@
 
 
 
-    <div class="comments" id="waline-comments"></div>
 </div>
   </main>
 
@@ -386,8 +383,8 @@
   </footer>
 
   
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="/lib/animejs/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="/lib/lozad/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
@@ -404,19 +401,10 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"/lib/mathjax/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://waline-talk-cxm.vercel.app","placeholder":"畅所欲言吧～","avatar":"mm","pageSize":10,"visitor":true,"comment_count":true,"requiredFields":["nick"],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/2021/09/30/cfr-744-div-3-jie-ti-bao-gao/"}</script>
-<script>
-document.addEventListener('page:loaded', () => {
-  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
-    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
-  ).then(() => {
-    new Waline(CONFIG.waline);
-  });
-});
-</script>
+
 </body>
 </html>
