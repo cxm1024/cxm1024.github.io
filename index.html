@@ -132,7 +132,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -204,6 +204,145 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2022/09/26/cf-za-ti-ti-jie/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="cxm1024">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/09/26/cf-za-ti-ti-jie/" class="post-title-link" itemprop="url">CF杂题题解</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-09-26 23:57:54" itemprop="dateCreated datePublished" datetime="2022-09-26T23:57:54+08:00">2022-09-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-09-27 00:20:46" itemprop="dateModified" datetime="2022-09-27T00:20:46+08:00">2022-09-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          CF129B. Students and Shoelaces
+题意：一个 \(n\) 个点 \(m\) 条边的无向图，每一轮删去所有度数为 \(1\) 的点，问删几轮停止。
+
+暴力模拟每一轮即可，每次删点更新邻居度数。
+
+code
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+
+
+#include<bits/stdc++.h>
+using namespace std;
+vector<int> a[110];
+int t[110],tmp[110];
+bo
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/09/26/cf-za-ti-ti-jie/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2022/09/26/abc.e-dp-ti-mu-ji-jin/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -234,7 +373,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-09-26 14:37:19 / 修改时间：17:38:00" itemprop="dateCreated datePublished" datetime="2022-09-26T14:37:19+08:00">2022-09-26</time>
+      <time title="创建时间：2022-09-26 14:37:19 / 修改时间：19:32:29" itemprop="dateCreated datePublished" datetime="2022-09-26T14:37:19+08:00">2022-09-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -257,6 +396,8 @@
     
     <div class="post-body" itemprop="articleBody">
           ABC266E. Throwing the Die
+题意：有 \(n\) 次扔骰子机会，每次随机扔到 \([1,6]\) 中的一个整数，每次扔完可以选择结束游戏（此时游戏结果为扔到的点数）或者再扔一次，求最佳策略下结果的期望。
+
 设 \(f_i\) 表示有 \(i\) 次机会时的得分期望，则 \(f_i\) 可以由 \(f_{i-1}\) 转移而来：如果第一次扔到的值小于 \(f_{i-1}\)，那么继续游戏，答案为 \(f_{i-1}\)；如果大于 \(f_{i-1}\)，那么结束游戏，答案为当前扔到的值。
 
 code:
@@ -276,12 +417,7 @@ code:
 13
 
 
-#include<bits/stdc++.h>
-using namespace std;
-long double g[110];
-int main() {
-    int n;
-  
+#i
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/09/26/abc.e-dp-ti-mu-ji-jin/#more" rel="contents">
@@ -1144,97 +1280,6 @@ A. Larger Score
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/04/28/gou-gu-ding-li-zheng-ming/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2022/01/22/bei-bao-dp-xue-xi-bi-ji/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="cxm1024">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="曹轩鸣的博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 曹轩鸣的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/01/22/bei-bao-dp-xue-xi-bi-ji/" class="post-title-link" itemprop="url">背包DP学习笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2022-01-22 10:41:31 / 修改时间：14:22:51" itemprop="dateCreated datePublished" datetime="2022-01-22T10:41:31+08:00">2022-01-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          01背包
-由于01背包太过经典，所以一定要把每一个细节理解透彻！
-
-有 \(n\) 个物品和一个容量为 \(m\) 的背包，每个物品有体积 \(w_i\) 和价值 \(v_i\)，求用这个背包所能装下的最大价值。
-
-设 \(f_{i,j}\) 表示只考虑前 \(i\) 个物品，体积不超过 \(j\) 的最大价值。如果我们算完了前 \(i-1\) 个物品的所有结果，那么第 \(i\) 个物品有选和不选两种情况。如果不选，则结果为 \(f_{i-1,j}\)；如果买，则：由于选了 \(i\) 后体积不超过 \(j\)，那么选 \(i\) 之前体积就不能超过 \(j-w_i\)，而选了 \(i\) 
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/01/22/bei-bao-dp-xue-xi-bi-ji/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
