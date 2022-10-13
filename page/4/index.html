@@ -132,7 +132,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -195,6 +195,113 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2021/08/14/p4363-yi-shuang-mu-qi-ti-jie/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="cxm1024">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/08/14/p4363-yi-shuang-mu-qi-ti-jie/" class="post-title-link" itemprop="url">P4363一双木棋 题解</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-08-14 00:00:00" itemprop="dateCreated datePublished" datetime="2021-08-14T00:00:00+08:00">2021-08-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2021-11-26 12:14:12" itemprop="dateModified" datetime="2021-11-26T12:14:12+08:00">2021-11-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          本篇题解献给和我一样看不懂其他题解的状压DP小白
+
+相信大家都是看了其他题解看不懂才看到这篇题解的（莫名自信），所以什么每行棋子数递减啊，每行的棋子都排在左边啊，就不用我多说了，直接切入正题（大段文字多，请耐心观看）。
+
+轮廓线DP
+没见过不用慌，我也没见过（雾
+
+轮廓线，就是把矩阵从右上角到左下角沿着有棋子和没棋子的分界线描一下，往下走就用1表示，往左走就用0表示。这样我们就得到了一个01串，即一个二进制数，这就是我们的DP状态。
+
+例如（图丑勿喷）
+
+
+
+这种情况下轮廓线状态为左左下左下下左左下，即\(001011001_{(2)}=89\)
+
+我们设\(f[s]\)（\(s\)就是轮廓线
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/08/14/p4363-yi-shuang-mu-qi-ti-jie/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
