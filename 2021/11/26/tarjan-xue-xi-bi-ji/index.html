@@ -25,16 +25,16 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"cxm1024.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="众所周知，Tarjan 可以用来求有向图的强连通分量，我们就不扯那些 dfs 生成树，前向边、返祖边之类的东西，直接步入正题。  准备工作 Tarjan 算法本质上是一次 dfs 的过程，我们用 \(dfn[u]\) 记录 \(u\) 结点是第几次被 dfs 到的，用 \(low[u]\) 记录 \(u\) 能到达的所有结点中最小的 \(dfn\)（包括自己）（详细定义：能够回溯到的最早的已经在栈">
+    <meta name="description" content="众所周知，Tarjan 可以用来求有向图的强连通分量，我们就不扯那些 dfs 生成树，前向边、返祖边之类的东西，直接步入正题。  准备工作 Tarjan 算法本质上是一次 dfs 的过程，我们用 \(dfn[u]\) 记录 \(u\) 结点被 dfs 到的顺序，用 \(low[u]\) 记录 \(u\) 能到达的所有结点中最小的 \(dfn\)（包括自己）（详细定义：能够回溯到的最早的已经在栈中的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tarjan学习笔记">
 <meta property="og:url" content="https://cxm1024.github.io/2021/11/26/tarjan-xue-xi-bi-ji/index.html">
 <meta property="og:site_name" content="曹轩鸣的博客">
-<meta property="og:description" content="众所周知，Tarjan 可以用来求有向图的强连通分量，我们就不扯那些 dfs 生成树，前向边、返祖边之类的东西，直接步入正题。  准备工作 Tarjan 算法本质上是一次 dfs 的过程，我们用 \(dfn[u]\) 记录 \(u\) 结点是第几次被 dfs 到的，用 \(low[u]\) 记录 \(u\) 能到达的所有结点中最小的 \(dfn\)（包括自己）（详细定义：能够回溯到的最早的已经在栈">
+<meta property="og:description" content="众所周知，Tarjan 可以用来求有向图的强连通分量，我们就不扯那些 dfs 生成树，前向边、返祖边之类的东西，直接步入正题。  准备工作 Tarjan 算法本质上是一次 dfs 的过程，我们用 \(dfn[u]\) 记录 \(u\) 结点被 dfs 到的顺序，用 \(low[u]\) 记录 \(u\) 能到达的所有结点中最小的 \(dfn\)（包括自己）（详细定义：能够回溯到的最早的已经在栈中的">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/cxm1024/img@master/uPic/wF29Sl.png">
 <meta property="article:published_time" content="2021-11-26T00:10:06.000Z">
-<meta property="article:modified_time" content="2021-11-26T04:14:15.475Z">
+<meta property="article:modified_time" content="2022-10-14T11:26:56.529Z">
 <meta property="article:author" content="cxm1024">
 <meta property="article:tag" content="图论">
 <meta name="twitter:card" content="summary">
@@ -140,7 +140,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -241,9 +241,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-11-26 08:10:06 / 修改时间：12:14:15" itemprop="dateCreated datePublished" datetime="2021-11-26T08:10:06+08:00">2021-11-26</time>
+      <time title="创建时间：2021-11-26 08:10:06" itemprop="dateCreated datePublished" datetime="2021-11-26T08:10:06+08:00">2021-11-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-10-14 19:26:56" itemprop="dateModified" datetime="2022-10-14T19:26:56+08:00">2022-10-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -267,21 +273,17 @@
     <div class="post-body" itemprop="articleBody">
         <p>众所周知，Tarjan 可以用来求有向图的强连通分量，我们就不扯那些 dfs 生成树，前向边、返祖边之类的东西，直接步入正题。</p>
 <h2 id="准备工作">准备工作</h2>
-<p>Tarjan 算法本质上是一次 dfs 的过程，我们用 <span class="math inline">\(dfn[u]\)</span> 记录 <span class="math inline">\(u\)</span> 结点是第几次被 dfs 到的，用 <span class="math inline">\(low[u]\)</span> 记录 <span class="math inline">\(u\)</span> 能到达的所有结点中最小的 <span class="math inline">\(dfn\)</span>（包括自己）（详细定义：能够回溯到的最早的已经在栈中的结点。设以 <span class="math inline">\(u\)</span> 为根的子树为 <span class="math inline">\(subtree_u\)</span>。 定义为以下结点的 <span class="math inline">\(dfn\)</span> 的最小值：<span class="math inline">\(subtree_u\)</span> 中的结点；从 <span class="math inline">\(subtree_u\)</span> 通过<strong>一条</strong>不在搜索树上的边能到达的结点。）。<span class="math inline">\(dfn\)</span> 很好维护，dfs 的过程中记录一下即可，<span class="math inline">\(low\)</span> 的维护也不难，为 <span class="math inline">\(\min\limits_{u\to v}{low[v]}\)</span>，dfs 的过程中顺便维护即可。我们还需要一个栈 <span class="math inline">\(s\)</span> 来维护有哪些结点被 dfs 过，且还没计算出属于哪个强连通分量，用一个 <span class="math inline">\(vis\)</span> 数组来记录结点是否在栈中。</p>
+<p>Tarjan 算法本质上是一次 dfs 的过程，我们用 <span class="math inline">\(dfn[u]\)</span> 记录 <span class="math inline">\(u\)</span> 结点被 dfs 到的顺序，用 <span class="math inline">\(low[u]\)</span> 记录 <span class="math inline">\(u\)</span> 能到达的所有结点中最小的 <span class="math inline">\(dfn\)</span>（包括自己）（详细定义：能够回溯到的最早的已经在栈中的结点。设以 <span class="math inline">\(u\)</span> 为根的子树为 <span class="math inline">\(subtree_u\)</span>，则 <span class="math inline">\(low[u]\)</span> 定义为以下结点的 <span class="math inline">\(dfn\)</span> 的最小值：<span class="math inline">\(subtree_u\)</span> 中的结点；从 <span class="math inline">\(subtree_u\)</span> 通过<strong>一条</strong>不在搜索树上的边能到达的结点。）。<span class="math inline">\(dfn\)</span> 很好维护，dfs 的过程中记录一下即可。接下来为重头戏：<span class="math inline">\(low[u]\)</span> 的维护与强联通分量的计算。</p>
 <h2 id="正式开始">正式开始</h2>
 <p>考虑从一个结点 <span class="math inline">\(u\)</span> 到另一个结点 <span class="math inline">\(v\)</span> 的过程中会发生什么。</p>
 <ol type="1">
-<li>如果 <span class="math inline">\(v\)</span> 在栈中（即那个节点还没操作完），那么 <span class="math inline">\(v\)</span> 一定是 <span class="math inline">\(u\)</span> 的祖先，则用 <span class="math inline">\(dfn[v]\)</span> 更新 <span class="math inline">\(low[u]\)</span>。</li>
-<li>如果 <span class="math inline">\(v\)</span> 访问过且不在栈中（即访问完了），那么装作无事发生。</li>
-<li>如果 <span class="math inline">\(v\)</span> 还没被访问过，那么递归访问。</li>
+<li>如果 <span class="math inline">\(v\)</span> 在栈中（即那个节点还没计算完），那么 <span class="math inline">\(v\)</span> 一定是 <span class="math inline">\(u\)</span> 的祖先，则用 <span class="math inline">\(\mathbf{dfn}[v]\)</span> 更新 <span class="math inline">\(low[u]\)</span>。</li>
+<li>如果 <span class="math inline">\(v\)</span> 访问过且不在栈中（即计算完了），那么装作无事发生。</li>
+<li>如果 <span class="math inline">\(v\)</span> 还没被访问过，那么递归访问，用 <span class="math inline">\(\mathbf{low}[v]\)</span> 更新 <span class="math inline">\(low[u]\)</span>。</li>
 </ol>
-<p>将 <span class="math inline">\(u\)</span> 能直接到达的所有 <span class="math inline">\(v\)</span> 都算完后，就可以结算强连通分量了。我们发现，如果一个结点算完后 <span class="math inline">\(low[u]=dfn[u]\)</span>，则能告诉我们两个信息：</p>
-<ol type="1">
-<li>这个结点能到达自己（出现环了！）</li>
-<li>这个结点是这个环中最先到达的（我们称之为这个强连通分量的根）</li>
-</ol>
+<p>将 <span class="math inline">\(u\)</span> 能直接到达的所有 <span class="math inline">\(v\)</span> 都算完后，就可以计算强连通分量了。我们发现，如果一个结点算完后 <span class="math inline">\(low[u]=dfn[u]\)</span>，则说明：这个结点是当前强联通分量中最先到达的（即 <span class="math inline">\(dfn\)</span> 最小的，称为这个强连通分量的根）</p>
 <p><img data-src="https://cdn.jsdelivr.net/gh/cxm1024/img@master/uPic/wF29Sl.png" /></p>
-<p>在这个图中，<span class="math inline">\(2\)</span> 号节点就是强连通分量 <span class="math inline">\({2,3,4,5,6,7}\)</span> 中的根。</p>
+<p>在这个图中，<span class="math inline">\(2\)</span> 号节点就是强连通分量 <span class="math inline">\(\{2,3,4,5,6,7\}\)</span> 中的根。</p>
 <p>这时候，我们就可以处理 <span class="math inline">\(u\)</span> 的强连通分量了！循环让结点出栈，直到栈顶元素为 <span class="math inline">\(u\)</span> 自己（因为 <span class="math inline">\(u\)</span> 是强连通分量的根，所以它一定是该强连通分量在栈中最靠前的），这些节点都在同一个以 <span class="math inline">\(u\)</span> 为根的强连通分量里。</p>
 <p>如果一个结点算完后 <span class="math inline">\(low[u]\ne dfn[u]\)</span>，则意味着它能到达一个它的祖先，我们暂时先不处理它，也不出栈（还没算完强连通分量怎么能出栈呢），直接返回，到他的那个强连通分量的根的时候再去算强连通分量。</p>
 <h2 id="代码实现">代码实现</h2>
