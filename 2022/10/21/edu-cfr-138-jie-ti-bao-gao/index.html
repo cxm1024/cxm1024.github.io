@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.png" color="#222">
+  <meta name="msvalidate.01" content="FCC2A0A2D983861F47E2A4F4188537E9">
+  <meta name="baidu-site-verification" content="code-7w81hVl3ZN">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="/lib/@fortawesome/fontawesome-free/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/lib/animate.css/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/lib/pace-js/themes/blue/pace-theme-minimal.css">
+  <script src="/lib/pace-js/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cxm1024.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="比赛传送门  A. Cowardly Rooks 题意：有一个 \(n\times n\) 的棋盘，有 \(m\) 个位置上有车，保证互不攻击。问是否能将一个车移动一次使得仍然互不攻击。  稍加思考可得，如果 \(m\ne n\)，一定可以，否则一定不可以。因为如果 \(m">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EDU-CFR-138解题报告">
+<meta property="og:url" content="https://cxm1024.github.io/2022/10/21/edu-cfr-138-jie-ti-bao-gao/index.html">
+<meta property="og:site_name" content="曹轩鸣的博客">
+<meta property="og:description" content="比赛传送门  A. Cowardly Rooks 题意：有一个 \(n\times n\) 的棋盘，有 \(m\) 个位置上有车，保证互不攻击。问是否能将一个车移动一次使得仍然互不攻击。  稍加思考可得，如果 \(m\ne n\)，一定可以，否则一定不可以。因为如果 \(m">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/cxm1024/img/master/uPic/379426B4793045BB86CF8E7944BA7F33.jpg">
+<meta property="article:published_time" content="2022-10-21T03:07:51.000Z">
+<meta property="article:modified_time" content="2022-10-21T05:40:57.036Z">
+<meta property="article:author" content="cxm1024">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/cxm1024/img/master/uPic/379426B4793045BB86CF8E7944BA7F33.jpg">
+
+
+<link rel="canonical" href="https://cxm1024.github.io/2022/10/21/edu-cfr-138-jie-ti-bao-gao/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://cxm1024.github.io/2022/10/21/edu-cfr-138-jie-ti-bao-gao/","path":"2022/10/21/edu-cfr-138-jie-ti-bao-gao/","title":"EDU-CFR-138解题报告"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>EDU-CFR-138解题报告 | 曹轩鸣的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">曹轩鸣的博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Nothing is impossible.</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#a.-cowardly-rooks"><span class="nav-number">1.</span> <span class="nav-text">A. Cowardly Rooks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#b.-deaths-blessing"><span class="nav-number">2.</span> <span class="nav-text">B. Death&#39;s Blessing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#c.-number-game"><span class="nav-number">3.</span> <span class="nav-text">C. Number Game</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#d.-counting-arrays"><span class="nav-number">4.</span> <span class="nav-text">D. Counting Arrays</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#e.-cactus-wall"><span class="nav-number">5.</span> <span class="nav-text">E. Cactus Wall</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="cxm1024"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">cxm1024</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友链
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://zyd.blog.luogu.org/" title="https:&#x2F;&#x2F;zyd.blog.luogu.org&#x2F;" rel="noopener" target="_blank">TLE_Automat</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.luogu.com.cn/blog/He-Ren/" title="https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;blog&#x2F;He-Ren&#x2F;" rel="noopener" target="_blank">He_Ren</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://djh233.blog.luogu.org/" title="https:&#x2F;&#x2F;djh233.blog.luogu.org&#x2F;" rel="noopener" target="_blank">djh233</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://echidna.blog.luogu.org/" title="https:&#x2F;&#x2F;echidna.blog.luogu.org&#x2F;" rel="noopener" target="_blank">Echidna</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.luogu.com.cn/blog/116067/" title="https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;blog&#x2F;116067&#x2F;" rel="noopener" target="_blank">Create_Random</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2022/10/21/edu-cfr-138-jie-ti-bao-gao/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="cxm1024">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="EDU-CFR-138解题报告 | 曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          EDU-CFR-138解题报告
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-10-21 11:07:51 / 修改时间：13:40:57" itemprop="dateCreated datePublished" datetime="2022-10-21T11:07:51+08:00">2022-10-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" itemprop="url" rel="index"><span itemprop="name">解题报告</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1749">比赛传送门</a></p>
+<h2 id="a.-cowardly-rooks">A. Cowardly Rooks</h2>
+<blockquote>
+<p>题意：有一个 <span class="math inline">\(n\times n\)</span> 的棋盘，有 <span class="math inline">\(m\)</span> 个位置上有车，保证互不攻击。问是否能将一个车移动一次使得仍然互不攻击。</p>
+</blockquote>
+<p>稍加思考可得，如果 <span class="math inline">\(m\ne n\)</span>，一定可以，否则一定不可以。因为如果 <span class="math inline">\(m&lt;n\)</span>，则一定有一列是空着的，随便选一辆车移动到该列即可。如果 <span class="math inline">\(m=n\)</span>，易证一定不可以。</p>
+<p>By <a target="_blank" rel="noopener" href="https://codeforces.com/contest/1749/submission/177143956">caoxuanming</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    cin&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--) &#123;</span><br><span class="line">        <span class="keyword">int</span> n,m,x,y;</span><br><span class="line">        cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">            cin&gt;&gt;x&gt;&gt;y;</span><br><span class="line">        <span class="keyword">if</span>(n==m) cout&lt;&lt;<span class="string">&quot;NO&quot;</span>&lt;&lt;endl;</span><br><span class="line">        <span class="keyword">else</span> cout&lt;&lt;<span class="string">&quot;YES&quot;</span>&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="b.-deaths-blessing">B. Death's Blessing</h2>
+<blockquote>
+<p>题意：有 <span class="math inline">\(n\)</span> 个怪物排成一排，每个怪物有 <span class="math inline">\(a_i,b_i\)</span> 两个权值。杀掉一个怪物需要花费 <span class="math inline">\(a_i\)</span> 的代价，同时会导致与其相邻的怪物的 <span class="math inline">\(a\)</span> 增加 <span class="math inline">\(b_i\)</span>。杀掉后左右两边变成相邻的。求全部杀完的最小代价。</p>
+</blockquote>
+<p>我们从贡献的角度考虑。显然每个怪物的 <span class="math inline">\(a_i\)</span> 都会且仅会给答案造成 <span class="math inline">\(a_i\)</span> 的贡献，所以可以不用考虑。对于 <span class="math inline">\(b_i\)</span>，只有杀掉的时候会产生贡献，所以只会贡献一“次”，而每次可以造成 0/1/2 倍的贡献（根据邻居数量）。显然，0 倍贡献只有最后一个怪物可以达到，而其他的怪物要么 1 倍要么 2 倍。此时显然每个其他怪物都用 1 倍更优，而这种方案是一定能够达到的：只需要从两边依次取到最后一个怪物的位置即可。所以只需要让 <span class="math inline">\(b\)</span> 最大的怪物造成 0 倍，其他造成 1 倍即可。</p>
+<p>By <a target="_blank" rel="noopener" href="https://codeforces.com/contest/1749/submission/177174379">caoxuanming</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">200010</span>],b[<span class="number">200010</span>];</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    cin&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--) &#123;</span><br><span class="line">        <span class="keyword">int</span> n;</span><br><span class="line">        cin&gt;&gt;n;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">            cin&gt;&gt;a[i];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">            cin&gt;&gt;b[i];</span><br><span class="line">        <span class="keyword">int</span> maxn=<span class="number">0</span>,sum=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">            maxn=<span class="built_in">max</span>(maxn,b[i]);</span><br><span class="line">            sum+=a[i]+b[i];</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;sum-maxn&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="c.-number-game">C. Number Game</h2>
+<blockquote>
+<p>题意：有一个长度为 <span class="math inline">\(n\)</span> 的序列 <span class="math inline">\(a\)</span>，进行 <span class="math inline">\(k\)</span> 次操作。第一次操作 Alice 可以删掉一个 <span class="math inline">\(\le k\)</span> 的数并由 Bob 再删掉一个数（如果没有可以不删）；第二次操作 Alice 可以删掉一个 <span class="math inline">\(\le k-1\)</span> 的数并由 Bob 再删掉一个数（如果没有可以不删），以此类推直到第 <span class="math inline">\(k\)</span> 次操作删掉一个 <span class="math inline">\(\le 1\)</span> 的数。如果在某次操作中 Alice 无数可删则 Bob 赢，否则 Alice赢。问 Alice 能赢的最大的 <span class="math inline">\(k\)</span>。</p>
+</blockquote>
+<p>显然 <span class="math inline">\(k\)</span> 不会超过 <span class="math inline">\(n\)</span>，于是从 <span class="math inline">\(1\)</span> 到 <span class="math inline">\(n\)</span> 枚举 <span class="math inline">\(k\)</span>，每次模拟 <span class="math inline">\(k\)</span> 次操作即可。贪心地考虑，Alice 每次一定选能选的最大的数删（因为以后可能就没法删了），而 Bob 每次一定选最小的数删（最小的威胁最大，因为更容易被 Alice 删掉）。于是我们在排好序的数组上维护一个双指针即可。</p>
+<p>By <a target="_blank" rel="noopener" href="https://codeforces.com/contest/1749/submission/177150769"><strong>gyh20</strong></a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> t,n,m,a[<span class="number">1000002</span>],A,B,R[<span class="number">1000002</span>],stk[<span class="number">1000002</span>],tp;</span><br><span class="line"><span class="keyword">char</span> s[<span class="number">1000002</span>];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> ans;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">ck</span><span class="params">(re <span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> pos=n;</span><br><span class="line">    <span class="keyword">while</span>(a[pos]&gt;x)--pos;</span><br><span class="line">    <span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=x;++i)&#123;</span><br><span class="line">        <span class="keyword">while</span>(a[pos]&gt;x-i+<span class="number">1</span>)--pos;</span><br><span class="line">        <span class="keyword">if</span>(pos&lt;i)<span class="keyword">return</span> <span class="number">0</span>;--pos;</span><br><span class="line">    &#125;<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    t=<span class="built_in">read</span>();</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        n=<span class="built_in">read</span>();ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)a[i]=<span class="built_in">read</span>();<span class="built_in">sort</span>(a+<span class="number">1</span>,a+n+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span>(re <span class="keyword">int</span> i=n;~i;--i)</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">ck</span>(i))&#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,i);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="d.-counting-arrays">D. Counting Arrays</h2>
+<blockquote>
+<p>题意：假设有一个序列 <span class="math inline">\(a_1\sim a_k\)</span>，我们可以以某种顺序依次删除这 <span class="math inline">\(k\)</span> 个元素，要求每次删除的数与“当前它所处的位置”互质。问有多少个长度在 <span class="math inline">\([1,n]\)</span>，值域在 <span class="math inline">\([1,m]\)</span> 的序列，满足有 <span class="math inline">\(\ge 2\)</span> 种满足条件的删除方式。</p>
+</blockquote>
+<p>首先，由于任何序列都存在一种平凡的满足条件的删除方式———每次都删除第一个元素，所以问题转化为有多少个序列存在一个非平凡的删除方式。进一步，我们可以发现，如果存在一个 <span class="math inline">\(2\le j\le i\)</span> 使得 <span class="math inline">\(a_i\)</span> 与 <span class="math inline">\(j\)</span> 互质，则一定存在一个非平凡的删除方式：先取若干次第一个元素直到 <span class="math inline">\(a_i\)</span> 成为第 <span class="math inline">\(j\)</span> 位，然后取 <span class="math inline">\(a_i\)</span>，然后再取第一个元素直到取完。反之，如果对于每个 <span class="math inline">\(i\)</span> 都不存在一个 <span class="math inline">\(2\le j\le i\)</span> 使得 <span class="math inline">\(a_i\)</span> 与 <span class="math inline">\(j\)</span> 互质，则一定不存在非平凡的删除方式，证明显然。</p>
+<p>我们可以反向考虑问题，考虑有多少种序列不存在非平凡的删除方式，则每位互相独立。我们只需要对于每个 <span class="math inline">\(i\)</span>，求出有多少种 <span class="math inline">\(1\le a_i\le m\)</span> 满足它与任意 <span class="math inline">\(2\le j\le i\)</span> 都不互质，每位的答案乘起来即可。而一个数与任意 <span class="math inline">\(2\le j\le i\)</span> 都不互质又可以进一步转化为与任意 <span class="math inline">\(2\le j\le i,j\text{ is prime}\)</span> 都不互质，即是所有 <span class="math inline">\(\le i\)</span> 的质数的倍数，也即：是当前所有质数乘积的倍数。所以我们可以维护一个当前质数的乘积 <span class="math inline">\(now\)</span>，每次更新，答案便乘上 <span class="math inline">\(m/now\)</span>。由于我们求的是“不存在删除方式”的方案数，而需要求“存在”的方案数，所以真正的答案要用总方案数减去“不存在”的方案数。由于要求长度在 <span class="math inline">\([1,n]\)</span> 之间，每次扫到一个位就将总答案加上这个位数的答案即可。</p>
+<p>By <a target="_blank" rel="noopener" href="https://codeforces.com/contest/1749/submission/177251568">cxm1024</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">998244353</span>;</span><br><span class="line"><span class="keyword">bool</span> isprime[<span class="number">300010</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n=<span class="number">300010</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n;i++)</span><br><span class="line">        isprime[i]=<span class="number">1</span>;</span><br><span class="line">    isprime[<span class="number">0</span>]=isprime[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(!isprime[i]) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=i*i;j&lt;=n;j+=i)</span><br><span class="line">            isprime[j]=<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">init</span>();</span><br><span class="line">    <span class="keyword">int</span> n,m;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    <span class="keyword">int</span> now=<span class="number">1</span>,ans=<span class="number">1</span>,ansans=<span class="number">0</span>,mi=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(now&lt;=m&amp;&amp;isprime[i]) now=now*i;</span><br><span class="line">        (ans*=m/now%mod)%=mod;</span><br><span class="line">        mi=mi*(m%mod)%mod;</span><br><span class="line">        (ansans+=(mi-ans+mod)%mod)%=mod;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;ansans&lt;&lt;endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="e.-cactus-wall">E. Cactus Wall</h2>
+<blockquote>
+<p>题意：有一个 <span class="math inline">\(n\times m\)</span> 的矩阵，有些位置是有障碍的。你需要添加尽可能少的障碍，满足障碍之间不能边相邻（但可以角相邻，保证初始矩阵满足条件），使得第一行到最后一行不存在路径（不连通）。</p>
+</blockquote>
+<p>我们发现，最终的墙一定是由若干个对角相邻的障碍连起来的。我们可以预处理哪些位置不能放障碍（即与已有障碍相邻的位置），然后预处理这个障碍可以与哪些位置在答案的墙中相邻（即建图），然后问题转化为从第一列到最后一列建一个墙（路径）使得添加的障碍数尽可能少（最短路）。我们可以建一个虚点作为源点连向第一列的所有能放障碍的点，并建一个虚点作为汇点连着最后一列的点，跑一遍 BFS/Dijkstra 即可。</p>
+<p><img data-src="https://raw.githubusercontent.com/cxm1024/img/master/uPic/379426B4793045BB86CF8E7944BA7F33.jpg" /></p>
+<p>By <a target="_blank" rel="noopener" href="https://codeforces.com/contest/1749/submission/177182011"><strong>SSRS_</strong></a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; dx = &#123;<span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">0</span>&#125;;</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; dy = &#123;<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>&#125;;</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; dx2 = &#123;<span class="number">1</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>&#125;;</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; dy2 = &#123;<span class="number">1</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">-1</span>&#125;;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">100000000</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">  cin.<span class="built_in">tie</span>(<span class="literal">nullptr</span>);</span><br><span class="line">  <span class="keyword">int</span> t;</span><br><span class="line">  cin &gt;&gt; t;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; t; i++)&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="function">vector&lt;string&gt; <span class="title">s</span><span class="params">(n)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)&#123;</span><br><span class="line">      cin &gt;&gt; s[j];</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">bool</span>&gt;&gt; <span class="built_in">ok</span>(n, vector&lt;<span class="keyword">bool</span>&gt;(m, <span class="literal">true</span>));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)&#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; m; k++)&#123;</span><br><span class="line">        <span class="keyword">if</span> (s[j][k] == <span class="string">&#x27;#&#x27;</span>)&#123;</span><br><span class="line">          ok[j][k] = <span class="literal">false</span>;</span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">int</span> l = <span class="number">0</span>; l &lt; <span class="number">4</span>; l++)&#123;</span><br><span class="line">            <span class="keyword">int</span> x = j + dx[l];</span><br><span class="line">            <span class="keyword">int</span> y = k + dy[l];</span><br><span class="line">            <span class="keyword">if</span> (<span class="number">0</span> &lt;= x &amp;&amp; x &lt; n &amp;&amp; <span class="number">0</span> &lt;= y &amp;&amp; y &lt; m)&#123;</span><br><span class="line">              ok[x][y] = <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;vector&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">d</span>(n, vector&lt;<span class="keyword">int</span>&gt;(m, INF));</span><br><span class="line">    vector&lt;vector&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&gt;&gt; <span class="built_in">pr</span>(n, vector&lt;pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt;&gt;(m));</span><br><span class="line">    deque&lt;tuple&lt;<span class="keyword">int</span>, <span class="keyword">int</span>, <span class="keyword">int</span>&gt;&gt; dq;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)&#123;</span><br><span class="line">      <span class="keyword">if</span> (s[j][<span class="number">0</span>] == <span class="string">&#x27;#&#x27;</span>)&#123;</span><br><span class="line">        d[j][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        dq.<span class="built_in">push_front</span>(<span class="built_in">make_tuple</span>(<span class="number">0</span>, j, <span class="number">0</span>));</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (ok[j][<span class="number">0</span>])&#123;</span><br><span class="line">        d[j][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        dq.<span class="built_in">push_back</span>(<span class="built_in">make_tuple</span>(<span class="number">1</span>, j, <span class="number">0</span>));</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (!dq.<span class="built_in">empty</span>())&#123;</span><br><span class="line">      <span class="keyword">int</span> c = get&lt;<span class="number">0</span>&gt;(dq.<span class="built_in">front</span>());</span><br><span class="line">      <span class="keyword">int</span> x = get&lt;<span class="number">1</span>&gt;(dq.<span class="built_in">front</span>());</span><br><span class="line">      <span class="keyword">int</span> y = get&lt;<span class="number">2</span>&gt;(dq.<span class="built_in">front</span>());</span><br><span class="line">      dq.<span class="built_in">pop_front</span>();</span><br><span class="line">      <span class="keyword">if</span> (d[x][y] == c)&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">4</span>; j++)&#123;</span><br><span class="line">          <span class="keyword">int</span> x2 = x + dx2[j];</span><br><span class="line">          <span class="keyword">int</span> y2 = y + dy2[j];</span><br><span class="line">          <span class="keyword">if</span> (<span class="number">0</span> &lt;= x2 &amp;&amp; x2 &lt; n &amp;&amp; <span class="number">0</span> &lt;= y2 &amp;&amp; y2 &lt; m)&#123;</span><br><span class="line">            <span class="keyword">if</span> (s[x2][y2]  == <span class="string">&#x27;#&#x27;</span>)&#123;</span><br><span class="line">              <span class="keyword">if</span> (d[x2][y2] &gt; d[x][y])&#123;</span><br><span class="line">                d[x2][y2] = d[x][y];</span><br><span class="line">                pr[x2][y2] = <span class="built_in">make_pair</span>(x, y);</span><br><span class="line">                dq.<span class="built_in">push_front</span>(<span class="built_in">make_tuple</span>(c, x2, y2));</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (ok[x2][y2])&#123;</span><br><span class="line">              <span class="keyword">if</span> (d[x2][y2] &gt; d[x][y] + <span class="number">1</span>)&#123;</span><br><span class="line">                d[x2][y2] = d[x][y] + <span class="number">1</span>;</span><br><span class="line">                pr[x2][y2] = <span class="built_in">make_pair</span>(x, y);</span><br><span class="line">                dq.<span class="built_in">push_back</span>(<span class="built_in">make_tuple</span>(c + <span class="number">1</span>, x2, y2));</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> mn = INF, p = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)&#123;</span><br><span class="line">      <span class="keyword">if</span> (d[j][m - <span class="number">1</span>] &lt; mn)&#123;</span><br><span class="line">        mn = d[j][m - <span class="number">1</span>];</span><br><span class="line">        p = j;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (p == <span class="number">-1</span>)&#123;</span><br><span class="line">      cout &lt;&lt; <span class="string">&quot;NO&quot;</span> &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      vector&lt;string&gt; ans = s;</span><br><span class="line">      <span class="keyword">int</span> x = p, y = m - <span class="number">1</span>;</span><br><span class="line">      <span class="keyword">int</span> CNT = <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">while</span> (<span class="literal">true</span>)&#123;</span><br><span class="line">        ans[x][y] = <span class="string">&#x27;#&#x27;</span>;</span><br><span class="line">        <span class="keyword">if</span> (y == <span class="number">0</span>)&#123;</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> x2 = pr[x][y].first;</span><br><span class="line">        <span class="keyword">int</span> y2 = pr[x][y].second;</span><br><span class="line">        x = x2;</span><br><span class="line">        y = y2;</span><br><span class="line">      &#125;</span><br><span class="line">      cout &lt;&lt; <span class="string">&quot;YES&quot;</span> &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)&#123;</span><br><span class="line">        cout &lt;&lt; ans[j] &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/10/20/abc-273-jie-ti-bao-gao/" rel="prev" title="ABC-273解题报告">
+                  <i class="fa fa-chevron-left"></i> ABC-273解题报告
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">cxm1024</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="/lib/animejs/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="/lib/lozad/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"/lib/mathjax/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
