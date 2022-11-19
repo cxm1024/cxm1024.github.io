@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.png" color="#222">
+  <meta name="msvalidate.01" content="FCC2A0A2D983861F47E2A4F4188537E9">
+  <meta name="baidu-site-verification" content="code-7w81hVl3ZN">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="/lib/@fortawesome/fontawesome-free/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/lib/animate.css/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/lib/pace-js/themes/blue/pace-theme-minimal.css">
+  <script src="/lib/pace-js/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cxm1024.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="题目传送门  题意：有一个环，每个位置的值为 0&#x2F;1，初始在位置 \(1\)，当走到一个已经走过的格子时不需要花费，如果没走过，如果值为 1，需要花费 \(b+1\)，否则花费为 \(1\)。无论是否走过，移动到相邻的格子花费为 \(a\)。求花费 \(\le t\) 时最多能走到多少个格子。  一个显然的结论是，走法一定为往右走若干格再折回往左走，或往左走若干格再折回往右走。分类讨论或翻转数组即">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CF650B. Image Preview题解">
+<meta property="og:url" content="https://cxm1024.github.io/2022/11/17/cf650b-image-preview-ti-jie/index.html">
+<meta property="og:site_name" content="曹轩鸣的博客">
+<meta property="og:description" content="题目传送门  题意：有一个环，每个位置的值为 0&#x2F;1，初始在位置 \(1\)，当走到一个已经走过的格子时不需要花费，如果没走过，如果值为 1，需要花费 \(b+1\)，否则花费为 \(1\)。无论是否走过，移动到相邻的格子花费为 \(a\)。求花费 \(\le t\) 时最多能走到多少个格子。  一个显然的结论是，走法一定为往右走若干格再折回往左走，或往左走若干格再折回往右走。分类讨论或翻转数组即">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-11-17T07:51:27.000Z">
+<meta property="article:modified_time" content="2022-11-17T08:11:37.437Z">
+<meta property="article:author" content="cxm1024">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://cxm1024.github.io/2022/11/17/cf650b-image-preview-ti-jie/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://cxm1024.github.io/2022/11/17/cf650b-image-preview-ti-jie/","path":"2022/11/17/cf650b-image-preview-ti-jie/","title":"CF650B. Image Preview题解"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>CF650B. Image Preview题解 | 曹轩鸣的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">曹轩鸣的博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Nothing is impossible.</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%9A%E6%B3%95%E4%B8%80"><span class="nav-number">1.</span> <span class="nav-text">做法一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%9A%E6%B3%95%E4%BA%8C"><span class="nav-number">2.</span> <span class="nav-text">做法二</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="cxm1024"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">cxm1024</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友链
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://zyd.blog.luogu.org/" title="https:&#x2F;&#x2F;zyd.blog.luogu.org&#x2F;" rel="noopener" target="_blank">TLE_Automat</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.luogu.com.cn/blog/He-Ren/" title="https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;blog&#x2F;He-Ren&#x2F;" rel="noopener" target="_blank">He_Ren</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://djh233.blog.luogu.org/" title="https:&#x2F;&#x2F;djh233.blog.luogu.org&#x2F;" rel="noopener" target="_blank">djh233</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://echidna.blog.luogu.org/" title="https:&#x2F;&#x2F;echidna.blog.luogu.org&#x2F;" rel="noopener" target="_blank">Echidna</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.luogu.com.cn/blog/116067/" title="https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;blog&#x2F;116067&#x2F;" rel="noopener" target="_blank">Create_Random</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2022/11/17/cf650b-image-preview-ti-jie/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="cxm1024">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="CF650B. Image Preview题解 | 曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CF650B. Image Preview题解
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-11-17 15:51:27 / 修改时间：16:11:37" itemprop="dateCreated datePublished" datetime="2022-11-17T15:51:27+08:00">2022-11-17</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/650/problem/B">题目传送门</a></p>
+<blockquote>
+<p>题意：有一个环，每个位置的值为 0/1，初始在位置 <span class="math inline">\(1\)</span>，当走到一个已经走过的格子时不需要花费，如果没走过，如果值为 1，需要花费 <span class="math inline">\(b+1\)</span>，否则花费为 <span class="math inline">\(1\)</span>。无论是否走过，移动到相邻的格子花费为 <span class="math inline">\(a\)</span>。求花费 <span class="math inline">\(\le t\)</span> 时最多能走到多少个格子。</p>
+</blockquote>
+<p>一个显然的结论是，走法一定为往右走若干格再折回往左走，或往左走若干格再折回往右走。分类讨论或翻转数组即可。这里只考虑往右走再折回往左走的情况。</p>
+<h3 id="做法一">做法一</h3>
+<p>如果我们往右走 <span class="math inline">\(0\)</span> 步就折回（即直接往左走）的最大步数为 <span class="math inline">\(p\)</span>，考虑快速计算往右走 <span class="math inline">\(1\)</span> 步后往左的最大步数。因为往右多了一步，花费会多加上移动两步的花费，即 <span class="math inline">\(2a\)</span>，再加上它本身的花费（<span class="math inline">\(1\)</span> 或 <span class="math inline">\(b+1\)</span>）。加上之后，如果超过了额定花费，则将往左走的步数重复减小至小于等于额定花费。类似尺取法。复杂度证明上，由于每次加上/减去一个花费是 <span class="math inline">\(O(1)\)</span> 的，所以总复杂度 <span class="math inline">\(O(n)\)</span>。</p>
+<p>By <a target="_blank" rel="noopener" href="https://codeforces.com/contest/650/submission/16567529"><strong>tourist</strong></a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1000010</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> v[N];</span><br><span class="line"><span class="keyword">int</span> sum[N];</span><br><span class="line"><span class="keyword">char</span> foo[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> n, A, B, T;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%d %d %d %d&quot;</span>, &amp;n, &amp;A, &amp;B, &amp;T);</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, foo);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    v[i] = <span class="number">1</span> + (foo[i] == <span class="string">&#x27;w&#x27;</span> ? B : <span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (v[<span class="number">0</span>] &gt; T) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> rot = <span class="number">0</span>; rot &lt; <span class="number">2</span>; rot++) &#123;</span><br><span class="line">    sum[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">      sum[i] = sum[i - <span class="number">1</span>] + v[i] + A;</span><br><span class="line">    &#125;</span><br><span class="line">    v[n] = v[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">int</span> spent = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> cur = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n; i &gt;= <span class="number">1</span>; i--) &#123;</span><br><span class="line">      spent += v[i];</span><br><span class="line">      cur++;</span><br><span class="line">      <span class="keyword">if</span> (spent &gt; T) &#123;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      ans = <span class="built_in">max</span>(ans, cur);</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="keyword">int</span> back = (n - i) * A;</span><br><span class="line">        <span class="keyword">int</span> have = T - (spent + back);</span><br><span class="line">        <span class="keyword">if</span> (have &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">          <span class="keyword">int</span> low = <span class="number">0</span>, high = i - <span class="number">1</span>;</span><br><span class="line">          <span class="keyword">while</span> (low &lt; high) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (low + high + <span class="number">1</span>) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (sum[mid] &lt;= have) &#123;</span><br><span class="line">              low = mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              high = mid - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          ans = <span class="built_in">max</span>(ans, cur + low);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      spent += A;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n - i; i++) &#123;</span><br><span class="line">      <span class="built_in">swap</span>(v[i], v[n - i]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  ans = <span class="built_in">min</span>(ans, n);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="做法二">做法二</h3>
+<p>可以通过牺牲复杂度来换取较简单的代码实现：预处理前缀和，每一步用二分代替尺取。</p>
+<p>By <a target="_blank" rel="noopener" href="https://codeforces.com/contest/650/submission/109702444"><strong>eecs</strong></a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">500010</span>;</span><br><span class="line"><span class="keyword">int</span> n, ans, A, B, T;</span><br><span class="line"><span class="keyword">char</span> s[maxn];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> sum[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d %d %d %s&quot;</span>, &amp;n, &amp;A, &amp;B, &amp;T, s + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        sum[i] = sum[i - <span class="number">1</span>] + <span class="number">1</span> + (s[i] == <span class="string">&#x27;w&#x27;</span> ? B : <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="keyword">if</span> (sum[i] + <span class="number">1LL</span> * A * (i - <span class="number">1</span>) &lt;= T) &#123;</span><br><span class="line">        <span class="keyword">int</span> l = i + <span class="number">1</span>, r = n, pos = n + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (l &lt;= r) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">long</span> <span class="keyword">long</span> v = sum[i] + sum[n] - sum[mid - <span class="number">1</span>] + <span class="number">1LL</span> * A * (i + n -</span><br><span class="line">                mid + <span class="built_in">min</span>(i - <span class="number">1</span>, n - mid + <span class="number">1</span>));</span><br><span class="line">            <span class="keyword">if</span> (v &lt;= T) r = (pos = mid) - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">else</span> l = mid + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        ans = <span class="built_in">max</span>(ans, i + n - pos + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/11/15/wei-tai-lian-ce-hao-ti-ji-jin/" rel="prev" title="潍泰联测好题集锦">
+                  <i class="fa fa-chevron-left"></i> 潍泰联测好题集锦
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/11/19/abc-278-jie-ti-bao-gao/" rel="next" title="ABC-278解题报告">
+                  ABC-278解题报告 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">cxm1024</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="/lib/animejs/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="/lib/lozad/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"/lib/mathjax/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 5.4.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.png" color="#222">
+  <meta name="msvalidate.01" content="FCC2A0A2D983861F47E2A4F4188537E9">
+  <meta name="baidu-site-verification" content="code-7w81hVl3ZN">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="/lib/@fortawesome/fontawesome-free/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/lib/animate.css/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="/lib/pace-js/themes/blue/pace-theme-minimal.css">
+  <script src="/lib/pace-js/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"cxm1024.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.13.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="minosi 题意：有一个 \(n\times m\) 的矩阵，每个格子有黑白两种颜色。所有黑色的格子只能从左方或上分进入，白色格子只能从右方或下方进入。求是否能走恰好 \(k\) 步从 \((1,1)\) 走到 \((n,m)\)。\(n\times m\le 300,k\le 10^6\)。  做法一 可以直接 \(O(nmk)\) DP。令 \(f[k][i][j]\) 表示从 \((1,1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="潍泰联测好题集锦">
+<meta property="og:url" content="https://cxm1024.github.io/2022/11/15/wei-tai-lian-ce-hao-ti-ji-jin/index.html">
+<meta property="og:site_name" content="曹轩鸣的博客">
+<meta property="og:description" content="minosi 题意：有一个 \(n\times m\) 的矩阵，每个格子有黑白两种颜色。所有黑色的格子只能从左方或上分进入，白色格子只能从右方或下方进入。求是否能走恰好 \(k\) 步从 \((1,1)\) 走到 \((n,m)\)。\(n\times m\le 300,k\le 10^6\)。  做法一 可以直接 \(O(nmk)\) DP。令 \(f[k][i][j]\) 表示从 \((1,1">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-11-15T14:24:33.000Z">
+<meta property="article:modified_time" content="2022-11-15T14:50:33.011Z">
+<meta property="article:author" content="cxm1024">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://cxm1024.github.io/2022/11/15/wei-tai-lian-ce-hao-ti-ji-jin/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://cxm1024.github.io/2022/11/15/wei-tai-lian-ce-hao-ti-ji-jin/","path":"2022/11/15/wei-tai-lian-ce-hao-ti-ji-jin/","title":"潍泰联测好题集锦"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>潍泰联测好题集锦 | 曹轩鸣的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">曹轩鸣的博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Nothing is impossible.</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#minosi"><span class="nav-number">1.</span> <span class="nav-text">minosi</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%9A%E6%B3%95%E4%B8%80"><span class="nav-number">1.1.</span> <span class="nav-text">做法一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%9A%E6%B3%95%E4%BA%8C"><span class="nav-number">1.2.</span> <span class="nav-text">做法二</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#carpet"><span class="nav-number">2.</span> <span class="nav-text">carpet</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="cxm1024"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">cxm1024</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友链
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://zyd.blog.luogu.org/" title="https:&#x2F;&#x2F;zyd.blog.luogu.org&#x2F;" rel="noopener" target="_blank">TLE_Automat</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.luogu.com.cn/blog/He-Ren/" title="https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;blog&#x2F;He-Ren&#x2F;" rel="noopener" target="_blank">He_Ren</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://djh233.blog.luogu.org/" title="https:&#x2F;&#x2F;djh233.blog.luogu.org&#x2F;" rel="noopener" target="_blank">djh233</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://echidna.blog.luogu.org/" title="https:&#x2F;&#x2F;echidna.blog.luogu.org&#x2F;" rel="noopener" target="_blank">Echidna</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.luogu.com.cn/blog/116067/" title="https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;blog&#x2F;116067&#x2F;" rel="noopener" target="_blank">Create_Random</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2022/11/15/wei-tai-lian-ce-hao-ti-ji-jin/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="cxm1024">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="潍泰联测好题集锦 | 曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          潍泰联测好题集锦
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-11-15 22:24:33 / 修改时间：22:50:33" itemprop="dateCreated datePublished" datetime="2022-11-15T22:24:33+08:00">2022-11-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="minosi">minosi</h2>
+<blockquote>
+<p>题意：有一个 <span class="math inline">\(n\times m\)</span> 的矩阵，每个格子有黑白两种颜色。所有黑色的格子只能从左方或上分进入，白色格子只能从右方或下方进入。求是否能走恰好 <span class="math inline">\(k\)</span> 步从 <span class="math inline">\((1,1)\)</span> 走到 <span class="math inline">\((n,m)\)</span>。<span class="math inline">\(n\times m\le 300,k\le 10^6\)</span>。</p>
+</blockquote>
+<h3 id="做法一">做法一</h3>
+<p>可以直接 <span class="math inline">\(O(nmk)\)</span> DP。令 <span class="math inline">\(f[k][i][j]\)</span> 表示从 <span class="math inline">\((1,1)\)</span> 走 <span class="math inline">\(k\)</span> 步是否能走到 <span class="math inline">\((i,j)\)</span>，则</p>
+<p><span class="math display">\[
+f[k][i][j]=
+\begin{cases}
+f[k-1][i-1][j]\texttt{ or }f[k-1][i][j-1] &amp; (i,j)\text{ is black}\\
+f[k-1][i+1][j]\texttt{ or }f[k-1][i][j+1] &amp; (i,j)\text{ is white}
+\end{cases}
+\]</span></p>
+<p>空间上可以使用滚动数组优化掉第三维。</p>
+<p>这种做法虽然可以通过，但没有达到极限。我们可以考虑将格子从 <span class="math inline">\(1\)</span> 到 <span class="math inline">\(nm\)</span> 按正常顺序编号（即 <span class="math inline">\((i,j)\to(i-1)\cdot m+j\)</span>），则设 <span class="math inline">\(f[k][x]\)</span> 表示恰好走 <span class="math inline">\(k\)</span> 步是否能做到编号为 <span class="math inline">\(x\)</span> 的节点。转移类似，用编号法表示一下即可：</p>
+<p><span class="math display">\[
+f[k][x]=
+\begin{cases}
+f[k-1][x-1]\texttt{ or }f[k-1][x-m] &amp; (i,j)\text{ is black}\\
+f[k-1][x+1]\texttt{ or }f[k-1][x+m] &amp; (i,j)\text{ is white}
+\end{cases}
+\]</span></p>
+<p>这样的好处是什么呢？由于 <span class="math inline">\(f\)</span> 的值只能为 <span class="math inline">\(0/1\)</span>，所以我们可以使用 bitset 来存某一个 <span class="math inline">\(k\)</span> 的所有位置的可达性，则对于所有黑格子，<span class="math inline">\(f[k]=(f[k-1]&gt;&gt;1)|(f[k-1]&gt;&gt;m)\)</span>，白格子类似。</p>
+<p>对于黑白格子的区分，预处理两个 bitset 表示格子颜色，需要提取某种颜色时按位与一下即可。还有一点需要注意，就是判断格子的边界。无法从上一行的最后一列转移到这一行的第一列，特殊处理一下即可。时间复杂度 <span class="math inline">\(O(\frac{nmk}{\omega})\)</span>。</p>
+<h3 id="做法二">做法二</h3>
+<p>倍增优化传递闭包。</p>
+<p>未完待续...</p>
+<h2 id="carpet">carpet</h2>
+<blockquote>
+<p>题意：平面上有 <span class="math inline">\(n\)</span> 个矩形（通过左下角和右上角坐标描述），求有多少面积被至少 <span class="math inline">\(n-1\)</span> 个矩形覆盖。<span class="math inline">\(T\le 5,n\le 3\times 10^5,0\le val\le 10^9\)</span>。</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/11/12/abc-277-jie-ti-bao-gao/" rel="prev" title="ABC-277解题报告">
+                  <i class="fa fa-chevron-left"></i> ABC-277解题报告
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/11/17/cf650b-image-preview-ti-jie/" rel="next" title="CF650B. Image Preview题解">
+                  CF650B. Image Preview题解 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">cxm1024</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="/lib/animejs/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="/lib/lozad/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"/lib/mathjax/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>

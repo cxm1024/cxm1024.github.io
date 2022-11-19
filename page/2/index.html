@@ -132,7 +132,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">46</span>
+          <span class="site-state-item-count">53</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -195,6 +195,650 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2022/10/30/abc275c-counting-squares-ti-jie/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="cxm1024">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/10/30/abc275c-counting-squares-ti-jie/" class="post-title-link" itemprop="url">ABC275C. Counting Squares题解</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-10-30 00:02:51" itemprop="dateCreated datePublished" datetime="2022-10-30T00:02:51+08:00">2022-10-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-11-03 17:47:17" itemprop="dateModified" datetime="2022-11-03T17:47:17+08:00">2022-11-03</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          题目传送门
+
+题意：给你一个 \(9\times 9\) 的矩阵，格子非黑即白，问有多少个不同的正方形，满足四个顶点都为黑色。
+
+很容易想到直接枚举四个顶点的位置，判断、去重，但这个做法显然过于麻烦，难以实现。
+
+于是我们可以想到如何更简洁地确定正方形位置，并尽量省掉去重的步骤。我的做法是枚举左上的顶点，再枚举右下方的某个顶点，统计得到的线段往右平移画出的正方形。实现上，我们用 \((i_1,j_1),(i_2,j_2)\) 来表示前两个节点，则可以用数学方式推出后两个节点的坐标。
+
+By cxm1024
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+1
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/10/30/abc275c-counting-squares-ti-jie/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2022/10/27/abc274f-fishing-ti-jie/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="cxm1024">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/10/27/abc274f-fishing-ti-jie/" class="post-title-link" itemprop="url">ABC274F-Fishing题解</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-10-27 21:01:30 / 修改时间：21:38:44" itemprop="dateCreated datePublished" datetime="2022-10-27T21:01:30+08:00">2022-10-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          题目传送门
+
+题意：有 \(n\) 条鱼在数轴上，第 \(i\) 条鱼初始在 \(x_i\)，有一个向右的速度 \(v_i\) 以及全职 \(w_i\)。问任选出一个时刻 \(t\) 并选出一个长度为 \(A\) 的区间，包含的鱼的权值和最大为多少。\(n\le 2000,\text{other val}\le 10^4\)。
+
+可以考虑枚举最左边选哪条鱼，设为第 \(i\) 条，例如 \(x_i=1,v_i=2,A=1\)，则其他我们可以画出两条直线：
+
+
+
+这两条线有什么用呢？我们对于其他每条鱼画出一条行动函数 \(y=v_ix+x_i\)，则这条鱼在时刻 \(t\) 能处在以 \(i\)
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/10/27/abc274f-fishing-ti-jie/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2022/10/27/timusoj-za-ti-ji-jin/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="cxm1024">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/10/27/timusoj-za-ti-ji-jin/" class="post-title-link" itemprop="url">TimusOJ杂题集锦</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-10-27 15:07:40 / 修改时间：16:44:58" itemprop="dateCreated datePublished" datetime="2022-10-27T15:07:40+08:00">2022-10-27</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          1008. Image Encoding
+题意：有一个 \(10\times 10\) 的矩阵，左下角为 \((0,0)\)，右上角为 \((10,10)\)（平面直角坐标系）。一部分格子被涂成了黑色，保证为一个联通块。有如下两种描述状态的方式：
+
+ 1. 第一行给出黑格子的个数 \(n\)，接下来 \(n\) 行依次给出黑格子的坐标。以 \(x\) 位第一关键字、\(y\) 为第二关键字从小到大给出。
+ 2. 第一行给出左下角（关键字同上）的格子坐标，接下来，第一行一个字符串描述与该格子相邻的、还没有被描述过的格子，用 \(\texttt{R,T,L,B}\) 表示右、上、左、下（严格以此为
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/10/27/timusoj-za-ti-ji-jin/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2022/10/26/cf1753c-wish-i-knew-how-to-sort-ti-jie/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="cxm1024">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/10/26/cf1753c-wish-i-knew-how-to-sort-ti-jie/" class="post-title-link" itemprop="url">CF1753C. Wish I Knew How to Sort题解</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-10-26 21:28:18 / 修改时间：22:44:11" itemprop="dateCreated datePublished" datetime="2022-10-26T21:28:18+08:00">2022-10-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          题目传送门
+
+题意：有一个 01 序列，每次可以选择两个元素，如果为逆序则交换，否则不变，无论是否交换都算一次操作。问排好序的期望操作次数。
+
+容易想到使用 DP 计算，但状态并不是很好想。首先状态必须有单向性，必须有严格的 DP 顺序，于是我们可以想到用逆序对数来记录状态。然而，思考会发现并不可行。不仅是复杂度无法接受，仅用逆序对也无法完整地表示状态。实际上，我们可以用“未归位的数字个数”来作为状态。具体地，假设当前序列为 \(\texttt{01101011}\)，该序列一共有三个 0，所以前三位应该都是 0，而实际上有两个 1，就定义此时的“未归位的数字个数”为 \(2\)。这个状态的单
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/10/26/cf1753c-wish-i-knew-how-to-sort-ti-jie/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2022/10/26/cf1736d-equal-binary-subsequences-ti-jie/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="cxm1024">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/10/26/cf1736d-equal-binary-subsequences-ti-jie/" class="post-title-link" itemprop="url">CF1736D. Equal Binary Subsequences题解</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-10-26 21:07:29 / 修改时间：22:41:32" itemprop="dateCreated datePublished" datetime="2022-10-26T21:07:29+08:00">2022-10-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          题目传送门
+
+题意：给你一个长为 \(2n\) 的 01 序列 \(a\)，你可以选择它的一个子序列，将这个子序列循环右移一位。问是否能使得最终序列满足：可以严格分成两个完全相同的子序列。
+
+显然，当 0/1 的个数为奇数时一定无解。于是只考虑为偶数的情况。
+
+我们可以发现一个性质：我们选中的子序列一定是严格 01 交替的（相邻两个不同、第一位和最后一位也不同），否则一定可以删除一些元素使得效果完全不变。而当我们选中 01 交替的子序列循环右移时，相当于将这个子序列中元素取反。
+
+思考发现，“可以严格分成两个完全相同的子序列”这个限制本身比较复杂，难以判断，于是我们可以猜测有一种平凡的操作策略
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/10/26/cf1736d-equal-binary-subsequences-ti-jie/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2022/10/21/cfr-109-jie-ti-bao-gao/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="cxm1024">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/10/21/cfr-109-jie-ti-bao-gao/" class="post-title-link" itemprop="url">CFR-109解题报告</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-10-21 22:45:08" itemprop="dateCreated datePublished" datetime="2022-10-21T22:45:08+08:00">2022-10-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-10-24 12:27:22" itemprop="dateModified" datetime="2022-10-24T12:27:22+08:00">2022-10-24</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          A. Hometask
+题意：一个字符串，给定 \(k\) 个限制字符对 \((a_i,b_i)\)，要求从原串中删除尽可能少的字符，使得不存在一个相邻的限制字符对。保证 \(a_i\ne b_i\)，且每个字符最多只出现在一个字符对中。
+
+做法 1
+可以设 \(f[i][c]\) 表示前 \(i\) 位，最后一位为 \(c\) 时最少的删除数量，则 \(\forall j,f[i][j]\leftarrow f[i-1][j]+1\)，而特殊地 \(f[i][s[i]]\leftarrow\min\limits_{(s[i],j)\text{ is available}}\{f[i-1][j
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/10/21/cfr-109-jie-ti-bao-gao/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2022/10/21/gym100959i-robots-ti-jie/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="cxm1024">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/10/21/gym100959i-robots-ti-jie/" class="post-title-link" itemprop="url">Gym100959I-Robots题解</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-10-21 17:52:52 / 修改时间：18:05:23" itemprop="dateCreated datePublished" datetime="2022-10-21T17:52:52+08:00">2022-10-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          题意：平面直角坐标系上有 \(n\) 个机器人，每个机器人有一个上下左右之一的方向，初始所有机器人静止。在第 \(0\) 秒，你让第一个机器人开始朝它的方向移动，速度为每秒一个单位。如果一个移动的机器人碰到了一个静止的机器人，该静止机器人也开始朝它的方向移动。需要注意的是，一个移动的机器人无论是否碰到其他机器人，移动的方向和速度永远不会改变。求 \(T\) 秒后的状态。
+
+由于一旦开始移动，后面的状态都是很简单的，所以只需要求出每个机器人从什么时候开始移动即可。考虑如下建图：若机器人 \(i\) 走 \(x\) 秒后会碰到机器人 \(j\)，则连一条 \(i\xrightarrow{x}j\)
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/10/21/gym100959i-robots-ti-jie/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -550,791 +1194,8 @@ long long f[50][4]
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2022/10/12/cfr-826-div-3-jie-ti-bao-gao/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="cxm1024">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="曹轩鸣的博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 曹轩鸣的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/10/12/cfr-826-div-3-jie-ti-bao-gao/" class="post-title-link" itemprop="url">CFR-826-Div.3解题报告</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-10-12 22:23:41" itemprop="dateCreated datePublished" datetime="2022-10-12T22:23:41+08:00">2022-10-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-13 15:54:23" itemprop="dateModified" datetime="2022-10-13T15:54:23+08:00">2022-10-13</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          F. Multi-Colored Segments
-题意：数轴上有 \(n\) 个线段，每个区间有一个颜色 \(c\)，对于每个线段，求与它颜色不同的线段中与它的最短距离。距离定义为两个线段中的点集最近的两个点的距离，如果相交则为 \(0\)。
-
-做法1
-可以想到按颜色排序，正着扫一遍再反着扫一遍，每次维护当前颜色之前的所有颜色的贡献。
-
-具体地，可以用两个 \(set\) 分别维护出现过的所有 \(l\) 和 \(r\) 的位置，每次查询在当前区间 \(r\) 左边的最大 \(r\) 和当前区间 \(l\) 右边的最小 \(l\)。可以发现，这种做法有一个缺陷，即对于完全被包含的情况无法考虑
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/10/12/cfr-826-div-3-jie-ti-bao-gao/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2022/10/04/cf-dp-zhong-deng-ti-ji-jin/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="cxm1024">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="曹轩鸣的博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 曹轩鸣的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/10/04/cf-dp-zhong-deng-ti-ji-jin/" class="post-title-link" itemprop="url">CF-DP中等题集锦</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-10-04 21:23:06" itemprop="dateCreated datePublished" datetime="2022-10-04T21:23:06+08:00">2022-10-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-05 22:54:13" itemprop="dateModified" datetime="2022-10-05T22:54:13+08:00">2022-10-05</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          CF1739E. Cleaning Robot
-题意：有一个 \(2\times n\) 的矩阵，每个格子有可能是干净的也有可能是脏的。一个机器人从 \((1,1)\) 出发，每次移动到离他的曼哈顿距离最近的脏格子并清理。如果出现曼哈顿距离相同的两个脏格子，则机器人会发生故障。在机器人出发前，你可以手动清理若干个格子，问最多保留多少个脏格子能使机器人不出故障地清理完。
-
-注意到，机器人一定会从左往右清理，所以同时出现的两个脏格子只可能出现在当前位置的右侧。定义 \(f[i][j\in\{0,1\}][k\in\{0,1\}]\) 表示当前在第 \(i\) 列的第 \(j\) 行，上一列有/没有
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/10/04/cf-dp-zhong-deng-ti-ji-jin/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2022/10/04/abc-271-jie-ti-bao-gao/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="cxm1024">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="曹轩鸣的博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 曹轩鸣的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/10/04/abc-271-jie-ti-bao-gao/" class="post-title-link" itemprop="url">ABC-271解题报告</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2022-10-04 16:27:18 / 修改时间：16:27:50" itemprop="dateCreated datePublished" datetime="2022-10-04T16:27:18+08:00">2022-10-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" itemprop="url" rel="index"><span itemprop="name">解题报告</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          C. Manga
-题意：有一本书有 \(n\) 卷，你需要从第一卷开始依次看，一旦没有某一卷就停止。在看之前你可以进行若干次操作，每次卖掉任意两卷并买新的任意一卷。问操作结束后最多能看多少卷。
-
-做法 1
-注意到拥有的重复的卷都可以没有损失地卖掉，提前记录一下。然后从小到大扫，如果没有这一卷就尝试卖两本并买这一本。卖的两本优先从重复的卷里考虑，然后再贪心从大到小卖。正确性显然，数据结构维护即可。
-
-By KrK
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-
-
-#incl
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/10/04/abc-271-jie-ti-bao-gao/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2022/09/28/abc-d-ti-ji-jin/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="cxm1024">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="曹轩鸣的博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 曹轩鸣的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/09/28/abc-d-ti-ji-jin/" class="post-title-link" itemprop="url">ABC-D题集锦</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-09-28 10:20:29" itemprop="dateCreated datePublished" datetime="2022-09-28T10:20:29+08:00">2022-09-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-10-04 16:30:10" itemprop="dateModified" datetime="2022-10-04T16:30:10+08:00">2022-10-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          ABC139D. ModSum
-题意：对于 \(1\sim n\) 的排列 \(P\)，求 \(\sum i\%P_i\) 的最大值。
-
-容易证明，最优排列为 \(\{2,3,4,\cdots,n,1\}\)，答案为 \(1+2+\cdots+(n-1)=\frac{n(n-1)}{2}\)。
-
-By risujiroh
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-
-
-#include <bits/stdc++.h>
-using namespace std;
-using lint = long long;
-template<class T = int> using V = vector<
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/09/28/abc-d-ti-ji-jin/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2022/09/26/cf-za-ti-ti-jie-pian-jian-dan/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="cxm1024">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="曹轩鸣的博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 曹轩鸣的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/09/26/cf-za-ti-ti-jie-pian-jian-dan/" class="post-title-link" itemprop="url">CF杂题题解（偏简单）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-09-26 23:57:54" itemprop="dateCreated datePublished" datetime="2022-09-26T23:57:54+08:00">2022-09-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-09-27 23:19:42" itemprop="dateModified" datetime="2022-09-27T23:19:42+08:00">2022-09-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          129B. Students and Shoelaces
-题意：一个 \(n\) 个点 \(m\) 条边的无向图，每一轮删去所有度数为 \(1\) 的点，问删几轮停止。
-
-暴力模拟每一轮即可，每次删点更新邻居度数。
-
-code
-
-By exod40
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-
-
-#include <cstdio>
-#include <vector>
-#include <algorithm>
-using n
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/09/26/cf-za-ti-ti-jie-pian-jian-dan/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2022/09/26/abc.e-dp-ti-mu-ji-jin/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="cxm1024">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="曹轩鸣的博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 曹轩鸣的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/09/26/abc.e-dp-ti-mu-ji-jin/" class="post-title-link" itemprop="url">ABC.E-DP题目集锦</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2022-09-26 14:37:19 / 修改时间：19:32:29" itemprop="dateCreated datePublished" datetime="2022-09-26T14:37:19+08:00">2022-09-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          ABC266E. Throwing the Die
-题意：有 \(n\) 次扔骰子机会，每次随机扔到 \([1,6]\) 中的一个整数，每次扔完可以选择结束游戏（此时游戏结果为扔到的点数）或者再扔一次，求最佳策略下结果的期望。
-
-设 \(f_i\) 表示有 \(i\) 次机会时的得分期望，则 \(f_i\) 可以由 \(f_{i-1}\) 转移而来：如果第一次扔到的值小于 \(f_{i-1}\)，那么继续游戏，答案为 \(f_{i-1}\)；如果大于 \(f_{i-1}\)，那么结束游戏，答案为当前扔到的值。
-
-code:
-
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-
-
-#i
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/09/26/abc.e-dp-ti-mu-ji-jin/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2022/09/25/abc-270-jie-ti-bao-gao/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="cxm1024">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="曹轩鸣的博客">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 曹轩鸣的博客">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/09/25/abc-270-jie-ti-bao-gao/" class="post-title-link" itemprop="url">ABC-270解题报告</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-09-25 08:35:21" itemprop="dateCreated datePublished" datetime="2022-09-25T08:35:21+08:00">2022-09-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-09-26 01:52:26" itemprop="dateModified" datetime="2022-09-26T01:52:26+08:00">2022-09-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" itemprop="url" rel="index"><span itemprop="name">解题报告</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          比赛传送门
-
-D. Stones
-题目传送门
-
-常规的博弈 DP。\(f[i]\) 表示还剩 \(i\) 个石子的情况下，先手将会拿到多少个，则 \(f_i=\max\limits_{a_j\le i}\{i-f_{i-a_j}\}\)。
-
-E. Apple Baskets on Circle
-题目传送门
-
-首先二分答案，找最大的 \(x\) 使得能够完整地取 \(x\) 轮。可以 \(O(n)\) 得到取 \(x\) 轮会取到的石子数，为 \(\sum\limits_{i=1}^n \min(a_i,x)\)，以此为限制二分即可。
-
-找到最大的 \(x\) 时，先取 \(x\) 轮，接下来只
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/09/25/abc-270-jie-ti-bao-gao/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>
