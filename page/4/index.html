@@ -256,9 +256,9 @@
     
     <div class="post-body" itemprop="articleBody">
           C. Manga
-题意：有一本书有 \(n\) 卷，你需要从第一卷开始依次看，一旦没有某一卷就停止。在看之前你可以进行若干次操作，每次卖掉任意两卷并买新的任意一卷。问操作结束后最多能看多少卷。
+题意：有一本书有 nnn 卷，你需要从第一卷开始依次看，一旦没有某一卷就停止。在看之前你可以进行若干次操作，每次卖掉任意两卷并买新的任意一卷。问操作结束后最多能看多少卷。
 
-做法 1
+ 做法 1
 注意到拥有的重复的卷都可以没有损失地卖掉，提前记录一下。然后从小到大扫，如果没有这一卷就尝试卖两本并买这一本。卖的两本优先从重复的卷里考虑，然后再贪心从大到小卖。正确性显然，数据结构维护即可。
 
 By KrK
@@ -296,7 +296,7 @@ By KrK
 31
 
 
-#incl
+#inclu
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/10/04/abc-271-jie-ti-bao-gao/#more" rel="contents">
@@ -389,9 +389,9 @@ By KrK
     
     <div class="post-body" itemprop="articleBody">
           ABC139D. ModSum
-题意：对于 \(1\sim n\) 的排列 \(P\)，求 \(\sum i\%P_i\) 的最大值。
+题意：对于 1∼n1\sim n1∼n 的排列 PPP，求 ∑i%Pi\sum i\%P_i∑i%Pi​ 的最大值。
 
-容易证明，最优排列为 \(\{2,3,4,\cdots,n,1\}\)，答案为 \(1+2+\cdots+(n-1)=\frac{n(n-1)}{2}\)。
+容易证明，最优排列为 {2,3,4,⋯,n,1}\{2,3,4,\cdots,n,1\}{2,3,4,⋯,n,1}，答案为 1+2+⋯+(n−1)=n(n−1)21+2+\cdots+(n-1)=\frac{n(n-1)}{2}1+2+⋯+(n−1)=2n(n−1)​。
 
 By risujiroh
 
@@ -410,8 +410,7 @@ By risujiroh
 
 #include <bits/stdc++.h>
 using namespace std;
-using lint = long long;
-template<class T = int> using V = vector<
+u
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/09/28/abc-d-ti-ji-jin/#more" rel="contents">
@@ -504,7 +503,7 @@ template<class T = int> using V = vector<
     
     <div class="post-body" itemprop="articleBody">
           129B. Students and Shoelaces
-题意：一个 \(n\) 个点 \(m\) 条边的无向图，每一轮删去所有度数为 \(1\) 的点，问删几轮停止。
+题意：一个 nnn 个点 mmm 条边的无向图，每一轮删去所有度数为 111 的点，问删几轮停止。
 
 暴力模拟每一轮即可，每次删点更新邻居度数。
 
@@ -556,7 +555,7 @@ By exod40
 #include <cstdio>
 #include <vector>
 #include <algorithm>
-using n
+using namespa
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/09/26/cf-za-ti-ti-jie-pian-jian-dan/#more" rel="contents">
@@ -643,9 +642,9 @@ using n
     
     <div class="post-body" itemprop="articleBody">
           ABC266E. Throwing the Die
-题意：有 \(n\) 次扔骰子机会，每次随机扔到 \([1,6]\) 中的一个整数，每次扔完可以选择结束游戏（此时游戏结果为扔到的点数）或者再扔一次，求最佳策略下结果的期望。
+题意：有 nnn 次扔骰子机会，每次随机扔到 [1,6][1,6][1,6] 中的一个整数，每次扔完可以选择结束游戏（此时游戏结果为扔到的点数）或者再扔一次，求最佳策略下结果的期望。
 
-设 \(f_i\) 表示有 \(i\) 次机会时的得分期望，则 \(f_i\) 可以由 \(f_{i-1}\) 转移而来：如果第一次扔到的值小于 \(f_{i-1}\)，那么继续游戏，答案为 \(f_{i-1}\)；如果大于 \(f_{i-1}\)，那么结束游戏，答案为当前扔到的值。
+设 fif_ifi​ 表示有 iii 次机会时的得分期望，则 fif_ifi​ 可以由 fi−1f_{i-1}fi−1​ 转移而来：如果第一次扔到的值小于 fi−1f_{i-1}fi−1​，那么继续游戏，答案为 fi−1f_{i-1}fi−1​；如果大于 fi−1f_{i-1}fi−1​，那么结束游戏，答案为当前扔到的值。
 
 code:
 
@@ -654,17 +653,7 @@ code:
 3
 4
 5
-6
-7
-8
-9
-10
-11
-12
-13
 
-
-#i
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/09/26/abc.e-dp-ti-mu-ji-jin/#more" rel="contents">
@@ -758,17 +747,15 @@ code:
     <div class="post-body" itemprop="articleBody">
           比赛传送门
 
-D. Stones
+ D. Stones
 题目传送门
 
-常规的博弈 DP。\(f[i]\) 表示还剩 \(i\) 个石子的情况下，先手将会拿到多少个，则 \(f_i=\max\limits_{a_j\le i}\{i-f_{i-a_j}\}\)。
+常规的博弈 DP。f[i]f[i]f[i] 表示还剩 iii 个石子的情况下，先手将会拿到多少个，则 fi=max⁡aj≤i{i−fi−aj}f_i=\max\limits_{a_j\le i}\{i-f_{i-a_j}\}fi​=aj​≤imax​{i−fi−aj​​}。
 
-E. Apple Baskets on Circle
+ E. Apple Baskets on Circle
 题目传送门
 
-首先二分答案，找最大的 \(x\) 使得能够完整地取 \(x\) 轮。可以 \(O(n)\) 得到取 \(x\) 轮会取到的石子数，为 \(\sum\limits_{i=1}^n \min(a_i,x)\)，以此为限制二分即可。
-
-找到最大的 \(x\) 时，先取 \(x\) 轮，接下来只
+首先二分答案，找最大的 xxx 使得能够完整地取 xxx 轮。可以 O(n)O(n)O(n) 得到取 xxx 轮会取到的石子数，为 ∑i=1nmin⁡(ai,x)\sum\limits_{i=1}^n 
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/09/25/abc-270-jie-ti-bao-gao/#more" rel="contents">
@@ -862,17 +849,12 @@ E. Apple Baskets on Circle
     <div class="post-body" itemprop="articleBody">
           比赛传送门
 
-D. Index × A(Not Continuous ver.)
+ D. Index × A(Not Continuous ver.)
 题目传送门
 
-令 \(f[i][j]\) 表示考虑序列的前 \(i\) 位，\(i\) 为取的 \(j\) 个元素时的最大贡献，则 \(f[i][j]=\max\limits_{1\le k<i} f[k][j-1]\)。用 \(g[j]\) 维护取 \(j\) 个元素时的最大贡献，即可将转移优化为 \(O(1)\)，总复杂度 \(O(n^2)\)。
+令 f[i][j]f[i][j]f[i][j] 表示考虑序列的前 iii 位，iii 为取的 jjj 个元素时的最大贡献，则 f[i][j]=max⁡1≤k<if[k][j−1]f[i][j]=\max\limits_{1\le k<i} f[k][j-1]f[i][j]=1≤k<imax​f[k][j−1]。用 g[j]g[j]g[j] 维护取 jjj 个元素时的最大贡献，即可将转移优化为 O(1)O(1)O(1)，总复杂度 O(n2)O(n^2)O(n2)。
 
-E. Erasing Vertices 2
-题目传送门
-
-可以想到一个很显然的贪心策略：每次取邻居的权值和最小的节点删除。
-
-具体实现上可以采用类似堆优化 \(D
+ E. Erasing Vert
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/09/23/abc-267-jie-ti-bao-gao/#more" rel="contents">
@@ -966,23 +948,23 @@ E. Erasing Vertices 2
     <div class="post-body" itemprop="articleBody">
           比赛传送门
 
-D. Unique Username
+ D. Unique Username
 题目传送门
 
-暴搜即可，复杂度 \(O(能过)\)
+暴搜即可，复杂度 O(能过)O(能过)O(能过)
 
-E. Chinese Restaurant (Three-Star Version)
+ E. Chinese Restaurant (Three-Star Version)
 题目传送门
 
 个人感觉非常好的一道题。
 
-首先抽象一下题意：\(n\) 个人和 \(n\) 道菜分别呈环状排列，如下图：
+首先抽象一下题意：nnn 个人和 nnn 道菜分别呈环状排列，如下图：
 
 
 
-环形可以旋转，若一个人与和他编号相同的菜距离为 \(x\)，会产生 \(x\) 的贡献，问最小贡献和。
+环形可以旋转，若一个人与和他编号相同的菜距离为 xxx，会产生 xxx 的贡献，问最小贡献和。
 
-可以发现，有一些人用顺时针计算距离（如上图中的 \(5\)），其他人用逆时针计算距离（如 \(3\)）。设编号为 \(i\) 的菜位于 \(a_i\) ，我们预处理一个桶 \
+可以发现，有一些人用顺时针计算距离（如上图中的 555），其他人用逆时针计算距离（如 333）。设编号为 iii 的菜位于 aia_iai​ ，我们预处理一个桶 txt_xt
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/09/18/abc-268-jie-ti-bao-gao/#more" rel="contents">
@@ -1076,26 +1058,26 @@ E. Chinese Restaurant (Three-Star Version)
     <div class="post-body" itemprop="articleBody">
           比赛传送门
 
-D. Do use hexagon grid
+ D. Do use hexagon grid
 题目传送门
 
-\(n^2\) 枚举两个格点，判断是否能直接走，能则连边，最后用 dfs 计算连通块个数。
+n2n^2n2 枚举两个格点，判断是否能直接走，能则连边，最后用 dfs 计算连通块个数。
 
-E. Last Rook
+ E. Last Rook
 题目传送门
 
 由于不需要考虑斜向的冲突，所以考虑行和列分开二分。以行为例：
 
 如果有若干连续行的棋子数量小于行数，则答案一定在这些行中，以此作为二分的 check。
 
-F. Numbered Checker
+ F. Numbered Checker
 题目传送门
 
 显然每一行剩下的数都是一个等差数列。
 
 考虑奇偶行分开计算：对于奇数行，只有奇数列能产生贡献；对于偶数行，只有偶数列能产生贡献。以奇数行为例：
 
-具体地，若输入的四界分别为 \(u,d
+具体地，若输入的四界分别为 u,
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/09/18/abc-269-jie-ti-bao-gao/#more" rel="contents">
@@ -1183,14 +1165,14 @@ F. Numbered Checker
     <div class="post-body" itemprop="articleBody">
           挖个巨坑，慢慢填。
 
-从 Nim 游戏入手
-问题：有 \(n\) 堆石子，第 \(i\) 堆石子有 \(s_i\) 个，两个人轮流取石子，每人每次只能从一堆中取任意数量的石子，可以取完，不能不取。问先手必胜还是必败。
+ 从 Nim 游戏入手
+问题：有 nnn 堆石子，第 iii 堆石子有 sis_isi​ 个，两个人轮流取石子，每人每次只能从一堆中取任意数量的石子，可以取完，不能不取。问先手必胜还是必败。
 
 前置知识：
 
- 1. 异或 \(\oplus\)：有两个数均为 \(0\) 或 \(1\)，若它们相等则异或结果为 \(0\)，不相等结果为 \(1\)
- 2. 按位异或 \(\oplus\)：将两个正整数分别表示成二进制，对应位进行异或。易证，按位异或满足交换律、结合律，同时有自反性，即 \(a\oplus a=0\)
- 3. 异或和：若干个正整数 \(a_1,a_2,a_3
+ 1. 异或 ⊕\oplus⊕：有两个数均为 000 或 111，若它们相等则异或结果为 000，不相等结果为 111
+ 2. 按位异或 ⊕\oplus⊕：将两个正整数分别表示成二进制，对应位进行异或。易证，按位异或满足交换律、结合律，同时有自反性，即 a⊕a=0a\oplus a=0a⊕a=0
+ 3. 异或和：若干个正整数 a1,a2,a3,…,ana_1,a_2,
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/07/12/bo-yi-lun-xue-xi-bi-ji/#more" rel="contents">
@@ -1281,7 +1263,7 @@ F. Numbered Checker
 
 首先，建议读者先对照无注释代码自行理解一下大致过程。
 
-无注释代码
+ 无注释代码
 1
 2
 3
@@ -1332,7 +1314,7 @@ F. Numbered Checker
 
 #include<bits/stdc++.h>
 using namespace std;
-#define int long lo
+#define int long l
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/07/07/ru-lue-ri-ti-jie/#more" rel="contents">
@@ -1402,8 +1384,9 @@ using namespace std;
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"/lib/mathjax/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
-<script src="/js/third-party/math/mathjax.js"></script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="/lib/katex/dist/katex.min.css" integrity="sha256-NJNVfEC6jfEt62wQMafLNT2eI6BaWONXbpkSEVAs3+8=" crossorigin="anonymous">
+  <script class="next-config" data-name="katex" type="application/json">{"copy_tex_js":{"url":"/lib/katex/dist/contrib/copy-tex.min.js","integrity":"sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs="}}</script>
+  <script src="/js/third-party/math/katex.js"></script>
 
 
 

@@ -350,9 +350,9 @@
     <div class="post-body" itemprop="articleBody">
           题目传送门
 
-题意：有一个矩阵，从最后一行开始走，每步可以向左上或右上走一步，最终走到第一行。要求沿途经过的格子权值和尽可能大且为 \(K\) 的倍数。输出方案。
+题意：有一个矩阵，从最后一行开始走，每步可以向左上或右上走一步，最终走到第一行。要求沿途经过的格子权值和尽可能大且为 KKK 的倍数。输出方案。
 
-设 \(f[i][j][k]\) 表示走到了第 \(i\) 行第 \(j\) 列，当前的和对 \(K\) 取模为 \(k\) 时的最大价值。转移采用刷表法较为简单：\(f[i][j][k]\to\begin{cases}f[i-1][j-1][(k+a[i-1][j-1])\bmod k]\\f[i-1][j+1][(k+a[i-1][j+1])\bmod k]\end{cases}\)。方案用 \(pre\) 数组记录，递归输出
+设 f[i][j][k]f[i][j][k]f[i][j][k] 表示走到了第 iii 行第 jjj 列，当前的和对 KKK 取模为 kkk 时的最大价值。转移采用刷表法较为简单：f[i][j][k]→{f[i−1][j−1][(k+a[i−1][j−1])modk]f[i−1][j+1][(k+a[i−1][j+1])modk]f[i][j][k]\to\begin{cases}f[i-1][j-1][(k+a[i-1][j-1])
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/11/22/cf41d-pawn-ti-jie/#more" rel="contents">
@@ -440,9 +440,9 @@
     <div class="post-body" itemprop="articleBody">
           题目传送门
 
-题意：有 \(n\) 个物品，每个物品有权值 \(a,b\)，首先由 A 选择 \(p\) 个物品，然后由 B 从其中再选择 \(k\) 个物品。B 首先想让剩余 \(p-k\) 个物品的 \(b\) 的和尽可能小，在此基础上让 \(a\) 的和尽可能小；A 首先想让这 \(k\) 个物品的 \(a\) 的和尽可能大，在此基础上让剩余 \(p-k\) 个 \(b\) 的和尽可能大。问 A 选哪 \(p\) 个才能在 B 走最优策略下对 A 最有利。
+题意：有 nnn 个物品，每个物品有权值 a,ba,ba,b，首先由 A 选择 ppp 个物品，然后由 B 从其中再选择 kkk 个物品。B 首先想让剩余 p−kp-kp−k 个物品的 bbb 的和尽可能小，在此基础上让 aaa 的和尽可能小；A 首先想让这 kkk 个物品的 aaa 的和尽可能大，在此基础上让剩余 p−kp-kp−k 个 bbb 的和尽可能大。问 A 选哪 ppp 个才能在 B 走最优策略下对 A 最有利。
 
-首先，A 选 \(p\) 个后由于不知道 B 会怎么选，从而较难确定选哪 \(p\) 个更优。于是我们考虑 A “让” B 选哪 
+首先，A 选 ppp 个后由于不知道 B 会怎么选，从而较难确定选哪 ppp 个更优。于是我们考虑 A “让” B 选哪 kkk 个对 A 最优。由于 B
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/11/22/cf332c-students-revenge-ti-jie/#more" rel="contents">
@@ -530,9 +530,9 @@
     <div class="post-body" itemprop="articleBody">
           题目传送门
 
-题意：有一个 \([0,L]\) 的数轴，分布有 \(n\) 个休息站，每个休息站坐标为 \(a_i\)。A、B 两人速度均为 \(1\)，他们分别从某个休息站开始，向某个方向走，每人都遍历完两个端点后回到原地。两人只有在休息站才能交错，而不能在路上穿过。求最小时间。
+题意：有一个 [0,L][0,L][0,L] 的数轴，分布有 nnn 个休息站，每个休息站坐标为 aia_iai​。A、B 两人速度均为 111，他们分别从某个休息站开始，向某个方向走，每人都遍历完两个端点后回到原地。两人只有在休息站才能交错，而不能在路上穿过。求最小时间。
 
-首先发现一个性质：AB 一定会交错两次，总时间即为 \(2L+\max(wait_A,wait_B)\)，其中 \(wait_A,wait_B\) 分别表示 AB 等待的时间。由于前者为定值，所以可以推出一个结论为，AB 的起点一定相同。于是对于每个起点，我们只需要找出 AB 两人等待时间最短的“第二次交错位置”
+首先发现一个性质：AB 一定会交错两次，总时间即为 2L+max⁡(waitA,waitB)2L+\max(wait_A,wait_B)2L+max(waitA​,waitB​)，其中 waitA,waitBwait_A,wait_BwaitA​,waitB​ 分别表示 AB 等待的时间。由于前者为定值，所
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/11/22/arc152b-pass-on-path-ti-jie/#more" rel="contents">
@@ -620,10 +620,10 @@
     <div class="post-body" itemprop="articleBody">
           比赛传送门
 
-D. Challenging Valleys
+ D. Challenging Valleys
 题意：给你一个数组，判断它是否为“山谷形”。
 
-tourist 的做法是假想在最左边和最右边插入一个极大值（结果不变）来统一情况，然后只需要判断下凹（比左右两边都低）的位置个数。如果为 \(1\) 则正确。
+tourist 的做法是假想在最左边和最右边插入一个极大值（结果不变）来统一情况，然后只需要判断下凹（比左右两边都低）的位置个数。如果为 111 则正确。
 
 By tourist
 
@@ -671,7 +671,7 @@ By tourist
 
 #include <bits/stdc++.h>
 
-using namespac
+using namespace
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/11/22/cfr-835-div-4-jie-ti-bao-gao/#more" rel="contents">
@@ -850,7 +850,7 @@ using namespac
  * 对于基本牌，第一个字符为点数，有 '2' '3' '4' '5' '6' '7' '8' '9' 'T' 'J' 'Q' 'K' 'A' 13 种；第二个字符为花色，有 'C' 'D' 'H' 'S' 四种。
  * 两张“王”分别用 "J1" "J2" 表示。
 
-现在你有 \(n\times m\) 张牌，排成 \(n\) 行 \(m\) 列的矩阵。由于是从一副牌中取的，保证互不相同。你需要将“王”替换成任意没出现过的普通牌，然后判断能否找到两个不重叠的 \(3\time
+现在你有 n×mn\times mn×m 张牌，排成 nnn 行 mmm 列的矩阵。由于是从一副牌中取的，保证互不相同。你需要将“王”替换成任意没出现过的普通牌，然后判断能否找到两个不重叠的 3×33\times
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/11/21/cf71d-solitaire-ti-jie/#more" rel="contents">
@@ -938,12 +938,12 @@ using namespac
     <div class="post-body" itemprop="articleBody">
           题目传送门
 
-题意：有一个 \(n\) 位的数字串，每位为 \(0-9\)。每次操作可以更改一位的数字，代价为新旧两位数字之差。问使字符串存在某一个数的出现次数超过 \(k\) 的最小代价。如果有多种方案，输出字典序最小的。
+题意：有一个 nnn 位的数字串，每位为 0−90-90−9。每次操作可以更改一位的数字，代价为新旧两位数字之差。问使字符串存在某一个数的出现次数超过 kkk 的最小代价。如果有多种方案，输出字典序最小的。
 
-求最小代价非常简单，枚举要让哪个数出现超过 \(k\) 次，然后将所有位求出将这一位改成该数的代价，排个序前 \(k\) 小值即可。难点在于如何让字典序最小。
+求最小代价非常简单，枚举要让哪个数出现超过 kkk 次，然后将所有位求出将这一位改成该数的代价，排个序前 kkk 小值即可。难点在于如何让字典序最小。
 
-做法一
-考虑排序时不仅要求代价从小到大，对于同样代价的两位，要么是原来比较大，减小为要求的数，要么是原来比较小，增大为要求的数，此时优先改数字大的那位，因为改完可以变小，字典序一定减小。如果两位相同，考虑是增大
+ 做法一
+考虑排序时不仅要求代价从小到大，对于同样代价的两位，要么是原来比较大，减小为要求的数，要么是原来比较小，增大为要求的数，此时优先改数字大的那位，因为改完可以变小，字典序一定减小。如果两位相同，考虑是增大还是减小，
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/11/21/cf118c-fancy-number-ti-jie/#more" rel="contents">
@@ -1037,10 +1037,10 @@ using namespac
     <div class="post-body" itemprop="articleBody">
           比赛传送门
 
-D. All Assign Point Add
-题意：给你一个数组 \(a\)，需要支持：全局赋值、单点加、单点查询。
+ D. All Assign Point Add
+题意：给你一个数组 aaa，需要支持：全局赋值、单点加、单点查询。
 
-做法一
+ 做法一
 维护最近一次全局赋值操作及每个位置在该操作后的增加量，当进行赋值操作时清空所有增加量。增加量可以用数组维护，但 STL 实现起来更简单。
 
 By tute7627
@@ -1160,12 +1160,12 @@ int main(){
     <div class="post-body" itemprop="articleBody">
           题目传送门
 
-题意：有一个环，每个位置的值为 0/1，初始在位置 \(1\)，当走到一个已经走过的格子时不需要花费，如果没走过，如果值为 1，需要花费 \(b+1\)，否则花费为 \(1\)。无论是否走过，移动到相邻的格子花费为 \(a\)。求花费 \(\le t\) 时最多能走到多少个格子。
+题意：有一个环，每个位置的值为 0/1，初始在位置 111，当走到一个已经走过的格子时不需要花费，如果没走过，如果值为 1，需要花费 b+1b+1b+1，否则花费为 111。无论是否走过，移动到相邻的格子花费为 aaa。求花费 ≤t\le t≤t 时最多能走到多少个格子。
 
 一个显然的结论是，走法一定为往右走若干格再折回往左走，或往左走若干格再折回往右走。分类讨论或翻转数组即可。这里只考虑往右走再折回往左走的情况。
 
-做法一
-如果我们往右走 \(0\) 步就折回（即直接往左走）的最大步数为 \(p\)，考虑快速计算往右走 \(1\) 步后往左的最大步数。因为往右多了一步，
+ 做法一
+如果我们往右走 000 步就折回（即直接往左走）的最大步数为 ppp，考虑快速计算往右走 111 步后往左的最大步数。因为往右多了一步，花费会多加上移动两
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/11/17/cf650b-image-preview-ti-jie/#more" rel="contents">
@@ -1235,8 +1235,9 @@ int main(){
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"/lib/mathjax/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
-<script src="/js/third-party/math/mathjax.js"></script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="/lib/katex/dist/katex.min.css" integrity="sha256-NJNVfEC6jfEt62wQMafLNT2eI6BaWONXbpkSEVAs3+8=" crossorigin="anonymous">
+  <script class="next-config" data-name="katex" type="application/json">{"copy_tex_js":{"url":"/lib/katex/dist/contrib/copy-tex.min.js","integrity":"sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs="}}</script>
+  <script src="/js/third-party/math/katex.js"></script>
 
 
 

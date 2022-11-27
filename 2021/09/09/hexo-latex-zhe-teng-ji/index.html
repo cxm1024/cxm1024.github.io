@@ -280,7 +280,6 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">escape: /^\\([!&quot;#$%&amp;&#x27;()*+,\-./:;&lt;=&gt;?@\[\]\\^_`&#123;|&#125;~])/,</span><br><span class="line">改成</span><br><span class="line">escape: /^\\([!&quot;#$&amp;&#x27;()*+,\-./:;&lt;=&gt;?@\[\]^_`|~])/,</span><br></pre></td></tr></table></figure>
 <p>第564行</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">inline._escapes = /\\([!&quot;#$%&amp;&#x27;()*+,\-./:;&lt;=&gt;?@\[\]\\^_`&#123;|&#125;~])/g;</span><br><span class="line">改成</span><br><span class="line">inline._escapes = /\\([!&quot;#$&amp;&#x27;()*+,\-./:;&lt;=&gt;?@\[\]^_`|~])/g;</span><br></pre></td></tr></table></figure>
-
     </div>
 
     
@@ -355,8 +354,9 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"/lib/mathjax/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
-<script src="/js/third-party/math/mathjax.js"></script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="/lib/katex/dist/katex.min.css" integrity="sha256-NJNVfEC6jfEt62wQMafLNT2eI6BaWONXbpkSEVAs3+8=" crossorigin="anonymous">
+  <script class="next-config" data-name="katex" type="application/json">{"copy_tex_js":{"url":"/lib/katex/dist/contrib/copy-tex.min.js","integrity":"sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs="}}</script>
+  <script src="/js/third-party/math/katex.js"></script>
 
 
 

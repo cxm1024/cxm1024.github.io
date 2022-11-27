@@ -247,10 +247,10 @@
     
     <div class="post-body" itemprop="articleBody">
           1008. Image Encoding
-题意：有一个 \(10\times 10\) 的矩阵，左下角为 \((0,0)\)，右上角为 \((10,10)\)（平面直角坐标系）。一部分格子被涂成了黑色，保证为一个联通块。有如下两种描述状态的方式：
+题意：有一个 10×1010\times 1010×10 的矩阵，左下角为 (0,0)(0,0)(0,0)，右上角为 (10,10)(10,10)(10,10)（平面直角坐标系）。一部分格子被涂成了黑色，保证为一个联通块。有如下两种描述状态的方式：
 
- 1. 第一行给出黑格子的个数 \(n\)，接下来 \(n\) 行依次给出黑格子的坐标。以 \(x\) 位第一关键字、\(y\) 为第二关键字从小到大给出。
- 2. 第一行给出左下角（关键字同上）的格子坐标，接下来，第一行一个字符串描述与该格子相邻的、还没有被描述过的格子，用 \(\texttt{R,T,L,B}\) 表示右、上、左、下（严格以此为
+ 1. 第一行给出黑格子的个数 nnn，接下来 nnn 行依次给出黑格子的坐标。以 xxx 位第一关键字、yyy 为第二关键字从小到大给出。
+ 2. 第一行给出左下角（关键字同上）的格子坐标，接下来，第一行一个字符串描述与该格子相邻的、还没有被描述过的格子，用 R,T,L,B\texttt{R,T,L,B
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/10/27/timusoj-za-ti-ji-jin/#more" rel="contents">
@@ -340,7 +340,7 @@
 
 题意：有一个 01 序列，每次可以选择两个元素，如果为逆序则交换，否则不变，无论是否交换都算一次操作。问排好序的期望操作次数。
 
-容易想到使用 DP 计算，但状态并不是很好想。首先状态必须有单向性，必须有严格的 DP 顺序，于是我们可以想到用逆序对数来记录状态。然而，思考会发现并不可行。不仅是复杂度无法接受，仅用逆序对也无法完整地表示状态。实际上，我们可以用“未归位的数字个数”来作为状态。具体地，假设当前序列为 \(\texttt{01101011}\)，该序列一共有三个 0，所以前三位应该都是 0，而实际上有两个 1，就定义此时的“未归位的数字个数”为 \(2\)。这个状态的单
+容易想到使用 DP 计算，但状态并不是很好想。首先状态必须有单向性，必须有严格的 DP 顺序，于是我们可以想到用逆序对数来记录状态。然而，思考会发现并不可行。不仅是复杂度无法接受，仅用逆序对也无法完整地表示状态。实际上，我们可以用“未归位的数字个数”来作为状态。具体地，假设当前序列为 01101011\texttt{01101011}01101011，该序列一共有三个 0，所以前三位应该都是 0，而实际上有两个 1，就定义此时的“未归位的数字个数”为 
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/10/26/cf1753c-wish-i-knew-how-to-sort-ti-jie/#more" rel="contents">
@@ -428,13 +428,13 @@
     <div class="post-body" itemprop="articleBody">
           题目传送门
 
-题意：给你一个长为 \(2n\) 的 01 序列 \(a\)，你可以选择它的一个子序列，将这个子序列循环右移一位。问是否能使得最终序列满足：可以严格分成两个完全相同的子序列。
+题意：给你一个长为 2n2n2n 的 01 序列 aaa，你可以选择它的一个子序列，将这个子序列循环右移一位。问是否能使得最终序列满足：可以严格分成两个完全相同的子序列。
 
 显然，当 0/1 的个数为奇数时一定无解。于是只考虑为偶数的情况。
 
 我们可以发现一个性质：我们选中的子序列一定是严格 01 交替的（相邻两个不同、第一位和最后一位也不同），否则一定可以删除一些元素使得效果完全不变。而当我们选中 01 交替的子序列循环右移时，相当于将这个子序列中元素取反。
 
-思考发现，“可以严格分成两个完全相同的子序列”这个限制本身比较复杂，难以判断，于是我们可以猜测有一种平凡的操作策略
+思考发现，“可以严格分成两个完全相同的子序列”这个限制本身比较复杂，难以判断，于是我们可以猜测有一种平凡的操作策略满足
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/10/26/cf1736d-equal-binary-subsequences-ti-jie/#more" rel="contents">
@@ -518,10 +518,10 @@
     
     <div class="post-body" itemprop="articleBody">
           A. Hometask
-题意：一个字符串，给定 \(k\) 个限制字符对 \((a_i,b_i)\)，要求从原串中删除尽可能少的字符，使得不存在一个相邻的限制字符对。保证 \(a_i\ne b_i\)，且每个字符最多只出现在一个字符对中。
+题意：一个字符串，给定 kkk 个限制字符对 (ai,bi)(a_i,b_i)(ai​,bi​)，要求从原串中删除尽可能少的字符，使得不存在一个相邻的限制字符对。保证 ai≠bia_i\ne b_iai​=bi​，且每个字符最多只出现在一个字符对中。
 
-做法 1
-可以设 \(f[i][c]\) 表示前 \(i\) 位，最后一位为 \(c\) 时最少的删除数量，则 \(\forall j,f[i][j]\leftarrow f[i-1][j]+1\)，而特殊地 \(f[i][s[i]]\leftarrow\min\limits_{(s[i],j)\text{ is available}}\{f[i-1][j
+ 做法 1
+可以设 f[i][c]f[i][c]f[i][c] 表示前 iii 位，最后一位为 ccc 时最少的删除数量，则 ∀j,f[i][j]←f[i−1][j]+1\forall j,f[i][j]\leftarrow f[i-1][j]+1∀j,f[i][j]←f[i−1][j]+1，而特殊地 f[i][s[i
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/10/21/cfr-109-jie-ti-bao-gao/#more" rel="contents">
@@ -607,9 +607,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          题意：平面直角坐标系上有 \(n\) 个机器人，每个机器人有一个上下左右之一的方向，初始所有机器人静止。在第 \(0\) 秒，你让第一个机器人开始朝它的方向移动，速度为每秒一个单位。如果一个移动的机器人碰到了一个静止的机器人，该静止机器人也开始朝它的方向移动。需要注意的是，一个移动的机器人无论是否碰到其他机器人，移动的方向和速度永远不会改变。求 \(T\) 秒后的状态。
+          题意：平面直角坐标系上有 nnn 个机器人，每个机器人有一个上下左右之一的方向，初始所有机器人静止。在第 000 秒，你让第一个机器人开始朝它的方向移动，速度为每秒一个单位。如果一个移动的机器人碰到了一个静止的机器人，该静止机器人也开始朝它的方向移动。需要注意的是，一个移动的机器人无论是否碰到其他机器人，移动的方向和速度永远不会改变。求 TTT 秒后的状态。
 
-由于一旦开始移动，后面的状态都是很简单的，所以只需要求出每个机器人从什么时候开始移动即可。考虑如下建图：若机器人 \(i\) 走 \(x\) 秒后会碰到机器人 \(j\)，则连一条 \(i\xrightarrow{x}j\)
+由于一旦开始移动，后面的状态都是很简单的，所以只需要求出每个机器人从什么时候开始移动即可。考虑如下建图：若机器人 iii 走 xxx 秒后会碰到机器人 jjj，则连一条 i→xji\xrightarrow{x}jix​j 的边。则每个机
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/10/21/gym100959i-robots-ti-jie/#more" rel="contents">
@@ -697,10 +697,10 @@
     <div class="post-body" itemprop="articleBody">
           比赛传送门
 
-A. Cowardly Rooks
-题意：有一个 \(n\times n\) 的棋盘，有 \(m\) 个位置上有车，保证互不攻击。问是否能将一个车移动一次使得仍然互不攻击。
+ A. Cowardly Rooks
+题意：有一个 n×nn\times nn×n 的棋盘，有 mmm 个位置上有车，保证互不攻击。问是否能将一个车移动一次使得仍然互不攻击。
 
-稍加思考可得，如果 \(m\ne n\)，一定可以，否则一定不可以。因为如果 \(m<n\)，则一定有一列是空着的，随便选一辆车移动到该列即可。如果 \(m=n\)，易证一定不可以。
+稍加思考可得，如果 m≠nm\ne nm=n，一定可以，否则一定不可以。因为如果 m<nm<nm<n，则一定有一列是空着的，随便选一辆车移动到该列即可。如果 m=nm=nm=n，易证一定不可以。
 
 By caoxuanming
 
@@ -723,7 +723,7 @@ By caoxuanming
 
 #include<bits/stdc++.h>
 using namespace std;
-signed main()
+signe
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/10/21/edu-cfr-138-jie-ti-bao-gao/#more" rel="contents">
@@ -810,11 +810,11 @@ signed main()
     
     <div class="post-body" itemprop="articleBody">
           D. LRUD Instructions
-题意：一个左上角为 \((1,1)\)、右下角为 \((H,W)\) 的矩阵，矩阵中有 \(n\) 个障碍。你初始在 \((r,c)\)，给你一个操作序列，每个操作为向上/下/左/右走若干格，如果遇到障碍/走到边界则停止。每次操作后输出当前位置。
+题意：一个左上角为 (1,1)(1,1)(1,1)、右下角为 (H,W)(H,W)(H,W) 的矩阵，矩阵中有 nnn 个障碍。你初始在 (r,c)(r,c)(r,c)，给你一个操作序列，每个操作为向上/下/左/右走若干格，如果遇到障碍/走到边界则停止。每次操作后输出当前位置。
 
 用数据结构存下每行中的障碍和每列中的障碍，每次从中找到最近的障碍，如果被挡住则走到障碍的上一格，否则正常走。
 
-best code:
+ best code:
 By tourist
 
 1
@@ -839,13 +839,7 @@ By tourist
 20
 21
 22
-23
-24
-25
-26
-27
-28
-
+2
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/10/20/abc-273-jie-ti-bao-gao/#more" rel="contents">
@@ -939,10 +933,10 @@ By tourist
     <div class="post-body" itemprop="articleBody">
           题目列表
 
-1225. Flags
-题意：有 \(n\) 个格子排成一行，你需要将每个格子染成白、蓝、红三色之一，要求不能有两个相邻的同色格子，且蓝色必须在白色和红色之间。求方案数。
+ 1225. Flags
+题意：有 nnn 个格子排成一行，你需要将每个格子染成白、蓝、红三色之一，要求不能有两个相邻的同色格子，且蓝色必须在白色和红色之间。求方案数。
 
-令 \(f[i][j]\) 表示前 \(i\) 个格子，末尾状态为 \(j\) 的方案数。有意义的状态共有四种：白、红、白蓝、红蓝。其中白可以由红蓝或红转移而来，红可以有白蓝或白转移而来，白蓝由白，红蓝由红。
+令 f[i][j]f[i][j]f[i][j] 表示前 iii 个格子，末尾状态为 jjj 的方案数。有意义的状态共有四种：白、红、白蓝、红蓝。其中白可以由红蓝或红转移而来，红可以有白蓝或白转移而来，白蓝由白，红蓝由红。
 
 1
 2
@@ -963,7 +957,7 @@ By tourist
 
 #include<bits/stdc++.h>
 using namespace std;
-long long f[50][4]
+long long f[5
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/10/14/timusoj-dp-ji-jin/#more" rel="contents">
@@ -1047,12 +1041,12 @@ long long f[50][4]
     
     <div class="post-body" itemprop="articleBody">
           F. Multi-Colored Segments
-题意：数轴上有 \(n\) 个线段，每个区间有一个颜色 \(c\)，对于每个线段，求与它颜色不同的线段中与它的最短距离。距离定义为两个线段中的点集最近的两个点的距离，如果相交则为 \(0\)。
+题意：数轴上有 nnn 个线段，每个区间有一个颜色 ccc，对于每个线段，求与它颜色不同的线段中与它的最短距离。距离定义为两个线段中的点集最近的两个点的距离，如果相交则为 000。
 
-做法1
+ 做法1
 可以想到按颜色排序，正着扫一遍再反着扫一遍，每次维护当前颜色之前的所有颜色的贡献。
 
-具体地，可以用两个 \(set\) 分别维护出现过的所有 \(l\) 和 \(r\) 的位置，每次查询在当前区间 \(r\) 左边的最大 \(r\) 和当前区间 \(l\) 右边的最小 \(l\)。可以发现，这种做法有一个缺陷，即对于完全被包含的情况无法考虑
+具体地，可以用两个 setsetset 分别维护出现过的所有 lll 和 rrr 的位置，每次查询在当前区间 rrr 左边的最大 rrr 和当前区间 lll 右边的最小 lll。可以发现，这种做法有一个缺陷，即对于完全被包含的情况无法考虑到。于是我们可以离散化后维护一
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/10/12/cfr-826-div-3-jie-ti-bao-gao/#more" rel="contents">
@@ -1145,9 +1139,9 @@ long long f[50][4]
     
     <div class="post-body" itemprop="articleBody">
           CF1739E. Cleaning Robot
-题意：有一个 \(2\times n\) 的矩阵，每个格子有可能是干净的也有可能是脏的。一个机器人从 \((1,1)\) 出发，每次移动到离他的曼哈顿距离最近的脏格子并清理。如果出现曼哈顿距离相同的两个脏格子，则机器人会发生故障。在机器人出发前，你可以手动清理若干个格子，问最多保留多少个脏格子能使机器人不出故障地清理完。
+题意：有一个 2×n2\times n2×n 的矩阵，每个格子有可能是干净的也有可能是脏的。一个机器人从 (1,1)(1,1)(1,1) 出发，每次移动到离他的曼哈顿距离最近的脏格子并清理。如果出现曼哈顿距离相同的两个脏格子，则机器人会发生故障。在机器人出发前，你可以手动清理若干个格子，问最多保留多少个脏格子能使机器人不出故障地清理完。
 
-注意到，机器人一定会从左往右清理，所以同时出现的两个脏格子只可能出现在当前位置的右侧。定义 \(f[i][j\in\{0,1\}][k\in\{0,1\}]\) 表示当前在第 \(i\) 列的第 \(j\) 行，上一列有/没有
+注意到，机器人一定会从左往右清理，所以同时出现的两个脏格子只可能出现在当前位置的右侧。定义 f[i][j∈{0,1}][k∈{0,1}]f[i][j\in\{0,1\}][k\in\{0,1\}]f[i][j∈
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/10/04/cf-dp-zhong-deng-ti-ji-jin/#more" rel="contents">
@@ -1217,8 +1211,9 @@ long long f[50][4]
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"/lib/mathjax/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
-<script src="/js/third-party/math/mathjax.js"></script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="/lib/katex/dist/katex.min.css" integrity="sha256-NJNVfEC6jfEt62wQMafLNT2eI6BaWONXbpkSEVAs3+8=" crossorigin="anonymous">
+  <script class="next-config" data-name="katex" type="application/json">{"copy_tex_js":{"url":"/lib/katex/dist/contrib/copy-tex.min.js","integrity":"sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs="}}</script>
+  <script src="/js/third-party/math/katex.js"></script>
 
 
 

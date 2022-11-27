@@ -263,8 +263,8 @@
     <div class="post-body" itemprop="articleBody">
           比赛传送门
 
-A. Larger Score
-因为只需要增加而不限制增加量，所以找到一对前小后大的数对，设法将它们交换即可。具体来说，所以对于 \(k+1\) 到 \(n\) 的一个位置 \(i\)，找到在前 \(k\) 个当中离它最近的（最后的）、比它小的位置 \(j\)（取后缀 \(\min\) 后用 lower_bound 找出），用 \(k-j\) 次操作将 \(j\) 移到位置 \(k\)，用 \(i-k-1\) 次操作将 \(i\) 移到位置 \(k+1\)，再用一次操作交换即可，总操作数为 \((k-j)+(i-k-1)+1=i-j\) 次。这就是一个位置的答案。计算每个位置的答
+ A. Larger Score
+因为只需要增加而不限制增加量，所以找到一对前小后大的数对，设法将它们交换即可。具体来说，所以对于 k+1k+1k+1 到 nnn 的一个位置 iii，找到在前 kkk 个当中离它最近的（最后的）、比它小的位置 jjj（取后缀 min⁡\minmin 后用 lower_bound 找出），用 k−jk-jk−j 次操作将 jjj 移到位置 kkk，用 i−k−1i-k-1i−k−1 次操作将 iii 移到位置 k+1k+1k+1，再用一次操作交换即可，总操作数为 (k−j)+(i−k−1)+1=i−j(k-j)+(i-k-1)+1=i-j(k−j)
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/05/01/arc-138-jie-ti-bao-gao/#more" rel="contents">
@@ -356,11 +356,11 @@ A. Larger Score
     
     
     <div class="post-body" itemprop="articleBody">
-          在这个直角三角形中，我们设以 \(c\) 为底的大三角形面积为 \(S_c\)，以 \(a,b\) 为底的两个小三角形的面积分别为 \(S_a,S_b\)。
+          在这个直角三角形中，我们设以 ccc 为底的大三角形面积为 ScS_cSc​，以 a,ba,ba,b 为底的两个小三角形的面积分别为 Sa,SbS_a,S_bSa​,Sb​。
 
-显然，\(S_c=\frac{ch}{2}=c^2\cdot\frac{h}{2c}\)。令 \(m=\frac{h}{2c}\)，则有 \(S_c=mc^2\)。
+显然，Sc=ch2=c2⋅h2cS_c=\frac{ch}{2}=c^2\cdot\frac{h}{2c}Sc​=2ch​=c2⋅2ch​。令 m=h2cm=\frac{h}{2c}m=2ch​，则有 Sc=mc2S_c=mc^2Sc​=mc2。
 
-同理，\(S_a=a^2\cdot\frac{h_a}{2a}\)（其中 \(h_a\) 表示三角形 \(BPC\) 中以 \(a\) 为底的高）。显然该三角形与大三角形 \(ABC\) 相似，所以 \(\frac{ha}{h}=\frac{a}{c}\)，即 \(\fr
+同理，Sa=a2⋅ha2aS_a=a^2\cdot\frac{h_a}{2a}Sa​=a2⋅2aha​​（其中 hah_aha​ 表示三角形 BPCBPCBPC 中以 aa
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/04/28/gou-gu-ding-li-zheng-ming/#more" rel="contents">
@@ -449,9 +449,9 @@ A. Larger Score
           01背包
 由于01背包太过经典，所以一定要把每一个细节理解透彻！
 
-有 \(n\) 个物品和一个容量为 \(m\) 的背包，每个物品有体积 \(w_i\) 和价值 \(v_i\)，求用这个背包所能装下的最大价值。
+有 nnn 个物品和一个容量为 mmm 的背包，每个物品有体积 wiw_iwi​ 和价值 viv_ivi​，求用这个背包所能装下的最大价值。
 
-设 \(f_{i,j}\) 表示只考虑前 \(i\) 个物品，体积不超过 \(j\) 的最大价值。如果我们算完了前 \(i-1\) 个物品的所有结果，那么第 \(i\) 个物品有选和不选两种情况。如果不选，则结果为 \(f_{i-1,j}\)；如果买，则：由于选了 \(i\) 后体积不超过 \(j\)，那么选 \(i\) 之前体积就不能超过 \(j-w_i\)，而选了 \(i\) 
+设 fi,jf_{i,j}fi,j​ 表示只考虑前 iii 个物品，体积不超过 jjj 的最大价值。如果我们算完了前 i−1i-1i−1 个物品的所有结果，那么第 iii 个物品有选和不选两种情况。如果不选，则结果为 fi−1,jf_{i-1,j}fi−1,j​；如果买，则：由于选了 iii 后体积不超过 jjj，那么选 iii 之前体积就不能超过 j−wij-w_ij−wi​，而选了
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/01/22/bei-bao-dp-xue-xi-bi-ji/#more" rel="contents">
@@ -541,24 +541,24 @@ A. Larger Score
 
 赛时做出来五道题，涨大分（开心）
 
-A. First Grid
+ A. First Grid
 problem
 
 有一个两行两列的矩阵，每个格子有黑和白两种颜色，至少有两个黑色格子，问黑色格子是否构成一个连通块（四连通）。
 
 显然，如果左上、右下都是白色或右上、左下都是白色，那么不能构成，否则能。
 
-B. Hard Calculation
+ B. Hard Calculation
 problem
 
-有两个正整数 \(a\) 和 \(b\) 做加法，问是否需要进位。
+有两个正整数 aaa 和 bbb 做加法，问是否需要进位。
 
 大水题，一位一位地判断即可。
 
-C. Cheese
+ C. Cheese
 problem
 
-有 \(n\) 种奶酪，第 \(i\) 种奶酪每千克能提供 \(a_i\) 的美味度，但最多能使用 \(b_i\) 千
+有 nnn 种奶酪，第 iii 种奶酪每千克能提供 aia_iai​ 的美味度，但最多能使用 bib_ibi​ 千克。你
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/11/28/abc-229-jie-ti-bao-gao/#more" rel="contents">
@@ -645,14 +645,12 @@ problem
     
     <div class="post-body" itemprop="articleBody">
           引入
-有很多题的答案可能会很大，这时候通常会让我们输出模一个数的结果。当我们的计算中只用到了加法，可以边加边模；只用到了乘法，可以边乘边模。但如果有除法，就不能边除边模了。这时候就要用到乘法逆元：\(a\times inv(b)\times inv(c)\%mod=\frac{a}{b\times c}\%mod\)。
+有很多题的答案可能会很大，这时候通常会让我们输出模一个数的结果。当我们的计算中只用到了加法，可以边加边模；只用到了乘法，可以边乘边模。但如果有除法，就不能边除边模了。这时候就要用到乘法逆元：a×inv(b)×inv(c)%mod=ab×c%moda\times inv(b)\times inv(c)\%mod=\frac{a}{b\times c}\%moda×inv(b)×inv(c)%mod=b×ca​%mod。
 
 有了乘法逆元，在过程中想怎么模就怎么模，非常方便。
 
-计算
-我们都知道，当模数为质数时，可以用快速幂求 \(a^{mod-2}\)，否则可以用扩展欧几里得来求。
-
-在组合数中，我们经常会用到阶乘逆元。当我们算出了 \(1-n\) 的阶乘（\(\%mod\)）后，就可以 \(O
+ 计算
+我们都知道，当模数为质数时，可以用快速幂求 amod−2a^{mod-2}amod−2，否则可以用扩展欧几里
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/11/26/cheng-fa-ni-yuan-xue-xi-bi-ji/#more" rel="contents">
@@ -746,8 +744,8 @@ problem
     <div class="post-body" itemprop="articleBody">
           众所周知，Tarjan 可以用来求有向图的强连通分量，我们就不扯那些 dfs 生成树，前向边、返祖边之类的东西，直接步入正题。
 
-准备工作
-Tarjan 算法本质上是一次 dfs 的过程，我们用 \(dfn[u]\) 记录 \(u\) 结点被 dfs 到的顺序，用 \(low[u]\) 记录 \(u\) 能到达的所有结点中最小的 \(dfn\)（包括自己）（详细定义：能够回溯到的最早的已经在栈中的结点。设以 \(u\) 为根的子树为 \(subtree_u\)，则 \(low[u]\) 定义为以下结点的 \(dfn\) 的最小值：\(subtree_u\) 中的结点；从 \(subtree_u
+ 准备工作
+Tarjan 算法本质上是一次 dfs 的过程，我们用 dfn[u]dfn[u]dfn[u] 记录 uuu 结点被 dfs 到的顺序，用 low[u]low[u]low[u] 记录 uuu 能到达的所有结点中最小的 dfndfndfn（包括自己）（详细定义：能够回溯到的最早的已经在栈中的结点。设以 uuu 为根的子树为 subtreeusubtree_usubtreeu​，则 low[u]low[u]low[u] 定义为以下结点的 dfndfndfn 的
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/11/26/tarjan-xue-xi-bi-ji/#more" rel="contents">
@@ -843,19 +841,19 @@ Tarjan 算法本质上是一次 dfs 的过程，我们用 \(dfn[u]\) 记录 \(u\
 
 做出来五道题。
 
-A. AB Balance
+ A. AB Balance
 problem
 
 给你一个只含有 a 和 b 的字符串，问怎样通过修改尽可能少的字符，使得 ab 的数量和 ba 的数量相等。
 
-显然，ab 的数量和 ba 的数量最多差 \(1\)，而当开头字母和结尾字母相同时，ab 的数量等于 ba 的数量。如果不同，修改开头或结尾字母使它们相同即可。
+显然，ab 的数量和 ba 的数量最多差 111，而当开头字母和结尾字母相同时，ab 的数量等于 ba 的数量。如果不同，修改开头或结尾字母使它们相同即可。
 
-B. Update Files
+ B. Update Files
 problem
 
-有 \(n\) 个电脑和 \(k\) 个数据线，其中一个电脑上有一个文件，每次可以通过数据线将文件从一个电脑传到另一个电脑上，耗时 \(1\) 小时。问至少需要几个小时才能让所有电脑都有文件。
+有 nnn 个电脑和 kkk 个数据线，其中一个电脑上有一个文件，每次可以通过数据线将文件从一个电脑传到另一个电脑上，耗时 111 小时。问至少需要几个小时才能让所有电脑都有文件。
 
-
+设当前有 x
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/11/21/edu-cfr-116-div-2-jie-ti-bao-gao/#more" rel="contents">
@@ -951,16 +949,14 @@ problem
 
 赛时AC三道，补题做出一道。
 
-A. Mathematical Addition
+ A. Mathematical Addition
 Problem
 
-给你两个正整数 \(u,v\)，求一对合法的 \(x,y\) 使得 \(\frac{x}{u}+\frac{y}{v}=\frac{x+y}{u+v}\)。
+给你两个正整数 u,vu,vu,v，求一对合法的 x,yx,yx,y 使得 xu+yv=x+yu+v\frac{x}{u}+\frac{y}{v}=\frac{x+y}{u+v}ux​+vy​=u+vx+y​。
 
 解方程。
 
-\[ \begin{array}{c} \frac{vx+uy}{uv}=\frac{x+y}{u+v} \\ (vx+uy)(u+v)=uv(x+y) \\ uvx+u^2y+v^2x+uvy=uvx+uvy \\ u^2y+v^2x=0 \end{array} \]
-
-则显然一组合法解为 \(\begin{c
+vx+uyuv=x+yu+v(vx+uy)(u+v)=uv(x+y)uvx+u2y+v2x+uvy=uvx+uvyu2y+v2x=0\begin{array}{c} \frac{vx+uy}{uv}=\frac{x+y}{u+v} \\ (vx+uy)(u+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/11/15/cfr-755-div-2-jie-ti-bao-gao/#more" rel="contents">
@@ -1054,7 +1050,7 @@ Problem
     <div class="post-body" itemprop="articleBody">
           这道题是线性筛的模板题，所以我们考虑怎么不用线性筛。
 
-我们都知道有一种筛法叫埃拉托色尼筛，简称埃氏筛，它比线性筛好写，也更好理解，但它过不了这道题，那怎么办呢？我们可以用 \(bitset\) 代替 bool 数组来进行优化，这造成的常数优化非常显著，以至于开了 ios::sync_with_stdio(false) 之后能轻松过掉这道题，和线性筛的时间总差距只有 \(0.5s\)，可以说是非常优秀了。
+我们都知道有一种筛法叫埃拉托色尼筛，简称埃氏筛，它比线性筛好写，也更好理解，但它过不了这道题，那怎么办呢？我们可以用 bitsetbitsetbitset 代替 bool 数组来进行优化，这造成的常数优化非常显著，以至于开了 ios::sync_with_stdio(false) 之后能轻松过掉这道题，和线性筛的时间总差距只有 0.5s0.5s0.5s，可以说是非常优秀了。
 
 AC 代码：
 
@@ -1087,7 +1083,7 @@ AC 代码：
 27
 
 
-#include<bit
+
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/10/21/p3383-mo-ban-xian-xing-shai-ti-jie/#more" rel="contents">
@@ -1180,17 +1176,17 @@ AC 代码：
     
     <div class="post-body" itemprop="articleBody">
           A. Diverse Substring
-\(Problem\)
-定义一个字符串为多变的，当且仅当字符串中没有一个字符的出现次数严格大于 \(n/2\)。给定一个只由小写字母构成的字符串，问是否能找出一个多变的字串，如果能，任意输出一个。
+ ProblemProblemProblem
+定义一个字符串为多变的，当且仅当字符串中没有一个字符的出现次数严格大于 n/2n/2n/2。给定一个只由小写字母构成的字符串，问是否能找出一个多变的字串，如果能，任意输出一个。
 
-\(n\le 1000\)
+n≤1000n\le 1000n≤1000
 
-\(Solution\)
+ SolutionSolutionSolution
 只有两个不同字符的字符串时多变的，所以只要给定的字符串中包含至少两个字符就一定可以，输出相邻两个不同字符即可。
 
-B. Vasya and Books
-\(Problem\)
-有一摞书，从上到下依次编号为 \(a_1,a_2,a_3...\)，现在 Vasya 想把它们分 \(n\) 次挪到别的地方，
+ B. Vasya and Books
+ ProblemProblemProblem
+有一摞书，从上到下依次编号为 a1
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/10/14/edu-cfr-53-div-2-jie-ti-bao-gao/#more" rel="contents">
@@ -1260,8 +1256,9 @@ B. Vasya and Books
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"/lib/mathjax/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
-<script src="/js/third-party/math/mathjax.js"></script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="/lib/katex/dist/katex.min.css" integrity="sha256-NJNVfEC6jfEt62wQMafLNT2eI6BaWONXbpkSEVAs3+8=" crossorigin="anonymous">
+  <script class="next-config" data-name="katex" type="application/json">{"copy_tex_js":{"url":"/lib/katex/dist/contrib/copy-tex.min.js","integrity":"sha256-Us54+rSGDSTvIhKKUs4kygE2ipA0RXpWWh0/zLqw3bs="}}</script>
+  <script src="/js/third-party/math/katex.js"></script>
 
 
 
