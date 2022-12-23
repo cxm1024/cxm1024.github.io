@@ -131,7 +131,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">62</span>
+          <span class="site-state-item-count">84</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -142,7 +142,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -203,7 +203,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2021/08/14/p4363-yi-shuang-mu-qi-ti-jie/">
+    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2022/09/18/abc-269-jie-ti-bao-gao/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -221,7 +221,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/08/14/p4363-yi-shuang-mu-qi-ti-jie/" class="post-title-link" itemprop="url">P4363一双木棋 题解</a>
+          <a href="/2022/09/18/abc-269-jie-ti-bao-gao/" class="post-title-link" itemprop="url">ABC-269解题报告</a>
         </h2>
 
         <div class="post-meta-container">
@@ -232,14 +232,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-08-14 00:00:00" itemprop="dateCreated datePublished" datetime="2021-08-14T00:00:00+08:00">2021-08-14</time>
+      <time title="创建时间：2022-09-18 20:13:17" itemprop="dateCreated datePublished" datetime="2022-09-18T20:13:17+08:00">2022-09-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2021-11-26 12:14:12" itemprop="dateModified" datetime="2021-11-26T12:14:12+08:00">2021-11-26</time>
+      <time title="修改时间：2022-09-20 15:13:06" itemprop="dateModified" datetime="2022-09-20T15:13:06+08:00">2022-09-20</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -247,7 +247,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+          <a href="/categories/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" itemprop="url" rel="index"><span itemprop="name">解题报告</span></a>
         </span>
     </span>
 
@@ -261,23 +261,31 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          本篇题解献给和我一样看不懂其他题解的状压DP小白
+          比赛传送门
 
-相信大家都是看了其他题解看不懂才看到这篇题解的（莫名自信），所以什么每行棋子数递减啊，每行的棋子都排在左边啊，就不用我多说了，直接切入正题（大段文字多，请耐心观看）。
+ D. Do use hexagon grid
+题目传送门
 
- 轮廓线DP
-没见过不用慌，我也没见过（雾
+n2n^2n2 枚举两个格点，判断是否能直接走，能则连边，最后用 dfs 计算连通块个数。
 
-轮廓线，就是把矩阵从右上角到左下角沿着有棋子和没棋子的分界线描一下，往下走就用1表示，往左走就用0表示。这样我们就得到了一个01串，即一个二进制数，这就是我们的DP状态。
+ E. Last Rook
+题目传送门
 
-例如（图丑勿喷）
+由于不需要考虑斜向的冲突，所以考虑行和列分开二分。以行为例：
 
+如果有若干连续行的棋子数量小于行数，则答案一定在这些行中，以此作为二分的 check。
 
+ F. Numbered Checker
+题目传送门
 
-这种情况下轮廓线状态为左左下左下下左左下，即001011001(2)=89001011001_{(2)}=89001011001(2)
+显然每一行剩下的数都是一个等差数列。
+
+考虑奇偶行分开计算：对于奇数行，只有奇数列能产生贡献；对于偶数行，只有偶数列能产生贡献。以奇数行为例：
+
+具体地，若输入的四界分别为 u,
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/08/14/p4363-yi-shuang-mu-qi-ti-jie/#more" rel="contents">
+              <a class="btn" href="/2022/09/18/abc-269-jie-ti-bao-gao/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -308,7 +316,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2021/08/14/kuo-zhan-ou-ji-li-de-xue-xi-bi-ji/">
+    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2022/07/12/bo-yi-lun-xue-xi-bi-ji/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -326,7 +334,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/08/14/kuo-zhan-ou-ji-li-de-xue-xi-bi-ji/" class="post-title-link" itemprop="url">扩展欧几里得学习笔记</a>
+          <a href="/2022/07/12/bo-yi-lun-xue-xi-bi-ji/" class="post-title-link" itemprop="url">博弈论学习笔记</a>
         </h2>
 
         <div class="post-meta-container">
@@ -336,15 +344,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2021-08-14 00:00:00" itemprop="dateCreated datePublished" datetime="2021-08-14T00:00:00+08:00">2021-08-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-05-05 17:55:59" itemprop="dateModified" datetime="2022-05-05T17:55:59+08:00">2022-05-05</time>
+      <time title="创建时间：2022-07-12 20:10:43 / 修改时间：21:48:19" itemprop="dateCreated datePublished" datetime="2022-07-12T20:10:43+08:00">2022-07-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -366,18 +368,845 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          温馨提示：本文推式子比较多，建议跟着文章自己推一推。
+          挖个巨坑，慢慢填。
 
- 扩展欧几里得是什么
-扩展欧几里得（exgcd）是一个可以用来求 ax+by=cax+by=cax+by=c（c%gcd⁡(a,b)=0c\%\gcd(a,b)=0c%gcd(a,b)=0，否则无解）的解的算法
+ 从 Nim 游戏入手
+问题：有 nnn 堆石子，第 iii 堆石子有 sis_isi​ 个，两个人轮流取石子，每人每次只能从一堆中取任意数量的石子，可以取完，不能不取。问先手必胜还是必败。
 
- 求解 ax+by=gcd⁡(a,b)ax+by=\gcd(a,b)ax+by=gcd(a,b)
-首先，如果 b=0b=0b=0 的话，gcd⁡(a,b)=a\gcd(a,b)=agcd(a,b)=a，则解为 {x=1y=0\begin{cases}x=1 \\ y=0\end{cases}{x=1y=0​
+前置知识：
 
-设此方程的解为 {
+ 1. 异或 ⊕\oplus⊕：有两个数均为 000 或 111，若它们相等则异或结果为 000，不相等结果为 111
+ 2. 按位异或 ⊕\oplus⊕：将两个正整数分别表示成二进制，对应位进行异或。易证，按位异或满足交换律、结合律，同时有自反性，即 a⊕a=0a\oplus a=0a⊕a=0
+ 3. 异或和：若干个正整数 a1,a2,a3,…,ana_1,a_2,
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/08/14/kuo-zhan-ou-ji-li-de-xue-xi-bi-ji/#more" rel="contents">
+              <a class="btn" href="/2022/07/12/bo-yi-lun-xue-xi-bi-ji/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2022/07/07/ru-lue-ri-ti-jie/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="cxm1024">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/07/07/ru-lue-ri-ti-jie/" class="post-title-link" itemprop="url">儒略日-题解</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-07-07 10:50:11 / 修改时间：11:35:18" itemprop="dateCreated datePublished" datetime="2022-07-07T10:50:11+08:00">2022-07-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          前言
+时隔两年，这个极为经典的题目终于被我 AC 了。经过诸多优化改良，最终得到了这个个人认为比较优美的做法，写篇题解纪念一下，也供参考。
+
+首先，建议读者先对照无注释代码自行理解一下大致过程。
+
+ 无注释代码
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+
+
+#include<bits/stdc++.h>
+using namespace std;
+#define int long l
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/07/07/ru-lue-ri-ti-jie/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2022/05/01/arc-138-jie-ti-bao-gao/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="cxm1024">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/05/01/arc-138-jie-ti-bao-gao/" class="post-title-link" itemprop="url">ARC-138解题报告</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-05-01 10:29:20" itemprop="dateCreated datePublished" datetime="2022-05-01T10:29:20+08:00">2022-05-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-05-05 17:39:09" itemprop="dateModified" datetime="2022-05-05T17:39:09+08:00">2022-05-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" itemprop="url" rel="index"><span itemprop="name">解题报告</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          比赛传送门
+
+ A. Larger Score
+因为只需要增加而不限制增加量，所以找到一对前小后大的数对，设法将它们交换即可。具体来说，所以对于 k+1k+1k+1 到 nnn 的一个位置 iii，找到在前 kkk 个当中离它最近的（最后的）、比它小的位置 jjj（取后缀 min⁡\minmin 后用 lower_bound 找出），用 k−jk-jk−j 次操作将 jjj 移到位置 kkk，用 i−k−1i-k-1i−k−1 次操作将 iii 移到位置 k+1k+1k+1，再用一次操作交换即可，总操作数为 (k−j)+(i−k−1)+1=i−j(k-j)+(i-k-1)+1=i-j(k−j)
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/05/01/arc-138-jie-ti-bao-gao/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2022/04/28/gou-gu-ding-li-zheng-ming/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="cxm1024">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/04/28/gou-gu-ding-li-zheng-ming/" class="post-title-link" itemprop="url">勾股定理证明</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-04-28 16:40:20" itemprop="dateCreated datePublished" datetime="2022-04-28T16:40:20+08:00">2022-04-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-07-23 23:13:27" itemprop="dateModified" datetime="2022-07-23T23:13:27+08:00">2022-07-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          在这个直角三角形中，我们设以 ccc 为底的大三角形面积为 ScS_cSc​，以 a,ba,ba,b 为底的两个小三角形的面积分别为 Sa,SbS_a,S_bSa​,Sb​。
+
+显然，Sc=ch2=c2⋅h2cS_c=\frac{ch}{2}=c^2\cdot\frac{h}{2c}Sc​=2ch​=c2⋅2ch​。令 m=h2cm=\frac{h}{2c}m=2ch​，则有 Sc=mc2S_c=mc^2Sc​=mc2。
+
+同理，Sa=a2⋅ha2aS_a=a^2\cdot\frac{h_a}{2a}Sa​=a2⋅2aha​​（其中 hah_aha​ 表示三角形 BPCBPCBPC 中以 aa
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/04/28/gou-gu-ding-li-zheng-ming/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2022/01/22/bei-bao-dp-xue-xi-bi-ji/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="cxm1024">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/01/22/bei-bao-dp-xue-xi-bi-ji/" class="post-title-link" itemprop="url">背包DP学习笔记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-01-22 10:41:31 / 修改时间：14:22:51" itemprop="dateCreated datePublished" datetime="2022-01-22T10:41:31+08:00">2022-01-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          01背包
+由于01背包太过经典，所以一定要把每一个细节理解透彻！
+
+有 nnn 个物品和一个容量为 mmm 的背包，每个物品有体积 wiw_iwi​ 和价值 viv_ivi​，求用这个背包所能装下的最大价值。
+
+设 fi,jf_{i,j}fi,j​ 表示只考虑前 iii 个物品，体积不超过 jjj 的最大价值。如果我们算完了前 i−1i-1i−1 个物品的所有结果，那么第 iii 个物品有选和不选两种情况。如果不选，则结果为 fi−1,jf_{i-1,j}fi−1,j​；如果买，则：由于选了 iii 后体积不超过 jjj，那么选 iii 之前体积就不能超过 j−wij-w_ij−wi​，而选了
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/01/22/bei-bao-dp-xue-xi-bi-ji/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2021/11/28/abc-229-jie-ti-bao-gao/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="cxm1024">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/11/28/abc-229-jie-ti-bao-gao/" class="post-title-link" itemprop="url">ABC-229解题报告</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-11-28 08:12:20 / 修改时间：08:57:27" itemprop="dateCreated datePublished" datetime="2021-11-28T08:12:20+08:00">2021-11-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" itemprop="url" rel="index"><span itemprop="name">解题报告</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          比赛传送门
+
+赛时做出来五道题，涨大分（开心）
+
+ A. First Grid
+problem
+
+有一个两行两列的矩阵，每个格子有黑和白两种颜色，至少有两个黑色格子，问黑色格子是否构成一个连通块（四连通）。
+
+显然，如果左上、右下都是白色或右上、左下都是白色，那么不能构成，否则能。
+
+ B. Hard Calculation
+problem
+
+有两个正整数 aaa 和 bbb 做加法，问是否需要进位。
+
+大水题，一位一位地判断即可。
+
+ C. Cheese
+problem
+
+有 nnn 种奶酪，第 iii 种奶酪每千克能提供 aia_iai​ 的美味度，但最多能使用 bib_ibi​ 千克。你
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/11/28/abc-229-jie-ti-bao-gao/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2021/11/26/cheng-fa-ni-yuan-xue-xi-bi-ji/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="cxm1024">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/11/26/cheng-fa-ni-yuan-xue-xi-bi-ji/" class="post-title-link" itemprop="url">乘法逆元学习笔记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-11-26 09:25:57 / 修改时间：12:13:33" itemprop="dateCreated datePublished" datetime="2021-11-26T09:25:57+08:00">2021-11-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          引入
+有很多题的答案可能会很大，这时候通常会让我们输出模一个数的结果。当我们的计算中只用到了加法，可以边加边模；只用到了乘法，可以边乘边模。但如果有除法，就不能边除边模了。这时候就要用到乘法逆元：a×inv(b)×inv(c)%mod=ab×c%moda\times inv(b)\times inv(c)\%mod=\frac{a}{b\times c}\%moda×inv(b)×inv(c)%mod=b×ca​%mod。
+
+有了乘法逆元，在过程中想怎么模就怎么模，非常方便。
+
+ 计算
+我们都知道，当模数为质数时，可以用快速幂求 amod−2a^{mod-2}amod−2，否则可以用扩展欧几里
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/11/26/cheng-fa-ni-yuan-xue-xi-bi-ji/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2021/11/26/tarjan-xue-xi-bi-ji/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="cxm1024">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/11/26/tarjan-xue-xi-bi-ji/" class="post-title-link" itemprop="url">Tarjan学习笔记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-11-26 08:10:06" itemprop="dateCreated datePublished" datetime="2021-11-26T08:10:06+08:00">2021-11-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-10-14 19:26:56" itemprop="dateModified" datetime="2022-10-14T19:26:56+08:00">2022-10-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          众所周知，Tarjan 可以用来求有向图的强连通分量，我们就不扯那些 dfs 生成树，前向边、返祖边之类的东西，直接步入正题。
+
+ 准备工作
+Tarjan 算法本质上是一次 dfs 的过程，我们用 dfn[u]dfn[u]dfn[u] 记录 uuu 结点被 dfs 到的顺序，用 low[u]low[u]low[u] 记录 uuu 能到达的所有结点中最小的 dfndfndfn（包括自己）（详细定义：能够回溯到的最早的已经在栈中的结点。设以 uuu 为根的子树为 subtreeusubtree_usubtreeu​，则 low[u]low[u]low[u] 定义为以下结点的 dfndfndfn 的
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/11/26/tarjan-xue-xi-bi-ji/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2021/11/21/edu-cfr-116-div-2-jie-ti-bao-gao/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="cxm1024">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 曹轩鸣的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/11/21/edu-cfr-116-div-2-jie-ti-bao-gao/" class="post-title-link" itemprop="url">EDU-CFR-116-Div.2解题报告</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-11-21 13:06:44" itemprop="dateCreated datePublished" datetime="2021-11-21T13:06:44+08:00">2021-11-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2021-11-26 12:13:59" itemprop="dateModified" datetime="2021-11-26T12:13:59+08:00">2021-11-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" itemprop="url" rel="index"><span itemprop="name">解题报告</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          比赛传送门
+
+做出来五道题。
+
+ A. AB Balance
+problem
+
+给你一个只含有 a 和 b 的字符串，问怎样通过修改尽可能少的字符，使得 ab 的数量和 ba 的数量相等。
+
+显然，ab 的数量和 ba 的数量最多差 111，而当开头字母和结尾字母相同时，ab 的数量等于 ba 的数量。如果不同，修改开头或结尾字母使它们相同即可。
+
+ B. Update Files
+problem
+
+有 nnn 个电脑和 kkk 个数据线，其中一个电脑上有一个文件，每次可以通过数据线将文件从一个电脑传到另一个电脑上，耗时 111 小时。问至少需要几个小时才能让所有电脑都有文件。
+
+设当前有 x
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/11/21/edu-cfr-116-div-2-jie-ti-bao-gao/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -401,7 +1230,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 </div>
