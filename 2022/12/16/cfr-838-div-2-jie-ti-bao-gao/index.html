@@ -26,25 +26,25 @@
 
     <meta name="description" content="比赛传送门   A. Divide and Conquer 题意：给你一个数组，每次操作可以将一个数变为它除以二下取整，求将数组的和变为偶数的最小次数。  显然如果数组本来就是偶数，则为 000，否则一定是选一个数一直除到改变，而其他数不动（动了显然更劣）。于是对于每个数求改变奇偶的最小次数，模拟即可。  By jiangly  1 2 3 4 5 6 7 8 9 10 11 12 13 14 1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CFR-838解题报告">
-<meta property="og:url" content="https://cxm1024.github.io/2022/12/16/cfr-838-jie-ti-bao-gao/index.html">
+<meta property="og:title" content="CFR-838(Div.2)解题报告">
+<meta property="og:url" content="https://cxm1024.github.io/2022/12/16/cfr-838-div-2-jie-ti-bao-gao/index.html">
 <meta property="og:site_name" content="曹轩鸣的博客">
 <meta property="og:description" content="比赛传送门   A. Divide and Conquer 题意：给你一个数组，每次操作可以将一个数变为它除以二下取整，求将数组的和变为偶数的最小次数。  显然如果数组本来就是偶数，则为 000，否则一定是选一个数一直除到改变，而其他数不动（动了显然更劣）。于是对于每个数求改变奇偶的最小次数，模拟即可。  By jiangly  1 2 3 4 5 6 7 8 9 10 11 12 13 14 1">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-12-16T07:04:15.000Z">
-<meta property="article:modified_time" content="2022-12-16T07:28:23.605Z">
+<meta property="article:modified_time" content="2023-01-12T09:25:47.169Z">
 <meta property="article:author" content="cxm1024">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://cxm1024.github.io/2022/12/16/cfr-838-jie-ti-bao-gao/">
+<link rel="canonical" href="https://cxm1024.github.io/2022/12/16/cfr-838-div-2-jie-ti-bao-gao/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://cxm1024.github.io/2022/12/16/cfr-838-jie-ti-bao-gao/","path":"2022/12/16/cfr-838-jie-ti-bao-gao/","title":"CFR-838解题报告"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://cxm1024.github.io/2022/12/16/cfr-838-div-2-jie-ti-bao-gao/","path":"2022/12/16/cfr-838-div-2-jie-ti-bao-gao/","title":"CFR-838(Div.2)解题报告"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>CFR-838解题报告 | 曹轩鸣的博客</title>
+<title>CFR-838(Div.2)解题报告 | 曹轩鸣的博客</title>
   
 
 
@@ -136,7 +136,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">86</span>
+          <span class="site-state-item-count">89</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -209,7 +209,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2022/12/16/cfr-838-jie-ti-bao-gao/">
+    <link itemprop="mainEntityOfPage" href="https://cxm1024.github.io/2022/12/16/cfr-838-div-2-jie-ti-bao-gao/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -222,12 +222,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="CFR-838解题报告 | 曹轩鸣的博客">
+      <meta itemprop="name" content="CFR-838(Div.2)解题报告 | 曹轩鸣的博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          CFR-838解题报告
+          CFR-838(Div.2)解题报告
         </h1>
 
         <div class="post-meta-container">
@@ -237,9 +237,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-12-16 15:04:15 / 修改时间：15:28:23" itemprop="dateCreated datePublished" datetime="2022-12-16T15:04:15+08:00">2022-12-16</time>
+      <time title="创建时间：2022-12-16 15:04:15" itemprop="dateCreated datePublished" datetime="2022-12-16T15:04:15+08:00">2022-12-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-01-12 17:25:47" itemprop="dateModified" datetime="2023-01-12T17:25:47+08:00">2023-01-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
